@@ -1,0 +1,278 @@
+:root {
+  --midnight: #0d0b12;
+  --midnight-2: #171224;
+  --midnight-3: #221a33;
+  --gold: #c9a227;
+  --gold-soft: #e3c766;
+  --violet: #8b6fc0;
+  --violet-soft: #b39ddb;
+  --cream: #f5f2ea;
+  --muted: #b8b0c4;
+  --line: #3a2f52;
+  --danger: #c96a6a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--midnight);
+  color: var(--cream);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.55;
+}
+
+h1, h2, h3, .serif {
+  font-family: Georgia, 'Times New Roman', serif;
+  color: var(--gold-soft);
+  font-weight: normal;
+  letter-spacing: 0.02em;
+}
+
+a {
+  color: var(--violet-soft);
+}
+
+button {
+  background: var(--midnight-3);
+  color: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0.5rem 0.9rem;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+button:hover:not(:disabled) {
+  border-color: var(--gold);
+}
+
+button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+button.primary {
+  background: var(--gold);
+  color: #171224;
+  border-color: var(--gold);
+  font-weight: 600;
+}
+
+button.ghost {
+  background: transparent;
+}
+
+input, select, textarea {
+  background: var(--midnight-2);
+  color: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0.55rem 0.7rem;
+  font-size: 0.95rem;
+  width: 100%;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: 1px solid var(--gold);
+  border-color: var(--gold);
+}
+
+label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 0.9rem 0 0.3rem;
+}
+
+.app {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0 1rem 3rem;
+}
+
+.app-header {
+  border-bottom: 1px solid var(--line);
+  padding: 1.2rem 0 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 1.9rem;
+}
+
+.app-header .tagline {
+  color: var(--muted);
+  font-style: italic;
+  margin: 0.2rem 0 0;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.9rem 0 0;
+}
+
+.nav button.active {
+  border-color: var(--gold);
+  color: var(--gold-soft);
+}
+
+.card {
+  background: var(--midnight-2);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1rem 1.1rem;
+  margin: 0.8rem 0;
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.small {
+  font-size: 0.85rem;
+}
+
+.gold {
+  color: var(--gold-soft);
+}
+
+.violet {
+  color: var(--violet-soft);
+}
+
+.banner {
+  background: var(--midnight-3);
+  border: 1px solid var(--gold);
+  border-radius: 10px;
+  padding: 0.8rem 1rem;
+  margin: 0.8rem 0;
+}
+
+.tarot-card {
+  background: linear-gradient(160deg, var(--midnight-3), #120e1e);
+  border: 1px solid var(--gold);
+  border-radius: 10px;
+  padding: 0.9rem;
+  text-align: center;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.3rem;
+}
+
+.tarot-card .numeral {
+  font-family: Georgia, serif;
+  color: var(--gold-soft);
+  font-size: 1.4rem;
+}
+
+.tarot-card .name {
+  font-family: Georgia, serif;
+  font-size: 1.05rem;
+}
+
+.tarot-card.reversed {
+  border-style: dashed;
+}
+
+.tarot-card.reversed .name::after {
+  content: ' · reversed';
+  color: var(--violet-soft);
+  font-size: 0.85rem;
+}
+
+.tarot-card .position {
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 0.7rem;
+}
+
+.spread-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.6rem;
+}
+
+.chat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin: 1rem 0;
+}
+
+.chat-msg {
+  max-width: 85%;
+  padding: 0.7rem 0.9rem;
+  border-radius: 12px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.chat-msg.reader {
+  background: var(--midnight-3);
+  border: 1px solid var(--line);
+  align-self: flex-start;
+}
+
+.chat-msg.user {
+  background: #2c2140;
+  border: 1px solid var(--violet);
+  align-self: flex-end;
+}
+
+.chat-input-row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.chat-input-row input {
+  flex: 1;
+}
+
+.chip {
+  display: inline-block;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.15rem 0.6rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin: 0.15rem 0.25rem 0.15rem 0;
+}
+
+.chip.gold {
+  color: var(--gold-soft);
+  border-color: var(--gold);
+}
+
+.row {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: 1.2rem 0;
+}

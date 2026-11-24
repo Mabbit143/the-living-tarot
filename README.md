@@ -7,9 +7,10 @@ life, not from generic definitions.
 
 ## Status
 
-V1 is live as a Muse app. This repo holds the portable heart of the project:
-the synthesized knowledge base and the documentation. The runnable app source
-is being packaged for development here as the next step.
+V1 is live as a Muse app, and this repo now holds a runnable implementation
+of it: a Vite + React + TypeScript app under `client/`, with the knowledge
+base and documentation alongside it. Clone it, install, and run it — see
+[Development](#development).
 
 ## What it does
 
@@ -40,6 +41,25 @@ It never claims to be more *accurate*.
 ## Repo layout
 
 ```
+client/                      The runnable app (Vite + React + TypeScript)
+  src/
+    lib/
+      types.ts               Shared data model
+      knowledge.ts           Typed access to the knowledge base
+      store.ts               The single data layer (localStorage now)
+      reader.ts              Interpretation assembly, in the reader's voice
+      patterns.ts            Recurrence counting with honest caveats
+      memory.ts              Memory extraction (suggestions start unconfirmed)
+    components/
+      Onboarding.tsx         Profile + life context + reading style
+      ReadingTable.tsx       Spread picker, draw, physical-deck entry
+      ChatReader.tsx         The conversational reader
+      Lexicon.tsx            The 78-card Personal Tarot Lexicon
+      LifeMemory.tsx         Confirmed / suggested / hidden memories
+      Archive.tsx            Readings + post-reading reflections
+      PatternsView.tsx       Recurring cards and pairs
+      SymbolJournal.tsx      Symbol notebook
+    App.tsx                  Shell + navigation
 server/src/knowledge/    The synthesized knowledge base (the data layer)
   synthesized-meanings.json     78 cards, upright + reversed, sources per card
   combinations-and-spreads.json  Combination principles, positional rules,
@@ -69,6 +89,25 @@ memory-extraction modules.
 
 ## Development
 
-The full runnable codebase scaffold is the next step for this repo. The
-intended direction is Supabase/PostgreSQL with vector search for the memory
-systems, per `docs/ARCHITECTURE.md`.
+Prerequisites: Node 18+ and npm.
+
+```sh
+cd client
+npm install
+npm run dev      # start the dev server
+npm run build    # typecheck + production build (output in client/dist)
+npm run preview  # serve the production build locally
+npm run typecheck
+```
+
+How it fits together:
+
+- The client imports the knowledge JSONs directly from
+  `server/src/knowledge/` (see `client/src/lib/knowledge.ts` and the
+  `server.fs.allow` setting in `client/vite.config.ts`). The JSON files are
+  the source of truth — edit the data, not the code, to change meanings.
+- Persistence is localStorage behind the `StoreAdapter` interface in
+  `client/src/lib/store.ts`. To move to Supabase/PostgreSQL, implement the
+  same interface against the backend; no reading, lexicon, or chat code needs
+  to change. See `docs/ARCHITECTURE.md` for the data model and the
+  Supabase/vector-search direction.

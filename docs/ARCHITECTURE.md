@@ -15,15 +15,40 @@
   meanings plus the user's stored context, in the reader's voice. No live
   model call, no predictive claims.
 
-## Modules (Muse build)
+## Modules (this repo — `client/src/`)
 
 | Module | Job |
 |---|---|
-| Deck data | The 78 cards as a standalone data module (now the synthesized knowledge base) |
-| Data layer (`store.ts`) | All reads/writes: profile, readings, lexicon, memories, patterns |
-| Reader voices | The Familiar (default), The Mystic, The Interpreter — tone and question style |
-| Pattern engine | Recurrence counting, honest frequency caveats |
-| Memory extraction | Suggests memories from readings; all suggestions start unconfirmed |
+| `lib/knowledge.ts` | Typed access to the knowledge base; imports the JSONs from `server/src/knowledge/` |
+| `lib/store.ts` | The single data layer: `StoreAdapter` interface, `LocalStorageStore` now, Supabase later |
+| `lib/reader.ts` | Interpretation assembly: meanings + combinations + positions + lexicon + history, in the reader's voice |
+| `lib/patterns.ts` | Recurrence counting with honest frequency caveats |
+| `lib/memory.ts` | Memory extraction: suggestions from readings, all starting unconfirmed |
+| `lib/types.ts` | Shared data model |
+| `components/` | `Onboarding`, `ReadingTable`, `ChatReader`, `Lexicon`, `LifeMemory`, `Archive`, `PatternsView`, `SymbolJournal` |
+| `App.tsx` | Shell + navigation + onboarding gate |
+
+## Scaffold layout
+
+```
+client/
+  package.json  vite.config.ts  tsconfig.json  index.html
+  src/
+    main.tsx  App.tsx  index.css
+    lib/      types.ts  knowledge.ts  store.ts  reader.ts  patterns.ts  memory.ts
+    components/  (see table above)
+server/src/knowledge/   The knowledge base (source of truth, never edited by the app)
+docs/                   This file
+```
+
+## Data gaps (round 1)
+
+The round-1 JSON carries synthesized upright/reversed meanings, sources, and
+disagreement notes per card — but no separate traditional-meaning field and
+no per-card thin-reversal flag. The Lexicon therefore shows the synthesized
+meanings, sources, and notes, and carries a plain note that reversal
+synthesis rests on fewer sources. Those two display elements need round-2
+data that carries them explicitly.
 
 ## Data model
 

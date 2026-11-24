@@ -3,9 +3,9 @@
     "arcana": "major",
     "id": "the-fool",
     "name": "The Fool",
-    "notes": "Stuart alone reads the Fool darkly, as unconscious humanity blaming life for its own folly; every other source reads the leap as hopeful, so the majority reading stands and Stuart's is the starting point the journey grows out of.",
+    "notes": "Stuart alone reads the Fool darkly, as unconscious humanity blaming life for its own folly; every other source reads the leap as hopeful, so the majority reading stands and Stuart's is the starting point the journey grows out of. Adams: Distinctive reversed angle: not fear or recklessness but bad timing and fantasy-vs-reality confusion; also reads the Fool's dog as instinct guiding the journey. Weber: Distinctive frame: the Fool is the reader themself (gender-neutral 'they'), and the whole Major Arcana is your life story, not a set of separate omens. Dean: Distinctive angle: the Fool's sleeve lining is read as the womb — he is being born into a new phase, not just wandering. Reed: Distinctive: the Fool can signal the afterlife — a loved one assuring the querent they are free and on a new journey — and the dog can stand for a pet who has crossed over. Ramakrishnan: Book's angle: neurulation — newborn neurons with no specific identity, wandering and connecting. Papez: Pair: Fool and World are two sides of one cycle — both contain the entire major arcana.",
     "number": 0,
-    "reversed": "A new idea is stalling because fear says you lack the tools, the skill, or the right timing — or, on the other side, a leap is being taken recklessly, without regard for the consequences. Inexperience and carelessness can trip up the fresh start, so check whether you are holding back or rushing blind.",
+    "reversed": "A new idea is stalling because fear says you lack the tools, the skill, or the right timing — or, on the other side, a leap is being taken recklessly, without regard for the consequences. Inexperience and carelessness can trip up the fresh start, so check whether you are holding back or rushing blind. It can also be simple bad timing rather than fear — a fantasy that needs weighing against reality before you act.",
     "sources": [
       "Esselmont",
       "Papez",
@@ -13,7 +13,12 @@
       "Stuart",
       "Place",
       "Hamaker",
-      "Gray"
+      "Gray",
+      "Adams",
+      "Weber",
+      "Dean",
+      "Reed",
+      "Ramakrishnan"
     ],
     "suit": null,
     "upright": "A fresh start full of possibility, calling for a leap of faith even without a complete plan. Travel light, leave past failures behind, and trust instinct and curiosity to carry you into something new. It is the open, playful energy of beginning — the deep urge to grow beyond where you have been."
@@ -22,7 +27,7 @@
     "arcana": "major",
     "id": "the-magician",
     "name": "The Magician",
-    "notes": "Hamaker sees the Magician as still embryonic and exploratory, without a clear-cut goal yet, while Stuart lifts him to the completed ascent; the synthesis keeps the traditional middle ground of focused, capable beginning.",
+    "notes": "Hamaker sees the Magician as still embryonic and exploratory, without a clear-cut goal yet, while Stuart lifts him to the completed ascent; the synthesis keeps the traditional middle ground of focused, capable beginning. Weber: Distinctive angle: the Magician as a brief, early mentor whose influence outlasts their presence. Dean: Numerology link to X The Wheel of Fortune: the Magician's focused will and the Wheel's turning luck are two faces of the same creative force. Reed: Distinctive: Magician-as-advocate, with a practice of meditating on the card before a medical appointment; pro tip warns never to suggest ignoring doctors' orders. Ramakrishnan: Book's angle: action potentials as the basic energy behind every action. Papez: Pair: Magician and Strength share the infinity symbol — active creation versus receptive taming; both are power, neither is stronger.",
     "number": 1,
     "reversed": "You know what you want to create but are not taking action, or your efforts are scattered and misdirected. Talents may be going unused, or power is being turned toward manipulation rather than honest making. Clarify the outcome you actually want, then take one concrete step toward it.",
     "sources": [
@@ -32,16 +37,20 @@
       "Stuart",
       "Place",
       "Hamaker",
-      "Gray"
+      "Gray",
+      "Weber",
+      "Dean",
+      "Reed",
+      "Ramakrishnan"
     ],
     "suit": null,
-    "upright": "You already have what you need — the skills, resources, and focus — to turn an idea into something real. This is the moment to act, channeling your energy with clear intent and combining what you have into a result. What was only potential in the Fool now takes shape through your hands."
+    "upright": "You already have what you need — the skills, resources, and focus — to turn an idea into something real. This is the moment to act — including the power to speak up for yourself, with doctors, bosses, anyone whose authority you are facing — channeling your energy with clear intent and combining what you have into a result. What was only potential in the Fool now takes shape through your hands."
   },
   {
     "arcana": "major",
     "id": "the-high-priestess",
     "name": "The High Priestess",
-    "notes": "All sources agree on stillness and hidden knowledge; Place's image of the veiled figure between the dark and light pillars carries the symbolism.",
+    "notes": "All sources agree on stillness and hidden knowledge; Place's image of the veiled figure between the dark and light pillars carries the symbolism. Weber: Reversed Priestess is specifically about blocked intuition, not just hidden knowledge. Dean: Dean's portal image: the Priestess is the guardian of a gateway, and a reading can travel through her from present to future. Reed: Distinctive: seclusion/quarantine reading and the Priestess as medical intuitive or messenger from the other side. Ramakrishnan: Book's angle: the pineal gland and melatonin as an inner homing signal. Papez: Pair: High Priestess and Moon — the water glimpsed behind her is the Moon's subconscious water; intuition first, then illusion.",
     "number": 2,
     "reversed": "You have drifted away from your inner voice, doubting it or letting other people's opinions drown it out, and you may even be hiding your intuitive gifts for fear of judgment. What looks true on the surface may be deception or misdirection. Withdraw, get quiet, and trust yourself again.",
     "sources": [
@@ -51,7 +60,11 @@
       "Stuart",
       "Place",
       "Hamaker",
-      "Gray"
+      "Gray",
+      "Weber",
+      "Dean",
+      "Reed",
+      "Ramakrishnan"
     ],
     "suit": null,
     "upright": "Be still and listen inward: the answers you are looking for live inside you, not outside. Hidden influences are at work and the veil between what you know and what you sense is thin, so trust intuition over noise and let understanding surface in its own time. This is the receptive counterpart to the Magician's action — knowledge that comes from quiet, not effort."
@@ -60,7 +73,7 @@
     "arcana": "major",
     "id": "the-empress",
     "name": "The Empress",
-    "notes": "Papez stresses this is not only about pregnancy or mothering others — nurture applies to projects, work, and yourself.",
+    "notes": "Papez stresses this is not only about pregnancy or mothering others — nurture applies to projects, work, and yourself. Weber: Distinctive angle: the Empress as truly seeing your mother as a person, and as creation of any kind, not only literal motherhood. Dean: Numerology link to XII The Hanged Man and XXI The World: abundance, suspension and completion form one arc. Reed: Distinctive: the Empress reversed as the depleted caregiver, plus a reader-ethics warning not to create codependence with clients. Ramakrishnan: Book's angle: the pituitary gland as the seat of hormonal control and homeostasis.",
     "number": 3,
     "reversed": "You have been pouring your energy into others and neglecting your own needs, and the cup is empty. A creative block or over-dependence on others may be part of the same pattern. Fill your own cup first: rest, pleasure, and self-care are what make real generosity possible again.",
     "sources": [
@@ -70,16 +83,20 @@
       "Stuart",
       "Place",
       "Hamaker",
-      "Gray"
+      "Gray",
+      "Weber",
+      "Dean",
+      "Reed",
+      "Ramakrishnan"
     ],
     "suit": null,
-    "upright": "A fertile time of growth, creativity, and abundance — what you have dreamed of is taking shape, and it deserves to be tended and enjoyed. Connect with your senses, make something beautiful, and care for what you are growing, whether that is a project, a relationship, or yourself. Nurture here is fierce and protective, not only soft."
+    "upright": "A fertile time of growth, creativity, and abundance — what you have dreamed of is taking shape, and it deserves to be tended and enjoyed. Connect with your senses, make something beautiful, and care for what you are growing, whether that is a project, a relationship, or yourself. Nurture here is fierce and protective, not only soft. You may also finally see a mother or maternal figure as a person with needs of her own — or become one yourself, giving birth to a person, a business, or a project."
   },
   {
     "arcana": "major",
     "id": "the-emperor",
     "name": "The Emperor",
-    "notes": "Papez frames authority as accountability rather than dominance, and Stuart warns that forgetfulness can turn the Emperor's power tyrannical.",
+    "notes": "Papez frames authority as accountability rather than dominance, and Stuart warns that forgetfulness can turn the Emperor's power tyrannical. Weber: Distinctive contrast: Empress creates, Emperor inherits or supports what already exists. Dean: Numerology link to XIII Death: the Emperor's order and Death's ending are paired — structures that cannot change must fall. Ramakrishnan: Book's angle: the frontal lobe as the Emperor of thoughts and actions.",
     "number": 4,
     "reversed": "Look honestly at your relationship with power and control: are you expressing too much of it, or too little? Domination, rigidity, or an abuse of authority — from you or from a boss, partner, or father figure — may be at play, or control may have slipped away entirely. The question is whether power is working for you or against you.",
     "sources": [
@@ -89,16 +106,19 @@
       "Stuart",
       "Place",
       "Hamaker",
-      "Gray"
+      "Gray",
+      "Weber",
+      "Dean",
+      "Ramakrishnan"
     ],
     "suit": null,
-    "upright": "Step into steady, protective leadership: bring structure, set clear boundaries, and rule with a firm but fair hand. Authority here is accountability — you are the one responsible for the domain you hold, and standing your ground is part of the work. Order and discipline give the Empress's creativity something solid to grow on."
+    "upright": "Step into steady, protective leadership: bring structure, set clear boundaries, and rule with a firm but fair hand. Authority here is accountability — you are the one responsible for the domain you hold, and standing your ground is part of the work. Order and discipline give the Empress's creativity something solid to grow on. It can also mean taking up something already established — inheriting or supporting a business or cause — and seeing a father figure plainly, hero or villain alike."
   },
   {
     "arcana": "major",
     "id": "the-hierophant",
     "name": "The Hierophant",
-    "notes": "Real conflict: Clark alone reads the upright as shallow and rigid and the reversed as the positive, open reading — the opposite of Esselmont, Papez, and Gray. The majority reading stands; Clark's inversion is noted, not followed.",
+    "notes": "Real conflict: Clark alone reads the upright as shallow and rigid and the reversed as the positive, open reading — the opposite of Esselmont, Papez, and Gray. The majority reading stands; Clark's inversion is noted, not followed. Weber: Distinctive angle: the Hierophant as any institutional gatekeeper, good or corrupt, not only a religious figure. Dean: Distinctive angle: Dean explicitly offers non-religious readings — shaman, lecturer, inspirational speaker, esoteric teacher — for readers uncomfortable with the Pope imagery. Reed: Distinctive: the Hierophant as the doctor's 'all clear' and as permission to explore complementary care; repeated advice to refer querents to a therapist when the work is beyond tarot. Ramakrishnan: Book's angle: the hippocampus as the seat of memory and learned expertise.",
     "number": 5,
     "reversed": "You are your own teacher now. Trust your inner wisdom, follow your own spiritual path, and question the rules and dogma that no longer fit, rather than seeking approval from outside. It is permission to go it alone and to let personal belief lead where tradition cannot.",
     "sources": [
@@ -108,16 +128,20 @@
       "Stuart",
       "Place",
       "Hamaker",
-      "Gray"
+      "Gray",
+      "Weber",
+      "Dean",
+      "Reed",
+      "Ramakrishnan"
     ],
     "suit": null,
-    "upright": "Learn from what has come before: a teacher, a tradition, or a trusted system holds keys you need for the next stretch of the path. There is real wisdom in established practices and in studying before forming your own beliefs — and you may also be the teacher now, sharing structured knowledge with others."
+    "upright": "Learn from what has come before: a teacher, a tradition, or a trusted system holds keys you need for the next stretch of the path. There is real wisdom in established practices and in studying before forming your own beliefs — and you may also be the teacher now, sharing structured knowledge with others. He can be any institutional gatekeeper — a college orientation, a new job's HR manager, a rite of passage — benign or corrupt, a warden who uses rules to serve himself."
   },
   {
     "arcana": "major",
     "id": "the-lovers",
     "name": "The Lovers",
-    "notes": "Papez puts choice first and romance second; Hamaker adds that others mirror our repressed traits, so the other person can show us what we have not yet owned in ourselves.",
+    "notes": "Papez puts choice first and romance second; Hamaker adds that others mirror our repressed traits, so the other person can show us what we have not yet owned in ourselves. Weber: Distinctive angle: the Lovers as any life-changing love, including love of a vocation or cause. Dean: Numerology link to XV The Devil, and compositional mirror of it: the same two figures under a presiding power, so the Devil is love's shadow side. Reed: Distinctive: Lovers as a guardian-angel card and as a prompt to seek a second medical opinion. Ramakrishnan: Book's angle: oxytocin and the hypothalamus in bonding and pair connection. Papez: Pair: Lovers and Devil are two sides of attachment — healthy commitment can slide into unhealthy bondage; the line is thin.",
     "number": 6,
     "reversed": "You are out of sync with someone you care about, with strained communication and values pulling in different directions. The relationship may heal with compassion and honesty, or it may have run its course. It can also point to one-sided feelings, or to needing self-love before love with another can work.",
     "sources": [
@@ -127,16 +151,20 @@
       "Stuart",
       "Place",
       "Hamaker",
-      "Gray"
+      "Gray",
+      "Weber",
+      "Dean",
+      "Reed",
+      "Ramakrishnan"
     ],
     "suit": null,
-    "upright": "A conscious, soul-honoring connection — romantic, platonic, or familial — built on love, respect, open communication, and raw vulnerability. It also marks a choice: commit fully to what aligns with your values, knowing the choice shapes what comes next. Love and choice belong together here."
+    "upright": "A conscious, soul-honoring connection — romantic, platonic, familial, or a calling — built on love, respect, open communication, and raw vulnerability. It also marks a choice: commit fully to what aligns with your values, knowing the choice shapes what comes next. Love and choice belong together here."
   },
   {
     "arcana": "major",
     "id": "the-chariot",
     "name": "The Chariot",
-    "notes": "Papez's driving image carries the reading: look at the horizon, not the road right in front of you.",
+    "notes": "Papez's driving image carries the reading: look at the horizon, not the road right in front of you. Weber: Distinctive angle: the Chariot as learning to govern yourself, not just outer victory. Dean: Numerology link to XVI The Tower: the charioteer must control his ego to stay on track; if not, the Tower's collapse is what follows. Ramakrishnan: Book's angle: adrenal stress response and its self-regulating feedback loop.",
     "number": 7,
     "reversed": "Stop pushing a stalled effort forward and back up instead — change direction, re-evaluate the approach, or admit that motivation has faded. A lack of direction or self-discipline may be the real problem, or unseen obstacles may be delaying the plan. Forcing it will not make it move.",
     "sources": [
@@ -146,7 +174,10 @@
       "Stuart",
       "Place",
       "Hamaker",
-      "Gray"
+      "Gray",
+      "Weber",
+      "Dean",
+      "Ramakrishnan"
     ],
     "suit": null,
     "upright": "Willpower, determination, and focused action: you have made a values-aligned decision, and now it is time to drive it forward with discipline. Keep your eyes on the horizon and the long-term goal, harmonizing the conflicting pulls inside you instead of letting distractions drag you off course. Success comes through commitment and staying the course."
@@ -155,7 +186,7 @@
     "arcana": "major",
     "id": "strength",
     "name": "Strength",
-    "notes": "Esselmont contrasts this inner strength with the Chariot's outer will; all sources agree the lion is mastered by love and patience, not force.",
+    "notes": "Esselmont contrasts this inner strength with the Chariot's outer will; all sources agree the lion is mastered by love and patience, not force. Weber: Distinctive angle: Strength as quiet, patient gentleness (Weber's Occupy chaplain story), and a warning — strength over what, and at what cost? Dean: Numerology link to XVII The Star: inner strength and hope are paired; the Star is what strength recovers toward. Reed: Distinctive: Strength framed squarely as a health card, with a practice of keeping it visible with an 'I am powerful' affirmation. Ramakrishnan: Book's angle: microtubules as the cellular scaffolding that makes strength and growth possible. Papez: Pair: Magician and Strength — the roses above the Magician's head become the garland at Strength's waist.",
     "number": 8,
     "reversed": "Check in on your inner strength, confidence, and energy: a setback may have left you depleted and doubting yourself. You may be pushing too hard and choosing force over empathy, or finding that will alone is not enough right now. Reconnect with your core resilience and be kind to yourself while you recover.",
     "sources": [
@@ -165,16 +196,20 @@
       "Stuart",
       "Place",
       "Hamaker",
-      "Gray"
+      "Gray",
+      "Weber",
+      "Dean",
+      "Reed",
+      "Ramakrishnan"
     ],
     "suit": null,
-    "upright": "Inner strength, courage, and quiet influence: endure obstacles with patience, stamina, and composure, persuading rather than controlling. Meet fear the way you would a wild thing — get close to it, know it, and work with it instead of trying to crush it. Your power is gentle and mostly invisible, which is an advantage."
+    "upright": "Inner strength, courage, and quiet influence: endure obstacles with patience, stamina, and composure, persuading rather than controlling. Meet fear the way you would a wild thing — get close to it, know it, and work with it instead of trying to crush it. Your power is gentle and mostly invisible, which is an advantage. And in health questions it is a sound sign: a hard battle overcome, strength found at last, with support around you."
   },
   {
     "arcana": "major",
     "id": "the-hermit",
     "name": "The Hermit",
-    "notes": "Papez notes the card comforts or confronts depending on how comfortable you are alone; Place's lantern holds the star of united masculine and feminine.",
+    "notes": "Papez notes the card comforts or confronts depending on how comfortable you are alone; Place's lantern holds the star of united masculine and feminine. Weber: Distinctive reframe: the Hermit is not a breakup omen or a lonely fate — it is brief, healing solitude and self-possession. Dean: Numerology link to XVIII The Moon, and a visual echo: the star in the Hermit's lamp reappears as the Star card's guiding light. Reed: Distinctive: the Hermit as wisdom earned through suffering, now turned outward as a guide for others. Ramakrishnan: Book's angle: the insula as a hub of consciousness, strengthened by meditation. Papez: Mix-up: Hermit vs Hanged Man — the Hermit actively seeks insight in solitude; the Hanged Man is held in uncomfortable suspension, voluntary or not.",
     "number": 9,
     "reversed": "The balance is off in one of two directions: either you are not taking enough time for reflection, or you have taken isolation too far and are cutting yourself off from others. It can also mean avoiding time alone because you fear what you might find within. Find the middle ground between inner work and staying connected.",
     "sources": [
@@ -184,18 +219,22 @@
       "Stuart",
       "Place",
       "Hamaker",
-      "Gray"
+      "Gray",
+      "Weber",
+      "Dean",
+      "Reed",
+      "Ramakrishnan"
     ],
     "suit": null,
-    "upright": "Withdraw from everyday noise to search within: your deepest truth and guidance come from solitude, introspection, and your own inner light. A retreat or quiet period brings wisdom and closeness to your authentic self, and you carry a lamp that lights the path ahead one step at a time."
+    "upright": "Withdraw from everyday noise to search within: your deepest truth and guidance come from solitude, introspection, and your own inner light. A retreat or quiet period brings wisdom and closeness to your authentic self, and you carry a lamp that lights the path ahead one step at a time. This is not a breakup omen or a lonely fate — it is brief, healing solitude and self-possession."
   },
   {
     "arcana": "major",
     "id": "wheel-of-fortune",
     "name": "Wheel of Fortune",
-    "notes": "Hamaker reads the wheel as repeating patterns we keep recreating until we see our own part in them, which deepens the karma framing in Esselmont and Gray.",
+    "notes": "Hamaker reads the wheel as repeating patterns we keep recreating until we see our own part in them, which deepens the karma framing in Esselmont and Gray. Weber: Distinctive angle: the Wheel is turned by the Fool's own choice, not by fate alone. Dean: Numerology links to I The Magician and XIX The Sun: will, luck and joy as one circuit. Ramakrishnan: Book's angle: Hox genes and developmental timing as embodied chance.",
     "number": 10,
-    "reversed": "Fortune may have turned against you, or you are resisting a change that feels forced on you — and fighting it only makes it harder. Take responsibility for your part in how things unfolded, learn from it, and take hold of your own direction rather than waiting passively for the wheel to turn again.",
+    "reversed": "Fortune may have turned against you, or you are resisting a change that feels forced on you — and fighting it only makes it harder. Take responsibility for your part in how things unfolded, learn from it, and take hold of your own direction rather than waiting passively for the wheel to turn again. Or a major change is coming that no one knows about yet — a hidden turning point, real but not yet visible.",
     "sources": [
       "Esselmont",
       "Papez",
@@ -203,16 +242,19 @@
       "Stuart",
       "Place",
       "Hamaker",
-      "Gray"
+      "Gray",
+      "Weber",
+      "Dean",
+      "Ramakrishnan"
     ],
     "suit": null,
-    "upright": "Life is always turning: hard times will improve and good times will pass, so cherish the moment you are in. What you are experiencing now will not last forever, and what you send out tends to come back around. You cannot control the wheel, only your position on it and how you respond when it turns."
+    "upright": "Life is always turning: hard times will improve and good times will pass, so cherish the moment you are in. What you are experiencing now will not last forever, and what you send out tends to come back around. You cannot control the wheel, only your position on it and how you respond when it turns — though sometimes you turn it yourself, by choosing to continue when quitting would be easier."
   },
   {
     "arcana": "major",
     "id": "justice",
     "name": "Justice",
-    "notes": "Papez stresses this is not only about the legal system — it is about cause and effect in your own choices.",
+    "notes": "Papez stresses this is not only about the legal system — it is about cause and effect in your own choices. Weber: Distinctive angle: Justice as closure, including accepting that some questions stay unanswered. Dean: Dean builds a whole DIY spread from Justice's symbols alone: mural crown = authority, pillars = boundaries, cloak and clasp = illumination. Ramakrishnan: Book's angle: the cerebellum as learned balance and pattern. Papez: Mix-up: Justice vs Judgement — accountability is the easiest confusion in the deck; Judgement is evolution, not being judged.",
     "number": 11,
     "reversed": "You know something was handled wrongly and are avoiding accountability — dodging blame, or being dishonest with yourself and others about your part in it. Unfair treatment or poor counsel may also be skewing the outcome. Own the mistake and make it right: that is what frees you from guilt and shame.",
     "sources": [
@@ -222,18 +264,21 @@
       "Stuart",
       "Place",
       "Hamaker",
-      "Gray"
+      "Gray",
+      "Weber",
+      "Dean",
+      "Ramakrishnan"
     ],
     "suit": null,
-    "upright": "Justice, fairness, and truth: you are called to account for your actions and to weigh things with clear, open-eyed impartiality. Every action has its consequence, and accepting your part — good or bad — is what brings balance. If you are seeking a fair outcome, this is a hopeful sign it can be served, with compassion alongside the verdict."
+    "upright": "Justice, fairness, and truth: you are called to account for your actions and to weigh things with clear, open-eyed impartiality. Every action has its consequence, and accepting your part — good or bad — is what brings balance. If you are seeking a fair outcome, this is a hopeful sign it can be served, with compassion alongside the verdict. And sometimes the balance is closure itself — including accepting that some answers will never come."
   },
   {
     "arcana": "major",
     "id": "the-hanged-man",
     "name": "The Hanged Man",
-    "notes": "All sources agree on pause, surrender, and a new perspective; Papez's cocoon image and Stuart's willing sacrifice of the ego say the same thing in different language.",
+    "notes": "All sources agree on pause, surrender, and a new perspective; Papez's cocoon image and Stuart's willing sacrifice of the ego say the same thing in different language. Adams: Distinctive significator use: represents a querent at a crossroads or turning point, someone at a standstill, or someone in hospital whose illness has opened a chance to take a new course. Weber: Distinctive angle: sacrifice without alternative (not chosen martyrdom), and the freedom inside surrender. Dean: Numerology link to III The Empress: suspension and abundance are paired — stillness as the ground fertility grows from. Reed: Distinctive: a waiting-room practice — picture the Hanged One's calm halo in a doctor's or dentist's waiting room — and a warning not to give exact timing predictions. Ramakrishnan: Book's angle: the amygdala trapping us in fear until a new perspective breaks the cycle. Papez: Mix-up: Hanged Man vs Hermit — suspension is endured, introspection is actively chosen.",
     "number": 12,
-    "reversed": "You know you need to pause but are resisting it, filling your days with busywork to avoid the real issue — slow down before you crash. It can also mean feeling blocked or stuck because others or circumstances have put you on hold, with the waiting breeding frustration and resentment. The pause is necessary either way.",
+    "reversed": "You know you need to pause but are resisting it, filling your days with busywork to avoid the real issue — slow down before you crash. It can also mean feeling blocked or stuck because others or circumstances have put you on hold, with the waiting breeding frustration and resentment. The pause is necessary either way. Or the reverse: something stalled is suddenly free, with great movement where there was none — one of the best cards to get in reverse.",
     "sources": [
       "Esselmont",
       "Papez",
@@ -241,16 +286,21 @@
       "Stuart",
       "Place",
       "Hamaker",
-      "Gray"
+      "Gray",
+      "Adams",
+      "Weber",
+      "Dean",
+      "Reed",
+      "Ramakrishnan"
     ],
     "suit": null,
-    "upright": "Pause and surrender: put things on hold, release old mental models, and see the world from a flipped perspective. The pause may be one you chose or one life imposed on you, but it opens up insight that rushing would hide. Like a cocoon, the suspension itself is what makes the change possible."
+    "upright": "Pause and surrender: put things on hold, release old mental models, and see the world from a flipped perspective. The pause may be one you chose or one life imposed on you, but it opens up insight that rushing would hide. Like a cocoon, the suspension itself is what makes the change possible. This is sacrifice, not martyrdom: a martyr chooses to sacrifice, but the Hanged Man has no other choice — yet there is real freedom in admitting 'I have no power here.'"
   },
   {
     "arcana": "major",
     "id": "death",
     "name": "Death",
-    "notes": "Esselmont explicitly reframes Death as one of the most positive cards; Gray alone reads the reversal harshly as disaster and upheaval, against Esselmont and Clark's stagnation reading, so the majority stands.",
+    "notes": "Esselmont explicitly reframes Death as one of the most positive cards; Gray alone reads the reversal harshly as disaster and upheaval, against Esselmont and Clark's stagnation reading, so the majority stands. Adams: Unusual significator use: Death is a good significator for a major transformation such as the end of a relationship, job loss, or relocation. Stresses mourning the ending as part of the card's work. Weber: Distinctive reframe: Death as natural transformation and even blessed transition, not only loss. Dean: The red feather on Death's helmet is the same life-force feather worn by the Fool and the Sun's child — life persists through the ending. Reed: Distinctive: explicit ethics — never predict someone's date of death — and the note that end-of-life readings often show happy cards like the Sun, not Death. Ramakrishnan: Book's angle: orderly neuronal death and recycling as the basis of renewal. Papez: Mix-up: Death vs Tower — Death is a natural ending you cannot prevent; the Tower is sudden destruction, sometimes preventable before it falls.",
     "number": 13,
     "reversed": "You are on the verge of meaningful change but resisting it, clinging to what is already gone and feeling stuck in limbo. Needed change stalls, and the holding-on itself becomes the suffering. Embrace the ending rather than fighting it, and new doors will open.",
     "sources": [
@@ -260,7 +310,12 @@
       "Stuart",
       "Place",
       "Hamaker",
-      "Gray"
+      "Gray",
+      "Adams",
+      "Weber",
+      "Dean",
+      "Reed",
+      "Ramakrishnan"
     ],
     "suit": null,
     "upright": "The end of a major phase that no longer serves you, opening the way to something more valuable: close one door to open another. Letting go of the past is difficult and deserves grieving, but it brings renewal and transformation — rarely a literal death, always a conclusion that clears space for what comes next."
@@ -269,7 +324,7 @@
     "arcana": "major",
     "id": "temperance",
     "name": "Temperance",
-    "notes": "Papez calls this the Goldilocks principle of the tarot — one foot in water, one on land, neither extreme.",
+    "notes": "Papez calls this the Goldilocks principle of the tarot — one foot in water, one on land, neither extreme. Adams: Distinctive angle: waiting itself as a spiritual discipline (a Zen lesson), not just a delay; also a significator for healers and caretakers, and for wise management of resources. Weber: Distinctive angle: Temperance as resurrection and second chance, read in sequence after Hanged Man and Death. Dean: Distinctive angle: Temperance is the gateway card closing the second stage of the Fool's journey (mind) and opening the third (spirit) — the last card before the Devil. Reed: Distinctive: Temperance as a mediumship card for the departed gaining wings, and as mixing treatment paths. Ramakrishnan: Book's angle: the suprachiasmatic nucleus as the master body clock. Papez: Mix-up: Temperance vs Two of Pentacles — Temperance mixes two things into one middle; the Two of Pentacles keeps them separate and juggles priorities.",
     "number": 14,
     "reversed": "A period of excess — overdoing, overspending, arguing, negative thinking — is pulling you away from who you are, and something feels off and stressful. Imbalance has taken hold and a pursuit may be slipping away. Restore balance now, possibly through a clean break from the excess, and the calm returns.",
     "sources": [
@@ -279,18 +334,23 @@
       "Stuart",
       "Place",
       "Hamaker",
-      "Gray"
+      "Gray",
+      "Adams",
+      "Weber",
+      "Dean",
+      "Reed",
+      "Ramakrishnan"
     ],
     "suit": null,
-    "upright": "Balance, patience, and moderation: take the middle path and bring different perspectives and opposites together into something more than the sum of its parts. Stay calm and composed even when life feels frantic, and let a measured, steady approach carry you through. Like watered wine, the blending itself is the alchemy."
+    "upright": "Balance, patience, and moderation: take the middle path and bring different perspectives and opposites together into something more than the sum of its parts. Stay calm and composed even when life feels frantic, and let a measured, steady approach carry you through. Like watered wine, the blending itself is the alchemy. And it can be a second chance after loss — the life you rebuild after the Hanged Man and Death, cleaning up the aftermath so you do not repeat the lesson."
   },
   {
     "arcana": "major",
     "id": "the-devil",
     "name": "The Devil",
-    "notes": "Papez is explicit that this is not a literal devil — bondage is chosen, a choice got you in and a choice gets you out; Stuart adds the work of facing each shadow trait and turning it toward its virtue.",
+    "notes": "Papez is explicit that this is not a literal devil — bondage is chosen, a choice got you in and a choice gets you out; Stuart adds the work of facing each shadow trait and turning it toward its virtue. Weber: Distinctive angle: the Devil as systems and self-imposed bondage, and as a sometimes-helpful trickster ally — Storm's reading makes it a teacher about unlearning conformity. Dean: Compositional mirror of VI The Lovers — the same two figures under a presiding power — so the Devil is love's shadow: bondage where the Lovers offered choice. Reed: Distinctive: the Devil reversed as a recovery card, and the tip to use a neutral deck when a querent was raised to see tarot as the devil's work. Ramakrishnan: Book's angle: prefrontal cortex and basal ganglia in impulse control and reward. Papez: Mix-up: Devil vs Eight of Swords — the Devil binds you to something outside you; the Eight of Swords traps you with your own thoughts. Pair: Lovers/Devil.",
     "number": 15,
-    "reversed": "You are on the verge of a breakthrough: first release the unhealthy attachments and limiting beliefs that hold you back. Confront your inner fears honestly, and the bondage starts to loosen. It is the beginning of freeing yourself, even if timidity and indecision still linger.",
+    "reversed": "You are on the verge of a breakthrough: first release the unhealthy attachments and limiting beliefs that hold you back. Confront your inner fears honestly, and the bondage starts to loosen. It is the beginning of freeing yourself, even if timidity and indecision still linger. And for someone getting clean or recovering, this is one of the best cards to see — free at last, the darkness nearly over, and clear at last about what must be done.",
     "sources": [
       "Esselmont",
       "Papez",
@@ -298,18 +358,22 @@
       "Stuart",
       "Place",
       "Hamaker",
-      "Gray"
+      "Gray",
+      "Weber",
+      "Dean",
+      "Reed",
+      "Ramakrishnan"
     ],
     "suit": null,
-    "upright": "Your shadow side: negative habits, dependencies, and thought patterns that keep you trapped between short-term pleasure and long-term pain. You may believe you have no control over these forces, but that belief is itself the trick — the chains are loose enough to slip off, and you stay because the familiar feels safer than the unknown."
+    "upright": "Your shadow side: negative habits, dependencies, and thought patterns that keep you trapped between short-term pleasure and long-term pain. You may believe you have no control over these forces, but that belief is itself the trick — the chains are loose enough to slip off, and you stay because the familiar feels safer than the unknown. It can also be a system, not a person — an unjust institution, a role that does not fit — and sometimes even a useful ally, the insider or devil's advocate who shows you the other side."
   },
   {
     "arcana": "major",
     "id": "the-tower",
     "name": "The Tower",
-    "notes": "Esselmont's reversed Tower is inner and chosen, against the upright's external shock; Stuart adds that watching the destruction as a thankful spectator, rather than clinging to the tower, is what lets it uplift instead of regress.",
+    "notes": "Esselmont's reversed Tower is inner and chosen, against the upright's external shock; Stuart adds that watching the destruction as a thankful spectator, rather than clinging to the tower, is what lets it uplift instead of regress. Adams: Reframes the Tower as positive and largely self-created/foreseeable rather than random catastrophe; as a significator it depicts an explosive situation or forces beyond control, not a person. Weber: Distinctive angle: the Tower as the 'aha' moment and as a structure that itself was the problem. Dean: The Yod-shaped golden droplets also appear on the Ace of Cups and the Moon — divine fire falling into water, emotion and ruin alike. Reed: Distinctive: Tower reversed as remission/recovery, and the Tower upright as end-of-life decluttering and giving possessions away. Ramakrishnan: Book's angle: neural plasticity — the brain rewiring itself after disruptive events. Papez: Mix-up: Tower vs Death — sudden destruction versus natural ending. Pair: Tower and Star — destruction is followed by hope and recalibration.",
     "number": 16,
-    "reversed": "The transformation has moved inward and is self-initiated: you are questioning your fundamental beliefs, values, and purpose, perhaps through a spiritual awakening or an existential crisis. It can also mean resisting a necessary change, or taking responsibility for the wreckage instead of being blindsided by it.",
+    "reversed": "The transformation has moved inward and is self-initiated: you are questioning your fundamental beliefs, values, and purpose, perhaps through a spiritual awakening or an existential crisis. It can also mean resisting a necessary change, or taking responsibility for the wreckage instead of being blindsided by it. Or the first shockwave has already passed and this is the aftershock — the worst is passing and you can rebuild now.",
     "sources": [
       "Esselmont",
       "Papez",
@@ -317,16 +381,21 @@
       "Stuart",
       "Place",
       "Hamaker",
-      "Gray"
+      "Gray",
+      "Adams",
+      "Weber",
+      "Dean",
+      "Reed",
+      "Ramakrishnan"
     ],
     "suit": null,
-    "upright": "Sudden, massive upheaval — a lightning bolt that destroys foundations built on false assumptions and illusions. Expect the unexpected: something breaks beyond repair and cannot be put back together the way it was. The chaos is frightening, but it clears the ground so a truer structure can be built."
+    "upright": "Sudden, massive upheaval — a lightning bolt that destroys foundations built on false assumptions and illusions. Expect the unexpected: something breaks beyond repair and cannot be put back together the way it was. The chaos is frightening, but it clears the ground so a truer structure can be built. And you usually already know what it is — the crisis was brought on by ignoring something rotten that needs restructuring."
   },
   {
     "arcana": "major",
     "id": "the-star",
     "name": "The Star",
-    "notes": "Every source places the Star directly after the Tower as reprieve and healing; Papez's line that the stars are always there even when unseen carries the reversal.",
+    "notes": "Every source places the Star directly after the Tower as reprieve and healing; Papez's line that the stars are always there even when unseen carries the reversal. Weber: Distinctive angle: hope as a deliberate choice, not a prediction. Dean: The five streams pouring from the Star's pitchers echo the five rivulets of the Ace of Cups — the same flow of feeling, now guided by hope. Reed: Distinctive: Star reversed as caregiver depletion, and the rule — never let a client walk away feeling hopeless; find solutions or solace even in hard readings. Ramakrishnan: Book's angle: neuronal regeneration finding new routes around damage. Papez: Pair: Tower and Star — the Star is the rebuild after the Tower's destruction; look at the top third of both images.",
     "number": 17,
     "reversed": "You have lost faith and hope, feeling overwhelmed and wondering why you are being put through this. The path looks obscured and hope is hard to see, but the test is one of faith: look for the deeper lesson, and remember that even when you cannot see the stars, they are still there.",
     "sources": [
@@ -336,16 +405,20 @@
       "Stuart",
       "Place",
       "Hamaker",
-      "Gray"
+      "Gray",
+      "Weber",
+      "Dean",
+      "Reed",
+      "Ramakrishnan"
     ],
     "suit": null,
-    "upright": "Renewed hope and faith after destruction and turmoil: you have stripped away limiting beliefs and are reconnecting with your core essence. A peaceful, blessed phase of healing opens — the calm after the storm, when the dust has settled and one bright star offers direction. Trust your inner compass and let yourself regroup."
+    "upright": "Renewed hope and faith after destruction and turmoil: you have stripped away limiting beliefs and are reconnecting with your core essence. A peaceful, blessed phase of healing opens — the calm after the storm, when the dust has settled and one bright star offers direction. Trust your inner compass and let yourself regroup. Hope here is a choice you make, not a prediction — you choose to keep going toward something uncertain."
   },
   {
     "arcana": "major",
     "id": "the-moon",
     "name": "The Moon",
-    "notes": "Hamaker is the outlier, reading the Moon's unconscious as a friend and helper speaking in dreams and symbols, against the other sources' fear and illusion; the synthesis keeps the traditional caution with his gentler angle inside the reversal.",
+    "notes": "Hamaker is the outlier, reading the Moon's unconscious as a friend and helper speaking in dreams and symbols, against the other sources' fear and illusion; the synthesis keeps the traditional caution with his gentler angle inside the reversal. Weber: Distinctive angle: the Moon as a shift in perception (gray pillars) rather than madness, and disorientation as a passing phase. Dean: The golden droplets here mean the element of fire — the same Yod droplets as the Tower and Ace of Cups, now falling as moonlight. Reed: Distinctive: Moon as a hidden or undisclosed health issue and as a practitioner withholding information. Ramakrishnan: Book's angle: the brain stem's unconscious program generators and mindfulness improving its gray matter. Papez: Pair: Moon and High Priestess (intuition navigates illusion); Moon and Death share the twin pillars — both transform, one by ending, one by facing fear.",
     "number": 18,
     "reversed": "The illusions, fears, and anxiety are subsiding as you work through them — a liberating release as the fog lifts. But it can also mean the opposite: burying feelings deeper to avoid your shadows, or receiving intuitive messages you struggle to interpret. Notice which one it is before you act.",
     "sources": [
@@ -355,18 +428,22 @@
       "Stuart",
       "Place",
       "Hamaker",
-      "Gray"
+      "Gray",
+      "Weber",
+      "Dean",
+      "Reed",
+      "Ramakrishnan"
     ],
     "suit": null,
-    "upright": "Fear, illusion, and uncertainty: buried emotions from the past are resurfacing and coloring how you see the present. Moonlight gives enough light to move forward but not enough to see the path clearly, so nothing is quite as it seems — avoid fast decisions made with only half the information, and look beneath the surface for what is really true."
+    "upright": "Fear, illusion, and uncertainty: buried emotions from the past are resurfacing and coloring how you see the present. Moonlight gives enough light to move forward but not enough to see the path clearly, so nothing is quite as it seems — avoid fast decisions made with only half the information, and look beneath the surface for what is really true. And the disorientation is a phase — a revelation that changes how you see the world, even though the world itself has not changed."
   },
   {
     "arcana": "major",
     "id": "the-sun",
     "name": "The Sun",
-    "notes": "Stuart adds a caution the others do not: the ego fights for survival by flattering vanity, so grace and vigilance matter even in joy.",
+    "notes": "Stuart adds a caution the others do not: the ego fights for survival by flattering vanity, so grace and vigilance matter even in joy. Weber: Distinctive angle: the Sun as a change in perspective rather than a change in circumstances. Dean: Distinctive rule: the Sun cancels out negative cards nearby — the only card Dean gives that power to. Reed: Distinctive: Sun as remission or a cure found, and the tip to take young people's grief seriously — children have heavy concerns too. Ramakrishnan: Book's angle: the medial forebrain bundle happiness circuit and endorphins. Papez: Mix-up: Sun vs World — the Sun is radiant, joyful success as yourself; the World is completion of a whole cycle, which can be bittersweet.",
     "number": 19,
-    "reversed": "Your inner child is calling you to play and let go of worries, or you are struggling to see the bright side after setbacks damaged your optimism. Happiness is delayed rather than denied, and future plans may look clouded for now. The light is still there even when the path ahead looks dim.",
+    "reversed": "Your inner child is calling you to play and let go of worries, or you are struggling to see the bright side after setbacks damaged your optimism. Happiness is delayed rather than denied, and future plans may look clouded for now. The light is still there even when the path ahead looks dim. Or burnout — surviving instead of thriving.",
     "sources": [
       "Esselmont",
       "Papez",
@@ -374,16 +451,20 @@
       "Stuart",
       "Place",
       "Hamaker",
-      "Gray"
+      "Gray",
+      "Weber",
+      "Dean",
+      "Reed",
+      "Ramakrishnan"
     ],
     "suit": null,
-    "upright": "Success, radiance, and abundance: your warm, positive energy draws people to you, and bright clarity means what you see is what you get. Be visible and authentic — the naked child on the horse is the point — and enjoy life fully, dark sides included. Shine who you are and share your light."
+    "upright": "Success, radiance, and abundance: your warm, positive energy draws people to you, and bright clarity means what you see is what you get. Be visible and authentic — the naked child on the horse is the point — and enjoy life fully, dark sides included. Shine who you are and share your light. And sometimes nothing has changed but your perspective — you walk out of the cave into direct sunlight; in health questions it can also mean remission, a cure found, real improvement."
   },
   {
     "arcana": "major",
     "id": "judgement",
     "name": "Judgement",
-    "notes": "Hamaker reads Judgement as joy, gratitude, and wholeness rather than a call to awaken, which softens the other sources' reckoning; Papez frames evolution as a choice, not a promise.",
+    "notes": "Hamaker reads Judgement as joy, gratitude, and wholeness rather than a call to awaken, which softens the other sources' reckoning; Papez frames evolution as a choice, not a promise. Weber: Distinctive angle: Judgment as a forward-looking call, distinct from the Moon's retrospective revelation. Dean: Archangel Gabriel's card; Dean pairs it with II The High Priestess by numerology — hidden knowledge surfacing as a call to rise. Reed: Distinctive: Judgement as a forgiveness card with a caution — don't push forgiveness work on clients who aren't ready or whose situation feels unforgivable. Ramakrishnan: Book's angle: the corpus callosum integrating the two hemispheres. Papez: Mix-up: Judgement vs Justice — evolution, not accountability; the names sound alike but the keywords could not be more different.",
     "number": 20,
     "reversed": "A period of reflection and self-evaluation is needed, with self-forgiveness for past mistakes and regrets. You may also be ignoring the call because you fear the sacrifice or doubt you are ready — but the call will not go away. Bad habits persist while the reckoning is postponed.",
     "sources": [
@@ -393,18 +474,22 @@
       "Stuart",
       "Place",
       "Hamaker",
-      "Gray"
+      "Gray",
+      "Weber",
+      "Dean",
+      "Reed",
+      "Ramakrishnan"
     ],
     "suit": null,
-    "upright": "A spiritual awakening and a call to rise up: let go of your old self, step into a new version of you, and make a life-changing decision guided by both intuition and clear thinking. You are close to a significant stage of your journey, and the call is to judge yourself honestly — not to be judged by others — and to grow into new skin."
+    "upright": "A spiritual awakening and a call to rise up: let go of your old self, step into a new version of you, and make a life-changing decision guided by both intuition and clear thinking. You are close to a significant stage of your journey, and the call is to judge yourself honestly — not to be judged by others — and to grow into new skin. And it peers forward, not back — 'embark on this' — catching you inches from the finish line and asking, 'You've come all this way — are you really going to quit now?'"
   },
   {
     "arcana": "major",
     "id": "the-world",
     "name": "The World",
-    "notes": "Sharp conflict: Stuart alone reads the World as enslavement to Mother Nature, whose laws rule us while pride makes us imagine we are our own masters — the opposite of every other source's completion and wholeness, so the majority reading stands.",
+    "notes": "Sharp conflict: Stuart alone reads the World as enslavement to Mother Nature, whose laws rule us while pride makes us imagine we are our own masters — the opposite of every other source's completion and wholeness, so the majority reading stands. Adams: Distinctive significator use: stands for a self-actualized, fulfilled person, or a situation going especially well — and specifically for someone involved in the natural sciences or environmental work. Weber: Distinctive angle: the World as 'leveling up' — completion with ascension, and the start of a new journey. Dean: Numerology links to III The Empress and XII The Hanged Man: completion joins abundance and suspension as one cycle closing. Reed: Distinctive: World reversed as partial healing, and as travel for treatment or renewal. Ramakrishnan: Book's angle: neural stem cells as the complete cycle of potential and renewal. Papez: Mix-up: World vs Sun — completion can be bittersweet, unlike the Sun's pure joy. Pair: World and Fool contain each other.",
     "number": 21,
-    "reversed": "You are seeking personal closure on something — often an emotional attachment to the past — and need to let go and accept where you are now. Success may still be just out of reach, with delays or short-cuts slowing completion, or fear of being finished may have you hesitating at the finish line. Unfounded self-doubt can shadow a real achievement.",
+    "reversed": "You are seeking personal closure on something — often an emotional attachment to the past — and need to let go and accept where you are now. Success may still be just out of reach, with delays or short-cuts slowing completion, or fear of being finished may have you hesitating at the finish line. Unfounded self-doubt can shadow a real achievement. Or partial healing — not perfect, but real improvement.",
     "sources": [
       "Esselmont",
       "Papez",
@@ -412,34 +497,42 @@
       "Stuart",
       "Place",
       "Hamaker",
-      "Gray"
+      "Gray",
+      "Adams",
+      "Weber",
+      "Dean",
+      "Reed",
+      "Ramakrishnan"
     ],
     "suit": null,
-    "upright": "Wholeness, achievement, and completion: a long-term project, study, relationship, or journey has come full circle, and the last piece has fallen into place. Reflect, celebrate, and honor how far you have come. Every ending here births a new beginning — the ripe apple falls and its seeds grow a new tree."
+    "upright": "Wholeness, achievement, and completion: a long-term project, study, relationship, or journey has come full circle, and the last piece has fallen into place. Reflect, celebrate, and honor how far you have come. Every ending here births a new beginning — the ripe apple falls and its seeds grow a new tree. There is ascension in it rather than loss — you are leveling up to whatever comes next."
   },
   {
     "arcana": "minor",
     "id": "ace-of-wands",
     "name": "Ace of Wands",
-    "notes": "All sources agree on the new-creative-beginning reading; Clark's reversal ('expected complications, silver linings') is vaguer than the others' blocked-spark reading.",
+    "notes": "All sources agree on the new-creative-beginning reading; Clark's reversal ('expected complications, silver linings') is vaguer than the others' blocked-spark reading. Weber: Distinctive angle: Weber reads all Aces as 'absolute' (the suit at full strength) and as a hand offering something to seize. Dean: The castle below is ambition and desire, and the valley is opportunity — the Ace's gift comes with somewhere to aim it. Reed: Distinctive: Ace of Wands as a new treatment offered, and as recovery of your fire after illness.",
     "number": 1,
-    "reversed": "The spark is there but it has no clear outlet yet — plenty of passion and no shape for it, or a new venture that stalls before it starts. It can also mean scattered energy, distractions pulling you off course, or a creative block that leaves everyday life feeling flat. Sit with the idea a little longer rather than forcing it into form.",
+    "reversed": "The spark is there but it has no clear outlet yet — plenty of passion and no shape for it, or a new venture that stalls before it starts. It can also mean scattered energy, distractions pulling you off course, or a creative block that leaves everyday life feeling flat. Sit with the idea a little longer rather than forcing it into form. Or a missed opportunity — the hand turned upside down no longer offers, it lets fall.",
     "sources": [
       "Esselmont",
       "Papez",
       "Clark",
       "Place",
       "Hamaker",
-      "Gray"
+      "Gray",
+      "Weber",
+      "Dean",
+      "Reed"
     ],
     "suit": "wands",
-    "upright": "A fresh spark of inspiration — a new idea, project, or direction that lights you up and asks to be followed. This is the beginning of something creative, a green light to start small and treat it as an experiment, letting your energy and curiosity lead. The hand offering the flowering wand is an invitation, not a guarantee: the fire is real, but it still needs tending."
+    "upright": "A fresh spark of inspiration — a new idea, project, or direction that lights you up and asks to be followed. This is the beginning of something creative, a green light to start small and treat it as an experiment, letting your energy and curiosity lead. The hand offering the flowering wand is an invitation, not a guarantee: the fire is real, but it still needs tending. Weber's keyword for the Aces is 'absolute': absolute creativity, pure potential — a hand offering a spark to seize."
   },
   {
     "arcana": "minor",
     "id": "two-of-wands",
     "name": "Two of Wands",
-    "notes": "Hamaker adds a shadow pole the others skip: success at a high point can still feel empty — ask whether the achievement itself would make you happy.",
+    "notes": "Hamaker adds a shadow pole the others skip: success at a high point can still feel empty — ask whether the achievement itself would make you happy. Dean: The two wands are a doorway, and the rose, cross and lily on the wall are alchemy — the vision is already being transmuted into a plan. Papez: Mix-up: Two vs Three of Wands — possibility is still looking at options; the Three is commencement, the first real step outward.",
     "number": 2,
     "reversed": "You may be hesitating, overplanning, or drifting in a direction that doesn't match what you actually value — a goal without a plan, or a plan that isn't really yours. Turn inward and check what you want before you move, rather than staying busy to avoid choosing. Stagnation here is usually a sign the choice needs honesty, not more time.",
     "sources": [
@@ -448,7 +541,8 @@
       "Clark",
       "Place",
       "Hamaker",
-      "Gray"
+      "Gray",
+      "Dean"
     ],
     "suit": "wands",
     "upright": "The spark has become a plan, and now you stand at a crossroads weighing your options — the world in your hand, the path still unpaved. This is a moment of bold choice and looking outward: decide which direction is worth your energy, then step beyond your comfort zone toward it. A good plan made now saves a lot of wandering later."
@@ -457,7 +551,7 @@
     "arcana": "minor",
     "id": "three-of-wands",
     "name": "Three of Wands",
-    "notes": "Gray's reversal is harsher than the rest ('beware of help offered', treachery); the majority reading is playing small or delayed expansion.",
+    "notes": "Gray's reversal is harsher than the rest ('beware of help offered', treachery); the majority reading is playing small or delayed expansion. Dean: The figure is fully turned away — vision and trust shown by a back, not a face. Papez: Mix-up: Three vs Two of Wands — commencement follows possibility; look at the horizon, not the road at your feet.",
     "number": 3,
     "reversed": "You may be playing small and staying close to shore, or the journey has hit delays and creative blocks that shake your confidence. Setbacks here are part of the path, not proof the venture was a mistake — but do watch who is offering help and what it costs. Don't retreat to safety just because the outcome is still unknown.",
     "sources": [
@@ -466,7 +560,8 @@
       "Clark",
       "Place",
       "Hamaker",
-      "Gray"
+      "Gray",
+      "Dean"
     ],
     "suit": "wands",
     "upright": "Your plans are underway and starting to bear fruit — the ships you sent out are coming back, and the horizon is wider than it looked from shore. This is expansion through patience and follow-through: keep thinking big, stay open to travel, study, and new enterprise, and trust that more opportunities are still on their way. The hardest first steps are behind you."
@@ -475,7 +570,7 @@
     "arcana": "minor",
     "id": "four-of-wands",
     "name": "Four of Wands",
-    "notes": "Conflict on the reversal: Esselmont and Gray read it as a gentler/private version of the same celebration, while Clark reads it as lacking stability and wasted effort; the majority favors the private-celebration reading.",
+    "notes": "Conflict on the reversal: Esselmont and Gray read it as a gentler/private version of the same celebration, while Clark reads it as lacking stability and wasted effort; the majority favors the private-celebration reading. Weber: Distinctive warning: a celebration card can hide an unwelcome union — read the image, not just the keyword. Dean: Two arches mean protection, and the city wall means boundaries — celebration here is sheltered, not exposed.",
     "number": 4,
     "reversed": "The celebration turns inward: a private milestone honored on your own terms, or a quiet sense of having come home to yourself. That inner harmony is real and worth claiming — though if there's tension at home, it may be asking for attention rather than a party. The same peace, just held closer.",
     "sources": [
@@ -484,16 +579,18 @@
       "Clark",
       "Place",
       "Hamaker",
-      "Gray"
+      "Gray",
+      "Weber",
+      "Dean"
     ],
     "suit": "wands",
-    "upright": "A milestone worth celebrating — a homecoming, a wedding, a finished project, a new home — with the people who helped you get here. This is harmony and rest after effort: let yourself enjoy feeling supported and secure, and mark how far you've come before the next stretch begins. Joy shared is part of the work, not a break from it."
+    "upright": "A milestone worth celebrating — a homecoming, a wedding, a finished project, a new home — with the people who helped you get here. This is harmony and rest after effort: let yourself enjoy feeling supported and secure, and mark how far you've come before the next stretch begins. Joy shared is part of the work, not a break from it. But look closely at the image — a celebration card can hide an unwelcome union, and not every homecoming is a happy one."
   },
   {
     "arcana": "minor",
     "id": "five-of-wands",
     "name": "Five of Wands",
-    "notes": "Conflict on the reversal: Esselmont reads it as internal conflict, while Gray reads it as generosity and victory after obstacles; the inner-conflict reading is used here, with Gray's easing-of-strife kept in the background.",
+    "notes": "Conflict on the reversal: Esselmont reads it as internal conflict, while Gray reads it as generosity and victory after obstacles; the inner-conflict reading is used here, with Gray's easing-of-strife kept in the background. Dean: The wands point in every direction with no focus — the card's meaning is visible in the composition before any symbol is decoded. Papez: Mix-up: Five of Wands vs Five of Swords — competition is a fair fight everyone joins; tyranny is one person winning at any cost.",
     "number": 5,
     "reversed": "The battle moves inward: you're unsure where you stand, pulled between strong opinions, and changing your mind as new information arrives. Getting clear with yourself — aligning what you think with what you feel — comes before winning any outside argument. Once the inner conflict settles, the outer one often eases too.",
     "sources": [
@@ -502,7 +599,8 @@
       "Clark",
       "Place",
       "Hamaker",
-      "Gray"
+      "Gray",
+      "Dean"
     ],
     "suit": "wands",
     "upright": "Friction and competition — everyone pushing to be heard and no one really listening, so progress stalls in the noise. This clash can be playful sparring or real strife, but either way it tests your confidence and forces the group to sort out what it actually wants. Rise above the scuffle, let each person make their case, and look for the common goal underneath the arguing."
@@ -511,24 +609,27 @@
     "arcana": "minor",
     "id": "six-of-wands",
     "name": "Six of Wands",
-    "notes": "Hamaker has no Six of Wands entry, so it is omitted from sources; Papez warns against relying on others' opinions for validation.",
+    "notes": "Hamaker has no Six of Wands entry, so it is omitted from sources; Papez warns against relying on others' opinions for validation. Weber: Distinctive angle: the 'looking-back' horse in the reversed 6 of Wands asks whether the applause is deserved or shared. Dean: The green caparison on the horse is new territory and possibilities — victory as entering somewhere new. Reed: Distinctive: Six of Wands singled out as a health-victory card.",
     "number": 6,
-    "reversed": "You may have reached a real milestone but prefer to keep it private, or public praise just doesn't sit comfortably with you. Define success for yourself instead of measuring it by applause or comparison — and watch for rewards that arrive late, or for resting on this win too long. Quiet pride counts just as much.",
+    "reversed": "You may have reached a real milestone but prefer to keep it private, or public praise just doesn't sit comfortably with you. Define success for yourself instead of measuring it by applause or comparison — and watch for rewards that arrive late, or for resting on this win too long. Quiet pride counts just as much. Weber adds a detail: reversed, the horse looks back at its rider, asking whether the applause is deserved or shared.",
     "sources": [
       "Esselmont",
       "Papez",
       "Clark",
       "Place",
-      "Gray"
+      "Gray",
+      "Weber",
+      "Dean",
+      "Reed"
     ],
     "suit": "wands",
-    "upright": "Success, out in the open — the victory after the struggle, with recognition from the people who saw what it took. You've earned the laurel and the confidence that comes with it, and the acknowledgment is fuel to keep going. Enjoy the moment, and don't let it become a place to stop: there's more road ahead."
+    "upright": "Success, out in the open — the victory after the struggle, with recognition from the people who saw what it took. You've earned the laurel and the confidence that comes with it, and the acknowledgment is fuel to keep going. Enjoy the moment, and don't let it become a place to stop: there's more road ahead. And in health questions it is one of the best cards to see — victory, a healing, good news."
   },
   {
     "arcana": "minor",
     "id": "seven-of-wands",
     "name": "Seven of Wands",
-    "notes": "Papez and Hamaker both flag the shadow question: are you on the high ground or your high horse, and is this a fight you can actually steer?",
+    "notes": "Papez and Hamaker both flag the shadow question: are you on the high ground or your high horse, and is this a fight you can actually steer? Dean: The six wands rise from unseen hands — the opposition is invisible, which is the point: you defend against pressure, not people.",
     "number": 7,
     "reversed": "The pressure is wearing you down, and exhaustion or self-doubt may be making the stand hard to hold. Don't change who you are to please the critics, but do ask honestly whether stubbornness has replaced principle — defending something out of habit is different from defending what matters. If you're overwhelmed, it's a sign to regroup, not necessarily to give up.",
     "sources": [
@@ -537,7 +638,8 @@
       "Clark",
       "Place",
       "Hamaker",
-      "Gray"
+      "Gray",
+      "Dean"
     ],
     "suit": "wands",
     "upright": "You're holding a hard-won position and now you have to defend it — challengers, critics, or plain resentment pushing back against what you've built. Stand your ground and speak for what you believe in; you have the high ground, and courage here is what keeps the win yours. But check first that this is the hill worth defending."
@@ -546,7 +648,7 @@
     "arcana": "minor",
     "id": "eight-of-wands",
     "name": "Eight of Wands",
-    "notes": "All sources agree on speed and momentum; Hamaker adds that one phase is nearly ended and restlessness is already reaching toward the next.",
+    "notes": "All sources agree on speed and momentum; Hamaker adds that one phase is nearly ended and restlessness is already reaching toward the next. Dean: The white house below is a dream come true — the speeding wands have a destination, not just momentum.",
     "number": 8,
     "reversed": "Things are moving fast but not necessarily in the right direction — or they've stalled just as they were picking up speed. Slow down enough to check your aim before mistakes pile up, and notice if you're jumping from one bright idea to the next without finishing anything. Delays here are usually a cue to aim more carefully, not to stop.",
     "sources": [
@@ -555,7 +657,8 @@
       "Clark",
       "Place",
       "Hamaker",
-      "Gray"
+      "Gray",
+      "Dean"
     ],
     "suit": "wands",
     "upright": "Fast movement and momentum — the obstacles have cleared and things are flying toward their target, sometimes quicker than expected. News, messages, travel, or a project taking on a life of its own: ride this energy while it's here, because the window won't stay open forever. Trying to slow it down out of fear would only waste the opening."
@@ -564,43 +667,47 @@
     "arcana": "minor",
     "id": "nine-of-wands",
     "name": "Nine of Wands",
-    "notes": "Hamaker and Place warn the upright can tip into over-defensiveness and distrust bred by past setbacks; Papez names the same shadow as holding on too tightly to something no longer useful.",
+    "notes": "Hamaker and Place warn the upright can tip into over-defensiveness and distrust bred by past setbacks; Papez names the same shadow as holding on too tightly to something no longer useful. Dean: The head bandage is a psychic wound — the card's defense is about old hurt, not present danger. Reed: Distinctive: Nine of Wands as quarantine and the wounded warrior who must heal before deciding.",
     "number": 9,
-    "reversed": "You're running on empty under relentless setbacks, and giving up may feel like the only option left — but you're closer than you think. Draw on your inner resources, ask for the support you've been carrying on without, and check whether you're holding on to something that no longer serves you. Persistence is strength; refusing to let go of a lost cause is a different thing.",
+    "reversed": "You're running on empty under relentless setbacks, and giving up may feel like the only option left — but you're closer than you think. Draw on your inner resources, ask for the support you've been carrying on without, and check whether you're holding on to something that no longer serves you. Persistence is strength; refusing to let go of a lost cause is a different thing. Or you can drop your defenses at last — the situation is resolving and help arrives.",
     "sources": [
       "Esselmont",
       "Papez",
       "Clark",
       "Place",
       "Hamaker",
-      "Gray"
+      "Gray",
+      "Dean",
+      "Reed"
     ],
     "suit": "wands",
-    "upright": "Resilience near the end of a long struggle — battered, tired, and still standing guard over what you've protected. Each obstacle you've survived has made you stronger, and you're closer to the finish than it feels right now. Trust your grit and keep going, but stay open: guarding everything too tightly can turn into its own problem."
+    "upright": "Resilience near the end of a long struggle — battered, tired, and still standing guard over what you've protected. Each obstacle you've survived has made you stronger, and you're closer to the finish than it feels right now. Trust your grit and keep going, but stay open: guarding everything too tightly can turn into its own problem. And in hard times it can mean paranoia and distrust — of experts, of your team — and doing all the work alone; set boundaries and heal before deciding."
   },
   {
     "arcana": "minor",
     "id": "ten-of-wands",
     "name": "Ten of Wands",
-    "notes": "Gray's upright ('power unwisely used, applied to selfish ends') is an outlier; the majority reading is burden and over-responsibility, which is used here.",
+    "notes": "Gray's upright ('power unwisely used, applied to selfish ends') is an outlier; the majority reading is burden and over-responsibility, which is used here. Dean: The wands partially block the laborer's vision — the burden is shown as blindness to anything beyond the load. Reed: Distinctive: Ten of Wands named as the addiction 'monkey on your back' card, and as back trouble or hard labour.",
     "number": 10,
-    "reversed": "You're trying to do too much alone, and it's time to delegate, share the work, and say no — put on your own oxygen mask first. It can also point to a heavy private burden, like emotional weight you haven't shared with anyone. Letting others help isn't failure; it's how the load gets lighter.",
+    "reversed": "You're trying to do too much alone, and it's time to delegate, share the work, and say no — put on your own oxygen mask first. It can also point to a heavy private burden, like emotional weight you haven't shared with anyone. Letting others help isn't failure; it's how the load gets lighter. The burden lifts and help arrives at last.",
     "sources": [
       "Esselmont",
       "Papez",
       "Clark",
       "Place",
       "Hamaker",
-      "Gray"
+      "Gray",
+      "Dean",
+      "Reed"
     ],
     "suit": "wands",
-    "upright": "A heavy load — too many responsibilities carried at once, often because you said yes to all of them. You're strong enough to carry it, and you're close to the destination, but the weight is the message: stop, look at what you've taken on, and set down what isn't yours. The burden is meant to be temporary, not a way of life."
+    "upright": "A heavy load — too many responsibilities carried at once, often because you said yes to all of them. You're strong enough to carry it, and you're close to the destination, but the weight is the message: stop, look at what you've taken on, and set down what isn't yours. The burden is meant to be temporary, not a way of life. And in addiction questions this is the monkey on your back — the final leg of a hard journey at your breaking point."
   },
   {
     "arcana": "minor",
     "id": "page-of-wands",
     "name": "Page of Wands",
-    "notes": "Ethony's archetype is Peter Pan, the playful eternal-youth spark; Papez frames the court as a sliding scale from enthusiastic to fanatical.",
+    "notes": "Ethony's archetype is Peter Pan, the playful eternal-youth spark; Papez frames the court as a sliding scale from enthusiastic to fanatical. Weber: Distinctive angle: the Page of Wands as the 'bohemian cousin' — curious, hard to understand, loved anyway. Dean: Three pyramids are wisdom and foundation — the desert Page stands before monuments, not mirages. Papez: Court sliding scale: strengths are creativity and fresh energy; struggles come when enthusiasm becomes obsessive or pushy.",
     "number": null,
     "reversed": "Something new is stirring but you don't yet know how to turn it into action, or past ventures fizzled out and left you scattered. In shadow this energy dodges responsibility, decides rashly, and runs from anything hard — so play with the idea, let it develop, and redirect your enthusiasm toward one thing you can actually finish.",
     "sources": [
@@ -610,7 +717,9 @@
       "Place",
       "Hamaker",
       "Gray",
-      "Ethony"
+      "Ethony",
+      "Weber",
+      "Dean"
     ],
     "suit": "wands",
     "upright": "A joyful, curious spark — the beginner's energy that turns anything into an adventure and dreams up ideas without worrying yet about how they'll work. This is inspiration in its youngest form: enthusiastic, cheeky, and full of potential, but without a solid plan. Ground the spark with small experiments before committing to the big leap."
@@ -619,9 +728,9 @@
     "arcana": "minor",
     "id": "knight-of-wands",
     "name": "Knight of Wands",
-    "notes": "Conflict on the reversal: Esselmont allows a gentler reading (a passion project pursued purely for joy), while the other sources read it as impatience, restlessness, and unfinished business; the majority reading is used here.",
+    "notes": "Conflict on the reversal: Esselmont allows a gentler reading (a passion project pursued purely for joy), while the other sources read it as impatience, restlessness, and unfinished business; the majority reading is used here. Weber: Distinctive angle: reversed Knights signal a stall that can be restarted, not an ending. Dean: Three pyramids reappear here as creative fire — the same symbol, warmed up from the Page's wisdom to the Knight's action. Papez: Court sliding scale: strengths are dynamism and courage; struggles are impulsiveness and a hot temper.",
     "number": null,
-    "reversed": "Energy building with no good outlet — restless, scattered, impatient, and leaving things unfinished or emotional messes behind. The thrill of the chase can turn reckless when there's no direction, and constant motion starts to feel unfulfilling no matter how far you roam. Slow down, pick one pursuit, and finish it before charging at the next.",
+    "reversed": "Energy building with no good outlet — restless, scattered, impatient, and leaving things unfinished or emotional messes behind. The thrill of the chase can turn reckless when there's no direction, and constant motion starts to feel unfulfilling no matter how far you roam. Slow down, pick one pursuit, and finish it before charging at the next. But a reversed Knight is never a dead end — the passion can be reignited with the right focus.",
     "sources": [
       "Esselmont",
       "Papez",
@@ -629,7 +738,9 @@
       "Place",
       "Hamaker",
       "Gray",
-      "Ethony"
+      "Ethony",
+      "Weber",
+      "Dean"
     ],
     "suit": "wands",
     "upright": "Bold, passionate action — charged up and riding out after what excites you, ready to take risks and explore unknown territory. This is the adventurer who motivates others just by moving, full of charm, confidence, and follow-through on what they love. Go for it, but keep an eye on the road: speed without listening wastes energy."
@@ -638,7 +749,7 @@
     "arcana": "minor",
     "id": "queen-of-wands",
     "name": "Queen of Wands",
-    "notes": "Conflict on the reversal: Esselmont reads it gently (introversion, self-defined success) while Gray and Ethony read it as domineering, dramatic, and revengeful; the majority's sharper reading is used, with Esselmont's quieter version folded in.",
+    "notes": "Conflict on the reversal: Esselmont reads it gently (introversion, self-defined success) while Gray and Ethony read it as domineering, dramatic, and revengeful; the majority's sharper reading is used, with Esselmont's quieter version folded in. Weber: Distinctive angle: the Queen of Wands as a working artist in her studio — mastery shown through what she has made. Dean: Distinctive angle: the sunflowers exist in two and three dimensions on this card — manifestation itself, flat image becoming real. Papez: Court sliding scale: strengths are leadership and charisma; struggles are domineering pride and needing control.",
     "number": null,
     "reversed": "Confidence tipping into its shadow: self-involved, dramatic, or domineering, guarding herself behind anxiety and intensity that wears on others — and on her. It can also show up more quietly as turning inward, preferring the sidelines and time alone to reconnect with yourself. Either way, the invitation is to check whether the spotlight is serving you or running you.",
     "sources": [
@@ -648,7 +759,9 @@
       "Place",
       "Hamaker",
       "Gray",
-      "Ethony"
+      "Ethony",
+      "Weber",
+      "Dean"
     ],
     "suit": "wands",
     "upright": "Courage, confidence, and warmth — someone who knows their worth, shines brightly, and brings people together with stories, encouragement, and fierce loyalty. She turns creative vision into real deeds, sets clear boundaries, and advocates for the people she cares about. Be bold, own your power, and don't be afraid to be seen."
@@ -657,7 +770,7 @@
     "arcana": "minor",
     "id": "king-of-wands",
     "name": "King of Wands",
-    "notes": "Reversal sources vary (Esselmont: leadership not yet owned; Clark: freedom lost, discipline lacking; Gray/Ethony: intolerant, manipulative, ruthless); all are folded into one spectrum here. Ethony's archetype is The Entrepreneur.",
+    "notes": "Reversal sources vary (Esselmont: leadership not yet owned; Clark: freedom lost, discipline lacking; Gray/Ethony: intolerant, manipulative, ruthless); all are folded into one spectrum here. Ethony's archetype is The Entrepreneur. Weber: Distinctive angle: Weber self-identifies with this card — a King can represent you even when its traditional gender does not match yours. Dean: His robes are fire under control, and his crown sits over a cap of maintenance — a secure identity, not a performance. Papez: Court sliding scale: strengths are vision and creative leadership; struggles are using charm to control rather than empower.",
     "number": null,
     "reversed": "Leadership not yet owned, or power used poorly: uncomfortable in the role, managing tasks without sharing the vision, or letting ego stretch people and relationships thin. In its harshest form it turns domineering, ruthless, and self-serving, using others while money or winning takes priority. The check is simple — are you inspiring people, or spending them?",
     "sources": [
@@ -667,7 +780,9 @@
       "Place",
       "Hamaker",
       "Gray",
-      "Ethony"
+      "Ethony",
+      "Weber",
+      "Dean"
     ],
     "suit": "wands",
     "upright": "Visionary leadership — a clear, big-picture vision paired with the charisma and drive to bring others along with it. This is the entrepreneur who thinks big, embraces change, and inspires people to lead in their own right, solving problems boldly from the front. Lead the vision and let others help carry the doing."
@@ -676,7 +791,7 @@
     "arcana": "minor",
     "id": "ace-of-cups",
     "name": "Ace of Cups",
-    "notes": "Sources conflict on the reversal: Esselmont reads it positively as self-love, while Gray (false love, instability) and Clark (stagnant, needs neglected) read it as blocked love; the synthesis holds both — blocked outward, turned inward.",
+    "notes": "Sources conflict on the reversal: Esselmont reads it positively as self-love, while Gray (false love, instability) and Clark (stagnant, needs neglected) read it as blocked love; the synthesis holds both — blocked outward, turned inward. Weber: Distinctive angle: the Aces as 'absolute' — the suit's essence at full power, offered or dropped. Dean: Distinctive angle: the 26 droplets form the Hebrew letter Yod — the divine hand — tying this card to the Tower and the Moon.",
     "number": 1,
     "reversed": "Love feels blocked, clouded, or turned back on itself — a connection gone stagnant, feelings kept hidden, or hesitation about letting yourself care. The gentlest reading here is also the most useful one: before pouring love outward, fill your own cup first. Tend to the repressed or neglected feelings, and let self-love be the starting point rather than an afterthought.",
     "sources": [
@@ -685,16 +800,18 @@
       "Clark",
       "Place",
       "Hamaker",
-      "Gray"
+      "Gray",
+      "Weber",
+      "Dean"
     ],
     "suit": "cups",
-    "upright": "A new emotional beginning is pouring in — love, compassion, creativity, or a spiritual opening that fills your cup to overflowing. Like the Grail in the card's image, this is an invitation to open your heart and say yes to what moves you, whether that's a person, a creative urge, or a deeper kindness toward yourself. The feeling is real but fleeting, so be present for it: notice it, receive it, and let it spill into how you love and create."
+    "upright": "A new emotional beginning is pouring in — love, compassion, creativity, or a spiritual opening that fills your cup to overflowing. Like the Grail in the card's image, this is an invitation to open your heart and say yes to what moves you, whether that's a person, a creative urge, or a deeper kindness toward yourself. The feeling is real but fleeting, so be present for it: notice it, receive it, and let it spill into how you love and create. Weber's keyword for the Aces is 'absolute': absolute love — the suit of the heart at full strength, offered to you like a cup held out by a hand."
   },
   {
     "arcana": "minor",
     "id": "two-of-cups",
     "name": "Two of Cups",
-    "notes": "Esselmont roots the reversal in self-love as the foundation of all love; Gray reads it more harshly as false love and dissipation — majority reading leans to imbalance and distrust.",
+    "notes": "Esselmont roots the reversal in self-love as the foundation of all love; Gray reads it more harshly as false love and dissipation — majority reading leans to imbalance and distrust. Dean: Distinctive angle: the two figures are read as other majors — the woman as the High Priestess (intuition), the man as the Fool (risk). Reed: Distinctive: Two of Cups singled out as a healing card, with the caduceus read as healing in progress. Papez: Mix-up: Two of Cups vs Lovers — connection is the bond forming; the Lovers is the committed choice that follows it.",
     "number": 2,
     "reversed": "The connection is out of balance — disharmony, misplaced trust, misunderstanding, or a parting of ways. Sometimes the trouble starts closer to home: without steady self-love, it's easy to cling, project the lack onto someone else, or feel pulled toward a connection that isn't in your best interest. The invitation is to look at what you bring to the bond before deciding what the bond itself needs.",
     "sources": [
@@ -703,16 +820,18 @@
       "Clark",
       "Place",
       "Hamaker",
-      "Gray"
+      "Gray",
+      "Dean",
+      "Reed"
     ],
     "suit": "cups",
-    "upright": "Two people meeting on equal footing, each offering their cup from the heart — the start of a bond built on mutual respect, shared values, and genuine reciprocity. This is the hopeful early yes of a relationship, friendship, or partnership, where neither gives or takes more than the other. It asks whether you're ready to come into the open with your opposite number and let the connection grow."
+    "upright": "Two people meeting on equal footing, each offering their cup from the heart — the start of a bond built on mutual respect, shared values, and genuine reciprocity. This is the hopeful early yes of a relationship, friendship, or partnership, where neither gives or takes more than the other. It asks whether you're ready to come into the open with your opposite number and let the connection grow. And in health questions it is one of the best cards to see — the symbol between the two figures shows healing taking place."
   },
   {
     "arcana": "minor",
     "id": "three-of-cups",
     "name": "Three of Cups",
-    "notes": "All sources agree on friendship and celebration upright; Clark's number theme is progress — the bond deepening from the Two's pairing into a wider circle.",
+    "notes": "All sources agree on friendship and celebration upright; Clark's number theme is progress — the bond deepening from the Two's pairing into a wider circle. Weber: Distinctive warning: the 3 of Cups carries overindulgence and exclusion alongside its celebration. Dean: Three women, three cups, fruits of summer — Dean reads the number three itself as creative power, not just company.",
     "number": 3,
     "reversed": "The circle feels strained or distant — drifting from friends, feeling left out, or wanting to go it alone for a while. That wish for space is worth honoring, especially if the group is stifling your creativity or the celebrating has tipped into overindulgence and neglected responsibilities. Step back, work independently, and let the bonds that matter find their way back on steadier terms.",
     "sources": [
@@ -721,16 +840,18 @@
       "Clark",
       "Place",
       "Hamaker",
-      "Gray"
+      "Gray",
+      "Weber",
+      "Dean"
     ],
     "suit": "cups",
-    "upright": "Celebration with your people — friends, chosen family, the inner circle that shows up for the good times and the hard ones alike. There's joy in simply being together, and strength in a group where each person brings something different. This is a card of support, shared delight, and a reminder that you don't have to carry things alone."
+    "upright": "Celebration with your people — friends, chosen family, the inner circle that shows up for the good times and the hard ones alike. There's joy in simply being together, and strength in a group where each person brings something different. This is a card of support, shared delight, and a reminder that you don't have to carry things alone. But not every joyful card is only joyful — watch for overindulgence, cliquishness, or a celebration at the wrong time."
   },
   {
     "arcana": "minor",
     "id": "four-of-cups",
     "name": "Four of Cups",
-    "notes": "Sources split on the upright: Esselmont/Clark read the refusal as deliberate discernment or contentment, Papez/Gray/Hamaker as dull stagnancy and surfeit — the synthesis holds both readings as a question, not a verdict.",
+    "notes": "Sources split on the upright: Esselmont/Clark read the refusal as deliberate discernment or contentment, Papez/Gray/Hamaker as dull stagnancy and surfeit — the synthesis holds both readings as a question, not a verdict. Dean: The Hebrew letter Tet is hidden in the card — Dean reads it as hidden goodness and potential in the offered cup.",
     "number": 4,
     "reversed": "Something stirs after the stillness — restlessness, a waking up, and a renewed interest in new relationships, goals, or ambitions. A period of introspection is ending and it's time to look outward again. Just take care not to swing from withdrawal into shutting people out entirely; the retreat served its purpose, and now the world is offering something again.",
     "sources": [
@@ -739,7 +860,8 @@
       "Clark",
       "Place",
       "Hamaker",
-      "Gray"
+      "Gray",
+      "Dean"
     ],
     "suit": "cups",
     "upright": "A pause — arms folded, eyes elsewhere, while a fresh cup is offered just outside your view. Sometimes this is healthy discernment: your cup is already full and the invitation genuinely doesn't interest you, so saying no is the right call. But it can also be a rut, where still water has gone dull and life's joys are taken for granted; the grass is greener where you water it, so it's worth asking whether you're refusing from clarity or from boredom."
@@ -748,25 +870,28 @@
     "arcana": "minor",
     "id": "five-of-cups",
     "name": "Five of Cups",
-    "notes": "Gray's reversal is the most hopeful (return of enjoyment, an old friend returns); Esselmont warns the pain may still be hidden — both point the same way, toward moving on.",
+    "notes": "Gray's reversal is the most hopeful (return of enjoyment, an old friend returns); Esselmont warns the pain may still be hidden — both point the same way, toward moving on. Weber: Distinctive reframe: the 5 of Cups figure might be relieved, not grieving — and its reversal can mean a loss undone. Dean: Distinctive angle: the two upright cups behind the figure, the bridge and the double arches are all read as healing already present in the scene. Reed: Distinctive: Five of Cups reversed as the grief-counsellor card and as recovery from mourning.",
     "number": 5,
-    "reversed": "Acceptance is arriving and it's time to move forward from the disappointment — new alliances, a returning friend, or simply enjoyment coming back into reach. If you're still hiding the pain or blaming yourself, open up and ask for help; you did your best, and forgiveness, for yourself and others, is what lets the turning happen. The loss stays part of the story, but it stops being the whole of it.",
+    "reversed": "Acceptance is arriving and it's time to move forward from the disappointment — new alliances, a returning friend, or simply enjoyment coming back into reach. If you're still hiding the pain or blaming yourself, open up and ask for help; you did your best, and forgiveness, for yourself and others, is what lets the turning happen. The loss stays part of the story, but it stops being the whole of it. Or a loss undone — something lost may soon be found.",
     "sources": [
       "Esselmont",
       "Papez",
       "Clark",
       "Place",
       "Hamaker",
-      "Gray"
+      "Gray",
+      "Weber",
+      "Dean",
+      "Reed"
     ],
     "suit": "cups",
-    "upright": "Grief over what's been lost — a disappointment, a broken connection, a hope that didn't turn out as expected. It's okay to cry over spilled milk; the sorrow is real and deserves its time. But two cups still stand behind you, and a bridge leads onward: the feelings are temporary, something good remains, and turning around is what sets a new course."
+    "upright": "Grief over what's been lost — a disappointment, a broken connection, a hope that didn't turn out as expected. It's okay to cry over spilled milk; the sorrow is real and deserves its time. But two cups still stand behind you, and a bridge leads onward: the feelings are temporary, something good remains, and turning around is what sets a new course — though look again at the cloaked figure, because the loss may be a narrow escape, and they may be secretly relieved."
   },
   {
     "arcana": "minor",
     "id": "six-of-cups",
     "name": "Six of Cups",
-    "notes": "Unanimous across sources: nostalgia as both gift and trap; Hamaker adds the inner-child angle — an old cycle is over, yet youthful patterns persist into the present.",
+    "notes": "Unanimous across sources: nostalgia as both gift and trap; Hamaker adds the inner-child angle — an old cycle is over, yet youthful patterns persist into the present. Dean: Distinctive angle: the red hood on the smaller figure is a blessing in disguise, and a second face is hidden in the scene — hidden feelings. Reed: Distinctive: Six of Cups as a message from the departed or spirits returning to a childhood home.",
     "number": 6,
     "reversed": "The past has become a place to live in rather than visit — clinging to how things used to be, romanticizing what was, and missing what's in front of you now. Old patterns or outgrown ways of relating may be constraining you, and the present keeps getting painted with the past's brush. Make peace with what's gone, forgive what needs forgiving, and bring your attention back to now.",
     "sources": [
@@ -775,7 +900,9 @@
       "Clark",
       "Place",
       "Hamaker",
-      "Gray"
+      "Gray",
+      "Dean",
+      "Reed"
     ],
     "suit": "cups",
     "upright": "A visit from the past — happy memories, childhood sweetness, an old friend, or a kindness given and received without expectation. Like finding a box of old photos, it can be nourishing: a fresh emotional cycle, generosity, and the beginner's pure-hearted trust. Let the memory warm the present, and let giving and receiving flow easily between you and the people around you."
@@ -784,7 +911,7 @@
     "arcana": "minor",
     "id": "seven-of-cups",
     "name": "Seven of Cups",
-    "notes": "Place and Hamaker add a nuance the others miss: among the seven cups, the veiled one is the Higher Self — most options serve self-interest, one invites a destiny beyond it.",
+    "notes": "Place and Hamaker add a nuance the others miss: among the seven cups, the veiled one is the Higher Self — most options serve self-interest, one invites a destiny beyond it. Weber: Distinctive angle: the 7 of Cups as a partner or situation that stays mysterious — too many options, too little clarity. Dean: Distinctive angle: every object in a cup is decoded separately — snake, wreath, jewels, castle, angel — so the choice is read object by object.",
     "number": 7,
     "reversed": "Clarity is cutting through the fog — good resolutions, a willingness to choose by your own values instead of what appeals to others, and the determination to narrow the field. That said, you may still feel overwhelmed by choice and unsure how to move; if so, ground yourself, set the fantasies aside for a moment, and focus on what matters for the long term. One honest choice beats seven perfect ones.",
     "sources": [
@@ -793,25 +920,30 @@
       "Clark",
       "Place",
       "Hamaker",
-      "Gray"
+      "Gray",
+      "Weber",
+      "Dean"
     ],
     "suit": "cups",
-    "upright": "So many options, so many shining possibilities — love, wealth, revenge, a castle in the sky — that it's hard to tell dreaming from deciding. This is the pipe-dream card: imagination working overtime, choices clouded by wishful thinking, and every option tainted a little by what the ego wants. Dare to dream and ask 'what if,' but then plant your feet, look below the surface of each cup, and choose with your deeper self rather than the shiniest lure."
+    "upright": "So many options, so many shining possibilities — love, wealth, revenge, a castle in the sky — that it's hard to tell dreaming from deciding. This is the pipe-dream card: imagination working overtime, choices clouded by wishful thinking, and every option tainted a little by what the ego wants. Dare to dream and ask 'what if,' but then plant your feet, look below the surface of each cup, and choose with your deeper self rather than the shiniest lure. Or a person who stays strangely unknowable after months together."
   },
   {
     "arcana": "minor",
     "id": "eight-of-cups",
     "name": "Eight of Cups",
-    "notes": "Gray's upright is harsher (misery and repining 'without cause'), but the majority reads the departure as purposeful; Esselmont frames the reversal as a genuine open question, with neighboring cards as tiebreaker.",
+    "notes": "Gray's upright is harsher (misery and repining 'without cause'), but the majority reads the departure as purposeful; Esselmont frames the reversal as a genuine open question, with neighboring cards as tiebreaker. Adams: Explicit disagreement inside the book itself: the Waite picture says walk away, but the number Eight connotes sincerity, abundance, and achievement, which would suggest success in matters of the heart — so the book advises trusting the number or the picture according to what your intuition hooks into. Dean: Distinctive angle: the missing cup is the quest itself — the card is defined by what is not there. Reed: Distinctive: Eight of Cups as sobriety and recovery, and its reversal as coming home from the hospital. Papez: Mix-up: Eight of Cups vs Six of Swords — departure is a chosen walk away; escape is being ferried out of trouble. Follows the Seven of Cups' fantasising.",
     "number": 8,
-    "reversed": "Stay or go? You're caught between giving a disappointing situation one more try and walking away, and the honest answer isn't obvious yet. Sticking it out just because of everything you've already invested can keep you stagnant, while leaving too soon can abandon something that might still grow. Listen to your heart and intuition — and to whether the situation can genuinely improve — before you decide which way the road goes.",
+    "reversed": "Stay or go? You're caught between giving a disappointing situation one more try and walking away, and the honest answer isn't obvious yet. Sticking it out just because of everything you've already invested can keep you stagnant, while leaving too soon can abandon something that might still grow — though sometimes the reverse is true, and the walk-away is a coward's way out, cutting and running without giving it a second chance. Listen to your heart and intuition — and to whether the situation can genuinely improve — before you decide which way the road goes.",
     "sources": [
       "Esselmont",
       "Papez",
       "Clark",
       "Place",
       "Hamaker",
-      "Gray"
+      "Gray",
+      "Adams",
+      "Dean",
+      "Reed"
     ],
     "suit": "cups",
     "upright": "Walking away from something that once brought happiness but no longer feeds you — a relationship, a job, a path you've invested heavily in and carefully stacked, cup by cup. It's a midnight departure with no new situation yet in sight, and that uncertainty is part of it. But staying won't fix what's missing on an emotional or spiritual level; choosing yourself here is hard, empowering, and the start of a longer journey toward something truer."
@@ -820,25 +952,27 @@
     "arcana": "minor",
     "id": "nine-of-cups",
     "name": "Nine of Cups",
-    "notes": "Papez reframes the 'wish card' as reality fulfilled rather than wishes granted — contentment from within; Gray keeps the classic material-success reading, and Hamaker warns the luxury can tip superficial.",
+    "notes": "Papez reframes the 'wish card' as reality fulfilled rather than wishes granted — contentment from within; Gray keeps the classic material-success reading, and Hamaker warns the luxury can tip superficial. Adams: Superlative claim unique in the book: the single best pip card, and effectively un-spoilable even reversed — the only danger is disbelieving your own luck. Dean: Crossed arms here mean give and take, not refusal — Dean contrasts this deliberately with the Four of Cups. Papez: Mix-up: Nine vs Ten of Cups — contentment is one person's satisfaction; bliss is that contentment shared by a whole family at once.",
     "number": 9,
-    "reversed": "Even with everything you dreamed of, something feels missing deep down — the wish came true and the satisfaction didn't follow. Maybe the chasing aimed at the wrong things: material gain, others' approval, or always wanting more. It's worth looking within and asking whether your wishes serve your deeper good or just your appetite, and realigning them with what actually fulfills you.",
+    "reversed": "Even with everything you dreamed of, something feels missing deep down — the wish came true and the satisfaction didn't follow. Maybe the chasing aimed at the wrong things: material gain, others' approval, or always wanting more. It's worth looking within and asking whether your wishes serve your deeper good or just your appetite, and realigning them with what actually fulfills you. Even reversed it is hard to spoil — the only real danger is refusing to believe in your own good fortune.",
     "sources": [
       "Esselmont",
       "Papez",
       "Clark",
       "Place",
       "Hamaker",
-      "Gray"
+      "Gray",
+      "Adams",
+      "Dean"
     ],
     "suit": "cups",
-    "upright": "Contentment — looking around and thinking, 'this is good.' This is the wish card, but the wish it grants is quieter than a windfall: emotional fulfillment found within, having exactly enough and being enough. There's pride here, honestly earned, and pleasure in what you've gathered around you. Enjoy it while it lasts, without measuring the rest of your life against this one good moment."
+    "upright": "Contentment — looking around and thinking, 'this is good.' This is the wish card, but the wish it grants is quieter than a windfall: emotional fulfillment found within, having exactly enough and being enough. There's pride here, honestly earned, and pleasure in what you've gathered around you. Enjoy it while it lasts, without measuring the rest of your life against this one good moment. Adams calls it the best pip card in the deck — effectively un-spoilable, even reversed."
   },
   {
     "arcana": "minor",
     "id": "ten-of-cups",
     "name": "Ten of Cups",
-    "notes": "Papez cautions that this bliss is rare and short-lived — 'the Nine is the cupcake, the Ten is the sprinkles' — while the other sources read it as lasting happiness; the synthesis treats it as real but not permanent.",
+    "notes": "Papez cautions that this bliss is rare and short-lived — 'the Nine is the cupcake, the Ten is the sprinkles' — while the other sources read it as lasting happiness; the synthesis treats it as real but not permanent. Adams: Distinctive claim: this Ten is so favorable it can offset any negative cards in a reading. Weber: Distinctive angle: Tens as the end of a chapter and the start of a new one — the fullest expression of the suit. Dean: The rainbow over the arc of cups is read as miracles and reward — the only rainbow in the deck. Reed: Distinctive: Ten of Cups as the welcoming committee on the other side in mediumship readings. Papez: Mix-up: Ten vs Nine of Cups — bliss is collective; count the people on the card.",
     "number": 10,
     "reversed": "The harmony you want feels out of reach — disconnection from a loved one, routines disrupted, disquiet entering the home, or communication that just won't land. Unrealistic expectations can make ordinary ups and downs feel like failure; every relationship has them. The way back is through common ground and honest conversation — or, if the fit is truly gone, the acceptance that it's time to let the picture change.",
     "sources": [
@@ -847,18 +981,22 @@
       "Clark",
       "Place",
       "Hamaker",
-      "Gray"
+      "Gray",
+      "Adams",
+      "Weber",
+      "Dean",
+      "Reed"
     ],
     "suit": "cups",
-    "upright": "Happiness shared — family, chosen family, community, the people you belong with under one rainbow. This is emotional peace without grasping: accepting yourself and others as they are, supporting one another toward your best, and letting love circulate freely. It's the completion of the suit's journey, from a single overflowing cup to a whole life full of them."
+    "upright": "Happiness shared — family, chosen family, community, the people you belong with under one rainbow. This is emotional peace without grasping: accepting yourself and others as they are, supporting one another toward your best, and letting love circulate freely. It's the completion of the suit's journey, from a single overflowing cup to a whole life full of them. Adams notes this Ten is so favorable it can offset negative cards elsewhere in the reading."
   },
   {
     "arcana": "minor",
     "id": "page-of-cups",
     "name": "Page of Cups",
-    "notes": "Ethony's archetype is The Empath — the Magician of water, 'no mud, no lotus' — with a sliding scale from sensitive to fragile; weak boundaries are the recurring shadow across sources.",
+    "notes": "Ethony's archetype is The Empath — the Magician of water, 'no mud, no lotus' — with a sliding scale from sensitive to fragile; weak boundaries are the recurring shadow across sources. Weber: Distinctive angle: Weber's code reads the Page of Cups as kindness and willingness, but poor timing and lack of commitment — ready for the next step only in reverse. Dean: The talking fish is psychic communication — the Page's intuition made literal and visible. Papez: Court sliding scale: strengths are sensitivity and imagination; struggles are emotional fragility and taking things too personally.",
     "number": null,
-    "reversed": "Your creative ideas are being kept secret — afraid they'll be stolen or dismissed, or doubting whether you can make them work at all. The inner critic is stalling you, and disappointment can turn inward into sulking or losing yourself in what others think. Better to try and fail than never try at all: the idea deserves daylight, and the sensitivity that makes you fragile is the same sensitivity that lets you sense what others miss.",
+    "reversed": "Your creative ideas are being kept secret — afraid they'll be stolen or dismissed, or doubting whether you can make them work at all. The inner critic is stalling you, and disappointment can turn inward into sulking or losing yourself in what others think. Better to try and fail than never try at all: the idea deserves daylight, and the sensitivity that makes you fragile is the same sensitivity that lets you sense what others miss. Though Weber reads this unreadiness as poor timing, not failure — the readiness comes later, not never.",
     "sources": [
       "Esselmont",
       "Papez",
@@ -866,7 +1004,9 @@
       "Place",
       "Hamaker",
       "Gray",
-      "Ethony"
+      "Ethony",
+      "Weber",
+      "Dean"
     ],
     "suit": "cups",
     "upright": "A new creative idea or intuitive message arrives out of the blue — a fish popping out of a cup, a dream, a feeling you can't quite explain yet. This is the sensitive, imaginative feeler: open, curious, playful, and willing to believe in possibility and in the goodness of others. Stay receptive, dream the impossible dream, and let your inner child have a say; empathy and emotional self-awareness are the gifts here, and the message is worth listening to."
@@ -875,9 +1015,9 @@
     "arcana": "minor",
     "id": "knight-of-cups",
     "name": "Knight of Cups",
-    "notes": "Ethony's archetype is The Romantic (fire of water — boiling water), sliding from romantic to unreliable; Gray's reversal is the harshest reading (trickery, fraud) versus the modern moodiness/unreliability reading.",
+    "notes": "Ethony's archetype is The Romantic (fire of water — boiling water), sliding from romantic to unreliable; Gray's reversal is the harshest reading (trickery, fraud) versus the modern moodiness/unreliability reading. Weber: Distinctive angle: the Knight of Cups as a quest for forgiveness and connection, not only romance. Dean: Facing right means the future — Dean uses court-card facing direction as a timing cue throughout the book. Papez: Court sliding scale: strengths are romance and emotional openness; struggles are unreliability and living in fantasy.",
     "number": null,
-    "reversed": "The dream is stalling — a creative project or romance still in the fantasy phase, with no grounding in costs, time, or practical steps. Moodiness, jealousy, or disappointment can cloud things, and the charm can curdle into fickleness when a relationship gets real or difficult. The invitation is to bring the vision down to earth: test it, tend it, and see what's actually there beneath the romance.",
+    "reversed": "The dream is stalling — a creative project or romance still in the fantasy phase, with no grounding in costs, time, or practical steps. Moodiness, jealousy, or disappointment can cloud things, and the charm can curdle into fickleness when a relationship gets real or difficult. The invitation is to bring the vision down to earth: test it, tend it, and see what's actually there beneath the romance. And in its darkest form, lies or slander — words used as weapons.",
     "sources": [
       "Esselmont",
       "Papez",
@@ -885,18 +1025,20 @@
       "Place",
       "Hamaker",
       "Gray",
-      "Ethony"
+      "Ethony",
+      "Weber",
+      "Dean"
     ],
     "suit": "cups",
-    "upright": "The romantic, riding out in pursuit of love, beauty, and creative inspiration — charming, kind, emotionally available, and led by imagination and desire. Where the Page dreams, the Knight acts: this can be a person bringing a message, a proposition, or an invitation, or your own impulse to follow your heart toward something that moves you. The feeling is genuine; just keep one eye on whether the dream can survive contact with real life."
+    "upright": "The romantic, riding out in pursuit of love, beauty, and creative inspiration — charming, kind, emotionally available, and led by imagination and desire. Where the Page dreams, the Knight acts: this can be a person bringing a message, a proposition, or an invitation, or your own impulse to follow your heart toward something that moves you. The feeling is genuine; just keep one eye on whether the dream can survive contact with real life. And the quest itself can be for forgiveness and connection, not only romance — a skilled seeker who will eventually find what they are looking for."
   },
   {
     "arcana": "minor",
     "id": "queen-of-cups",
     "name": "Queen of Cups",
-    "notes": "Ethony's archetype is The Mystic (water of water, the Empress of water), sliding from nurturing to smothering; Gray's reversed portrait ('perverse character') is a dated, harsh outlier — the synthesis follows the modern drained-caregiver reading.",
+    "notes": "Ethony's archetype is The Mystic (water of water, the Empress of water), sliding from nurturing to smothering; Gray's reversed portrait ('perverse character') is a dated, harsh outlier — the synthesis follows the modern drained-caregiver reading. Weber: Distinctive warning: the Queen of Cups can also be clingy and overbearing — devotion that smothers. Dean: Distinctive angle: her chalice is closed and elaborate — faith and fertility held inward, unlike the open Ace. Papez: Court sliding scale: strengths are compassion and intuition; struggles are over-giving and emotional enmeshment.",
     "number": null,
-    "reversed": "The caregiver is drained — you've been tending everyone else's feelings and neglecting your own, and the empathy that nourishes others has started to smother or deplete you. Boundaries are the missing piece: stop absorbing other people's emotional baggage, watch for codependent patterns, and turn the care inward for a while. Self-doubt may be distorting what you feel; rest and replenishment come first, and the clarity follows.",
+    "reversed": "The caregiver is drained — you've been tending everyone else's feelings and neglecting your own, and the empathy that nourishes others has started to smother or deplete you. Boundaries are the missing piece: stop absorbing other people's emotional baggage, watch for codependent patterns, and turn the care inward for a while. Self-doubt may be distorting what you feel; rest and replenishment come first, and the clarity follows. Or devotion that smothers — clingy and overbearing rather than caring.",
     "sources": [
       "Esselmont",
       "Papez",
@@ -904,7 +1046,9 @@
       "Place",
       "Hamaker",
       "Gray",
-      "Ethony"
+      "Ethony",
+      "Weber",
+      "Dean"
     ],
     "suit": "cups",
     "upright": "Deep intuition and tender, steady care — the most watery of the courts, at home in feeling the way the sea is at home in itself. She listens with her heart, sees past masks to what's underneath, and holds space for others' emotions without taking them on as her own. This is the healer of hearts: compassionate, creative, in flow, and quietly sure of what she senses without needing words."
@@ -913,7 +1057,7 @@
     "arcana": "minor",
     "id": "king-of-cups",
     "name": "King of Cups",
-    "notes": "Ethony's archetype is Hades — the intense, transformative emotional leader (air of water, sea spray against a rock), sliding from approachable to complacent; Gray's reversed portrait ('crafty and violent') is a dated outlier, not followed.",
+    "notes": "Ethony's archetype is Hades — the intense, transformative emotional leader (air of water, sea spray against a rock), sliding from approachable to complacent; Gray's reversed portrait ('crafty and violent') is a dated outlier, not followed. Weber: Distinctive angle: the King of Cups as someone who has already survived heartbreak and therefore commits wisely. Dean: Distinctive angle: a jellyfish crown (trust) and green slippers (magic) — the calmest king wears the strangest symbols. Papez: Court sliding scale: strengths are emotional steadiness and approachability; struggles are passivity and avoiding conflict.",
     "number": null,
     "reversed": "The calm exterior is under strain — moodiness, touchiness, or emotional outbursts leaking through, or a pull toward indirectness and control when feelings go unexamined. The work here is inward: exploring the subconscious emotions you've been setting aside, and meeting yourself with self-compassion instead of suppression. Steadiness returns when the feelings are faced rather than managed around.",
     "sources": [
@@ -923,10 +1067,12 @@
       "Place",
       "Hamaker",
       "Gray",
-      "Ethony"
+      "Ethony",
+      "Weber",
+      "Dean"
     ],
     "suit": "cups",
-    "upright": "Emotional mastery — not the absence of feeling, but a calm steadiness within it. Like a king enthroned in the sea itself, he accepts his feelings without letting them rule him, stays level-headed under pressure, and leads with diplomacy, generosity, and creative intelligence. This is maturity you can lean on: composed, empathetic, dependable, and quietly perceptive about the hidden currents in people and situations."
+    "upright": "Emotional mastery — not the absence of feeling, but a calm steadiness within it. Like a king enthroned in the sea itself, he accepts his feelings without letting them rule him, stays level-headed under pressure, and leads with diplomacy, generosity, and creative intelligence. This is maturity you can lean on: composed, empathetic, dependable, and quietly perceptive about the hidden currents in people and situations. And he has likely known heartbreak — which is why he will not waste true love when he finds it."
   },
   {
     "id": "ace-of-swords",
@@ -934,17 +1080,20 @@
     "arcana": "minor",
     "suit": "swords",
     "number": 1,
-    "upright": "A breakthrough in thinking — a sudden clear idea, a truth that cuts through confusion, or a new way of seeing things. Your mind feels sharp and awake, ready to start something with fresh energy. With that clarity comes responsibility: once you see something plainly, it's hard to pretend you don't know it.",
-    "reversed": "An idea is still forming and isn't ready to be shared or acted on yet, or your judgment feels clouded and the thinking needs reworking. Give it time and space to take shape instead of forcing it. Pushing ahead on a shaky idea right now is more likely to bring loss than a win.",
+    "upright": "A breakthrough in thinking — a sudden clear idea, a truth that cuts through confusion, or a new way of seeing things. Your mind feels sharp and awake, ready to start something with fresh energy. With that clarity comes responsibility: once you see something plainly, it's hard to pretend you don't know it. And in health questions it can mean a new treatment — or surgery.",
+    "reversed": "An idea is still forming and isn't ready to be shared or acted on yet, or your judgment feels clouded and the thinking needs reworking. Give it time and space to take shape instead of forcing it. Pushing ahead on a shaky idea right now is more likely to bring loss than a win. Or a blunt signal that something has run its course — stick a fork in it, it's done.",
     "sources": [
       "Esselmont",
       "Papez",
       "Clark",
       "Place",
       "Hamaker",
-      "Gray"
+      "Gray",
+      "Weber",
+      "Dean",
+      "Reed"
     ],
-    "notes": "Clark's reversed reading (the conflict cannot be won) is harsher than Esselmont's gentler 'idea still gestating' — the synthesis leans on Esselmont/Gray's clouded-judgment thread."
+    "notes": "Clark's reversed reading (the conflict cannot be won) is harsher than Esselmont's gentler 'idea still gestating' — the synthesis leans on Esselmont/Gray's clouded-judgment thread. Weber: Distinctive angle: Weber's card-of-the-day Ace of Swords meant a day of focused problem-solving, not a prediction. Dean: The golden droplets are the Yod fire again — the same divine-fire symbol as the Ace of Cups, Tower and Moon, here crowning truth. Reed: Distinctive: Ace of Swords as a new treatment or surgery in health readings."
   },
   {
     "id": "two-of-swords",
@@ -952,7 +1101,7 @@
     "arcana": "minor",
     "suit": "swords",
     "number": 2,
-    "upright": "You're caught between two options and neither one feels clearly right, so you've gone still. The blindfold in the image is the point: part of the picture is hidden, and the answer may lie inside you rather than in more outside opinions. Weigh things with both head and heart, and stay open to a third option you haven't named yet.",
+    "upright": "You're caught between two options and neither one feels clearly right, so you've gone still. The blindfold in the image is the point: part of the picture is hidden, and the answer may lie inside you rather than in more outside opinions. Weigh things with both head and heart, and stay open to a third option you haven't named yet. Though the blindfold can also be wise restraint — keeping your distance from family drama or workplace politics is sometimes the better option.",
     "reversed": "The stalemate tightens — too much conflicting information, too many voices, and a fear of choosing wrong keeps you frozen. Try tuning out the noise and listening for what you already know, sifting advice for what's actually relevant to you.",
     "sources": [
       "Esselmont",
@@ -960,9 +1109,11 @@
       "Clark",
       "Place",
       "Hamaker",
-      "Gray"
+      "Gray",
+      "Weber",
+      "Dean"
     ],
-    "notes": "Gray's reversed reading (release and movement) conflicts with Esselmont and Clark, who read reversal as deeper stuckness — majority reading chosen."
+    "notes": "Gray's reversed reading (release and movement) conflicts with Esselmont and Clark, who read reversal as deeper stuckness — majority reading chosen. Weber: Distinctive reframe: the blindfold can be a useful boundary, not only avoidance — staying out of something can be the better option. Dean: Low tide is emerging truths — the same symbol as in the Eight of Cups and Eight of Swords, always meaning what is being revealed."
   },
   {
     "id": "three-of-swords",
@@ -970,17 +1121,20 @@
     "arcana": "minor",
     "suit": "swords",
     "number": 3,
-    "upright": "Heartbreak, grief, or the sting of cutting words — pain that often arrives without warning. Let yourself feel it fully rather than rushing past it; tears and honest expression are part of how the hurt clears. The pain is real, and it also carries a hard lesson about what matters to you.",
-    "reversed": "The hurt turns inward, into harsh self-talk and old beliefs that keep the wound open. Notice the inner critic's voice and question whether it's telling the truth. Releasing old pain and softening toward yourself is how the healing starts.",
+    "upright": "Heartbreak, grief, or the sting of cutting words — pain that often arrives without warning. Let yourself feel it fully rather than rushing past it; tears and honest expression are part of how the hurt clears. The pain is real, and it also carries a hard lesson about what matters to you. Yet it can also be a badge of honor, like a Purple Heart — painful trials carried with pride.",
+    "reversed": "The hurt turns inward, into harsh self-talk and old beliefs that keep the wound open. Notice the inner critic's voice and question whether it's telling the truth. Releasing old pain and softening toward yourself is how the healing starts. Or healing beginning at last — the storm has passed, clarity arrives, and relief is in sight.",
     "sources": [
       "Esselmont",
       "Papez",
       "Clark",
       "Place",
       "Hamaker",
-      "Gray"
+      "Gray",
+      "Weber",
+      "Dean",
+      "Reed"
     ],
-    "notes": "Esselmont's reversed reading (inner critic) vs. Gray's (sorrow continues, only lesser) — synthesis follows Esselmont/Clark's inward turn; Hamaker adds that the pain is a passage, not an ending."
+    "notes": "Esselmont's reversed reading (inner critic) vs. Gray's (sorrow continues, only lesser) — synthesis follows Esselmont/Clark's inward turn; Hamaker adds that the pain is a passage, not an ending. Weber: Distinctive reframe: the 3 of Swords as a medal for surviving pain, not only the pain itself. Dean: The heraldic shield is reputation — the sorrow here is public, not only private. Reed: Distinctive: Three of Swords reversed as recovery from surgery and the light at the end of a long, dark tunnel."
   },
   {
     "id": "four-of-swords",
@@ -988,17 +1142,19 @@
     "arcana": "minor",
     "suit": "swords",
     "number": 4,
-    "upright": "Rest before the next stretch — you've reached a milestone and your body and mind need to recharge. A real pause restores focus and steadies you; it isn't laziness, it's part of the work. Step back, breathe, and let things settle before you pick the sword up again.",
-    "reversed": "You're running on empty and close to burnout after pushing too long without a break. Stop and rest now, before your body forces the issue. Withdraw a little, clear your head, and come back only when you've actually recovered.",
+    "upright": "Rest before the next stretch — you've reached a milestone and your body and mind need to recharge. A real pause restores focus and steadies you; it isn't laziness, it's part of the work. Step back, breathe, and let things settle before you pick the sword up again. And it can picture a hospital, ashram, or rehab — a real place of convalescence, or time in quarantine to get back on your feet.",
+    "reversed": "You're running on empty and close to burnout after pushing too long without a break. Stop and rest now, before your body forces the issue. Withdraw a little, clear your head, and come back only when you've actually recovered. Or you are back in action at last — recovered and able to resume your routine.",
     "sources": [
       "Esselmont",
       "Papez",
       "Clark",
       "Place",
       "Hamaker",
-      "Gray"
+      "Gray",
+      "Dean",
+      "Reed"
     ],
-    "notes": "Hamaker reads the upright more darkly — stagnation in rigid logic, a forced rest — against the other books' restorative pause; Gray's reversed (renewed activity) also conflicts with Esselmont's burnout warning, and the majority burnout reading is used."
+    "notes": "Hamaker reads the upright more darkly — stagnation in rigid logic, a forced rest — against the other books' restorative pause; Gray's reversed (renewed activity) also conflicts with Esselmont's burnout warning, and the majority burnout reading is used. Dean: The knight is a Templar effigy — faith and surrender — and the stained-glass window is the outside world seen from sanctuary. Reed: Distinctive: Four of Swords as hospital, rehab, or quarantine, and its reversal as funeral planning."
   },
   {
     "id": "five-of-swords",
@@ -1007,16 +1163,17 @@
     "suit": "swords",
     "number": 5,
     "upright": "A conflict where even winning costs you — trust, respect, and goodwill get damaged along the way, and nobody walks away clean. Ask whether your point is worth what the fight is doing to the relationship. Sometimes the wiser move is to compromise, or to choose not to fight this battle at all.",
-    "reversed": "The fighting starts to feel pointless, and you can see there are only losers here. That recognition opens the door to making amends, forgiving, and rebuilding the relationship. Negotiation and compromise offer a way through that victory never did.",
+    "reversed": "The fighting starts to feel pointless, and you can see there are only losers here. That recognition opens the door to making amends, forgiving, and rebuilding the relationship. Negotiation and compromise offer a way through that victory never did. Dean reads it as the situation ending more dramatically — and, thankfully, quickly.",
     "sources": [
       "Esselmont",
       "Papez",
       "Clark",
       "Place",
       "Hamaker",
-      "Gray"
+      "Gray",
+      "Dean"
     ],
-    "notes": "Gray's reversed reading (empty victory, beware pride) conflicts with Esselmont and Clark's reconciliation theme — majority reconciliation reading chosen."
+    "notes": "Gray's reversed reading (empty victory, beware pride) conflicts with Esselmont and Clark's reconciliation theme — majority reconciliation reading chosen. Dean: The green and red disguise is subterfuge — the victor's win is read as a performance, not an honest victory. Papez: Mix-up: Five of Swords vs Five of Wands — tyranny is domination, not competition; look at who holds the swords."
   },
   {
     "id": "six-of-swords",
@@ -1024,16 +1181,18 @@
     "arcana": "minor",
     "suit": "swords",
     "number": 6,
-    "upright": "A transition — leaving troubled waters behind and heading for a calmer shore. It might be a move, a job change, or the end of a relationship, and sadness about what's lost travels with you. Still, the direction is toward clearer thinking and smoother water ahead.",
-    "reversed": "The move is private and inner: quietly releasing a belief, pattern, or relationship that no longer serves you, worked on mostly alone. Or you know a change is needed and you're resisting it, hoping the problem will sort itself out. Either way, check your baggage before you set sail — carrying too much of the old story can sink the crossing.",
+    "upright": "A transition — leaving troubled waters behind and heading for a calmer shore. It might be a move, a job change, or the end of a relationship, and sadness about what's lost travels with you. Still, the direction is toward clearer thinking and smoother water ahead. And it can be a healing journey — 'we're in this boat together' — with the support you need by your side.",
+    "reversed": "The move is private and inner: quietly releasing a belief, pattern, or relationship that no longer serves you, worked on mostly alone. Or you know a change is needed and you're resisting it, hoping the problem will sort itself out. Either way, check your baggage before you set sail — carrying too much of the old story can sink the crossing. Or stuck like a car in snow, spinning its tires — no traction, no help, or help rejected.",
     "sources": [
       "Esselmont",
       "Papez",
       "Clark",
       "Place",
-      "Gray"
+      "Gray",
+      "Dean",
+      "Reed"
     ],
-    "notes": "Hamaker has no Six of Swords entry, so it is omitted from sources. Papez's baggage-check warning is folded into the reversed reading."
+    "notes": "Hamaker has no Six of Swords entry, so it is omitted from sources. Papez's baggage-check warning is folded into the reversed reading. Dean: The six swords are carried, not used — self-protection on a journey, not a battle. Reed: Distinctive: Six of Swords as a healing journey, with its reversal as a return to hospital or rehab. Papez: Mix-up: Six of Swords vs Eight of Cups — escape is fleeing with help toward calm; departure is choosing to walk away uphill, alone."
   },
   {
     "id": "seven-of-swords",
@@ -1041,17 +1200,20 @@
     "arcana": "minor",
     "suit": "swords",
     "number": 7,
-    "upright": "Something sneaky is afoot — deception, a hidden agenda, or someone (maybe you) bending the rules to get away with something. Trust your instincts if a situation feels off, and look honestly at your own motives too. Not every rule-breaker is a thief, though: sometimes this is rebellion against a system that deserves challenging, so check the intention before you judge.",
-    "reversed": "The deception turns inward — self-deceit, or the nagging feeling that you're a fraud and don't deserve your place. It can also mean a secret you're still keeping, or a game that's ending because the truth is coming out. Honesty with yourself is the way through.",
+    "upright": "Something sneaky is afoot — deception, a hidden agenda, or someone (maybe you) bending the rules to get away with something. Trust your instincts if a situation feels off, and look honestly at your own motives too. Not every rule-breaker is a thief, though: sometimes this is rebellion against a system that deserves challenging, so check the intention before you judge. Though sometimes the oblique approach is the likelier route to success — discretion and diplomacy rather than theft.",
+    "reversed": "The deception turns inward — self-deceit, or the nagging feeling that you're a fraud and don't deserve your place. It can also mean a secret you're still keeping, or a game that's ending because the truth is coming out. Honesty with yourself is the way through. Or the opposite — what feels like a big problem is an irritating delay, not a disaster.",
     "sources": [
       "Esselmont",
       "Papez",
       "Clark",
       "Place",
       "Hamaker",
-      "Gray"
+      "Gray",
+      "Adams",
+      "Weber",
+      "Dean"
     ],
-    "notes": "Papez reframes the card as rebellion (activists, whistleblowers) against the traditional deception reading; Clark/Gray's reversed 'unexpected good / game ends' conflicts with Esselmont's imposter-syndrome reading — both threads are kept."
+    "notes": "Papez reframes the card as rebellion (activists, whistleblowers) against the traditional deception reading; Clark/Gray's reversed 'unexpected good / game ends' conflicts with Esselmont's imposter-syndrome reading — both threads are kept. Adams: Reads the card as strategic cunning that can be legitimate (discretion and diplomacy) rather than only theft or deceit; reversed adds deception rather than reversing the meaning. Weber: Distinctive angle: the same card can mean burden or triumph depending on which detail your eye catches that day. Dean: The theft happens in broad daylight in a sunlit camp — daylight robbery, with stealth performed on tiptoe as parody."
   },
   {
     "id": "eight-of-swords",
@@ -1059,17 +1221,20 @@
     "arcana": "minor",
     "suit": "swords",
     "number": 8,
-    "upright": "You feel trapped, boxed in by fear, indecision, or worst-case thinking — but the bindings are looser than they look. The cage is mostly built from your own thoughts, and the way out is clearer than it feels from inside. Look for the gap between the swords: help from others and a fresh angle are both within reach.",
-    "reversed": "The limiting stories start to loosen — the beliefs that told you you're too old, not deserving, or unable to change begin to lose their grip. Catch the thought pattern, question it, and try an unexpected way out. Freedom here starts in the mind, and it is genuinely possible.",
+    "upright": "You feel trapped, boxed in by fear, indecision, or worst-case thinking — but the bindings are looser than they look. The cage is mostly built from your own thoughts, and the way out is clearer than it feels from inside. Look for the gap between the swords: help from others and a fresh angle are both within reach. Unlike the Two of Swords' denial, here you are conscious of the choices available — and still stuck.",
+    "reversed": "The limiting stories start to loosen — the beliefs that told you you're too old, not deserving, or unable to change begin to lose their grip. Catch the thought pattern, question it, and try an unexpected way out. Freedom here starts in the mind, and it is genuinely possible. Though Adams warns the reverse can also mean what is already wrong getting worse — get your affairs in order.",
     "sources": [
       "Esselmont",
       "Papez",
       "Clark",
       "Place",
       "Hamaker",
-      "Gray"
+      "Gray",
+      "Adams",
+      "Weber",
+      "Dean"
     ],
-    "notes": "Sources agree unusually well here: Esselmont, Papez, Clark, and Gray all point to a self-imposed trap with a real escape."
+    "notes": "Sources agree unusually well here: Esselmont, Papez, Clark, and Gray all point to a self-imposed trap with a real escape. Adams: Distinctive contrast with the Two of Swords (denial vs. conscious paralysis), and the hopeful note that a future-position Eight of Swords can still be avoided. Weber: Distinctive angle: the 8 of Swords as a self-made cage with loose bindings — the escape is already available. Dean: Distinctive angle: Dean names the woman in orange as the Other, the witch — the card's restriction is also about who is allowed to be free. Papez: Mix-up: Eight of Swords vs Devil — overwhelm is self-imposed by thought; bondage is attachment to something outside you."
   },
   {
     "id": "nine-of-swords",
@@ -1077,17 +1242,20 @@
     "arcana": "minor",
     "suit": "swords",
     "number": 9,
-    "upright": "Anxiety and worry piling up, especially in the small hours — fears stack on each other until they feel like facts. The thoughts are loud, but they aren't necessarily true, and acting from them can turn a fear into a self-fulfilling prophecy. Name what's actually frightening you, and check which fears hold up in daylight.",
-    "reversed": "The spiral deepens and things feel much worse than they really are, with fear draining your energy and stealing your rest. Get a reality check from someone you trust, confide in them, and start letting go of the beliefs that keep the cycle turning. Tomorrow really is another day.",
+    "upright": "Anxiety and worry piling up, especially in the small hours — fears stack on each other until they feel like facts. The thoughts are loud, but they aren't necessarily true, and acting from them can turn a fear into a self-fulfilling prophecy. Name what's actually frightening you, and check which fears hold up in daylight. Weber calls it the 'crying in the bathtub' card — it may mirror your catastrophizing more than any fact.",
+    "reversed": "The spiral deepens and things feel much worse than they really are, with fear draining your energy and stealing your rest. Get a reality check from someone you trust, confide in them, and start letting go of the beliefs that keep the cycle turning. Tomorrow really is another day. Or the opposite reading: the nightmare ends at last, the pain is over, and with support you can move on.",
     "sources": [
       "Esselmont",
       "Papez",
       "Clark",
       "Place",
       "Hamaker",
-      "Gray"
+      "Gray",
+      "Weber",
+      "Dean",
+      "Reed"
     ],
-    "notes": "Gray's reversed reading (patience, time brings healing) conflicts with Esselmont and Clark, who read reversal as heavier turmoil — majority reading chosen, with Gray's healing thread kept in the closing line."
+    "notes": "Gray's reversed reading (patience, time brings healing) conflicts with Esselmont and Clark, who read reversal as heavier turmoil — majority reading chosen, with Gray's healing thread kept in the closing line. Weber: Distinctive angle: the 9 of Swords as a mirror of a querent's own catastrophizing — it may reflect fear more than fact. Dean: The bedspread is daytime perspective — the card contrasts the night's anguish with how it will look in daylight. Reed: Distinctive: Nine of Swords reversed as leaving hospital/rehab or receiving effective therapy."
   },
   {
     "id": "ten-of-swords",
@@ -1095,17 +1263,20 @@
     "arcana": "minor",
     "suit": "swords",
     "number": 10,
-    "upright": "A painful, final ending — a relationship cut off, a job lost, a plan in ruins. It hurts, and there's no softening that, but this is rock bottom, which means the pain has nowhere further to fall. The sun is already rising in the image: this is the end of the pain, not the end of you, and a new beginning is on the horizon.",
-    "reversed": "You're resisting an ending that has already happened, and holding on only drags the pain out longer. Letting go — ripping off the bandage, painful as it is — is what lets recovery begin. What looks like ruin also clears the ground for something new.",
+    "upright": "A painful, final ending — a relationship cut off, a job lost, a plan in ruins. It hurts, and there's no softening that, but this is rock bottom, which means the pain has nowhere further to fall. The sun is already rising in the image: this is the end of the pain, not the end of you, and a new beginning is on the horizon. And the swords can read as acupuncture needles — painful, but placed to heal; defeat teaches a better way to win.",
+    "reversed": "You're resisting an ending that has already happened, and holding on only drags the pain out longer. Letting go — ripping off the bandage, painful as it is — is what lets recovery begin. What looks like ruin also clears the ground for something new. Or pick yourself up and start fresh — the swords have fallen out, and nothing holds you back from a new life.",
     "sources": [
       "Esselmont",
       "Papez",
       "Clark",
       "Place",
       "Hamaker",
-      "Gray"
+      "Gray",
+      "Weber",
+      "Dean",
+      "Reed"
     ],
-    "notes": "Gray's reversed reading (overthrow of evil, courage to rise again) conflicts with Esselmont and Clark (resisting the ending / bitter ending) — synthesis keeps the resistance theme and folds Gray's rising-again into the close."
+    "notes": "Gray's reversed reading (overthrow of evil, courage to rise again) conflicts with Esselmont and Clark (resisting the ending / bitter ending) — synthesis keeps the resistance theme and folds Gray's rising-again into the close. Weber: Distinctive reframe: the 10 of Swords as acupuncture and a sunrise — strategy, strength, and appreciation hidden in defeat. Dean: The light over the mountains may be sunset or sunrise — night and day together mean coming light, not just ending. Reed: Distinctive: Ten of Swords as back trouble or surgery, with its reversal as rebirth after the ending."
   },
   {
     "id": "page-of-swords",
@@ -1114,7 +1285,7 @@
     "suit": "swords",
     "number": null,
     "upright": "Curious, questioning, full of fresh ideas — a perpetual student who wants to know how things really work and won't settle for 'because I said so.' You're in the exploring phase: gathering information, asking sharp questions, and spotting what others miss. The energy is real, even if mastery is still ahead of you.",
-    "reversed": "You're holding back from speaking your truth out loud, keeping it private — or you're all talk and no follow-through, promising more than you can deliver. Ethony's shadow is the immature detective: disappearing into your own head, unable to trust or be trusted. Speak up, but only promise what you can actually do.",
+    "reversed": "You're holding back from speaking your truth out loud, keeping it private — or you're all talk and no follow-through, promising more than you can deliver. Ethony's shadow is the immature detective: disappearing into your own head, unable to trust or be trusted. Speak up, but only promise what you can actually do. Though reversed can also mean privacy — keeping motives quiet — rather than deception.",
     "sources": [
       "Esselmont",
       "Papez",
@@ -1122,9 +1293,11 @@
       "Place",
       "Hamaker",
       "Gray",
-      "Ethony"
+      "Ethony",
+      "Weber",
+      "Dean"
     ],
-    "notes": "Ethony's archetype: The Detective — curious, perceptive investigator. Hamaker warns the Page's rashness can cut down new options before they grow."
+    "notes": "Ethony's archetype: The Detective — curious, perceptive investigator. Hamaker warns the Page's rashness can cut down new options before they grow. Weber: Distinctive angle: the reversed Page of Swords can mean privacy or keeping motives quiet, not only deception. Dean: Ten birds in the sky are messages and worries — the Page's mental weather made visible. Papez: Court sliding scale: strengths are curiosity and clear thinking; struggles are nosiness and tactlessness."
   },
   {
     "id": "knight-of-swords",
@@ -1133,7 +1306,7 @@
     "suit": "swords",
     "number": null,
     "upright": "Driven, fast, and fiercely focused — once your mind is set, nothing slows you down. You charge ahead with intellect and determination, solving problems and defending what you believe in. It's powerful energy; just make sure the cause is worth the charge.",
-    "reversed": "All that energy with nowhere good to go — restless, frustrated, making rash and impulsive decisions, changing your mind and confusing everyone around you. In shadow this becomes the aggressive warrior: acting without thinking, punishing without cause. Slow down enough to aim before you charge.",
+    "reversed": "All that energy with nowhere good to go — restless, frustrated, making rash and impulsive decisions, changing your mind and confusing everyone around you. In shadow this becomes the aggressive warrior: acting without thinking, punishing without cause. Slow down enough to aim before you charge. But a reversed Knight is never a dead end — the charge can be redirected rather than abandoned.",
     "sources": [
       "Esselmont",
       "Papez",
@@ -1141,9 +1314,11 @@
       "Place",
       "Hamaker",
       "Gray",
-      "Ethony"
+      "Ethony",
+      "Weber",
+      "Dean"
     ],
-    "notes": "Ethony's archetype: The Warrior — swift, fearless defender. Papez's sliding scale runs ambitious to ruthless; Hamaker notes the quarrel can sometimes bring relief."
+    "notes": "Ethony's archetype: The Warrior — swift, fearless defender. Papez's sliding scale runs ambitious to ruthless; Hamaker notes the quarrel can sometimes bring relief. Weber: Distinctive angle: reversed Knights are never a dead end — the charge can be redirected rather than abandoned. Dean: Birds and butterflies in his wake are thought itself — the Knight's charge is mental before it is physical. Papez: Court sliding scale: strengths are drive and mental clarity; struggles are ruthlessness and impatience with anything slow."
   },
   {
     "id": "queen-of-swords",
@@ -1151,8 +1326,8 @@
     "arcana": "minor",
     "suit": "swords",
     "number": null,
-    "upright": "Clear-eyed, independent, and fair — you lead with your head, see straight through nonsense, and judge situations without sentimentality getting in the way. Your sharpness comes from experience, and your advice is worth listening to. You connect through honest understanding, not flattery.",
-    "reversed": "Your emotions are clouding your usually clear vision, or relationships are pulling your decisions off course. The sharp mind can also turn inward as self-criticism and unreasonable demands, or outward as cold, cutting judgment. Step back, look at things objectively, and be firm without being cruel.",
+    "upright": "Clear-eyed, independent, and fair — you lead with your head, see straight through nonsense, and judge situations without sentimentality getting in the way. Your sharpness comes from experience, and your advice is worth listening to. You connect through honest understanding, not flattery. And she can be a surgeon or mental health practitioner — a professional who speaks up for you.",
+    "reversed": "Your emotions are clouding your usually clear vision, or relationships are pulling your decisions off course. The sharp mind can also turn inward as self-criticism and unreasonable demands, or outward as cold, cutting judgment. Step back, look at things objectively, and be firm without being cruel. And in older books this is the widow's card — loss and grief suffered in silence.",
     "sources": [
       "Esselmont",
       "Papez",
@@ -1160,9 +1335,12 @@
       "Place",
       "Hamaker",
       "Gray",
-      "Ethony"
+      "Ethony",
+      "Weber",
+      "Dean",
+      "Reed"
     ],
-    "notes": "Ethony's archetype: The Judge — fair, razor-sharp truth-teller. Papez's sliding scale runs perceptive to judgmental; Place's stern, cloud-caped queen echoes the same cool authority."
+    "notes": "Ethony's archetype: The Judge — fair, razor-sharp truth-teller. Papez's sliding scale runs perceptive to judgmental; Place's stern, cloud-caped queen echoes the same cool authority. Weber: Distinctive angle: Weber's code reads the Queen of Swords as respect (especially for women), leadership, and challenging the status quo. Dean: The two sickles on her throne are divine judgement, and the red bracelet is Venus — mercy and redemption worn by the sternest queen. Reed: Distinctive: Queen of Swords reversed as the widow's card — loss and grief suffered in silence. Papez: Court sliding scale: strengths are perception and honesty; struggles are harsh judgment and coldness."
   },
   {
     "id": "king-of-swords",
@@ -1170,7 +1348,7 @@
     "arcana": "minor",
     "suit": "swords",
     "number": null,
-    "upright": "Intellectual authority and clear judgment — you think things through like a chess player, weigh all the factors, and then decide firmly and fairly. You express yourself with clarity, stand by your convictions, and keep emotions from muddying the call. It's the mind at its most mature and useful.",
+    "upright": "Intellectual authority and clear judgment — you think things through like a chess player, weigh all the factors, and then decide firmly and fairly. You express yourself with clarity, stand by your convictions, and keep emotions from muddying the call. It's the mind at its most mature and useful. Weber's code reads him as independence and self-sufficiency — a great ally but a terrible enemy.",
     "reversed": "Power misused, or logic taken too far — coldness, arrogance, and manipulation when the sharp mind runs ahead of care for people. Esselmont also notes a quieter side: authority that comes from within, not from volume. The invitation is to lead with principle, not ego, and to leave room for feelings and intuition.",
     "sources": [
       "Esselmont",
@@ -1179,33 +1357,37 @@
       "Place",
       "Hamaker",
       "Gray",
-      "Ethony"
+      "Ethony",
+      "Weber",
+      "Dean"
     ],
-    "notes": "Ethony's archetype: The Scientist — brilliant, visionary logician. Esselmont's 'quiet power' reversed reading is unusual and is kept alongside the traditional misuse-of-power thread."
+    "notes": "Ethony's archetype: The Scientist — brilliant, visionary logician. Esselmont's 'quiet power' reversed reading is unusual and is kept alongside the traditional misuse-of-power thread. Weber: Distinctive angle: Weber's own code reads the King of Swords as independence and self-sufficiency — a great ally but a terrible enemy. Dean: Two moons on his throne are cycles and phases — even the King of logic answers to timing. Papez: Court sliding scale: strengths are strategy and rational judgment; struggles are emotional detachment and rigidity."
   },
   {
     "arcana": "minor",
     "id": "ace-of-pentacles",
     "name": "Ace of Pentacles",
-    "notes": "Hamaker adds giving a gift concrete form, often the start of a relationship; Clark and Gray warn that greed and mismanagement spoil the opening.",
+    "notes": "Hamaker adds giving a gift concrete form, often the start of a relationship; Clark and Gray warn that greed and mismanagement spoil the opening. Weber: Distinctive angle: Weber's student read the reversed Ace of Pentacles as an expensive secret tied to home. Dean: The rose arch is a transition — the Ace's garden is a threshold, not just a prize.",
     "number": 1,
-    "reversed": "The opportunity may be slipping, stalling, or not quite what it seemed — hesitation, distraction, or a door closing before anything lands. It can also point to greed or sloppy handling spoiling a good start. Wait until things are solid before counting on them, and check honestly whether fear or carelessness is getting in the way.",
+    "reversed": "The opportunity may be slipping, stalling, or not quite what it seemed — hesitation, distraction, or a door closing before anything lands. It can also point to greed or sloppy handling spoiling a good start. Wait until things are solid before counting on them, and check honestly whether fear or carelessness is getting in the way. Or a loss kept quiet, particularly around house and home — an expensive secret.",
     "sources": [
       "Esselmont",
       "Papez",
       "Clark",
       "Place",
       "Hamaker",
-      "Gray"
+      "Gray",
+      "Weber",
+      "Dean"
     ],
     "suit": "pentacles",
-    "upright": "A real, tangible opening is here — a job, a bit of money, a chance to build something solid — and the groundwork you have already laid helped bring it about. It is a green light, not a gift: the seed is in your hand, and what grows from it depends on the steady effort you put in next. Take the chance seriously, and give it your full attention rather than scattering it."
+    "upright": "A real, tangible opening is here — a job, a bit of money, a chance to build something solid — and the groundwork you have already laid helped bring it about. It is a green light, not a gift: the seed is in your hand, and what grows from it depends on the steady effort you put in next. Take the chance seriously, and give it your full attention rather than scattering it. Weber's keyword for the Aces is 'absolute': absolute opportunity — the suit of the body and material life at full strength."
   },
   {
     "arcana": "minor",
     "id": "two-of-pentacles",
     "name": "Two of Pentacles",
-    "notes": "All sources agree: upright is balance held at capacity, reversed is the balance breaking. Papez frames it as priorities — the only anchor is deciding what comes first.",
+    "notes": "All sources agree: upright is balance held at capacity, reversed is the balance breaking. Papez frames it as priorities — the only anchor is deciding what comes first. Dean: The green rope forms the infinity symbol — the juggle itself is flow and energy, not just strain. Papez: Mix-up: Two of Pentacles vs Temperance — juggling separate priorities versus mixing two extremes into moderation.",
     "number": 2,
     "reversed": "You are overcommitted and starting to drop things, with an overloaded schedule or bills that will not stay on top of themselves. It may also mean pouring everything into one area while the rest quietly falls apart. Get organised, reprioritise, and turn down what no longer fits — the juggling only works when something is allowed to wait.",
     "sources": [
@@ -1214,7 +1396,8 @@
       "Clark",
       "Place",
       "Hamaker",
-      "Gray"
+      "Gray",
+      "Dean"
     ],
     "suit": "pentacles",
     "upright": "You are juggling several priorities at once — work, home, care for yourself — and managing the balance well, dancing on one foot while the sea stays rough behind you. The line between coping and losing control is thin, though, and you are close to capacity. Decide what comes first in any given moment, and remember that rest is productive too."
@@ -1223,7 +1406,7 @@
     "arcana": "minor",
     "id": "three-of-pentacles",
     "name": "Three of Pentacles",
-    "notes": "Clark's number theme: progress — hard work earns its just reward and growth endures. Place reads it as creative work for a salary or commission inside an established organisation.",
+    "notes": "Clark's number theme: progress — hard work earns its just reward and growth endures. Place reads it as creative work for a salary or commission inside an established organisation. Dean: Distinctive angle: the uncarved stone is future potential, and the crypt itself is foundations — the building is the message.",
     "number": 3,
     "reversed": "Disharmony is stalling the work — people not listening to each other, ego getting in the way, or someone biting off more than they can chew. It can also mean the skill itself is not there yet, or effort being abandoned before it pays off. Come back to the original shared goal, renegotiate how you work together, and plan more carefully before pushing on.",
     "sources": [
@@ -1232,7 +1415,8 @@
       "Clark",
       "Place",
       "Hamaker",
-      "Gray"
+      "Gray",
+      "Dean"
     ],
     "suit": "pentacles",
     "upright": "Working together creates something no one person could build alone: the stonemason, the planners, the patron each bring a different skill, and mutual respect turns those differences into something lasting. This is skilled work taking real shape — learning on the job, earning your reward, and growing through the collaboration itself. Keep going with confidence; the plan is coming together."
@@ -1241,7 +1425,7 @@
     "arcana": "minor",
     "id": "four-of-pentacles",
     "name": "Four of Pentacles",
-    "notes": "Sources conflict on the reversal: Esselmont reads it both ways (release or overspending) and Gray leans toward the spendthrift and setbacks; both readings are carried here. Hamaker: trustworthy and stable, but nothing vital or inspired while the grip holds.",
+    "notes": "Sources conflict on the reversal: Esselmont reads it both ways (release or overspending) and Gray leans toward the spendthrift and setbacks; both readings are carried here. Hamaker: trustworthy and stable, but nothing vital or inspired while the grip holds. Dean: The hand position — a coin held at the heart — is read as money at heart, the card's core image.",
     "number": 4,
     "reversed": "This one reads two ways, and both are worth sitting with. It may mean loosening your grip — realising money and possessions will not make you happy, and letting go of what you have been guarding. Or the opposite: money slipping through your fingers as spending outruns saving. Either way, the question is the same: what is the holding-on actually protecting?",
     "sources": [
@@ -1250,7 +1434,8 @@
       "Clark",
       "Place",
       "Hamaker",
-      "Gray"
+      "Gray",
+      "Dean"
     ],
     "suit": "pentacles",
     "upright": "Look honestly at your relationship with money. At its best this is wise saving — protecting what you have built with caution and discipline. More often it is a scarcity mindset: clutching every coin because you fear there will never be enough, and building walls that keep other people and new growth out. Seeds kept safe and dry never grow more fruit."
@@ -1259,7 +1444,7 @@
     "arcana": "minor",
     "id": "five-of-pentacles",
     "name": "Five of Pentacles",
-    "notes": "All sources agree on the lit-window image — aid offered but unseen. Esselmont alone adds the reversed nuance of an inner, spiritual poverty persisting past material recovery.",
+    "notes": "All sources agree on the lit-window image — aid offered but unseen. Esselmont alone adds the reversed nuance of an inner, spiritual poverty persisting past material recovery. Dean: Distinctive angle: Dean reads this as poverty consciousness — fear of poverty — as often as actual lack, and the window as sanctuary unnoticed. Reed: Distinctive: Five of Pentacles as hope just around the corner despite hardship, and its reversal as a return to hospital or rehab.",
     "number": 5,
     "reversed": "The difficult stretch is easing — new income, a new job, or help arriving — and hope and self-confidence are coming back with it. Support is found, and persistence carries you through. Even so, check for a quieter poverty underneath: something can still feel missing, even once the material pressure lifts.",
     "sources": [
@@ -1268,7 +1453,9 @@
       "Clark",
       "Place",
       "Hamaker",
-      "Gray"
+      "Gray",
+      "Dean",
+      "Reed"
     ],
     "suit": "pentacles",
     "upright": "Hard times have stripped something away — a job, a home, a sense of security — and you feel left out in the cold, walking past a lit window without noticing it. The help is closer than it feels, but pride or a lack mindset can make a temporary hardship feel permanent. This is a Minor Arcana card, not a life sentence: this too shall pass, and admitting you need a hand is part of getting through it."
@@ -1277,16 +1464,18 @@
     "arcana": "minor",
     "id": "six-of-pentacles",
     "name": "Six of Pentacles",
-    "notes": "Sources agree on reciprocity upright; they split on the reversal — Esselmont stresses one-sided giving and self-care, Gray stresses purse-pride, bad debts, and gifts given as bribes. Hamaker: the old cycle of becoming a success is over, and wealth must now be used ethically.",
+    "notes": "Sources agree on reciprocity upright; they split on the reversal — Esselmont stresses one-sided giving and self-care, Gray stresses purse-pride, bad debts, and gifts given as bribes. Hamaker: the old cycle of becoming a success is over, and wealth must now be used ethically. Dean: The scales in the giver's hand are mercy and precision — giving as a measured, just act, not a casual one. Reed: Distinctive: Six of Pentacles reversed as a contested will or unfair inheritance, and as the caregiver becoming the one who needs care.",
     "number": 6,
-    "reversed": "Check the balance of the flow. You may be giving and giving while others take without returning, leaving you feeling used — or giving to everyone except yourself after a long stretch of generosity. Make sure you are included in your own care. At its worst this is giving with strings attached, or prosperity propped up by bad debts.",
+    "reversed": "Check the balance of the flow. You may be giving and giving while others take without returning, leaving you feeling used — or giving to everyone except yourself after a long stretch of generosity. Make sure you are included in your own care — and watch the money itself, too: an unfair inheritance, a contested will, or a caregiver who now needs care themselves. At its worst this is giving with strings attached, or prosperity propped up by bad debts.",
     "sources": [
       "Esselmont",
       "Papez",
       "Clark",
       "Place",
       "Hamaker",
-      "Gray"
+      "Gray",
+      "Dean",
+      "Reed"
     ],
     "suit": "pentacles",
     "upright": "Giving and receiving flow both ways here — the merchant weighing coins fairly, sharing with those who have less, knowing the cycle turns and everyone gives and takes in turn. You may be the one with more than enough right now, ready to pay it forward with money, time, energy, or wisdom. Or you may be the one who needs to let pride drop and accept the help being offered."
@@ -1295,7 +1484,7 @@
     "arcana": "minor",
     "id": "seven-of-pentacles",
     "name": "Seven of Pentacles",
-    "notes": "Conflict: Gray reads the upright far more pessimistically (unprofitable speculation, loss, disappointment, success not attained) while Esselmont, Papez, and Hamaker all read it as patient evaluation — the majority reading is used here.",
+    "notes": "Conflict: Gray reads the upright far more pessimistically (unprofitable speculation, loss, disappointment, success not attained) while Esselmont, Papez, and Hamaker all read it as patient evaluation — the majority reading is used here. Dean: Seven of fourteen in the suit: Dean reads it as the halfway point, when doubt sets in — the card's position in the suit is part of its meaning.",
     "number": 7,
     "reversed": "Your efforts feel scattered, and you are questioning whether you invested in the right things — spending on what bears no fruit, or pouring energy in without the rewards you expected. Impatience creeps in, and so does the worry over things you can no longer change. Pause, prioritise, and do an honest cost-benefit check before planting anything more.",
     "sources": [
@@ -1304,7 +1493,8 @@
       "Clark",
       "Place",
       "Hamaker",
-      "Gray"
+      "Gray",
+      "Dean"
     ],
     "suit": "pentacles",
     "upright": "This is the gardener's pause: step back from the daily work, look at what has actually grown, and ask whether your time and energy are going to the right places. The seeds are planted and the cake is in the oven — too late to change course, too early to know the harvest — so trust what you have done and let time do its part. You are playing a long game here, not chasing a quick win."
@@ -1313,7 +1503,7 @@
     "arcana": "minor",
     "id": "eight-of-pentacles",
     "name": "Eight of Pentacles",
-    "notes": "Esselmont and Papez both name the perfectionism and impostor-syndrome shadow; Gray goes further, warning of skill turned to cunning. Place and Hamaker stress the apprentice's steady, motivated work.",
+    "notes": "Esselmont and Papez both name the perfectionism and impostor-syndrome shadow; Gray goes further, warning of skill turned to cunning. Place and Hamaker stress the apprentice's steady, motivated work. Dean: The finished coins are displayed on a tree — growth and measurable progress shown together.",
     "number": 8,
     "reversed": "Perfectionism may be getting in the way — nothing ever feels good enough, and the bigger picture disappears behind the details. Or the work has gone stale: boredom, monotony, or stagnation despite all the effort, and a feeling of being your own worst critic. Mastery can lock you into a path you no longer want, so check whether the craft still serves you.",
     "sources": [
@@ -1322,7 +1512,8 @@
       "Clark",
       "Place",
       "Hamaker",
-      "Gray"
+      "Gray",
+      "Dean"
     ],
     "suit": "pentacles",
     "upright": "This is apprenticeship and mastery: the craftsman at the bench, repeating the work until skill becomes second nature. Diligent, focused effort is producing real excellence, and further study or practice will only deepen it. The work itself is the teacher — keep showing up, keep refining, and the results will follow."
@@ -1331,7 +1522,7 @@
     "arcana": "minor",
     "id": "nine-of-pentacles",
     "name": "Nine of Pentacles",
-    "notes": "Sources split on the reversal: Esselmont frames it as self-worth and overwork, Gray as a cancelled project or loss of home or friendship — both are carried here. Hamaker: rest and movement together, wholeness without stagnation.",
+    "notes": "Sources split on the reversal: Esselmont frames it as self-worth and overwork, Gray as a cancelled project or loss of home or friendship — both are carried here. Hamaker: rest and movement together, wholeness without stagnation. Weber: Distinctive angle: the 9 of Pentacles' serene surface with a forlorn undertone — abundance with something unsaid. Dean: Distinctive angle: the snail at her feet — slowness and protection — is Dean's emblem for enjoying wealth without rushing.",
     "number": 9,
     "reversed": "This turns into a self-worth question. You may doubt you are enough, under-charge for what you do, or accept less than you deserve. Or the balance tips the other way — hustling so hard for more that you never stop to enjoy what you already have. Slow down, and check whether a project or friendship is quietly being lost while you chase the next thing.",
     "sources": [
@@ -1340,36 +1531,20 @@
       "Clark",
       "Place",
       "Hamaker",
-      "Gray"
+      "Gray",
+      "Weber",
+      "Dean"
     ],
     "suit": "pentacles",
-    "upright": "You have worked hard and the harvest is yours to enjoy — comfort, leisure, and the quiet pleasure of a garden you tended yourself. This is abundance earned through independent effort, discipline, and self-confidence, and it comes with room to breathe: enough to feel safe, and enough to stretch your wings. Treat yourself; you have earned the rest."
+    "upright": "You have worked hard and the harvest is yours to enjoy — comfort, leisure, and the quiet pleasure of a garden you tended yourself. This is abundance earned through independent effort, discipline, and self-confidence, and it comes with room to breathe: enough to feel safe, and enough to stretch your wings. Treat yourself; you have earned the rest. Yet something forlorn may sit underneath the serenity — comfort is real, but so is the quiet conflict, a confidence not yet spoken."
   },
   {
     "arcana": "minor",
     "id": "ten-of-pentacles",
     "name": "Ten of Pentacles",
-    "notes": "Sources split on the reversal: Esselmont asks whether the conventional wealth-and-family dream is truly yours, Gray warns of family misfortune and loss of inheritance — both are carried here. Clark's number theme: completion.",
+    "notes": "Sources split on the reversal: Esselmont asks whether the conventional wealth-and-family dream is truly yours, Gray warns of family misfortune and loss of inheritance — both are carried here. Clark's number theme: completion. Weber: Distinctive warning: the 10 of Pentacles reversed as a caution against showing your full hand. Dean: The ten coins are read as the world itself — the whole suit's journey arriving at legacy.",
     "number": 10,
-    "reversed": "Ask whether this picture of stability, security, and commitment is truly what you want — or what is expected of you. Wealth can become a trap, always wanting more and never feeling satisfied, and the foundations may not be as solid as they look. Family strain, a lost inheritance, or a poor-risk venture can also unsettle the legacy, so move carefully with money that involves others.",
-    "sources": [
-      "Esselmont",
-      "Papez",
-      "Clark",
-      "Place",
-      "Hamaker",
-      "Gray"
-    ],
-    "suit": "pentacles",
-    "upright": "This is the full picture: wealth, a stable home, family across generations, and the long-term security that comes from plans carried through. It is the apex of the suit — not just money, but a legacy, the lasting mark you leave and the resources, knowledge, and care that outlive you. Matter and spirit walk hand in hand here: enjoy what is real and unadorned, and share the abundance with others."
-  },
-  {
-    "arcana": "minor",
-    "id": "page-of-pentacles",
-    "name": "Page of Pentacles",
-    "notes": "Ethony's archetype: The Naturalist — a quiet, gentle soul happiest among animals and nature. Papez: diligent to perfectionistic, the Magician of earth. Clark: introvert Pentacles youth — responsible, reliable, logical.",
-    "number": null,
-    "reversed": "The idea is stalled — kept secret, endlessly brainstormed, or put off for fear you lack the skills — or your efforts keep amounting to nothing and need a fresh plan. Perfectionism can freeze the momentum here, sweating the details while the bigger picture waits. In shadow this gentle learner withdraws, struggling with boundaries and with saying what they need.",
+    "reversed": "Ask whether this picture of stability, security, and commitment is truly what you want — or what is expected of you. Wealth can become a trap, always wanting more and never feeling satisfied, and the foundations may not be as solid as they look. Family strain, a lost inheritance, or a poor-risk venture can also unsettle the legacy, so move carefully with money that involves others. And keep your money close — do not reveal all of your strengths right away.",
     "sources": [
       "Esselmont",
       "Papez",
@@ -1377,7 +1552,29 @@
       "Place",
       "Hamaker",
       "Gray",
-      "Ethony"
+      "Weber",
+      "Dean"
+    ],
+    "suit": "pentacles",
+    "upright": "This is the full picture: wealth, a stable home, family across generations, and the long-term security that comes from plans carried through. It is the apex of the suit — not just money, but a legacy, the lasting mark you leave and the resources, knowledge, and care that outlive you. Matter and spirit walk hand in hand here: enjoy what is real and unadorned, and share the abundance with others. Though wealth brings its own questions — taxes, responsibilities, whether it will stay."
+  },
+  {
+    "arcana": "minor",
+    "id": "page-of-pentacles",
+    "name": "Page of Pentacles",
+    "notes": "Ethony's archetype: The Naturalist — a quiet, gentle soul happiest among animals and nature. Papez: diligent to perfectionistic, the Magician of earth. Clark: introvert Pentacles youth — responsible, reliable, logical. Weber: Distinctive angle: any reversed Page means there is more to the story — withheld truth or something hidden. Dean: The coin is held delicately, almost reverentially — talent and reward treated as precious, not spent. Papez: Court sliding scale: strengths are diligence and a love of learning; struggles are perfectionism and fear of not measuring up.",
+    "number": null,
+    "reversed": "The idea is stalled — kept secret, endlessly brainstormed, or put off for fear you lack the skills — or your efforts keep amounting to nothing and need a fresh plan. Perfectionism can freeze the momentum here, sweating the details while the bigger picture waits. In shadow this gentle learner withdraws, struggling with boundaries and with saying what they need. And any reversed Page means there is more to the story — withheld truth or something hidden.",
+    "sources": [
+      "Esselmont",
+      "Papez",
+      "Clark",
+      "Place",
+      "Hamaker",
+      "Gray",
+      "Ethony",
+      "Weber",
+      "Dean"
     ],
     "suit": "pentacles",
     "upright": "A new material opportunity is opening — a job, a course of study, a project to build — and you are approaching it like a careful student, eager to learn and ready to work. This is earth of earth, the most grounded of the court: practical, diligent, happiest learning through touch and patience, wanting real, measurable results from the effort. Dive in and receive what comes, without worrying yet about the end result."
@@ -1386,7 +1583,7 @@
     "arcana": "minor",
     "id": "knight-of-pentacles",
     "name": "Knight of Pentacles",
-    "notes": "Ethony's archetype: The Soldier — the loyal, duty-bound protector who keeps going long after everyone else has left. Papez: dependable to inflexible, the Chariot of earth; Hamaker: caution and perseverance, but conservative and passive, with little vision for the future.",
+    "notes": "Ethony's archetype: The Soldier — the loyal, duty-bound protector who keeps going long after everyone else has left. Papez: dependable to inflexible, the Chariot of earth; Hamaker: caution and perseverance, but conservative and passive, with little vision for the future. Weber: Distinctive angle: the Knight of Pentacles as a 'battle of enterprise, not conflict' — determination in work and money. Dean: The coin is read as a seed the Knight is about to plant — the slowest knight is the one thinking furthest ahead. Papez: Court sliding scale: strengths are reliability and persistence; struggles are stubbornness and resistance to change.",
     "number": null,
     "reversed": "The steady pace has hardened into stuckness — boredom, complacency, or a routine that no longer leads anywhere, and a self-development journey that needs real structure. In shadow this loyal worker turns rigid and perfectionist, following authority without question and losing themselves in duty. Check whether discipline is serving the goal, or has quietly become the goal.",
     "sources": [
@@ -1396,7 +1593,9 @@
       "Place",
       "Hamaker",
       "Gray",
-      "Ethony"
+      "Ethony",
+      "Weber",
+      "Dean"
     ],
     "suit": "pentacles",
     "upright": "Slow, steady, and reliable: you have a plan, you stick to your routine, and you finish the job one foot in front of the other. This is the only knight whose horse stands still — not fast or flashy, but loyal, patient, and committed to the long haul, protecting the people you love by simply keeping going. Trust the methodical pace; it gets there."
@@ -1405,7 +1604,7 @@
     "arcana": "minor",
     "id": "queen-of-pentacles",
     "name": "Queen of Pentacles",
-    "notes": "Ethony's archetype: The Healer — the warm, nurturing comforter. Papez: comforting to enabling, the Empress of earth. All sources agree on the nurturing provider; the reversal is where the shadow (control, enabling, self-neglect) lives.",
+    "notes": "Ethony's archetype: The Healer — the warm, nurturing comforter. Papez: comforting to enabling, the Empress of earth. All sources agree on the nurturing provider; the reversal is where the shadow (control, enabling, self-neglect) lives. Weber: Distinctive angle: the Queen's love shown through practical giving, and the risk of practicality crowding out feeling. Dean: The rabbit on her throne is nature's cycles, and the ground beneath her is uncultivated — she is still doing the groundwork. Papez: Court sliding scale: strengths are practical care and warmth; struggles are over-protecting and enabling dependency.",
     "number": null,
     "reversed": "Turn that caring energy toward yourself for once: build the financial independence that lets you sustain your own life, and nurture yourself with rest, good food, and retreat, knowing others can manage while you care for you. In shadow the caring curdles — smothering control, enabling what harms, or manipulating others while denying your own need to be cared for. Mistrust and neglected duties can follow when the giving runs on empty.",
     "sources": [
@@ -1415,18 +1614,20 @@
       "Place",
       "Hamaker",
       "Gray",
-      "Ethony"
+      "Ethony",
+      "Weber",
+      "Dean"
     ],
     "suit": "pentacles",
-    "upright": "Warm, practical, and generous — the caretaker of the material world, who looks after home and family while also earning and creating abundance. She holds her community together, stays steady in a crisis, and gives through tangible, useful support: good food, sound advice, a safe place to land. She is a caretaker of her wealth rather than its owner, enjoying the good things of the earth with restraint."
+    "upright": "Warm, practical, and generous — the caretaker of the material world, who looks after home and family while also earning and creating abundance. She holds her community together, stays steady in a crisis, and gives through tangible, useful support: good food, sound advice, a safe place to land. She is a caretaker of her wealth rather than its owner, enjoying the good things of the earth with restraint. Though she may place money or practicality over emotion."
   },
   {
     "arcana": "minor",
     "id": "king-of-pentacles",
     "name": "King of Pentacles",
-    "notes": "Ethony's archetype: The Manager — the dependable, wealth-building provider. Papez: wise to cynical, the Emperor of earth. Clark: introvert Pentacles adult — moderate, careful, content.",
+    "notes": "Ethony's archetype: The Manager — the dependable, wealth-building provider. Papez: wise to cynical, the Emperor of earth. Clark: introvert Pentacles adult — moderate, careful, content. Weber: Distinctive angle: reversed Kings/Queens as unfulfilled potential; reversals can also signal secrets. Dean: The boar on his throne is base instincts kept in check — the King's wealth includes his appetites. Reed: Distinctive: King of Pentacles reversed as money used as a weapon, and as the 'Bernie Madoff type' who profits while harming others. Papez: Court sliding scale: strengths are wisdom and sound management; struggles are cynicism and measuring everything by its price.",
     "number": null,
-    "reversed": "Look honestly at the relationship with money. It may be mismanagement — earning well but spending just as fast, gambling on high-risk ventures, or letting thrift slide into waste. Or it may be worship: money put before relationships, wellbeing, even integrity, with a cynical edge that trusts slowly and resists change. In shadow the provider turns greedy, critical, and impatient, feeling there is never enough.",
+    "reversed": "Look honestly at the relationship with money. It may be mismanagement — earning well but spending just as fast, gambling on high-risk ventures, or letting thrift slide into waste. Or it may be worship: money put before relationships, wellbeing, even integrity, with a cynical edge that trusts slowly and resists change. In shadow the provider turns greedy, critical, and impatient, feeling there is never enough — or money becomes a weapon, used to harm while profiting, the miser who hoards what others need.",
     "sources": [
       "Esselmont",
       "Papez",
@@ -1434,7 +1635,10 @@
       "Place",
       "Hamaker",
       "Gray",
-      "Ethony"
+      "Ethony",
+      "Weber",
+      "Dean",
+      "Reed"
     ],
     "suit": "pentacles",
     "upright": "A wise, steady provider who built wealth through experience and knows how to keep it growing: practical, reliable, slow to anger, and generous with those under his care. He spots risks before others do, plans for the fallback, and turns vision into something tangible and lasting. This is success that enjoys the earth's gifts without taking them at anyone else's expense."

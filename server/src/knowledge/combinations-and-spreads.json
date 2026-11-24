@@ -216,9 +216,507 @@
       "sources": [
         "Gray"
       ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "Read the spread as a whole first — overall colors, whether the images feel dramatic or peaceful, harmony versus contrast, and your own feeling gazing at it — before interpreting any single card.",
+      "sources": [
+        "Adams"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "Check for preponderances and voids: many Major Arcana or mostly Minor, court cards present, aces, many cards of one suit, a suit entirely absent, or several cards sharing the same number.",
+      "sources": [
+        "Adams"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "Many Major Arcana cards mean forces beyond your control are at work — fate, destiny, or past actions now manifesting — and you may have little choice in the outcome; a spread of mostly Minor Arcana means the future is in your own hands.",
+      "sources": [
+        "Adams"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "A suit dominating a reading names the life area in question: several Cups point to a relationship, Pentacles to finances; each suit is a realm of activity and growth.",
+      "sources": [
+        "Adams"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "Repeated numbers carry weight: lots of Fours and Eights signal stability, Fives signal change; in a time-oriented spread, low numbers early and higher numbers later show development.",
+      "sources": [
+        "Adams"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "Court cards often represent real people in the querent's life, but they can also be the querent's own traits or influences in the environment — and gender is flexible, so a King can stand for a strong businesswoman; Pages are messengers, students or apprentices, youths, or immature adults.",
+      "sources": [
+        "Adams"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "Reversed cards are read three ways by different readers: weakened, more negative or dark, or revealing hidden, esoteric undercurrents (Mary K. Greer: the shamanic perspective and dream-time versus surface reality). Choose your approach, or read upright only.",
+      "sources": [
+        "Adams"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "Contradictory cards in one spread can both be true: an upright Hermit beside the Devil means seek inner guidance to resolve the Devil's restrictions; the cards also answer the most urgent matter on your mind even if you asked about something else.",
+      "sources": [
+        "Adams"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "A pip card's meaning comes from number plus suit, not only its picture — when the two disagree, as with the Eight of Cups, trust whichever your intuition hooks into.",
+      "sources": [
+        "Adams"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "A card's meaning is multiplied by its position: combine card meaning with position meaning, and treat the relationships between cards as important as the individual cards.",
+      "sources": [
+        "Adams"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "Yes/No system: a Major Arcana card is Yes if you are willing to do the work it asks, No if not; Minor Arcana even numbers are Yes, odd are No; King is No, Queen Yes, Knight No, Page Yes; a reversed Yes card means delay, a reversed No card means obstacles will prevent it.",
+      "sources": [
+        "Adams"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "Aces are gifts from the universe (Barbara Moore's phrase): a seed planted, a new opportunity offered — but you must follow through, it will not happen automatically; an Ace can also mean withdrawing into isolation to nurture a new idea before going public.",
+      "sources": [
+        "Adams"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "Cards that pop out of the deck while shuffling are significant: set them aside as extra commentary on the reading, or consider them and shuffle them back in.",
+      "sources": [
+        "Adams",
+        "Dean"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "Watch for repeated numbers: if three Twos appear in a five-card reading, a decision needs making — the other cards show what the decision is about.",
+      "sources": [
+        "Weber"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "Read a card with its neighbors as one story: the same event can be Death, Tower, and Devil at once, and each card adds a true facet rather than contradicting the others.",
+      "sources": [
+        "Weber"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "What is missing speaks: no Cups in a love reading may mean a frivolous crush or an uninterested object of affection; no Pentacles may mean love without stability; no Wands, love without chemistry; no Swords, no communication or healthy conflict; no Majors, a situation smaller than it feels; no Court cards, a lack of control or leadership.",
+      "sources": [
+        "Weber"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "If a Court card's meaning is unclear — you or someone else? — pull a Major Arcana clarifier: a character card means an external person, a lesson card like Judgment or the Wheel means an internal influence; the Fool is the exception and almost always means an internal influence.",
+      "sources": [
+        "Weber"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "To identify what kind of reversal you have, flip through the deck to the first Major Arcana card and use it as a key: it can indicate whether the reversal means opposite, loss, hidden, stalled, diminished, or 'pay attention'.",
+      "sources": [
+        "Weber"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "Pair a Major Arcana card with each numbered Minor card in turn and read the pair as a message — the Major sets the theme, the Minor shows how it plays out in daily life.",
+      "sources": [
+        "Weber"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "Notice where the figures point and look: a reversed Knight of Wands aiming his wand at the Empress can be a direct instruction, such as to call your mother.",
+      "sources": [
+        "Weber"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "In reversed cards, watch for 'looking-back' figures — the horse glancing at its rider in the 6 of Wands, the bird looking back in the 9 of Pentacles — they invite you to see the situation from another person's viewpoint.",
+      "sources": [
+        "Weber"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "Compare what you deliberately choose with what the deck randomly deals: the gap between your chosen cards and Tarot's cards is where Tarot's own voice appears, separate from your projection.",
+      "sources": [
+        "Weber"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "Pull clarifying cards sparingly — no more than seven extra in a reading (three for the first three, one per card, plus a final messenger) — and if seven clarifiers still do not clarify, stop, note the reading, and reflect on it later.",
+      "sources": [
+        "Weber"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "For a yes/no answer, count upright versus reversed in three cards: three upright is a strong yes, two upright one reversed is a qualified yes, one upright two reversed is unlikely but not impossible, three reversed is a strong no — and the cards still explain why.",
+      "sources": [
+        "Weber"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "If the majority of cards in a spread are reversed, consider flipping them all: pull one more card — upright means flip the spread, reversed means leave it — or read the general themes instead of each reversal; a mostly-reversed reading often means you are stuck and major changes are needed.",
+      "sources": [
+        "Weber"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "Numbers gain meaning from frequency and grouping: pulling all four of one number, or noticing which number completes first when sorting the deck, reveals what that number is trying to tell you.",
+      "sources": [
+        "Weber"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "A reversed card is not always negative and an upright card is not always good: a reversed Hanged Man can mean sudden freedom, while an upright 'good' card like the 3 of Cups can warn of overindulgence.",
+      "sources": [
+        "Weber"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "Do not reshuffle a scary card away: the card will manifest anyway, and re-dealing tells Tarot you do not trust its voice, which disrupts the language you have built together.",
+      "sources": [
+        "Weber"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "Numerology links pair major arcana cards by digit-sum (for example VII The Chariot with XVI The Tower, since 1+6=7): read the pair as a light-and-shadow story, where one card shows what the other becomes if its energy goes wrong — or what recovery looks like after it.",
+      "sources": [
+        "Dean"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "Compositional affinity: when two cards share the same visual layout, compare them — VI The Lovers and XV The Devil mirror each other (two figures under a presiding power), so the Devil reads as love's shadow side, choice turned to bondage.",
+      "sources": [
+        "Dean"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "A symbol that repeats across cards in one reading is the thread of the reading: the star in the Hermit's lamp and on XVII The Star, the sunflowers on the Queen of Wands and in the Sun's garden, the red feather on the Fool, Death and the Sun's child. Name the shared symbol and read the cards through it.",
+      "sources": [
+        "Dean"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "The Yod droplets link the Ace of Cups, XVI The Tower and XVIII The Moon, and the five streams link the Ace of Cups and XVII The Star — the same divine fire or flow of feeling appears in very different contexts, so ask what the shared symbol is doing in each card.",
+      "sources": [
+        "Dean"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "Major-minor links run through the deck: all Aces link to I The Magician (beginnings), all Knights to VII The Chariot (journeys), all Queens to III The Empress (the mother archetype), all Kings to IV The Emperor (the father archetype). A court card can be read as one face of its major.",
+      "sources": [
+        "Dean"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "Court-card facing direction is a timing cue: facing right looks to the future, facing left looks to the past. Use it to tell whether a person or influence is arriving or leaving.",
+      "sources": [
+        "Dean"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "A card or symbol that recurs across many readings means you are still in that card's energy — either you are on your path and it reassures you, or there is something to learn and the card stays until it is learned. When the situation changes, the card usually disappears.",
+      "sources": [
+        "Dean"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "XIX The Sun cancels out negative cards nearby — the only card Dean gives that power to. A Sun beside a difficult card softens or overrides it.",
+      "sources": [
+        "Dean"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "In an advice or balance position, the suit of a minor arcana card changes the advice: Wands (Fire) means push through with drive, Cups means gentle negotiation, Swords means an intellectual solution, Pentacles means do only what is practical and protect your boundaries.",
+      "sources": [
+        "Dean"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "In a decision spread, the suit of a minor card in a position adds a layer: Swords in an advantage position says a logical approach is best, while Cups says follow your intuition.",
+      "sources": [
+        "Dean"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "For cards that are already challenging, the reversed meaning can say the worst is over — the reversed Devil and the reversed Five of Cups both turn toward recovery and acceptance rather than deepening the difficulty.",
+      "sources": [
+        "Dean"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "Read several cards together like a storyboard: what is unfolding across the images, how are the figures interacting or not, and what story do the cards tell as a sequence?",
+      "sources": [
+        "Reed"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "If many Court cards appear in a reading, many other people will affect the situation — and remember you can be any Court yourself, regardless of age or gender; a Court can show which role you are playing right now.",
+      "sources": [
+        "Reed"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "Use the numbers as a thread: Aces are new beginnings, Twos are choices, Threes are creativity, Fours are stability, Fives are change and crossroads, Sixes are balance, Sevens are challenges, Eights are movement, Nines are near-completion, and Tens are endings and fulfilment.",
+      "sources": [
+        "Reed"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "If a frightening or 'bad' card appears in a position, pull up to three advice cards for it rather than leaving the querent with fear — there is no such thing as a bad card, only a hard message that needs guidance.",
+      "sources": [
+        "Reed"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "In a mediumship reading, read each group of three cards as a whole — the three journey cards together, then the three message cards together — rather than card by card.",
+      "sources": [
+        "Reed"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "When comparing options, pull one card per option and see what stands out; each position can then spawn its own clarifying pull to narrow the choice down.",
+      "sources": [
+        "Reed"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "A clarifying card is fine when you need more information, but pull no more than one — too many clarifiers muddle the reading.",
+      "sources": [
+        "Reed"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "Watch for repeated cards, suits, or numbers across a spread: patterns that keep showing up over days or weeks are the message, while one-off cards can be let go.",
+      "sources": [
+        "Reed"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "If two significators land next to each other in the deck during a mediumship reading, that is a sign the departed person is with the querent at the time of the reading.",
+      "sources": [
+        "Reed"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "Let the querent speak first about what a card says to them: ask what they feel a card reveals about their situation instead of interpreting it for them, especially in sensitive readings.",
+      "sources": [
+        "Reed"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "A reading is built in layers: first you see the image, then you rebuild it in your mind, then you tag it with memory and emotion, then you link it to other images through association and metaphor — and only then does a story emerge. Read cards in that order, from image to story.",
+      "sources": [
+        "Ramakrishnan"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "Meaning comes from association, not from the card alone: each image is broken apart by the brain and reassembled with your own memories, culture, and emotional tags, so the same card legitimately means different things to different readers.",
+      "sources": [
+        "Ramakrishnan"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "Cards link through shared associations: when two cards share a color, figure, mood, or memory tag, the brain connects them, and that connection — not either card alone — is often where the reading's real message lives.",
+      "sources": [
+        "Ramakrishnan"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "Metaphor is the bridge between cards: the brain constantly translates images into metaphors to understand how we fit into the world, so ask what each card is a metaphor for in the querent's life, then weave the metaphors into one narrative.",
+      "sources": [
+        "Ramakrishnan"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "A spread is a narrative arc with a beginning, middle, and end, and the listener's brain engages most when it can follow that arc. Arrange the cards as a plot — situation, tension, resolution — rather than a list of separate meanings.",
+      "sources": [
+        "Ramakrishnan"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "Watch for overfitting: the first card can set a theme that then bends every later card to fit it. Ask whether your interpretation follows the cards or just confirms the story you formed before the first card was laid.",
+      "sources": [
+        "Ramakrishnan"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "Expectation shapes what you see next: the brain anticipates the next card or the next turn in the story based on patterns so far, and a mismatch between expectation and what appears is information, not failure — it is the moment to recalibrate.",
+      "sources": [
+        "Ramakrishnan"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "A prediction error is a gift: when a card contradicts what you expected, do not force it into your narrative. Pause, notice the disconnect, and let the surprise revise the story — that is how the brain learns.",
+      "sources": [
+        "Ramakrishnan"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "The querent completes the story: the reader narrates, but the querent holds the fuller picture — their life, emotions, and hidden details — so the meaning of a card combination is only finished when the querent recognizes themselves in it.",
+      "sources": [
+        "Ramakrishnan"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "Intuition works like a sieve: the brain takes in far more than consciousness can hold, filters out what is not needed right now, and leaves the ore — the few details that matter — from which narratives and decisions are made. Trust the filtered result, then reflect on it later.",
+      "sources": [
+        "Ramakrishnan"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "Suit energies combine as elements of the living world: the book reimagines the suits as animal kingdoms — Cups as molluscs (mystery, desire, illusion), Pentacles as mammals (material, earthy, embodied), Swords as birds (air, movement, sharp perception), Wands as insects (fire, passion, cooperative energy) — so a spread can be read as an ecology of instincts, not just four categories.",
+      "sources": [
+        "Ramakrishnan"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "Give the order of the cards a consistent meaning — Papez reads left to right as past, present, future — and apply it the same way every time so the sequence adds context.",
+      "sources": [
+        "Papez"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "Do not usually factor major arcana cards into the elemental count; instead count how many majors are present — few or none means the reading is flexible and changeable, half or more means it is more fixed.",
+      "sources": [
+        "Papez"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "Read connected pairs as two sides of the same coin — Fool/World, Magician/Strength, Lovers/Devil, Tower/Star — so one card explains the other's shadow and light.",
+      "sources": [
+        "Papez"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "To tell easily confused cards apart, compare them visually (what is similar, what is different), compare your keywords for each, and answer the same question with each card to feel how they differ in practice.",
+      "sources": [
+        "Papez"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "Place a card in its suit's story: the Six of Swords' escape follows the Five of Swords' tyranny, and the Eight of Cups' departure follows the Seven of Cups' fantasising — where a card falls in its suit changes its meaning.",
+      "sources": [
+        "Papez"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "Remember the ace is the seed of its suit and the page is the person who plants that seed — both mean beginnings, but one is potential and the other is the beginner who acts on it.",
+      "sources": [
+        "Papez"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "Add steps only as far as they help: keyword math first, then order, then elements and numbers, then directionality — and prune back to the simplest method if a step makes reading harder.",
+      "sources": [
+        "Papez"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "You do not have to show your work: as long as you reach an answer that fits, how you got there is yours alone.",
+      "sources": [
+        "Papez"
+      ]
+    },
+    {
+      "applies_to": "reversals",
+      "rule": "When a card is reversed, try modifying it one of seven ways (Greer Step 12, Modification): read it as No/Not, as excessive or over- or undercompensating, as misused or misdirected, through 're-' words (re-do, re-think, return), as rectification (what needs correcting), as unconventional, shamanic, magical or humorous, or by reverting to the upright meaning.",
+      "sources": [
+        "Greer"
+      ]
+    },
+    {
+      "applies_to": "elemental dignities",
+      "rule": "In a three-card triad, elemental dignities change a card's strength (Greer Step 14, Dignity & Theme): a card between two contrary cards is little affected by either, while a card contrary to both its flankers is weakened.",
+      "sources": [
+        "Greer"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "Read a card as a metaphor (Greer Step 8, Metaphor): 'this card is like...' — the metaphor you reach for can unlock a meaning the keywords miss.",
+      "sources": [
+        "Greer"
+      ]
     }
   ],
-  "notes": "Where the books disagree: on reversals, Papez treats them as optional and argues the tarot is already balanced between light and shadow, while Clark calls dual upright/reversed meanings the more traditional and more nuanced method, and Esselmont offers four reversal methods (internalised energy, too much or too little, blocked, upside-down imagery) and advises picking one method for a whole reading. On the Celtic Cross tenth position, Papez reads it as the key to the outcome rather than the outcome itself, while Fiebig's Celtic/Sun Cross variations call the tenth card the outcome, goal, or task. On elements, Ethony's interaction table (fire-earth oppose, water-air oppose, air-earth merely dilute) differs from the classic Golden Dawn elemental dignities, where fire-earth and water-air are neutral rather than opposing; the app should treat Ethony's version as one system, not the only one. On numbers, Fiebig argues numbers have no inherent meaning beyond their functional value, while Esselmont and Papez both use numerology (repeating numbers, digit sums) as a live interpretive tool. On the five-card spread, Fiebig defines no single standard five-card layout — the five-card set used here (Situation / Challenge / Guidance / Hidden influence / Outcome) is the standard general-purpose layout, while Fiebig's own five-card variants include the Trend (what you have, what you are looking for, what you should do, what you want, what is important now) and Present and Future, both catalogued or noted here. Every principle in this file is grounded in a named source, and the elemental interaction rules are Ethony's system rather than a universal one. What the books do not cover: none of the sources gives a systematic table of how specific card pairs combine beyond Esselmont's per-card suggested combinations, so pair-level meanings must be computed from the keyword-addition and elemental rules rather than looked up; none gives rules for chains of three or more cards beyond Papez's five-step method; none addresses how a user's personal lexicon should override or blend with a traditional combination reading; none gives rules for reversed cards in specific spread positions beyond the general reversal methods; and none covers timing in combinations except Ethony's court-card timing chapter, which is not summarised here. The Fiebig book contains 122 layouts; this catalog is a curated 11, chosen for general-purpose use, and the app's 1-, 3-, and 5-card spreads are listed first.\n\nEden Gray adds three full spreads (Ancient Celtic Method, Horoscope Method, Tree of Life Method), each with a complete sample reading, plus suit-preponderance and significator rules. She gives no dedicated two-card pair-combination chapter and no short 1- or 3-card spreads. Her Ancient Celtic Method is a distinct variant from the Celtic Cross already in the catalog (Papez's position set) — both are kept. Her Tree of Life chapter also describes a full Life-reading variant (seven cards at each Tree position, spread three times for past/present/future, at most once a year per querent).",
+  "notes": "Where the books disagree: on reversals, Papez treats them as optional and argues the tarot is already balanced between light and shadow, while Clark calls dual upright/reversed meanings the more traditional and more nuanced method, and Esselmont offers four reversal methods (internalised energy, too much or too little, blocked, upside-down imagery) and advises picking one method for a whole reading. On the Celtic Cross tenth position, Papez reads it as the key to the outcome rather than the outcome itself, while Fiebig's Celtic/Sun Cross variations call the tenth card the outcome, goal, or task. On elements, Ethony's interaction table (fire-earth oppose, water-air oppose, air-earth merely dilute) differs from the classic Golden Dawn elemental dignities, where fire-earth and water-air are neutral rather than opposing; the app should treat Ethony's version as one system, not the only one. On numbers, Fiebig argues numbers have no inherent meaning beyond their functional value, while Esselmont and Papez both use numerology (repeating numbers, digit sums) as a live interpretive tool. On the five-card spread, Fiebig defines no single standard five-card layout — the five-card set used here (Situation / Challenge / Guidance / Hidden influence / Outcome) is the standard general-purpose layout, while Fiebig's own five-card variants include the Trend (what you have, what you are looking for, what you should do, what you want, what is important now) and Present and Future, both catalogued or noted here. Every principle in this file is grounded in a named source, and the elemental interaction rules are Ethony's system rather than a universal one. What the books do not cover: none of the sources gives a systematic table of how specific card pairs combine beyond Esselmont's per-card suggested combinations, so pair-level meanings must be computed from the keyword-addition and elemental rules rather than looked up; none gives rules for chains of three or more cards beyond Papez's five-step method; none addresses how a user's personal lexicon should override or blend with a traditional combination reading; none gives rules for reversed cards in specific spread positions beyond the general reversal methods; and none covers timing in combinations except Ethony's court-card timing chapter, which is not summarised here. The Fiebig book contains 122 layouts; this catalog is a curated 11, chosen for general-purpose use, and the app's 1-, 3-, and 5-card spreads are listed first.\n\nEden Gray adds three full spreads (Ancient Celtic Method, Horoscope Method, Tree of Life Method), each with a complete sample reading, plus suit-preponderance and significator rules. She gives no dedicated two-card pair-combination chapter and no short 1- or 3-card spreads. Her Ancient Celtic Method is a distinct variant from the Celtic Cross already in the catalog (Papez's position set) — both are kept. Her Tree of Life chapter also describes a full Life-reading variant (seven cards at each Tree position, spread three times for past/present/future, at most once a year per querent). On clarifiers, Weber allows up to seven clarifying cards for a question, while Reed advises drawing at most one — the two books disagree on how many clarifiers a reading should use. Greer (21 Ways) is partial coverage: the book is a scanned image-only PDF with no text layer, so only a bounded sample of 20 pages was read — the contents (all 21 steps) plus Steps 8 (Metaphor), 12 (Modification) and 14 (Dignity & Theme) in detail; the full text was not extracted.",
   "positional_rules": [
     {
       "applies_to": "general",
@@ -273,13 +771,6 @@
       "rule": "A card in a strength, talent, or chance position is read as a resource even if it is a normally 'difficult' card: ask what this energy offers, what it makes possible, and how it can be used well.",
       "sources": [
         "Fiebig"
-      ]
-    },
-    {
-      "applies_to": "general",
-      "rule": "A card in a hopes-and-fears position is both at once: the querent's greatest hope and greatest fear are usually the same thing, or two sides of the same coin. Ask how the card could be both hoped for and feared.",
-      "sources": [
-        "Papez"
       ]
     },
     {
@@ -355,6 +846,293 @@
       "rule": "If the final outcome card yields no clear conclusion, the whole operation may be repeated with the tenth card taking the place of the querent's significator card, for a more detailed account of the outcome.",
       "sources": [
         "Gray"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "In timeline spreads, compare the beginning and the end: negative cards in the past and positive ones in the future show progress and better days ahead; the reverse suggests you are not handling the situation well, or things may get worse before they get better.",
+      "sources": [
+        "Adams"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "Notice where Major Arcana cards fall: early or in the past portion means forces already set in motion; toward the end or future means destiny unfolding ahead; a trump in an opportunity position versus an obstacle position changes its weight — always pay a trump extra attention wherever it lands.",
+      "sources": [
+        "Adams"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "In spreads describing levels of awareness, such as the World Tree, check whether the levels are harmonious or incongruous — calm images in one section and disturbing ones in another, or a coordinated flow.",
+      "sources": [
+        "Adams"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "In spreads describing different life areas, such as the Horoscope or Feng Shui spreads, check whether positive cards cluster in some areas while negative ones appear in others, and whether cards fall into positions that fit or conflict with their basic natures.",
+      "sources": [
+        "Adams"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "If a Significator is left in the deck and turns up in the spread, the position it occupies becomes particularly important.",
+      "sources": [
+        "Adams"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "An outcome or future position shows what is likely if things continue as they are — change your actions, thoughts, or feelings and the outcome can change, so update a reading every few months.",
+      "sources": [
+        "Adams"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "Near future and distant future are relative: near may mean days for one person and weeks for another, distant weeks to months; the cards show what is likely but are poor at fixed time limits, so allow leeway.",
+      "sources": [
+        "Adams"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "In the Goal Seeking spread, the two cards surrounding your deliberately chosen outcome card show what flanks and influences that outcome.",
+      "sources": [
+        "Weber"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "In the How Long spread, the cards lying between the Fool (the beginning) and the World (the outcome) mark the events between now and the goal, each card standing for one unit of time — days, weeks, months, or years, whichever is reasonable.",
+      "sources": [
+        "Weber"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "In a Couple's Reading, each partner gets a column and the horizontal cards are shared experiences; a majority pointing one way means one person is giving or taking too much.",
+      "sources": [
+        "Weber"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "In the Monthly Forecast, the three cards for each week read left to right as blessing, challenge, and general theme.",
+      "sources": [
+        "Weber"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "In the Seasonal Forecast, each season's triangle reads bottom-left blessing, bottom-right challenge, top unexpected, with a crowning card as the soul's lesson for the season — and a seventeenth center card as the year's lesson.",
+      "sources": [
+        "Weber"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "In the Follow the Wand spread, the cards surrounding the Ace of Wands show how to develop a passion — what feeds it and what blocks it.",
+      "sources": [
+        "Weber"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "In the Roles We Play spread, four Majors read as the largest role you play to others, the smallest role, how you challenge others, and how you bless others.",
+      "sources": [
+        "Weber"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "In a Journey in a Day reading, five Majors laid left to right are morning, midday, early afternoon, late afternoon, and evening — the same archetypes at the scale of one ordinary day.",
+      "sources": [
+        "Weber"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "In the Present Triangle, the positions include the past, the present, the future, the effects of the past on the present, and the root cause of the situation.",
+      "sources": [
+        "Weber"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "In the Storyboard reading, three cards read as beginning, middle, and end of a single story, like panels of a comic strip.",
+      "sources": [
+        "Weber"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "Where a character in a card is looking or pointing can act as a position in itself, directing the card's message toward another card or a real-world action.",
+      "sources": [
+        "Weber"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "An overseeing or significator card sets the theme of the reading and is read first in spirit and last in turn: the drawn cards answer inside the frame it provides, not independently of it.",
+      "sources": [
+        "Dean"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "The bottom card of the deck can be used as a hidden-truth position: it reveals what is concealed beneath the visible spread.",
+      "sources": [
+        "Dean"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "In the Ten spread, position order tells an endings-to-beginnings story: what is ending, what to do now, what supports you, a secret, then what is coming next — a card in the 'ending' position is closing, the same card in the 'coming next' position is opening.",
+      "sources": [
+        "Dean"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "In the portal spread the layout is a journey: the present sits below the High Priestess and the future above her, so the reading moves upward through the gateway from what you are learning now to how that wisdom will shape your life.",
+      "sources": [
+        "Dean"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "Reversed cards in any position are optional to read as reversed: the shadow side of a card is always present in its upright meaning, so you may turn a reversed card upright and read its shadow from the upright instead — except the Sun, which chases all shadows away.",
+      "sources": [
+        "Dean"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "In the Body Mind Spirit spread, the same card reads as physical state, mental state, or spiritual state depending on its position — a card that is solid in Mind can still flag burnout in Body.",
+      "sources": [
+        "Reed"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "In the Chakra spread, position is the energy centre: Root is survival and security, Sacral is creativity and pleasure, Solar Plexus is willpower, Heart is love and connection, Throat is communication, Third Eye is intuition, Crown is awareness.",
+      "sources": [
+        "Reed"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "In the Grief spread, the five positions follow the stages of grief — what to look at now, what anger teaches, finding peace in the present, what sadness is saying, and what must be accepted.",
+      "sources": [
+        "Reed"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "In the Mediumship spread, the first three cards after the significators describe the soul's journey and the last three carry the spirit's messages — the same card reads as journey or message depending on which group it falls in.",
+      "sources": [
+        "Reed"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "In the Guardian Angel spread, cards are read in three groups of three: what you need to know about your angel, how to connect, and what messages they have for you now.",
+      "sources": [
+        "Reed"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "In the Situation, What You Need to Know, and Advice spread, the middle card exists to illuminate what you are missing or ignoring — the hidden or overlooked aspect — while the last card is guidance, not prediction.",
+      "sources": [
+        "Reed"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "A card drawn for the day answers only that day's question — what is most meaningful today, or how to make the most of today — and should not be stretched into a long-term forecast.",
+      "sources": [
+        "Reed"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "Position turns an image into a role: the same card means something different as the self, the problem, a past bias, or a future plan, because each position asks a different question of the image.",
+      "sources": [
+        "Ramakrishnan"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "A past position is about memory and bias: it shows how long-term memories and learned inhibitions are steering the present, not just what happened before.",
+      "sources": [
+        "Ramakrishnan"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "A future position is about expectation and planning: it reveals what the querent anticipates and is already rehearsing, so it can show a plan — or a self-fulfilling expectation worth questioning.",
+      "sources": [
+        "Ramakrishnan"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "A position that represents the other person asks for empathy, not projection: read it by imagining their feelings and motives, not by importing your own state.",
+      "sources": [
+        "Ramakrishnan"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "In a narrative-arc layout, the middle position holds the roadblock: the card there is not the obstacle in the world but the querent's resistance to hearing or accepting the story, which is often the most useful card in the spread.",
+      "sources": [
+        "Ramakrishnan"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "The final position is action, not fate: it shows what happens when thought becomes movement in the world — the outcome of the choices made, not a fixed destiny.",
+      "sources": [
+        "Ramakrishnan"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "An anticipation position works by staying closed: keeping a card face-down while you write down what you expect it to be exposes your biases before the image can confirm them.",
+      "sources": [
+        "Ramakrishnan"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "In the Celtic Cross, position 7 (internal influences) is what is within the querent's control — a court card there shows the querent's own traits — while position 8 (external influences) is outside their control, and a court card there usually means someone else.",
+      "sources": [
+        "Papez"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "In the Celtic Cross, position 9 holds the greatest hope AND the greatest fear together — the two are usually the same thing, or two sides of the same coin.",
+      "sources": [
+        "Papez"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "If a spread position does not fit how you read, rename it or tweak it until it works — the spread serves you, not the other way round; the same applies to the near-future position if you prefer present-focused readings.",
+      "sources": [
+        "Papez"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "A single card becomes a spread when you give its position a name or focus — daily advice, evening reflection, preparation, or a focus for the day — which gives the card context to work with.",
+      "sources": [
+        "Papez"
       ]
     }
   ],
@@ -905,6 +1683,2809 @@
       "sources": [
         "Gray"
       ]
+    },
+    {
+      "name": "Single-Card Method",
+      "cards": 1,
+      "purpose": "The simplest spread, for a straightforward question needing an immediate answer.",
+      "positions": [
+        {
+          "label": "The card",
+          "meaning": "The answer or insight into your question; also a daily card for the day's theme.",
+          "position": 1
+        }
+      ],
+      "sources": [
+        "Adams"
+      ]
+    },
+    {
+      "name": "Yes/No Method",
+      "cards": 1,
+      "purpose": "A yes-or-no answer to a definite question, using the card's Yes/No value plus its meaning for detail.",
+      "positions": [
+        {
+          "label": "The card",
+          "meaning": "Yes or No by the book's system (Majors: willing to do the work = Yes; Minors: even = Yes, odd = No; King No, Queen Yes, Knight No, Page Yes); reversed Yes means delay, reversed No means obstacles.",
+          "position": 1
+        }
+      ],
+      "sources": [
+        "Adams"
+      ]
+    },
+    {
+      "name": "Either/Or Method",
+      "cards": 2,
+      "purpose": "Choosing between two options when you cannot decide.",
+      "positions": [
+        {
+          "label": "First option",
+          "meaning": "What the first choice offers or leads to.",
+          "position": 1
+        },
+        {
+          "label": "Second option",
+          "meaning": "What the second choice offers or leads to.",
+          "position": 2
+        }
+      ],
+      "sources": [
+        "Adams"
+      ]
+    },
+    {
+      "name": "Past-Present-Future Method",
+      "cards": 3,
+      "purpose": "See past influences, the present state, and the likely future of a situation.",
+      "positions": [
+        {
+          "label": "Past",
+          "meaning": "Past influences or conditions regarding the situation.",
+          "position": 1
+        },
+        {
+          "label": "Present",
+          "meaning": "The present state of the matter.",
+          "position": 2
+        },
+        {
+          "label": "Future",
+          "meaning": "What is likely to occur in the future.",
+          "position": 3
+        }
+      ],
+      "sources": [
+        "Adams"
+      ]
+    },
+    {
+      "name": "Immediate Situation Three-Card Spread",
+      "cards": 3,
+      "purpose": "A quick focus on what is happening now, to clarify a situation and gain a new perspective.",
+      "positions": [
+        {
+          "label": "Present situation",
+          "meaning": "The nature of what is happening now.",
+          "position": 1
+        },
+        {
+          "label": "Your attitude",
+          "meaning": "Your attitude toward what is happening.",
+          "position": 2
+        },
+        {
+          "label": "Key element",
+          "meaning": "The key element for you to consider.",
+          "position": 3
+        }
+      ],
+      "sources": [
+        "Adams"
+      ]
+    },
+    {
+      "name": "Four-Card Spread",
+      "cards": 4,
+      "purpose": "Simple, direct advice for a specific practical, everyday problem.",
+      "positions": [
+        {
+          "label": "Situation",
+          "meaning": "The situation as it stands.",
+          "position": 1
+        },
+        {
+          "label": "Obstacle",
+          "meaning": "The obstacle or opportunity you may encounter.",
+          "position": 2
+        },
+        {
+          "label": "Action recommended",
+          "meaning": "What action you should take.",
+          "position": 3
+        },
+        {
+          "label": "Outcome",
+          "meaning": "The likely outcome.",
+          "position": 4
+        }
+      ],
+      "sources": [
+        "Adams"
+      ]
+    },
+    {
+      "name": "Practical Advice Five-Card Spread",
+      "cards": 5,
+      "purpose": "Insight into practical matters, with advice and the outcome if the advice is followed.",
+      "positions": [
+        {
+          "label": "Past influence",
+          "meaning": "Past influences on the matter.",
+          "position": 1
+        },
+        {
+          "label": "Present influence",
+          "meaning": "Present influences on the matter.",
+          "position": 2
+        },
+        {
+          "label": "Major influence",
+          "meaning": "The major influence at work.",
+          "position": 3
+        },
+        {
+          "label": "Advice",
+          "meaning": "The advice being offered.",
+          "position": 4
+        },
+        {
+          "label": "Outcome",
+          "meaning": "The likely outcome if the advice is followed.",
+          "position": 5
+        }
+      ],
+      "sources": [
+        "Adams"
+      ]
+    },
+    {
+      "name": "General Life Conditions Spread",
+      "cards": 6,
+      "purpose": "Answers just about any question, giving insight into the querent's psychological state as well as practical matters.",
+      "positions": [
+        {
+          "label": "Who you are right now",
+          "meaning": "Your current state.",
+          "position": 1
+        },
+        {
+          "label": "What is affecting you",
+          "meaning": "The forces currently affecting you.",
+          "position": 2
+        },
+        {
+          "label": "What you value",
+          "meaning": "What matters most to you.",
+          "position": 3
+        },
+        {
+          "label": "What's bothering you",
+          "meaning": "The trouble weighing on you.",
+          "position": 4
+        },
+        {
+          "label": "The short term",
+          "meaning": "What is coming soon.",
+          "position": 5
+        },
+        {
+          "label": "The long term",
+          "meaning": "Where things are headed over time.",
+          "position": 6
+        }
+      ],
+      "sources": [
+        "Adams"
+      ]
+    },
+    {
+      "name": "Quick Answer Spread",
+      "cards": 7,
+      "purpose": "A fast seven-card overview of a concern, its past and future, your state of mind, and what helps or blocks you.",
+      "positions": [
+        {
+          "label": "Concern",
+          "meaning": "The concern itself.",
+          "position": 1
+        },
+        {
+          "label": "Immediate past",
+          "meaning": "What just happened.",
+          "position": 2
+        },
+        {
+          "label": "Immediate future",
+          "meaning": "What is coming next.",
+          "position": 3
+        },
+        {
+          "label": "Querent's state of mind",
+          "meaning": "What is uppermost in your mind.",
+          "position": 4
+        },
+        {
+          "label": "Obstacle",
+          "meaning": "What stands in the way.",
+          "position": 5
+        },
+        {
+          "label": "Help",
+          "meaning": "What helps or is coming to your aid.",
+          "position": 6
+        },
+        {
+          "label": "Outcome",
+          "meaning": "The likely outcome.",
+          "position": 7
+        }
+      ],
+      "sources": [
+        "Adams"
+      ]
+    },
+    {
+      "name": "The Horseshoe Spread",
+      "cards": 7,
+      "purpose": "Each position covers a specific area of life; good for advice on a developing situation such as a relationship.",
+      "positions": [
+        {
+          "label": "The past",
+          "meaning": "Past events, emotions, and actions pertaining to the question.",
+          "position": 1
+        },
+        {
+          "label": "The present",
+          "meaning": "What is happening now, or your current state of mind.",
+          "position": 2
+        },
+        {
+          "label": "Hidden influences",
+          "meaning": "Unexpected influences or expectations you are unaware of.",
+          "position": 3
+        },
+        {
+          "label": "Obstacles",
+          "meaning": "What stands in the way — outer conditions or problems in your attitude.",
+          "position": 4
+        },
+        {
+          "label": "The environment",
+          "meaning": "Other people and their attitudes toward you and your issue.",
+          "position": 5
+        },
+        {
+          "label": "What should be done",
+          "meaning": "Action to take, or a change in attitude.",
+          "position": 6
+        },
+        {
+          "label": "Most likely outcome",
+          "meaning": "What is likely to occur if you follow Card 6's advice.",
+          "position": 7
+        }
+      ],
+      "sources": [
+        "Adams"
+      ]
+    },
+    {
+      "name": "The World Tree Spread",
+      "cards": 10,
+      "purpose": "Based on the Celtic World Tree; shows the relationship between the three layers of reality or levels of consciousness.",
+      "positions": [
+        {
+          "label": "Roots — card 1",
+          "meaning": "Influences in the subconscious or underworld — the source or roots of the situation, including hidden spiritual forces.",
+          "position": 1
+        },
+        {
+          "label": "Roots — card 2",
+          "meaning": "Influences in the subconscious or underworld — the source or roots of the situation, including hidden spiritual forces.",
+          "position": 2
+        },
+        {
+          "label": "Roots — card 3",
+          "meaning": "Influences in the subconscious or underworld — the source or roots of the situation, including hidden spiritual forces.",
+          "position": 3
+        },
+        {
+          "label": "Trunk — card 1",
+          "meaning": "The present situation — physical or conscious conditions, and how you are working with the root forces.",
+          "position": 4
+        },
+        {
+          "label": "Trunk — card 2",
+          "meaning": "The present situation — physical or conscious conditions, and how you are working with the root forces.",
+          "position": 5
+        },
+        {
+          "label": "Branches — card 1",
+          "meaning": "Influences in the spiritual realm or higher self — guidance and spiritual forces present in your life.",
+          "position": 6
+        },
+        {
+          "label": "Branches — card 2",
+          "meaning": "Influences in the spiritual realm or higher self — guidance and spiritual forces present in your life.",
+          "position": 7
+        },
+        {
+          "label": "Branches — card 3",
+          "meaning": "Influences in the spiritual realm or higher self — guidance and spiritual forces present in your life.",
+          "position": 8
+        },
+        {
+          "label": "Branches — card 4",
+          "meaning": "Influences in the spiritual realm or higher self — guidance and spiritual forces present in your life.",
+          "position": 9
+        },
+        {
+          "label": "Branches — card 5",
+          "meaning": "Influences in the spiritual realm or higher self — guidance and spiritual forces present in your life.",
+          "position": 10
+        }
+      ],
+      "sources": [
+        "Adams"
+      ]
+    },
+    {
+      "name": "Feng Shui Spread",
+      "cards": 9,
+      "purpose": "Based on the bagua octagon; shows the energies and influences operating in each area of the querent's life.",
+      "positions": [
+        {
+          "label": "Fame, future, career",
+          "meaning": "Career direction and public standing.",
+          "position": 1
+        },
+        {
+          "label": "Relationships, marriage, partnerships",
+          "meaning": "One-on-one bonds and partnerships.",
+          "position": 2
+        },
+        {
+          "label": "Creativity, children",
+          "meaning": "Creative life and children.",
+          "position": 3
+        },
+        {
+          "label": "Helpful people, friends, travel",
+          "meaning": "Friends, colleagues, agents, and travel.",
+          "position": 4
+        },
+        {
+          "label": "Self, identity, image",
+          "meaning": "Who you are and how you present yourself.",
+          "position": 5
+        },
+        {
+          "label": "Wisdom, knowledge, spirituality",
+          "meaning": "Learning and spiritual life.",
+          "position": 6
+        },
+        {
+          "label": "Family, community, neighbors",
+          "meaning": "Home base and community ties.",
+          "position": 7
+        },
+        {
+          "label": "Wealth",
+          "meaning": "Money and material resources.",
+          "position": 8
+        },
+        {
+          "label": "Health",
+          "meaning": "Physical well-being and stress.",
+          "position": 9
+        }
+      ],
+      "sources": [
+        "Adams"
+      ]
+    },
+    {
+      "name": "Thirteen-Card Story Spread",
+      "cards": 13,
+      "purpose": "Describes the evolution of a situation over time, as a story — how each step led to the next.",
+      "positions": [
+        {
+          "label": "The birth",
+          "meaning": "The birth of the subject of the reading.",
+          "position": 1
+        },
+        {
+          "label": "Development — card 2",
+          "meaning": "The development of the situation — positive and negative conditions, opportunities and obstacles, progress and setbacks, in sequence.",
+          "position": 2
+        },
+        {
+          "label": "Development — card 3",
+          "meaning": "The development of the situation — positive and negative conditions, opportunities and obstacles, progress and setbacks, in sequence.",
+          "position": 3
+        },
+        {
+          "label": "Development — card 4",
+          "meaning": "The development of the situation — positive and negative conditions, opportunities and obstacles, progress and setbacks, in sequence.",
+          "position": 4
+        },
+        {
+          "label": "Development — card 5",
+          "meaning": "The development of the situation — positive and negative conditions, opportunities and obstacles, progress and setbacks, in sequence.",
+          "position": 5
+        },
+        {
+          "label": "Development — card 6",
+          "meaning": "The development of the situation — positive and negative conditions, opportunities and obstacles, progress and setbacks, in sequence.",
+          "position": 6
+        },
+        {
+          "label": "Development — card 7",
+          "meaning": "The development of the situation — positive and negative conditions, opportunities and obstacles, progress and setbacks, in sequence.",
+          "position": 7
+        },
+        {
+          "label": "Development — card 8",
+          "meaning": "The development of the situation — positive and negative conditions, opportunities and obstacles, progress and setbacks, in sequence.",
+          "position": 8
+        },
+        {
+          "label": "Development — card 9",
+          "meaning": "The development of the situation — positive and negative conditions, opportunities and obstacles, progress and setbacks, in sequence.",
+          "position": 9
+        },
+        {
+          "label": "Development — card 10",
+          "meaning": "The development of the situation — positive and negative conditions, opportunities and obstacles, progress and setbacks, in sequence.",
+          "position": 10
+        },
+        {
+          "label": "Development — card 11",
+          "meaning": "The development of the situation — positive and negative conditions, opportunities and obstacles, progress and setbacks, in sequence.",
+          "position": 11
+        },
+        {
+          "label": "Near future",
+          "meaning": "What comes next.",
+          "position": 12
+        },
+        {
+          "label": "Distant future",
+          "meaning": "Where the story is headed in the longer term.",
+          "position": 13
+        }
+      ],
+      "sources": [
+        "Adams"
+      ]
+    },
+    {
+      "name": "Present Triangle",
+      "cards": 6,
+      "purpose": "An extended past/present/future reading that also shows how the past affects the present and what sits at the root of the situation.",
+      "positions": [
+        {
+          "label": "Past",
+          "meaning": "What has already happened.",
+          "position": 1
+        },
+        {
+          "label": "Present",
+          "meaning": "The current situation.",
+          "position": 2
+        },
+        {
+          "label": "Future",
+          "meaning": "Where things are headed.",
+          "position": 3
+        },
+        {
+          "label": "Effects of the past on the present",
+          "meaning": "How the past is still acting on today.",
+          "position": 4
+        },
+        {
+          "label": "Inner block",
+          "meaning": "What you may be doing to hold yourself back (in the book's example, self-criticism).",
+          "position": 5
+        },
+        {
+          "label": "Root cause",
+          "meaning": "The underlying cause of the situation.",
+          "position": 6
+        }
+      ],
+      "sources": [
+        "Weber"
+      ]
+    },
+    {
+      "name": "Hidden Meaning Reading",
+      "cards": 3,
+      "purpose": "When something feels odd or off, find where that uneasy feeling is coming from.",
+      "positions": [
+        {
+          "label": "Card 1",
+          "meaning": "One facet of the source of the uneasy feeling.",
+          "position": 1
+        },
+        {
+          "label": "Card 2",
+          "meaning": "A second facet of the source.",
+          "position": 2
+        },
+        {
+          "label": "Card 3",
+          "meaning": "A third facet of the source.",
+          "position": 3
+        }
+      ],
+      "sources": [
+        "Weber"
+      ]
+    },
+    {
+      "name": "Goal Seeking Reading",
+      "cards": 6,
+      "purpose": "Plot the course to a specific goal you have in mind.",
+      "positions": [
+        {
+          "label": "Desired outcome (chosen deliberately)",
+          "meaning": "The card you select to depict your goal.",
+          "position": 1
+        },
+        {
+          "label": "Card before the outcome",
+          "meaning": "What flanks and influences the goal on one side.",
+          "position": 2
+        },
+        {
+          "label": "Card after the outcome",
+          "meaning": "What flanks and influences the goal on the other side.",
+          "position": 3
+        },
+        {
+          "label": "Random card 1",
+          "meaning": "Further guidance toward the goal.",
+          "position": 4
+        },
+        {
+          "label": "Random card 2",
+          "meaning": "Further guidance toward the goal.",
+          "position": 5
+        },
+        {
+          "label": "Random card 3",
+          "meaning": "Further guidance toward the goal.",
+          "position": 6
+        }
+      ],
+      "sources": [
+        "Weber"
+      ]
+    },
+    {
+      "name": "Conflict Resolution",
+      "cards": 6,
+      "purpose": "Solve a conflict: first whether it will resolve soon, then how it will resolve.",
+      "positions": [
+        {
+          "label": "Will it resolve? — card 1",
+          "meaning": "Three upright: yes. Two up, one down: probably. Two down, one up: probably not. Three down: no.",
+          "position": 1
+        },
+        {
+          "label": "Will it resolve? — card 2",
+          "meaning": "Three upright: yes. Two up, one down: probably. Two down, one up: probably not. Three down: no.",
+          "position": 2
+        },
+        {
+          "label": "Will it resolve? — card 3",
+          "meaning": "Three upright: yes. Two up, one down: probably. Two down, one up: probably not. Three down: no.",
+          "position": 3
+        },
+        {
+          "label": "How will it resolve? — card 1",
+          "meaning": "Best course of action, drawn at random.",
+          "position": 4
+        },
+        {
+          "label": "How will it resolve? — card 2",
+          "meaning": "Best course of action, drawn at random.",
+          "position": 5
+        },
+        {
+          "label": "How will it resolve? — card 3",
+          "meaning": "Best course of action, drawn at random.",
+          "position": 6
+        }
+      ],
+      "sources": [
+        "Weber"
+      ]
+    },
+    {
+      "name": "How Long?",
+      "cards": 3,
+      "purpose": "Answer a timing question: not exact dates, but the events and rough span between now and a desired outcome.",
+      "positions": [
+        {
+          "label": "The Fool",
+          "meaning": "The beginning of your search for the outcome.",
+          "position": 1
+        },
+        {
+          "label": "Cards between",
+          "meaning": "Each card is one unit of time (day, week, month, or year — whichever is reasonable) and an event on the way.",
+          "position": 2
+        },
+        {
+          "label": "The World",
+          "meaning": "The desired outcome itself.",
+          "position": 3
+        }
+      ],
+      "sources": [
+        "Weber"
+      ]
+    },
+    {
+      "name": "A Couple's Reading",
+      "cards": 6,
+      "purpose": "Check how a relationship is going, with one column per partner and shared cards between them. Shared horizontal cards lie between the two columns; a majority pointing one way means one person gives or takes too much.",
+      "positions": [
+        {
+          "label": "Partner A — card 1",
+          "meaning": "Three cards for one partner's side of the relationship.",
+          "position": 1
+        },
+        {
+          "label": "Partner A — card 2",
+          "meaning": "Three cards for one partner's side of the relationship.",
+          "position": 2
+        },
+        {
+          "label": "Partner A — card 3",
+          "meaning": "Three cards for one partner's side of the relationship.",
+          "position": 3
+        },
+        {
+          "label": "Partner B — card 1",
+          "meaning": "Three cards for the other partner's side.",
+          "position": 4
+        },
+        {
+          "label": "Partner B — card 2",
+          "meaning": "Three cards for the other partner's side.",
+          "position": 5
+        },
+        {
+          "label": "Partner B — card 3",
+          "meaning": "Three cards for the other partner's side.",
+          "position": 6
+        }
+      ],
+      "sources": [
+        "Weber"
+      ]
+    },
+    {
+      "name": "To Work Out a Problem",
+      "cards": 3,
+      "purpose": "If a Couple's Reading highlights a problem, pull three more cards to work it out.",
+      "positions": [
+        {
+          "label": "Card 1",
+          "meaning": "One aspect of working out the problem.",
+          "position": 1
+        },
+        {
+          "label": "Card 2",
+          "meaning": "A second aspect of working out the problem.",
+          "position": 2
+        },
+        {
+          "label": "Card 3",
+          "meaning": "A third aspect of working out the problem.",
+          "position": 3
+        }
+      ],
+      "sources": [
+        "Weber"
+      ]
+    },
+    {
+      "name": "Forecast for the Coming Week",
+      "cards": 7,
+      "purpose": "A general theme for each day of the coming week.",
+      "positions": [
+        {
+          "label": "Monday",
+          "meaning": "The day's general theme.",
+          "position": 1
+        },
+        {
+          "label": "Tuesday",
+          "meaning": "The day's general theme.",
+          "position": 2
+        },
+        {
+          "label": "Wednesday",
+          "meaning": "The day's general theme.",
+          "position": 3
+        },
+        {
+          "label": "Thursday",
+          "meaning": "The day's general theme.",
+          "position": 4
+        },
+        {
+          "label": "Friday",
+          "meaning": "The day's general theme.",
+          "position": 5
+        },
+        {
+          "label": "Saturday",
+          "meaning": "The day's general theme.",
+          "position": 6
+        },
+        {
+          "label": "Sunday",
+          "meaning": "The day's general theme.",
+          "position": 7
+        }
+      ],
+      "sources": [
+        "Weber"
+      ]
+    },
+    {
+      "name": "Monthly Forecast",
+      "cards": 12,
+      "purpose": "A forecast for the coming month, week by week, plus a four-card overview of the month.",
+      "positions": [
+        {
+          "label": "Week 1 — blessing",
+          "meaning": "The blessing of that week (left card of each week's three).",
+          "position": 1
+        },
+        {
+          "label": "Week 1 — challenge",
+          "meaning": "The challenge of that week (middle card).",
+          "position": 2
+        },
+        {
+          "label": "Week 1 — general theme",
+          "meaning": "The general theme of that week (bottom card).",
+          "position": 3
+        },
+        {
+          "label": "Week 2 — blessing",
+          "meaning": "The blessing of that week (left card of each week's three).",
+          "position": 4
+        },
+        {
+          "label": "Week 2 — challenge",
+          "meaning": "The challenge of that week (middle card).",
+          "position": 5
+        },
+        {
+          "label": "Week 2 — general theme",
+          "meaning": "The general theme of that week (bottom card).",
+          "position": 6
+        },
+        {
+          "label": "Week 3 — blessing",
+          "meaning": "The blessing of that week (left card of each week's three).",
+          "position": 7
+        },
+        {
+          "label": "Week 3 — challenge",
+          "meaning": "The challenge of that week (middle card).",
+          "position": 8
+        },
+        {
+          "label": "Week 3 — general theme",
+          "meaning": "The general theme of that week (bottom card).",
+          "position": 9
+        },
+        {
+          "label": "Week 4 — blessing",
+          "meaning": "The blessing of that week (left card of each week's three).",
+          "position": 10
+        },
+        {
+          "label": "Week 4 — challenge",
+          "meaning": "The challenge of that week (middle card).",
+          "position": 11
+        },
+        {
+          "label": "Week 4 — general theme",
+          "meaning": "The general theme of that week (bottom card).",
+          "position": 12
+        }
+      ],
+      "sources": [
+        "Weber"
+      ]
+    },
+    {
+      "name": "Seasonal Forecast",
+      "cards": 17,
+      "purpose": "A forecast for the year, season by season, with a crowning lesson for each season and one for the year.",
+      "positions": [
+        {
+          "label": "Spring — blessing",
+          "meaning": "Bottom-left card of the season's triangle.",
+          "position": 1
+        },
+        {
+          "label": "Spring — challenge",
+          "meaning": "Bottom-right card of the season's triangle.",
+          "position": 2
+        },
+        {
+          "label": "Spring — unexpected",
+          "meaning": "Top card of the season's triangle.",
+          "position": 3
+        },
+        {
+          "label": "Spring — soul's lesson",
+          "meaning": "The crowning card above the triangle.",
+          "position": 4
+        },
+        {
+          "label": "Summer — blessing",
+          "meaning": "Bottom-left card of the season's triangle.",
+          "position": 5
+        },
+        {
+          "label": "Summer — challenge",
+          "meaning": "Bottom-right card of the season's triangle.",
+          "position": 6
+        },
+        {
+          "label": "Summer — unexpected",
+          "meaning": "Top card of the season's triangle.",
+          "position": 7
+        },
+        {
+          "label": "Summer — soul's lesson",
+          "meaning": "The crowning card above the triangle.",
+          "position": 8
+        },
+        {
+          "label": "Autumn — blessing",
+          "meaning": "Bottom-left card of the season's triangle.",
+          "position": 9
+        },
+        {
+          "label": "Autumn — challenge",
+          "meaning": "Bottom-right card of the season's triangle.",
+          "position": 10
+        },
+        {
+          "label": "Autumn — unexpected",
+          "meaning": "Top card of the season's triangle.",
+          "position": 11
+        },
+        {
+          "label": "Autumn — soul's lesson",
+          "meaning": "The crowning card above the triangle.",
+          "position": 12
+        },
+        {
+          "label": "Winter — blessing",
+          "meaning": "Bottom-left card of the season's triangle.",
+          "position": 13
+        },
+        {
+          "label": "Winter — challenge",
+          "meaning": "Bottom-right card of the season's triangle.",
+          "position": 14
+        },
+        {
+          "label": "Winter — unexpected",
+          "meaning": "Top card of the season's triangle.",
+          "position": 15
+        },
+        {
+          "label": "Winter — soul's lesson",
+          "meaning": "The crowning card above the triangle.",
+          "position": 16
+        },
+        {
+          "label": "Soul's lesson for the year",
+          "meaning": "The seventeenth center card.",
+          "position": 17
+        }
+      ],
+      "sources": [
+        "Weber"
+      ]
+    },
+    {
+      "name": "Follow the Wand",
+      "cards": 3,
+      "purpose": "Use the Ace of Wands to learn how to develop a passion.",
+      "positions": [
+        {
+          "label": "Ace of Wands",
+          "meaning": "Your passion, found by flipping through the deck.",
+          "position": 1
+        },
+        {
+          "label": "Card before the Ace",
+          "meaning": "What surrounds and feeds the passion on one side.",
+          "position": 2
+        },
+        {
+          "label": "Card after the Ace",
+          "meaning": "What surrounds and shapes the passion on the other side.",
+          "position": 3
+        }
+      ],
+      "sources": [
+        "Weber"
+      ]
+    },
+    {
+      "name": "A Journey in a Day",
+      "cards": 5,
+      "purpose": "Read one ordinary day as a complete Fool's Journey, using only the Major Arcana.",
+      "positions": [
+        {
+          "label": "Morning",
+          "meaning": "The morning's archetype.",
+          "position": 1
+        },
+        {
+          "label": "Midday",
+          "meaning": "The midday's archetype.",
+          "position": 2
+        },
+        {
+          "label": "Early afternoon",
+          "meaning": "The early afternoon's archetype.",
+          "position": 3
+        },
+        {
+          "label": "Late afternoon",
+          "meaning": "The late afternoon's archetype.",
+          "position": 4
+        },
+        {
+          "label": "Evening",
+          "meaning": "The evening's archetype.",
+          "position": 5
+        }
+      ],
+      "sources": [
+        "Weber"
+      ]
+    },
+    {
+      "name": "The Roles We Play",
+      "cards": 4,
+      "purpose": "See the roles you play in other people's journeys, using only the Major Arcana.",
+      "positions": [
+        {
+          "label": "Largest role",
+          "meaning": "The largest role you play to others.",
+          "position": 1
+        },
+        {
+          "label": "Smallest role",
+          "meaning": "The smallest role you play to others.",
+          "position": 2
+        },
+        {
+          "label": "How you challenge others",
+          "meaning": "The way you challenge the people around you.",
+          "position": 3
+        },
+        {
+          "label": "How you bless others",
+          "meaning": "The way you bless the people around you.",
+          "position": 4
+        }
+      ],
+      "sources": [
+        "Weber"
+      ]
+    },
+    {
+      "name": "The Storyboard",
+      "cards": 3,
+      "purpose": "Read three cards as a single story — beginning, middle, and end — like panels of a comic strip, answering 'What is my current story?'",
+      "positions": [
+        {
+          "label": "Beginning",
+          "meaning": "How the story starts.",
+          "position": 1
+        },
+        {
+          "label": "Middle",
+          "meaning": "How the story develops.",
+          "position": 2
+        },
+        {
+          "label": "End",
+          "meaning": "How the story resolves.",
+          "position": 3
+        }
+      ],
+      "sources": [
+        "Weber"
+      ]
+    },
+    {
+      "name": "Star of Guidance",
+      "cards": 9,
+      "purpose": "An eight-pointed-star layout using the seven classical planets to reveal talents, challenges and potential; a significator is laid first and turned last.",
+      "positions": [
+        {
+          "position": 1,
+          "label": "Significator",
+          "meaning": "The theme of the reading"
+        },
+        {
+          "position": 2,
+          "label": "You and your situation",
+          "meaning": "Where you stand now"
+        },
+        {
+          "position": 3,
+          "label": "Mercury: immediate influences",
+          "meaning": "What is flowing in your life"
+        },
+        {
+          "position": 4,
+          "label": "Mars: challenges",
+          "meaning": "Conflict and power struggles"
+        },
+        {
+          "position": 5,
+          "label": "Venus: relationships",
+          "meaning": "Love and partnerships"
+        },
+        {
+          "position": 6,
+          "label": "Saturn: lessons",
+          "meaning": "What you are learning, or what lesson is repeating"
+        },
+        {
+          "position": 7,
+          "label": "Jupiter: skills and experience",
+          "meaning": "How you shine in the world"
+        },
+        {
+          "position": 8,
+          "label": "Moon: what is hidden",
+          "meaning": "Unconscious beliefs and what is hidden from you"
+        },
+        {
+          "position": 9,
+          "label": "The Sun: the outcome",
+          "meaning": "Your greatest potential at this time"
+        }
+      ],
+      "sources": [
+        "Dean"
+      ]
+    },
+    {
+      "name": "The Ten: Endings and Beginnings",
+      "cards": 6,
+      "purpose": "Built on the Roman numeral X, the number of endings that make way for beginnings; reveals what will be released and what is to come.",
+      "positions": [
+        {
+          "position": 1,
+          "label": "What's coming to an end",
+          "meaning": "What is closing in this situation"
+        },
+        {
+          "position": 2,
+          "label": "What's before you",
+          "meaning": "What to do now"
+        },
+        {
+          "position": 3,
+          "label": "What supports you financially",
+          "meaning": "Material backing for the change"
+        },
+        {
+          "position": 4,
+          "label": "What supports you emotionally",
+          "meaning": "Emotional backing for the change"
+        },
+        {
+          "position": 5,
+          "label": "A secret about this situation",
+          "meaning": "What is hidden or unspoken"
+        },
+        {
+          "position": 6,
+          "label": "What's coming next",
+          "meaning": "What arrives after the ending"
+        }
+      ],
+      "sources": [
+        "Dean"
+      ]
+    },
+    {
+      "name": "Fortune's Wheel: Cycles of Change",
+      "cards": 8,
+      "purpose": "Built around X The Wheel of Fortune; explores cycles of growth, fulfilment, release and gratitude, optionally with a second wheel layered on top and a pendulum to find your place in the cycle.",
+      "positions": [
+        {
+          "position": 1,
+          "label": "What to appreciate",
+          "meaning": "What deserves gratitude now"
+        },
+        {
+          "position": 2,
+          "label": "What to reflect on",
+          "meaning": "What to sit with and consider"
+        },
+        {
+          "position": 3,
+          "label": "What to release",
+          "meaning": "What to let go of"
+        },
+        {
+          "position": 4,
+          "label": "What's over",
+          "meaning": "What has already ended"
+        },
+        {
+          "position": 5,
+          "label": "Underlying support",
+          "meaning": "What holds you up"
+        },
+        {
+          "position": 6,
+          "label": "What I need to share",
+          "meaning": "What to give or express"
+        },
+        {
+          "position": 7,
+          "label": "What's getting stronger",
+          "meaning": "What is growing"
+        },
+        {
+          "position": 8,
+          "label": "Blessings",
+          "meaning": "What is gifted to you"
+        }
+      ],
+      "sources": [
+        "Dean"
+      ]
+    },
+    {
+      "name": "Authority, Boundaries, Illumination (Justice)",
+      "cards": 3,
+      "purpose": "Dean's example of designing your own spread: take three symbol meanings from one card and turn each into a position.",
+      "positions": [
+        {
+          "position": 1,
+          "label": "Authority",
+          "meaning": "What am I in charge of, or responsible for?"
+        },
+        {
+          "position": 2,
+          "label": "Boundaries",
+          "meaning": "What do I need to protect?"
+        },
+        {
+          "position": 3,
+          "label": "Illumination",
+          "meaning": "What do I need to see now?"
+        }
+      ],
+      "sources": [
+        "Dean"
+      ]
+    },
+    {
+      "name": "The Birthday Reading (The Fool)",
+      "cards": 3,
+      "purpose": "A year-ahead reading overseen by the Fool, the newborn beginner of the major arcana cycle.",
+      "positions": [
+        {
+          "position": 1,
+          "label": "What you have learned",
+          "meaning": "What you have learned from the past twelve months"
+        },
+        {
+          "position": 2,
+          "label": "What is seeking you now",
+          "meaning": "What is arriving or calling to you"
+        },
+        {
+          "position": 3,
+          "label": "Spiritual guidance",
+          "meaning": "Spiritual guidance for the year ahead"
+        }
+      ],
+      "sources": [
+        "Dean"
+      ]
+    },
+    {
+      "name": "Making Magic (The Magician)",
+      "cards": 3,
+      "purpose": "Discover your potential to create what you desire, overseen by the Magician.",
+      "positions": [
+        {
+          "position": 1,
+          "label": "What you can create",
+          "meaning": "What you are able to bring into being"
+        },
+        {
+          "position": 2,
+          "label": "Resources needed",
+          "meaning": "What kind of resources you need"
+        },
+        {
+          "position": 3,
+          "label": "The magic ingredient",
+          "meaning": "What turns your idea into gold"
+        }
+      ],
+      "sources": [
+        "Dean"
+      ]
+    },
+    {
+      "name": "The Other Side of the Portal (The High Priestess)",
+      "cards": 2,
+      "purpose": "Travel through the Priestess's gateway from present to future, with her card placed in the centre.",
+      "positions": [
+        {
+          "position": 1,
+          "label": "The present",
+          "meaning": "What I am learning now"
+        },
+        {
+          "position": 2,
+          "label": "The future",
+          "meaning": "How this wisdom will affect my life"
+        }
+      ],
+      "sources": [
+        "Dean"
+      ]
+    },
+    {
+      "name": "Money and Abundance (The Empress)",
+      "cards": 2,
+      "purpose": "Tune in to the creative energy of number III to check for blocks in abundance.",
+      "positions": [
+        {
+          "position": 1,
+          "label": "What's in the way",
+          "meaning": "What blocks abundance"
+        },
+        {
+          "position": 2,
+          "label": "What to do",
+          "meaning": "What to focus on to grow in abundance"
+        }
+      ],
+      "sources": [
+        "Dean"
+      ]
+    },
+    {
+      "name": "Being the Emperor (The Emperor)",
+      "cards": 3,
+      "purpose": "Uses the Emperor's organizing skills to reveal what you most need to manage at present.",
+      "positions": [
+        {
+          "position": 1,
+          "label": "Past success",
+          "meaning": "A success to stand on"
+        },
+        {
+          "position": 2,
+          "label": "Your situation",
+          "meaning": "What to take charge of now"
+        },
+        {
+          "position": 3,
+          "label": "Guidance",
+          "meaning": "Moving on from the situation in card 2"
+        }
+      ],
+      "sources": [
+        "Dean"
+      ]
+    },
+    {
+      "name": "Lessons and Blessings (The Hierophant)",
+      "cards": 3,
+      "purpose": "Acknowledge and appreciate what you are learning; gratitude opens the way to further lessons.",
+      "positions": [
+        {
+          "position": 1,
+          "label": "The situation now",
+          "meaning": "Where things stand"
+        },
+        {
+          "position": 2,
+          "label": "Your current lesson",
+          "meaning": "What you are learning about yourself through this situation"
+        },
+        {
+          "position": 3,
+          "label": "Blessings",
+          "meaning": "What you can be grateful for; skills and challenges that help with the lesson"
+        }
+      ],
+      "sources": [
+        "Dean"
+      ]
+    },
+    {
+      "name": "You and Them (The Lovers)",
+      "cards": 3,
+      "purpose": "A fast look at what each person brings to a relationship, new or established.",
+      "positions": [
+        {
+          "position": 1,
+          "label": "What you bring",
+          "meaning": "The qualities you bring to the relationship"
+        },
+        {
+          "position": 2,
+          "label": "What they bring",
+          "meaning": "The qualities the other person brings"
+        },
+        {
+          "position": 3,
+          "label": "The outcome",
+          "meaning": "Where the relationship is heading"
+        }
+      ],
+      "sources": [
+        "Dean"
+      ]
+    },
+    {
+      "name": "Where Am I Going? (The Chariot)",
+      "cards": 3,
+      "purpose": "The Chariot's progress as a small spread for what can move forward next in your life.",
+      "positions": [
+        {
+          "position": 1,
+          "label": "Where you are now",
+          "meaning": "Your current position"
+        },
+        {
+          "position": 2,
+          "label": "Where you are going",
+          "meaning": "The direction of travel"
+        },
+        {
+          "position": 3,
+          "label": "What to do next",
+          "meaning": "The next step to take"
+        }
+      ],
+      "sources": [
+        "Dean"
+      ]
+    },
+    {
+      "name": "Finding Resilience (Strength)",
+      "cards": 3,
+      "purpose": "Draw on energy reserves to stay strong and focused when you need to.",
+      "positions": [
+        {
+          "position": 1,
+          "label": "How to recharge",
+          "meaning": "How best to recharge your energy: what to avoid or do more of"
+        },
+        {
+          "position": 2,
+          "label": "Resources and support",
+          "meaning": "Resources and support available"
+        },
+        {
+          "position": 3,
+          "label": "Likely outcome",
+          "meaning": "Where this leads"
+        }
+      ],
+      "sources": [
+        "Dean"
+      ]
+    },
+    {
+      "name": "Healing Within (The Hermit)",
+      "cards": 3,
+      "purpose": "Look at healing and what you may need to soothe in yourself.",
+      "positions": [
+        {
+          "position": 1,
+          "label": "How you are feeling",
+          "meaning": "How you are feeling this moment"
+        },
+        {
+          "position": 2,
+          "label": "What needs care",
+          "meaning": "What aspect of your life needs care and attention"
+        },
+        {
+          "position": 3,
+          "label": "The benefit",
+          "meaning": "How this approach can benefit you going forward"
+        }
+      ],
+      "sources": [
+        "Dean"
+      ]
+    },
+    {
+      "name": "Ups and Downs (The Wheel of Fortune)",
+      "cards": 3,
+      "purpose": "A simple spread taking its inspiration from the Wheel's cycles of fortune.",
+      "positions": [
+        {
+          "position": 1,
+          "label": "The upside",
+          "meaning": "The upside of your present situation"
+        },
+        {
+          "position": 2,
+          "label": "The downside",
+          "meaning": "The downside of your situation"
+        },
+        {
+          "position": 3,
+          "label": "The outcome",
+          "meaning": "Where the cycle is heading"
+        }
+      ],
+      "sources": [
+        "Dean"
+      ]
+    },
+    {
+      "name": "Make That Decision (Justice)",
+      "cards": 3,
+      "purpose": "A three-card decision spread overseen by Justice; note the suits of any minor cards as well as their meanings.",
+      "positions": [
+        {
+          "position": 1,
+          "label": "Strengths",
+          "meaning": "What favours this choice"
+        },
+        {
+          "position": 2,
+          "label": "Weaknesses",
+          "meaning": "What counts against it"
+        },
+        {
+          "position": 3,
+          "label": "Advice",
+          "meaning": "What to do"
+        }
+      ],
+      "sources": [
+        "Dean"
+      ]
+    },
+    {
+      "name": "Trust Issues (The Hanged Man)",
+      "cards": 3,
+      "purpose": "Built on the Hanged Man's thin tether: what or whom you can trust, the doubt, and advice.",
+      "positions": [
+        {
+          "position": 1,
+          "label": "What you trust",
+          "meaning": "What or whom you trust or believe in"
+        },
+        {
+          "position": 2,
+          "label": "Doubt",
+          "meaning": "What to commit to or walk away from"
+        },
+        {
+          "position": 3,
+          "label": "Advice",
+          "meaning": "Advice going forward"
+        }
+      ],
+      "sources": [
+        "Dean"
+      ]
+    },
+    {
+      "name": "What's on the Horizon? (Death)",
+      "cards": 3,
+      "purpose": "Looks at what may be ending, how best to manage it, and what comes next.",
+      "positions": [
+        {
+          "position": 1,
+          "label": "What is to be transformed",
+          "meaning": "What is ending or changing"
+        },
+        {
+          "position": 2,
+          "label": "What you need",
+          "meaning": "What you need to move forward"
+        },
+        {
+          "position": 3,
+          "label": "What's on the horizon",
+          "meaning": "What comes next"
+        }
+      ],
+      "sources": [
+        "Dean"
+      ]
+    },
+    {
+      "name": "Balancing Opposites (Temperance)",
+      "cards": 4,
+      "purpose": "Find a way forward when dealing with opposing demands; Temperance herself is position 1.",
+      "positions": [
+        {
+          "position": 1,
+          "label": "The situation now",
+          "meaning": "Where things stand (Temperance oversees)"
+        },
+        {
+          "position": 2,
+          "label": "Negative impact",
+          "meaning": "The negative impact of your situation or relationship"
+        },
+        {
+          "position": 3,
+          "label": "Positive potential",
+          "meaning": "The positive potential of your situation or relationship"
+        },
+        {
+          "position": 4,
+          "label": "Guidance",
+          "meaning": "Where to find balance"
+        }
+      ],
+      "sources": [
+        "Dean"
+      ]
+    },
+    {
+      "name": "Hidden Truth (The Devil)",
+      "cards": 3,
+      "purpose": "Find the hidden truth that unlocks a stuck situation, using the bottom card of the deck as the final position.",
+      "positions": [
+        {
+          "position": 1,
+          "label": "The reason",
+          "meaning": "The reason for this situation"
+        },
+        {
+          "position": 2,
+          "label": "What needs to change",
+          "meaning": "What has to shift"
+        },
+        {
+          "position": 3,
+          "label": "Hidden truth",
+          "meaning": "The hidden truth, taken from the bottom of the deck, to help you move forward"
+        }
+      ],
+      "sources": [
+        "Dean"
+      ]
+    },
+    {
+      "name": "Surrender and Reflection (The Tower)",
+      "cards": 4,
+      "purpose": "The Tower is about acceptance rather than action: two face-up cards plus two new ones.",
+      "positions": [
+        {
+          "position": 1,
+          "label": "The Tower: destruction",
+          "meaning": "What is breaking down"
+        },
+        {
+          "position": 2,
+          "label": "What to surrender to",
+          "meaning": "What to let go of after the impact"
+        },
+        {
+          "position": 3,
+          "label": "What to reflect on",
+          "meaning": "What to contemplate, including what is in and out of balance"
+        },
+        {
+          "position": 4,
+          "label": "The Chariot: moving on",
+          "meaning": "How you move forward"
+        }
+      ],
+      "sources": [
+        "Dean"
+      ]
+    },
+    {
+      "name": "Star Power (The Star)",
+      "cards": 3,
+      "purpose": "When you have a wish: check your focus and pull in a little starlight.",
+      "positions": [
+        {
+          "position": 1,
+          "label": "What you're creating",
+          "meaning": "What you are creating or manifesting now"
+        },
+        {
+          "position": 2,
+          "label": "What to release",
+          "meaning": "What to release to allow your wish to manifest"
+        },
+        {
+          "position": 3,
+          "label": "Star power",
+          "meaning": "Cosmic guidance"
+        }
+      ],
+      "sources": [
+        "Dean"
+      ]
+    },
+    {
+      "name": "Moon Wisdom (The Moon)",
+      "cards": 3,
+      "purpose": "Uses the ocean's tides to see the benefits and the challenges in any situation.",
+      "positions": [
+        {
+          "position": 1,
+          "label": "High tide: benefits",
+          "meaning": "The benefits of the situation"
+        },
+        {
+          "position": 2,
+          "label": "Low tide: challenges",
+          "meaning": "The challenges of the situation"
+        },
+        {
+          "position": 3,
+          "label": "Gift or lesson",
+          "meaning": "The gift or lesson in it"
+        }
+      ],
+      "sources": [
+        "Dean"
+      ]
+    },
+    {
+      "name": "Sun Light (The Sun)",
+      "cards": 3,
+      "purpose": "When you need time to recharge and grow creatively, let these cards illuminate the way.",
+      "positions": [
+        {
+          "position": 1,
+          "label": "What can't grow",
+          "meaning": "What is blocked or withering"
+        },
+        {
+          "position": 2,
+          "label": "What should I sow",
+          "meaning": "What to plant or begin"
+        },
+        {
+          "position": 3,
+          "label": "What will manifest",
+          "meaning": "What will grow as a result"
+        }
+      ],
+      "sources": [
+        "Dean"
+      ]
+    },
+    {
+      "name": "Recurring Situations (The World)",
+      "cards": 3,
+      "purpose": "The World marks completion and a new cycle; this spread reveals a recurring situation and the lesson it brings.",
+      "positions": [
+        {
+          "position": 1,
+          "label": "The recurring situation",
+          "meaning": "The pattern that keeps returning"
+        },
+        {
+          "position": 2,
+          "label": "Advice",
+          "meaning": "What to do about it"
+        },
+        {
+          "position": 3,
+          "label": "Guidance for healing",
+          "meaning": "Guidance for healing this cycle"
+        }
+      ],
+      "sources": [
+        "Dean"
+      ]
+    },
+    {
+      "name": "Daily Pull",
+      "cards": 1,
+      "purpose": "Centre yourself, set an intentional day, and learn the cards through a single daily draw.",
+      "positions": [
+        {
+          "label": "Card for the Day",
+          "meaning": "What the day holds or what to focus on; journal whatever comes to mind without overthinking.",
+          "position": 1
+        }
+      ],
+      "sources": [
+        "Reed"
+      ]
+    },
+    {
+      "name": "Body Mind Spirit Spread",
+      "cards": 3,
+      "purpose": "Check in on your overall physical, mental, and spiritual energy, especially during illness or heavy responsibility.",
+      "positions": [
+        {
+          "label": "Body",
+          "meaning": "Your physical state and what your body needs.",
+          "position": 1
+        },
+        {
+          "label": "Mind",
+          "meaning": "Your mental state, focus, and worries.",
+          "position": 2
+        },
+        {
+          "label": "Spirit",
+          "meaning": "Your spiritual state and what restores you.",
+          "position": 3
+        }
+      ],
+      "sources": [
+        "Reed"
+      ]
+    },
+    {
+      "name": "Chakra Spread",
+      "cards": 7,
+      "purpose": "See whether any energy centre is blocked or out of balance; for exploration, not diagnosis.",
+      "positions": [
+        {
+          "label": "Root Chakra",
+          "meaning": "Basic needs, survival, and identity.",
+          "position": 1
+        },
+        {
+          "label": "Sacral Chakra",
+          "meaning": "Creativity, pleasure, and desire.",
+          "position": 2
+        },
+        {
+          "label": "Solar Plexus Chakra",
+          "meaning": "Willpower, self-esteem, and autonomy.",
+          "position": 3
+        },
+        {
+          "label": "Heart Chakra",
+          "meaning": "Love, compassion, and connection with others.",
+          "position": 4
+        },
+        {
+          "label": "Throat Chakra",
+          "meaning": "Communication, self-expression, and truth.",
+          "position": 5
+        },
+        {
+          "label": "Third Eye Chakra",
+          "meaning": "Intuition, imagination, and the big picture.",
+          "position": 6
+        },
+        {
+          "label": "Crown Chakra",
+          "meaning": "Awareness, knowledge, and wisdom.",
+          "position": 7
+        }
+      ],
+      "sources": [
+        "Reed"
+      ]
+    },
+    {
+      "name": "Recovery Spread",
+      "cards": 3,
+      "purpose": "Untangle fearful thinking while recovering from surgery, illness, or addiction.",
+      "positions": [
+        {
+          "label": "Present Moment",
+          "meaning": "Where you are right now in your recovery.",
+          "position": 1
+        },
+        {
+          "label": "What Do I Need Right Now?",
+          "meaning": "What you need in this moment.",
+          "position": 2
+        },
+        {
+          "label": "How Can I Continue to Support My Healing?",
+          "meaning": "How to keep supporting your healing going forward.",
+          "position": 3
+        }
+      ],
+      "sources": [
+        "Reed"
+      ]
+    },
+    {
+      "name": "Boundaries Spread",
+      "cards": 4,
+      "purpose": "Shore up boundaries with a specific person or in general, especially for caregivers.",
+      "positions": [
+        {
+          "label": "What Do I Need to Know About My Boundaries?",
+          "meaning": "What to know about your boundaries with this person right now.",
+          "position": 1
+        },
+        {
+          "label": "What Is Preventing Me from Setting Good Boundaries?",
+          "meaning": "The block that keeps you from setting limits.",
+          "position": 2
+        },
+        {
+          "label": "How Can I Care for My Needs in a Healthy, Happy Way?",
+          "meaning": "How to meet your own needs well.",
+          "position": 3
+        },
+        {
+          "label": "What Boundaries Can I Set Right Now to Empower Me?",
+          "meaning": "A boundary you can set immediately.",
+          "position": 4
+        }
+      ],
+      "sources": [
+        "Reed"
+      ]
+    },
+    {
+      "name": "What Do I Need? Spread",
+      "cards": 3,
+      "purpose": "Compare options for support by pulling one card per option, such as a helper, a day off, or a massage.",
+      "positions": [
+        {
+          "label": "Option 1",
+          "meaning": "What the first option would bring.",
+          "position": 1
+        },
+        {
+          "label": "Option 2",
+          "meaning": "What the second option would bring.",
+          "position": 2
+        },
+        {
+          "label": "Option 3",
+          "meaning": "What the third option would bring.",
+          "position": 3
+        }
+      ],
+      "sources": [
+        "Reed"
+      ]
+    },
+    {
+      "name": "Three Things, Right Now Spread",
+      "cards": 3,
+      "purpose": "Create ease when overwhelmed by finding three small changes instead of a complete overhaul.",
+      "positions": [
+        {
+          "label": "What Is One Thing I Can Take Off My Plate Right Now?",
+          "meaning": "One thing to release or delegate now.",
+          "position": 1
+        },
+        {
+          "label": "What Is One Habit I Can Change Right Now?",
+          "meaning": "One habit to change now.",
+          "position": 2
+        },
+        {
+          "label": "What Is One Kind Thing I Can Do for Myself Right Now?",
+          "meaning": "One kind thing to do for yourself now.",
+          "position": 3
+        }
+      ],
+      "sources": [
+        "Reed"
+      ]
+    },
+    {
+      "name": "The Situation, What You Need to Know, and Advice Spread",
+      "cards": 3,
+      "purpose": "A go-to all-purpose spread for moving through a problem with grace.",
+      "positions": [
+        {
+          "label": "The Situation",
+          "meaning": "Where you stand at the moment.",
+          "position": 1
+        },
+        {
+          "label": "What You Need to Know",
+          "meaning": "What you may be missing or ignoring.",
+          "position": 2
+        },
+        {
+          "label": "Advice",
+          "meaning": "Guidance for moving through the issue wisely.",
+          "position": 3
+        }
+      ],
+      "sources": [
+        "Reed"
+      ]
+    },
+    {
+      "name": "Grief Spread",
+      "cards": 5,
+      "purpose": "Work through loss using the five stages of grief; for yourself or someone grieving.",
+      "positions": [
+        {
+          "label": "What Do I Need to Look at Right Now?",
+          "meaning": "What needs attention in this moment.",
+          "position": 1
+        },
+        {
+          "label": "What Can I Learn from My Anger?",
+          "meaning": "What anger is teaching you.",
+          "position": 2
+        },
+        {
+          "label": "What Can I Do to Find Peace with the Present Moment?",
+          "meaning": "How to find peace right now.",
+          "position": 3
+        },
+        {
+          "label": "What Is My Sadness Trying to Tell Me?",
+          "meaning": "The message inside your sadness.",
+          "position": 4
+        },
+        {
+          "label": "What Do I Need to Accept at This Time?",
+          "meaning": "What acceptance is asking of you now.",
+          "position": 5
+        }
+      ],
+      "sources": [
+        "Reed"
+      ]
+    },
+    {
+      "name": "Mediumship Spread",
+      "cards": 8,
+      "purpose": "Learn how a departed loved one is doing on the other side and hear any messages they have.",
+      "positions": [
+        {
+          "label": "Querent Significator",
+          "meaning": "A Court card chosen for the querent, by astrological sign or identity.",
+          "position": 1
+        },
+        {
+          "label": "Deceased Significator",
+          "meaning": "A Court card chosen for the departed person; use the High Priestess if the sign is unknown, both share one significator, or it is a pet.",
+          "position": 2
+        },
+        {
+          "label": "The Soul's Journey — card 1",
+          "meaning": "Three cards read as a whole describing the departed person's journey.",
+          "position": 3
+        },
+        {
+          "label": "The Soul's Journey — card 2",
+          "meaning": "Three cards read as a whole describing the departed person's journey.",
+          "position": 4
+        },
+        {
+          "label": "The Soul's Journey — card 3",
+          "meaning": "Three cards read as a whole describing the departed person's journey.",
+          "position": 5
+        },
+        {
+          "label": "Messages from the Spirit — card 1",
+          "meaning": "Three cards read as a whole carrying the spirit's messages for the querent.",
+          "position": 6
+        },
+        {
+          "label": "Messages from the Spirit — card 2",
+          "meaning": "Three cards read as a whole carrying the spirit's messages for the querent.",
+          "position": 7
+        },
+        {
+          "label": "Messages from the Spirit — card 3",
+          "meaning": "Three cards read as a whole carrying the spirit's messages for the querent.",
+          "position": 8
+        }
+      ],
+      "sources": [
+        "Reed"
+      ]
+    },
+    {
+      "name": "Card for the Day Spread",
+      "cards": 1,
+      "purpose": "Stay in the present moment when facing a terminal illness, instead of looking far ahead.",
+      "positions": [
+        {
+          "label": "Today",
+          "meaning": "The most meaningful thing to do today, how to make the most of today, or what magic to expect today.",
+          "position": 1
+        }
+      ],
+      "sources": [
+        "Reed"
+      ]
+    },
+    {
+      "name": "Meeting My Guardian Angel Spread",
+      "cards": 9,
+      "purpose": "Connect with your guardian angel for comfort and guidance.",
+      "positions": [
+        {
+          "label": "What Do I Need to Know About My Guardian Angel? — card 1",
+          "meaning": "Three cards describing your guardian angel.",
+          "position": 1
+        },
+        {
+          "label": "What Do I Need to Know About My Guardian Angel? — card 2",
+          "meaning": "Three cards describing your guardian angel.",
+          "position": 2
+        },
+        {
+          "label": "What Do I Need to Know About My Guardian Angel? — card 3",
+          "meaning": "Three cards describing your guardian angel.",
+          "position": 3
+        },
+        {
+          "label": "How Can I Connect with My Guardian Angel? — card 1",
+          "meaning": "Three cards on how to connect with them.",
+          "position": 4
+        },
+        {
+          "label": "How Can I Connect with My Guardian Angel? — card 2",
+          "meaning": "Three cards on how to connect with them.",
+          "position": 5
+        },
+        {
+          "label": "How Can I Connect with My Guardian Angel? — card 3",
+          "meaning": "Three cards on how to connect with them.",
+          "position": 6
+        },
+        {
+          "label": "What Messages Does My Guardian Angel Have for Me Right Now? — card 1",
+          "meaning": "Three cards carrying their messages for you now.",
+          "position": 7
+        },
+        {
+          "label": "What Messages Does My Guardian Angel Have for Me Right Now? — card 2",
+          "meaning": "Three cards carrying their messages for you now.",
+          "position": 8
+        },
+        {
+          "label": "What Messages Does My Guardian Angel Have for Me Right Now? — card 3",
+          "meaning": "Three cards carrying their messages for you now.",
+          "position": 9
+        }
+      ],
+      "sources": [
+        "Reed"
+      ]
+    },
+    {
+      "name": "The Three R's Spread",
+      "cards": 3,
+      "purpose": "Heal after pregnancy loss or the loss of a child.",
+      "positions": [
+        {
+          "label": "Release: What Do I Need to Release?",
+          "meaning": "What to let go of.",
+          "position": 1
+        },
+        {
+          "label": "Recover: How Can I Recover?",
+          "meaning": "How to recover.",
+          "position": 2
+        },
+        {
+          "label": "Remember: How Do I Honor the Memory of This Child?",
+          "meaning": "How to honour the child's memory.",
+          "position": 3
+        }
+      ],
+      "sources": [
+        "Reed"
+      ]
+    },
+    {
+      "name": "Past, Present, and Future Spread",
+      "cards": 3,
+      "purpose": "A classic spread that works well after a job loss, when the focus is fixed on finding new work.",
+      "positions": [
+        {
+          "label": "Past",
+          "meaning": "What led here.",
+          "position": 1
+        },
+        {
+          "label": "Present",
+          "meaning": "Where you are now.",
+          "position": 2
+        },
+        {
+          "label": "Future",
+          "meaning": "What is coming next.",
+          "position": 3
+        }
+      ],
+      "sources": [
+        "Reed"
+      ]
+    },
+    {
+      "name": "Now, Soon, Obstacles, The New Beginning Spread",
+      "cards": 4,
+      "purpose": "Navigate any life change, such as the empty nest, by mapping now, soon, obstacles, and the new beginning.",
+      "positions": [
+        {
+          "label": "Now",
+          "meaning": "Where things are now.",
+          "position": 1
+        },
+        {
+          "label": "Soon",
+          "meaning": "What is coming soon.",
+          "position": 2
+        },
+        {
+          "label": "Obstacles",
+          "meaning": "What stands in the way.",
+          "position": 3
+        },
+        {
+          "label": "The New Beginning Looks Like...",
+          "meaning": "What the new beginning will look like.",
+          "position": 4
+        }
+      ],
+      "sources": [
+        "Reed"
+      ]
+    },
+    {
+      "name": "Reflection on Aging Spread",
+      "cards": 4,
+      "purpose": "Make peace with getting older and focus on how you feel rather than how you look.",
+      "positions": [
+        {
+          "label": "What Do You Need to Face About Getting Older?",
+          "meaning": "What aging asks you to face.",
+          "position": 1
+        },
+        {
+          "label": "What Is Your Inner Dialogue at This Time?",
+          "meaning": "What you are telling yourself about aging.",
+          "position": 2
+        },
+        {
+          "label": "What Can You Appreciate About Yourself Right Now?",
+          "meaning": "What to appreciate about yourself now.",
+          "position": 3
+        },
+        {
+          "label": "What Are Some Actions You Can Take to Accept Yourself Right Now?",
+          "meaning": "Actions that help you accept yourself.",
+          "position": 4
+        }
+      ],
+      "sources": [
+        "Reed"
+      ]
+    },
+    {
+      "name": "The Five Remembrances Spread",
+      "cards": 5,
+      "purpose": "Remember that life is precious and finite, based on the Buddhist Five Remembrances, and loosen grasping.",
+      "positions": [
+        {
+          "label": "What Do I Need to Know About Aging?",
+          "meaning": "What aging has to teach you.",
+          "position": 1
+        },
+        {
+          "label": "What Do I Need to Know About Health?",
+          "meaning": "What health has to teach you.",
+          "position": 2
+        },
+        {
+          "label": "What Do I Need to Know About Dying?",
+          "meaning": "What dying has to teach you.",
+          "position": 3
+        },
+        {
+          "label": "What Do I Need to Know About Loss?",
+          "meaning": "What loss has to teach you.",
+          "position": 4
+        },
+        {
+          "label": "What Do I Need to Know About My Karma?",
+          "meaning": "What your deeds and karma have to teach you.",
+          "position": 5
+        }
+      ],
+      "sources": [
+        "Reed"
+      ]
+    },
+    {
+      "name": "Self and the Other",
+      "cards": 5,
+      "purpose": "Overlaid on a regular spread to clarify how the reader relates to the querent — empathy, mirroring, and understanding their actions.",
+      "positions": [
+        {
+          "label": "Your Inner Self",
+          "meaning": "Where you, the reader, are emotionally at this point in the reading.",
+          "position": 1
+        },
+        {
+          "label": "Empathy for the Other",
+          "meaning": "How you perceive the other person and recognize their emotions.",
+          "position": 2
+        },
+        {
+          "label": "Mirroring the Other in You",
+          "meaning": "How you would feel in their shoes — feeling what they feel.",
+          "position": 3
+        },
+        {
+          "label": "Understanding the Other's Actions",
+          "meaning": "Their desires, influences, and choices — contemplating why they act as they do.",
+          "position": 4
+        },
+        {
+          "label": "Future Prognostications",
+          "meaning": "What they can do to resolve the situation, and the ramifications of those next steps.",
+          "position": 5
+        }
+      ],
+      "sources": [
+        "Ramakrishnan"
+      ]
+    },
+    {
+      "name": "Narrative Arc",
+      "cards": 3,
+      "purpose": "For a querent stuck on a preconceived outcome or looping on choices — walks through plot formation, resistance, and future possibility.",
+      "positions": [
+        {
+          "label": "Plot Narrative",
+          "meaning": "The story forming in the reading — the plot as it stands.",
+          "position": 1
+        },
+        {
+          "label": "Roadblocks to Acceptance",
+          "meaning": "Why the querent may not be ready to hear the story, or finds it discordant with their expectations; ask the querent to interpret this card themselves.",
+          "position": 2
+        },
+        {
+          "label": "Future Contemplation",
+          "meaning": "The querent's crossroads — how things could unfold with different choices.",
+          "position": 3
+        }
+      ],
+      "sources": [
+        "Ramakrishnan"
+      ]
+    },
+    {
+      "name": "Anticipation Spread",
+      "cards": 3,
+      "purpose": "Overcomes the bias of expectation and opens the reader to newer inputs; can also be used to set intentions.",
+      "positions": [
+        {
+          "label": "First Card",
+          "meaning": "Opened first; write down what you expect the second card to be before opening it.",
+          "position": 1
+        },
+        {
+          "label": "Second Card",
+          "meaning": "Opened next; notice how you feel when you see it — does it match what you expected? Ask the querent the same.",
+          "position": 2
+        },
+        {
+          "label": "Third Card",
+          "meaning": "Predict it before opening, note your feelings beforehand, then compare expectation with reality.",
+          "position": 3
+        }
+      ],
+      "sources": [
+        "Ramakrishnan"
+      ]
+    },
+    {
+      "name": "One-Card Reflection Spread",
+      "cards": 1,
+      "purpose": "Look back at the day and reflect on its key lesson or message.",
+      "positions": [
+        {
+          "position": 1,
+          "label": "Key lesson or message of the day",
+          "meaning": "What the day was trying to teach you."
+        }
+      ],
+      "sources": [
+        "Papez"
+      ]
+    },
+    {
+      "name": "Two-Card Personal Growth Check-In Spread",
+      "cards": 2,
+      "purpose": "A present-time check-in on your personal growth.",
+      "positions": [
+        {
+          "position": 1,
+          "label": "What should I be working on?",
+          "meaning": "The growth edge right now."
+        },
+        {
+          "position": 2,
+          "label": "What can help me do better?",
+          "meaning": "The support or approach that helps."
+        }
+      ],
+      "sources": [
+        "Papez"
+      ]
+    },
+    {
+      "name": "Three-Card Week- or Month-Ahead Spread",
+      "cards": 3,
+      "purpose": "A simple forecast of what is coming up in the week or month ahead.",
+      "positions": [
+        {
+          "position": 1,
+          "label": "Primary theme of the upcoming week/month",
+          "meaning": "The main thread of the period ahead."
+        },
+        {
+          "position": 2,
+          "label": "What to avoid this week/month",
+          "meaning": "What to steer clear of."
+        },
+        {
+          "position": 3,
+          "label": "What to embrace this week/month",
+          "meaning": "What to lean into."
+        }
+      ],
+      "sources": [
+        "Papez"
+      ]
+    },
+    {
+      "name": "Four-Card Guidance Spread",
+      "cards": 4,
+      "purpose": "Process something weighing on your mind and find your next best steps.",
+      "positions": [
+        {
+          "position": 1,
+          "label": "What lies at the heart of the issue?",
+          "meaning": "The core of the situation."
+        },
+        {
+          "position": 2,
+          "label": "Internal influences",
+          "meaning": "What is coming from inside you."
+        },
+        {
+          "position": 3,
+          "label": "External influences",
+          "meaning": "What is coming from outside you."
+        },
+        {
+          "position": 4,
+          "label": "Key to a favourable outcome",
+          "meaning": "What unlocks the best resolution."
+        }
+      ],
+      "sources": [
+        "Papez"
+      ]
+    },
+    {
+      "name": "One-Card Focus Spread",
+      "cards": 1,
+      "purpose": "Drawn at the start of the day: something to keep in mind or focus on.",
+      "positions": [
+        {
+          "position": 1,
+          "label": "Focus for the day",
+          "meaning": "What to hold in mind through the day ahead."
+        }
+      ],
+      "sources": [
+        "Papez"
+      ]
+    },
+    {
+      "name": "Two-Card Situation/Advice Spread",
+      "cards": 2,
+      "purpose": "Quick insight for navigating a situation, good or bad.",
+      "positions": [
+        {
+          "position": 1,
+          "label": "What do I need to know about this situation?",
+          "meaning": "Context and information about what is happening."
+        },
+        {
+          "position": 2,
+          "label": "What action should I take?",
+          "meaning": "Advice for the next step."
+        }
+      ],
+      "sources": [
+        "Papez"
+      ]
+    },
+    {
+      "name": "Three-Card Wants vs. Needs Spread",
+      "cards": 3,
+      "purpose": "Separate what you want from what you need and bridge the gap between them.",
+      "positions": [
+        {
+          "position": 1,
+          "label": "What you want",
+          "meaning": "The desire pulling at you."
+        },
+        {
+          "position": 2,
+          "label": "What you need",
+          "meaning": "What would actually serve you."
+        },
+        {
+          "position": 3,
+          "label": "How to bridge the gap",
+          "meaning": "How to move from want toward need."
+        }
+      ],
+      "sources": [
+        "Papez"
+      ]
+    },
+    {
+      "name": "Four-Card Life Learning Spread",
+      "cards": 4,
+      "purpose": "Draw lessons from past and present and integrate them into what comes next.",
+      "positions": [
+        {
+          "position": 1,
+          "label": "Something you can learn from your past",
+          "meaning": "A past lesson still relevant."
+        },
+        {
+          "position": 2,
+          "label": "Something you can learn from your present",
+          "meaning": "What the present is teaching."
+        },
+        {
+          "position": 3,
+          "label": "What you need to learn next",
+          "meaning": "Where to focus your learning."
+        },
+        {
+          "position": 4,
+          "label": "How to integrate this knowledge",
+          "meaning": "How to put the lessons together."
+        }
+      ],
+      "sources": [
+        "Papez"
+      ]
+    },
+    {
+      "name": "One-Card Embodiment Spread",
+      "cards": 1,
+      "purpose": "Pull a court card for qualities to embody in the day or week ahead.",
+      "positions": [
+        {
+          "position": 1,
+          "label": "Qualities to embody",
+          "meaning": "Lean into this character's strengths and work past their struggles."
+        }
+      ],
+      "sources": [
+        "Papez"
+      ]
+    },
+    {
+      "name": "Two-Card Situation/Advice Spread (Court Cards)",
+      "cards": 2,
+      "purpose": "Explore a predicament through court-card personalities and energies.",
+      "positions": [
+        {
+          "position": 1,
+          "label": "What do I need to know about this situation?",
+          "meaning": "Use the court card to understand the energy or personality of the situation."
+        },
+        {
+          "position": 2,
+          "label": "What action should I take?",
+          "meaning": "Use the court card to find the best approach to navigate it."
+        }
+      ],
+      "sources": [
+        "Papez"
+      ]
+    },
+    {
+      "name": "Three-Card Me, Them, Us Spread",
+      "cards": 3,
+      "purpose": "A relationship spread for any kind of relationship — romantic, platonic, professional, or familial.",
+      "positions": [
+        {
+          "position": 1,
+          "label": "Me",
+          "meaning": "Personality traits coming forward prominently for you."
+        },
+        {
+          "position": 2,
+          "label": "Them",
+          "meaning": "Personality traits coming forward prominently for the other person."
+        },
+        {
+          "position": 3,
+          "label": "Us",
+          "meaning": "Traits both should lean into to create more harmony."
+        }
+      ],
+      "sources": [
+        "Papez"
+      ]
+    },
+    {
+      "name": "Four-Card Personal Development Spread",
+      "cards": 4,
+      "purpose": "Explore your own personal growth and development.",
+      "positions": [
+        {
+          "position": 1,
+          "label": "Strengths to lean into",
+          "meaning": "What is already working for you."
+        },
+        {
+          "position": 2,
+          "label": "Struggles you are currently dealing with",
+          "meaning": "What is getting in the way."
+        },
+        {
+          "position": 3,
+          "label": "Advice from a court card",
+          "meaning": "What advice would this character give you about your struggles?"
+        },
+        {
+          "position": 4,
+          "label": "Action step to take",
+          "meaning": "What would this court card do next?"
+        }
+      ],
+      "sources": [
+        "Papez"
+      ]
+    },
+    {
+      "name": "Daily Advice",
+      "cards": 1,
+      "purpose": "One card taken as advice for a better day today.",
+      "positions": [
+        {
+          "position": 1,
+          "label": "Advice for today",
+          "meaning": "Start with a single-sentence piece of advice, then journal deeper if you like."
+        }
+      ],
+      "sources": [
+        "Papez"
+      ]
+    },
+    {
+      "name": "Evening Reflection",
+      "cards": 1,
+      "purpose": "Look back on the day at its end and learn from what happened.",
+      "positions": [
+        {
+          "position": 1,
+          "label": "What lesson can I learn from my experiences today?",
+          "meaning": "Frame the interpretation as a question to sit with."
+        }
+      ],
+      "sources": [
+        "Papez"
+      ]
+    },
+    {
+      "name": "Preparation",
+      "cards": 1,
+      "purpose": "A daily forecast that empowers you to be prepared for the day ahead.",
+      "positions": [
+        {
+          "position": 1,
+          "label": "What do I need to be prepared for today?",
+          "meaning": "Read literally or metaphorically — what is coming, and how to meet it."
+        }
+      ],
+      "sources": [
+        "Papez"
+      ]
+    },
+    {
+      "name": "Within, Without, Advice",
+      "cards": 3,
+      "purpose": "Untangle a situation into inner influences, outer forces, and what to do.",
+      "positions": [
+        {
+          "position": 1,
+          "label": "Within",
+          "meaning": "Internal influences — thoughts or emotions about the subject."
+        },
+        {
+          "position": 2,
+          "label": "Without",
+          "meaning": "External forces outside your control."
+        },
+        {
+          "position": 3,
+          "label": "Advice",
+          "meaning": "What to consider or how to act."
+        }
+      ],
+      "sources": [
+        "Papez"
+      ]
+    },
+    {
+      "name": "Energy, Obstacle, Advice",
+      "cards": 3,
+      "purpose": "Papez's own favourite three-card spread, created because the popular ones left her wanting more.",
+      "positions": [
+        {
+          "position": 1,
+          "label": "Energy",
+          "meaning": "What is going on energetically with the situation."
+        },
+        {
+          "position": 2,
+          "label": "Obstacle",
+          "meaning": "What is causing trouble."
+        },
+        {
+          "position": 3,
+          "label": "Advice",
+          "meaning": "How to move forward."
+        }
+      ],
+      "sources": [
+        "Papez"
+      ]
     }
-  ]
+  ],
+  "greer_21_ways": {
+    "note": "Bounded sample only: the book is a scanned image-only PDF with no text layer, so only the contents (all 21 steps) plus Steps 8, 12 and 14 in detail were read; the full text was not extracted.",
+    "source": "Greer, 21 Ways to Read a Tarot Card",
+    "steps": [
+      {
+        "step": 0,
+        "name": "Stepping Out"
+      },
+      {
+        "step": 1,
+        "name": "Name"
+      },
+      {
+        "step": 2,
+        "name": "Description"
+      },
+      {
+        "step": 3,
+        "name": "Emotion"
+      },
+      {
+        "step": 4,
+        "name": "Story"
+      },
+      {
+        "step": 5,
+        "name": "Number"
+      },
+      {
+        "step": 6,
+        "name": "Mode/Suit/Element"
+      },
+      {
+        "step": 7,
+        "name": "Synthesis"
+      },
+      {
+        "step": 8,
+        "name": "Metaphor"
+      },
+      {
+        "step": 9,
+        "name": "Query & Snapshots"
+      },
+      {
+        "step": 10,
+        "name": "Meanings"
+      },
+      {
+        "step": 11,
+        "name": "Range"
+      },
+      {
+        "step": 12,
+        "name": "Modification"
+      },
+      {
+        "step": 13,
+        "name": "Symbols"
+      },
+      {
+        "step": 14,
+        "name": "Dignity & Theme"
+      },
+      {
+        "step": 15,
+        "name": "Dialogs"
+      },
+      {
+        "step": 16,
+        "name": "Drawing"
+      },
+      {
+        "step": 17,
+        "name": "Embodiment"
+      },
+      {
+        "step": 18,
+        "name": "Imagination"
+      },
+      {
+        "step": 19,
+        "name": "Myth & Archetypes"
+      },
+      {
+        "step": 20,
+        "name": "Deck Comparison"
+      },
+      {
+        "step": 21,
+        "name": "The Possible Self"
+      },
+      {
+        "step": "00",
+        "name": "Full Circle"
+      }
+    ]
+  }
 }
