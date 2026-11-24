@@ -1,0 +1,910 @@
+{
+  "combination_principles": [
+    {
+      "applies_to": "general",
+      "rule": "Add the keywords: a combination is read by adding up each card's core keyword into one sentence, then shaping that sentence to fit the question. Start with two cards and build up from there.",
+      "sources": [
+        "Papez"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "The whole layout gives the answer, not any single card. Read every card in the context of the others and the question before settling on an interpretation.",
+      "sources": [
+        "Fiebig",
+        "Papez"
+      ]
+    },
+    {
+      "applies_to": "majors-and-minors",
+      "rule": "A Major Arcana card sets the scene for the whole reading, and the Minor Arcana cards relate back to it. When Majors make up half or more of a spread, the reading is more fixed and life-changing; with few or no Majors, it is more flexible and changeable.",
+      "sources": [
+        "Esselmont",
+        "Papez"
+      ]
+    },
+    {
+      "applies_to": "majors-and-minors",
+      "rule": "Minor Arcana cards in a spread with a Major Arcana card are drawn into that Major's sphere of influence: the Major names the big theme and the Minors show how it plays out in everyday life.",
+      "sources": [
+        "Hamaker-Zondag"
+      ]
+    },
+    {
+      "applies_to": "majors-and-minors",
+      "rule": "Cards with the same number share a theme across suits and elements. A Three of Swords and a Three of Cups are the same theme on different levels, and the Major card of that number (for example, III The Empress over all the Threes) names the theme they share.",
+      "sources": [
+        "Fiebig"
+      ]
+    },
+    {
+      "applies_to": "majors-and-minors",
+      "rule": "Parallel cards share a final digit and echo each other as base tone and octave, or foreground and background: for example, V The Hierophant and XV The Devil, or VII The Chariot and XVII The Star.",
+      "sources": [
+        "Fiebig"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "Adding the cards' numbers can unlock a card: the Quintessential card is the digit-sum of a whole layout, reduced to a Major Arcana card, and names the layout's underlying theme. Two cards can also be added to explain a third (for example, II + III = V).",
+      "sources": [
+        "Fiebig"
+      ]
+    },
+    {
+      "applies_to": "elemental",
+      "rule": "Count the elements in a spread: Wands are fire (passion, action), Cups are water (feeling), Swords are air (thought), Pentacles are earth (resources, body). A dominant element colours the whole reading, and a missing element is information too — it names what the situation lacks.",
+      "sources": [
+        "Papez",
+        "Ethony",
+        "Fiebig"
+      ]
+    },
+    {
+      "applies_to": "elemental",
+      "rule": "Friendly elements strengthen each other: fire and air feed each other, and water and earth support each other. A spread heavy in one of these pairs reads as fast-moving and intense (fire-air) or slow, healing, and grounded (water-earth).",
+      "sources": [
+        "Ethony"
+      ]
+    },
+    {
+      "applies_to": "elemental",
+      "rule": "Opposing elements weaken each other: fire is put out by water and earth, and water and air cannot support each other. When opposing suits sit together, read both cards as muted, strained, or in conflict.",
+      "sources": [
+        "Ethony"
+      ]
+    },
+    {
+      "applies_to": "elemental",
+      "rule": "Air and earth dilute each other rather than strengthening or cancelling out: they can sit side by side, but they feel opposite — air light and quick, earth slow and dense — so neither card dominates the other.",
+      "sources": [
+        "Ethony"
+      ]
+    },
+    {
+      "applies_to": "court-cards",
+      "rule": "A court card's rank adds its own element to its suit: Pages are earth, Knights are fire, Queens are water, Kings are air. A court card whose rank and suit share an element is doubled and intensified — for example, the Queen of Cups is double water, so her intuition runs especially strong.",
+      "sources": [
+        "Ethony"
+      ]
+    },
+    {
+      "applies_to": "court-cards",
+      "rule": "Two court cards of the same rank play the same role in different styles: a Knight of Wands charges in and acts, while a Knight of Cups pauses to weigh how a choice will feel. Read the rank for the role and the suit for how it is played.",
+      "sources": [
+        "Ethony"
+      ]
+    },
+    {
+      "applies_to": "court-cards",
+      "rule": "A court card can mean a real person or an energy, and the spread position decides which: in an 'internal influences' position it is usually the querent's own traits, and in an 'external influences' position it is usually someone else or the wider environment.",
+      "sources": [
+        "Papez",
+        "Ethony"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "No card is only good or only bad: a 'difficult' card is softened by supportive neighbours and a 'kind' card is sharpened by hard ones. Let the surrounding cards decide whether to lean into the brighter or darker side of a card's meaning.",
+      "sources": [
+        "Papez",
+        "Fiebig"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "Watch for repeating numbers and rising or falling number sequences across a spread: repeated numbers (for example, several Twos) flag a shared theme such as choice, and a rising sequence suggests something escalating while a falling one suggests it easing.",
+      "sources": [
+        "Papez",
+        "Esselmont"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "Watch which way the figures on the cards face: several figures facing left suggest a pull toward the past, several facing right a pull toward the future, two figures facing each other a conflict or meeting, and figures turned away from each other a failure to see eye to eye.",
+      "sources": [
+        "Papez"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "Read every card on two levels at once: the objective level, where figures stand for other people, and the subjective level, where they mirror an aspect of the querent. If it is unclear which applies, hold both readings open until the rest of the spread clarifies it.",
+      "sources": [
+        "Fiebig"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "A reversed card usually yields the opposite meaning to the same card upright.",
+      "sources": [
+        "Gray"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "A reading depends not only on each card's own meaning but on its place in the layout, and the cards on each side may also affect the interpretation.",
+      "sources": [
+        "Gray"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "Glance at the whole spread first for a preponderance of one suit: many Wands mean change, many Cups love and goodness, many Swords strife, many Pentacles political action or intrigue.",
+      "sources": [
+        "Gray"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "Many Major Arcana cards in a spread indicate the answer to the question is largely controlled by other people.",
+      "sources": [
+        "Gray"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "Make a running story out of the cards in relation to the querent rather than reading each card in isolation.",
+      "sources": [
+        "Gray"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "Choose a Court card as the querent's significator before shuffling, by age and coloring (Page for the young, Knight for a young man, King for a married mature man, Queen for a woman over twenty-one), or by temperament; the layout may direct it to the center of the spread or back into the deck.",
+      "sources": [
+        "Gray"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "Knights in a spread may mean the coming or going of a matter, and Court cards generally may stand for people or for traits rather than a person.",
+      "sources": [
+        "Gray"
+      ]
+    },
+    {
+      "applies_to": "Horoscope Method",
+      "rule": "A card's meaning is narrowed by the House it falls in: the Two of Cups on Leo (5th House, the heart) means a love affair, while on Aquarius (11th House, friendship) it means a new friendship.",
+      "sources": [
+        "Gray"
+      ]
+    },
+    {
+      "applies_to": "Tree of Life Method",
+      "rule": "A card on the right-hand branch of the Tree is read with mercy and compassion, on the left-hand branch with severity, and on the middle branch in a spirit of harmony.",
+      "sources": [
+        "Gray"
+      ]
+    },
+    {
+      "applies_to": "Tree of Life Method",
+      "rule": "If the querent's significator card turns up in the spread, look with special attention at that position on the Tree.",
+      "sources": [
+        "Gray"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "If the cards do not seem to respond, have the querent shuffle again and concentrate more deeply; if they still make no sense, put them away for at least twenty-four hours before trying again.",
+      "sources": [
+        "Gray"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "Never finish a reading on a discouraging note: show how the querent can overcome problems by work, study, care of health, or more love and compassion in relationships.",
+      "sources": [
+        "Gray"
+      ]
+    }
+  ],
+  "notes": "Where the books disagree: on reversals, Papez treats them as optional and argues the tarot is already balanced between light and shadow, while Clark calls dual upright/reversed meanings the more traditional and more nuanced method, and Esselmont offers four reversal methods (internalised energy, too much or too little, blocked, upside-down imagery) and advises picking one method for a whole reading. On the Celtic Cross tenth position, Papez reads it as the key to the outcome rather than the outcome itself, while Fiebig's Celtic/Sun Cross variations call the tenth card the outcome, goal, or task. On elements, Ethony's interaction table (fire-earth oppose, water-air oppose, air-earth merely dilute) differs from the classic Golden Dawn elemental dignities, where fire-earth and water-air are neutral rather than opposing; the app should treat Ethony's version as one system, not the only one. On numbers, Fiebig argues numbers have no inherent meaning beyond their functional value, while Esselmont and Papez both use numerology (repeating numbers, digit sums) as a live interpretive tool. On the five-card spread, Fiebig defines no single standard five-card layout — the five-card set used here (Situation / Challenge / Guidance / Hidden influence / Outcome) is the standard general-purpose layout, while Fiebig's own five-card variants include the Trend (what you have, what you are looking for, what you should do, what you want, what is important now) and Present and Future, both catalogued or noted here. Every principle in this file is grounded in a named source, and the elemental interaction rules are Ethony's system rather than a universal one. What the books do not cover: none of the sources gives a systematic table of how specific card pairs combine beyond Esselmont's per-card suggested combinations, so pair-level meanings must be computed from the keyword-addition and elemental rules rather than looked up; none gives rules for chains of three or more cards beyond Papez's five-step method; none addresses how a user's personal lexicon should override or blend with a traditional combination reading; none gives rules for reversed cards in specific spread positions beyond the general reversal methods; and none covers timing in combinations except Ethony's court-card timing chapter, which is not summarised here. The Fiebig book contains 122 layouts; this catalog is a curated 11, chosen for general-purpose use, and the app's 1-, 3-, and 5-card spreads are listed first.\n\nEden Gray adds three full spreads (Ancient Celtic Method, Horoscope Method, Tree of Life Method), each with a complete sample reading, plus suit-preponderance and significator rules. She gives no dedicated two-card pair-combination chapter and no short 1- or 3-card spreads. Her Ancient Celtic Method is a distinct variant from the Celtic Cross already in the catalog (Papez's position set) — both are kept. Her Tree of Life chapter also describes a full Life-reading variant (seven cards at each Tree position, spread three times for past/present/future, at most once a year per querent).",
+  "positional_rules": [
+    {
+      "applies_to": "general",
+      "rule": "A spread position is half the interpretation: combine the card's meaning with the position's meaning to get the reading. The same card means something different in every slot it lands in.",
+      "sources": [
+        "Papez",
+        "Fiebig"
+      ]
+    },
+    {
+      "applies_to": "past-present-future",
+      "rule": "A card in a past position shows roots and influences — what shaped the present — not a prediction. Read it as background that is still active, not as something finished and gone.",
+      "sources": [
+        "Fiebig",
+        "Papez"
+      ]
+    },
+    {
+      "applies_to": "past-present-future",
+      "rule": "A card in a present position shows the live energy of the situation right now: what is happening, what is on the querent's mind, and what they can act on today.",
+      "sources": [
+        "Fiebig",
+        "Papez"
+      ]
+    },
+    {
+      "applies_to": "past-present-future",
+      "rule": "A card in a future position shows direction and tendency, not a fixed fate. It describes where things are headed if nothing changes, and it can be renamed as a tendency or next step for readers who do not read predictively.",
+      "sources": [
+        "Fiebig",
+        "Papez"
+      ]
+    },
+    {
+      "applies_to": "challenge-positions",
+      "rule": "A card laid across another (the crossing card) modifies it for good or bad: it either supports the card beneath it or blocks and challenges it. Read the pair together, not the crossing card on its own.",
+      "sources": [
+        "Papez",
+        "Fiebig"
+      ]
+    },
+    {
+      "applies_to": "challenge-positions",
+      "rule": "A card in a challenge or obstacle position is read as a block even if it is a normally 'positive' card: ask what about this energy is getting in the way, being overdone, or arriving at the wrong time.",
+      "sources": [
+        "Fiebig",
+        "Papez"
+      ]
+    },
+    {
+      "applies_to": "challenge-positions",
+      "rule": "A card in a strength, talent, or chance position is read as a resource even if it is a normally 'difficult' card: ask what this energy offers, what it makes possible, and how it can be used well.",
+      "sources": [
+        "Fiebig"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "A card in a hopes-and-fears position is both at once: the querent's greatest hope and greatest fear are usually the same thing, or two sides of the same coin. Ask how the card could be both hoped for and feared.",
+      "sources": [
+        "Papez"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "A card in a hidden or unconscious position shows what the querent does not yet see: influences, motives, or facts operating below awareness. Read it as context the querent needs, not as a verdict.",
+      "sources": [
+        "Papez",
+        "Fiebig"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "A card in an advice or guidance position is counsel, not description: it says what to do or how to approach the situation, rather than what is happening.",
+      "sources": [
+        "Papez",
+        "Fiebig"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "A card in an outcome position is best read as the key to the outcome — what the querent needs to do to reach the best result — rather than a fixed prediction of what will happen.",
+      "sources": [
+        "Papez"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "Read paired positions as a dialogue: past with future, conscious with unconscious, internal with external. Each pair shows the same situation from two angles, and the contrast between them is often the most useful part of the reading.",
+      "sources": [
+        "Papez",
+        "Fiebig"
+      ]
+    },
+    {
+      "applies_to": "reversed-in-position",
+      "rule": "A reversed card in a position can mean the energy is internalised or private, too much or too little, or blocked — pick one method for the whole reading before you begin, then let the position narrow it: a reversed card in an obstacle slot usually means blocked, in a hopes slot usually means an inner fear.",
+      "sources": [
+        "Esselmont",
+        "Papez",
+        "Clark"
+      ]
+    },
+    {
+      "applies_to": "general",
+      "rule": "A card in a root or foundation position grounds the whole reading: it names what the question grew out of. If the outcome is unclear, re-read the root — the answer usually traces back to it.",
+      "sources": [
+        "Fiebig"
+      ]
+    },
+    {
+      "applies_to": "Ancient Celtic Method",
+      "rule": "Position 2 (This Crosses Him) is laid across position 1 and is always read as if it were right side up, even when it falls reversed.",
+      "sources": [
+        "Gray"
+      ]
+    },
+    {
+      "applies_to": "Horoscope Method",
+      "rule": "Each of the twelve Houses governs a department of life, and the card falling there must be blended with that House's meaning to fit the pair.",
+      "sources": [
+        "Gray"
+      ]
+    },
+    {
+      "applies_to": "Tree of Life Method",
+      "rule": "The Daath Pack of seven cards, set aside during the layout, is turned up and read only after the rest of the reading is completed, from right to left, to qualify and enlarge upon the ten Tree cards.",
+      "sources": [
+        "Gray"
+      ]
+    },
+    {
+      "applies_to": "Ancient Celtic Method",
+      "rule": "If the final outcome card yields no clear conclusion, the whole operation may be repeated with the tenth card taking the place of the querent's significator card, for a more detailed account of the outcome.",
+      "sources": [
+        "Gray"
+      ]
+    }
+  ],
+  "spreads": [
+    {
+      "cards": 1,
+      "name": "Single-Card Draw",
+      "positions": [
+        {
+          "label": "The card",
+          "meaning": "The whole answer: the card's core energy, read as theme, advice, or mirror for the question asked. Sit with it rather than pulling clarifiers.",
+          "position": 1
+        }
+      ],
+      "purpose": "One focused answer, a daily theme, or a piece of advice — the fastest way to build confidence with a single card."
+    },
+    {
+      "cards": 3,
+      "name": "Three-Card Spread",
+      "positions": [
+        {
+          "label": "Past",
+          "meaning": "What shaped the situation and is still influencing it.",
+          "position": 1
+        },
+        {
+          "label": "Present",
+          "meaning": "What is happening now and what the querent is dealing with.",
+          "position": 2
+        },
+        {
+          "label": "Future",
+          "meaning": "Where things are headed if nothing changes.",
+          "position": 3
+        }
+      ],
+      "purpose": "The classic timeline spread: enough context to see a story without becoming overwhelming."
+    },
+    {
+      "cards": 5,
+      "name": "Five-Card Spread",
+      "positions": [
+        {
+          "label": "Situation",
+          "meaning": "What is going on at the heart of the question.",
+          "position": 1
+        },
+        {
+          "label": "Challenge",
+          "meaning": "The obstacle, tension, or block standing in the way.",
+          "position": 2
+        },
+        {
+          "label": "Guidance",
+          "meaning": "The advice or approach that will help most.",
+          "position": 3
+        },
+        {
+          "label": "Hidden influence",
+          "meaning": "What is unseen, unconscious, or working behind the scenes.",
+          "position": 4
+        },
+        {
+          "label": "Outcome",
+          "meaning": "The likely result, or the key to reaching the best result.",
+          "position": 5
+        }
+      ],
+      "purpose": "A compact general-purpose spread: the situation, what blocks it, what guides it, what is hidden, and where it leads."
+    },
+    {
+      "cards": 4,
+      "name": "The Cross",
+      "positions": [
+        {
+          "label": "On one hand",
+          "meaning": "The aspects of the question that are already known.",
+          "position": 1
+        },
+        {
+          "label": "On the other hand",
+          "meaning": "The other side of the coin: the opposing view or factor.",
+          "position": 2
+        },
+        {
+          "label": "What needs to be changed",
+          "meaning": "What has to shift for the situation to move forward.",
+          "position": 3
+        },
+        {
+          "label": "The decision",
+          "meaning": "The perspective or decision that follows from the first three cards.",
+          "position": 4
+        }
+      ],
+      "purpose": "A short perspective spread from Oswald Wirth for weighing two sides of a question and finding the decision in it."
+    },
+    {
+      "cards": 3,
+      "name": "Decision Spread",
+      "positions": [
+        {
+          "label": "Situation",
+          "meaning": "The situation as it stands.",
+          "position": 1
+        },
+        {
+          "label": "Task",
+          "meaning": "What the situation asks of you.",
+          "position": 2
+        },
+        {
+          "label": "Decision",
+          "meaning": "The decision to make.",
+          "position": 3
+        }
+      ],
+      "purpose": "A quick decision spread: the situation, the task it asks of you, and the decision itself."
+    },
+    {
+      "cards": 3,
+      "name": "Partnership Spread",
+      "positions": [
+        {
+          "label": "My partner",
+          "meaning": "The other person in the relationship, as they stand in it.",
+          "position": 1
+        },
+        {
+          "label": "Myself",
+          "meaning": "The querent, as they stand in the relationship.",
+          "position": 2
+        },
+        {
+          "label": "The joint tasks or chances",
+          "meaning": "What the two share: their common work and opportunities.",
+          "position": 3
+        }
+      ],
+      "purpose": "A short relationship spread: each person and what they share."
+    },
+    {
+      "cards": 5,
+      "name": "The Solution",
+      "positions": [
+        {
+          "label": "The task",
+          "meaning": "What needs doing.",
+          "position": 1
+        },
+        {
+          "label": "The problem",
+          "meaning": "The problem connected to the task.",
+          "position": 2
+        },
+        {
+          "label": "The solution",
+          "meaning": "How the problem can be resolved.",
+          "position": 3
+        },
+        {
+          "label": "New insights",
+          "meaning": "What is learned or seen differently along the way.",
+          "position": 4
+        },
+        {
+          "label": "The conclusion",
+          "meaning": "Where the matter settles.",
+          "position": 5
+        }
+      ],
+      "purpose": "A problem-solving spread that moves from the task through the problem to a conclusion."
+    },
+    {
+      "cards": 5,
+      "name": "Present and Future",
+      "positions": [
+        {
+          "label": "Where you stand",
+          "meaning": "Your current position in the matter.",
+          "position": 1
+        },
+        {
+          "label": "Your task",
+          "meaning": "What you need to do.",
+          "position": 2
+        },
+        {
+          "label": "Your fears",
+          "meaning": "What you are afraid of in this situation.",
+          "position": 3
+        },
+        {
+          "label": "Attitude that helps",
+          "meaning": "Which attitude will help you get ahead.",
+          "position": 4
+        },
+        {
+          "label": "Outcome",
+          "meaning": "The outcome of your efforts.",
+          "position": 5
+        }
+      ],
+      "purpose": "A forward-looking spread: where you stand, what it asks of you, and how it turns out."
+    },
+    {
+      "cards": 7,
+      "name": "Checking the Direction of the Trend",
+      "positions": [
+        {
+          "label": "Power of the past",
+          "meaning": "The force the past still exerts on the situation.",
+          "position": 1
+        },
+        {
+          "label": "Power of the present",
+          "meaning": "The force active right now.",
+          "position": 2
+        },
+        {
+          "label": "Power of the future",
+          "meaning": "The force building toward what comes next.",
+          "position": 3
+        },
+        {
+          "label": "Suggestion",
+          "meaning": "A suggestion or tip for your behaviour.",
+          "position": 4
+        },
+        {
+          "label": "Suggestion",
+          "meaning": "A second suggestion or tip for your behaviour.",
+          "position": 5
+        },
+        {
+          "label": "Obstacles",
+          "meaning": "Obstacles you must overcome or avoid.",
+          "position": 6
+        },
+        {
+          "label": "The answer",
+          "meaning": "The answer the trend points to.",
+          "position": 7
+        }
+      ],
+      "purpose": "A trend-check spread: the forces of past, present, and future, plus guidance, obstacles, and the answer."
+    },
+    {
+      "cards": 10,
+      "name": "Celtic Cross",
+      "positions": [
+        {
+          "label": "Heart of the issue",
+          "meaning": "The central focus of the reading; what it is really about.",
+          "position": 1
+        },
+        {
+          "label": "What crosses it",
+          "meaning": "What supports or hinders the first card, for good or bad.",
+          "position": 2
+        },
+        {
+          "label": "Unconscious influences",
+          "meaning": "What is unknown or unconscious in the situation.",
+          "position": 3
+        },
+        {
+          "label": "Conscious influences",
+          "meaning": "What is known or conscious: what the querent is aware of.",
+          "position": 4
+        },
+        {
+          "label": "Recent past",
+          "meaning": "Something from the recent past that influences the present.",
+          "position": 5
+        },
+        {
+          "label": "Near future",
+          "meaning": "What is coming around the bend; journeys just beginning.",
+          "position": 6
+        },
+        {
+          "label": "Internal influences",
+          "meaning": "How the querent is influencing the situation; what is within their control.",
+          "position": 7
+        },
+        {
+          "label": "External influences",
+          "meaning": "Forces outside the querent: what is not within their control.",
+          "position": 8
+        },
+        {
+          "label": "Greatest hope, greatest fear",
+          "meaning": "The querent's greatest hope and greatest fear — usually the same thing, two sides of one coin.",
+          "position": 9
+        },
+        {
+          "label": "Key to the outcome",
+          "meaning": "Not a fixed prediction, but what the querent needs to do to reach the outcome in their best interest.",
+          "position": 10
+        }
+      ],
+      "purpose": "The standard full reading for a complicated question: the most versatile spread in the books, worth memorising."
+    },
+    {
+      "cards": 10,
+      "name": "Pyramid",
+      "positions": [
+        {
+          "label": "Task",
+          "meaning": "Part of the task at hand.",
+          "position": 1
+        },
+        {
+          "label": "Task",
+          "meaning": "Part of the task at hand.",
+          "position": 2
+        },
+        {
+          "label": "Task",
+          "meaning": "Part of the task at hand.",
+          "position": 3
+        },
+        {
+          "label": "Task",
+          "meaning": "Part of the task at hand.",
+          "position": 4
+        },
+        {
+          "label": "Obstacle",
+          "meaning": "An obstacle in the way of the task.",
+          "position": 5
+        },
+        {
+          "label": "Obstacle",
+          "meaning": "An obstacle in the way of the task.",
+          "position": 6
+        },
+        {
+          "label": "Obstacle",
+          "meaning": "An obstacle in the way of the task.",
+          "position": 7
+        },
+        {
+          "label": "Help / solution",
+          "meaning": "Help available, or part of the solution.",
+          "position": 8
+        },
+        {
+          "label": "Help / solution",
+          "meaning": "Help available, or part of the solution.",
+          "position": 9
+        },
+        {
+          "label": "Outcome",
+          "meaning": "The outcome of your efforts.",
+          "position": 10
+        }
+      ],
+      "purpose": "A layered overview spread: the task at the base, the obstacles and help in the middle, the outcome at the top."
+    },
+    {
+      "cards": 10,
+      "name": "Ancient Celtic Method",
+      "positions": [
+        {
+          "label": "This Covers Him",
+          "meaning": "The general atmosphere surrounding the question and the influences at work around it.",
+          "position": 1
+        },
+        {
+          "label": "This Crosses Him",
+          "meaning": "The opposing forces, for good or evil; laid across the first card and always read right side up.",
+          "position": 2
+        },
+        {
+          "label": "This Is Beneath Him",
+          "meaning": "The basis of the matter, something that has already become part of the subject's past experience.",
+          "position": 3
+        },
+        {
+          "label": "This Is Behind Him",
+          "meaning": "The influence that is just passing away.",
+          "position": 4
+        },
+        {
+          "label": "This Crowns Him",
+          "meaning": "Something that may happen in the future.",
+          "position": 5
+        },
+        {
+          "label": "This Is Before Him",
+          "meaning": "Things that will come to pass in the near future, such as a meeting, an affair, a person or an influence.",
+          "position": 6
+        },
+        {
+          "label": "What He Fears",
+          "meaning": "The negative feelings the querent has about the question asked.",
+          "position": 7
+        },
+        {
+          "label": "Family Opinion",
+          "meaning": "The querent's environment, the opinions and influence of family and friends on the matter.",
+          "position": 8
+        },
+        {
+          "label": "His Hopes",
+          "meaning": "The querent's own hopes and ideals in the matter.",
+          "position": 9
+        },
+        {
+          "label": "Final Outcome",
+          "meaning": "What the final outcome will be, gathering all that has been divined from the other cards.",
+          "position": 10
+        }
+      ],
+      "purpose": "A general ten-card reading for a single question, with a Court-card significator placed in the center.",
+      "sources": [
+        "Gray"
+      ]
+    },
+    {
+      "cards": 12,
+      "name": "Horoscope Method",
+      "positions": [
+        {
+          "label": "1st House, Aries",
+          "meaning": "The querent's appearance and characteristics, worldly outlook and potential; all beginnings, including childhood.",
+          "position": 1
+        },
+        {
+          "label": "2nd House, Taurus",
+          "meaning": "Financial affairs and tangible assets; conserving and building.",
+          "position": 2
+        },
+        {
+          "label": "3rd House, Gemini",
+          "meaning": "Relatives and neighbors; communications, letters, roads, writings and short journeys.",
+          "position": 3
+        },
+        {
+          "label": "4th House, Cancer",
+          "meaning": "All endings; old age, old people, parents and the home environment.",
+          "position": 4
+        },
+        {
+          "label": "5th House, Leo",
+          "meaning": "Love affairs, children, and things that cause excitement: theatres, gambling, speculations.",
+          "position": 5
+        },
+        {
+          "label": "6th House, Virgo",
+          "meaning": "Work, employees, food, hygiene and the general health of the querent.",
+          "position": 6
+        },
+        {
+          "label": "7th House, Libra",
+          "meaning": "Marriage and business partners, dealings with the public, lawsuits and open enemies.",
+          "position": 7
+        },
+        {
+          "label": "8th House, Scorpio",
+          "meaning": "Death, legacies, insurance policies, the partner's money, sex and occult experiences.",
+          "position": 8
+        },
+        {
+          "label": "9th House, Sagittarius",
+          "meaning": "Law, philosophy and religion; dreams, psychic experiences, long journeys and foreign countries.",
+          "position": 9
+        },
+        {
+          "label": "10th House, Capricorn",
+          "meaning": "Profession, promotion and fame; parentage, social status and government.",
+          "position": 10
+        },
+        {
+          "label": "11th House, Aquarius",
+          "meaning": "Friends, groups and clubs; hopes, wishes and aspirations, and money earned from the profession.",
+          "position": 11
+        },
+        {
+          "label": "12th House, Pisces",
+          "meaning": "Hidden limitations that restrict expression; secrets, secret enemies, self-undoing, institutions, and the basic strength or weakness of body and soul.",
+          "position": 12
+        }
+      ],
+      "purpose": "A twelve-card reading laid in a circle of astrological Houses, with the querent's significator in the middle as Ruler of the horoscope.",
+      "sources": [
+        "Gray"
+      ]
+    },
+    {
+      "cards": 10,
+      "name": "Tree of Life Method",
+      "positions": [
+        {
+          "label": "1, Crown",
+          "meaning": "The place of one's highest ideals.",
+          "position": 1
+        },
+        {
+          "label": "2, Wisdom",
+          "meaning": "The dynamic creative force, balancing the wisdom of position 3.",
+          "position": 2
+        },
+        {
+          "label": "3, Understanding",
+          "meaning": "The place of wisdom and the creative force of the mother.",
+          "position": 3
+        },
+        {
+          "label": "4, Mercy",
+          "meaning": "The place of good qualities, a building-up force.",
+          "position": 4
+        },
+        {
+          "label": "5, Severity (Geburah)",
+          "meaning": "The breaking-down force.",
+          "position": 5
+        },
+        {
+          "label": "6, Beauty (the Sun)",
+          "meaning": "The place of the Sun that draws all other vibrations to it; health and perhaps sacrifice.",
+          "position": 6
+        },
+        {
+          "label": "7, Victory",
+          "meaning": "The place of love, lust and the arts.",
+          "position": 7
+        },
+        {
+          "label": "8, Splendour",
+          "meaning": "The place of the intellect, design, crafts and procreation.",
+          "position": 8
+        },
+        {
+          "label": "9, Foundation",
+          "meaning": "Where the meanings of all the other cards are gathered together, showing what the final outcome will most probably be.",
+          "position": 9
+        },
+        {
+          "label": "10, Kingdom",
+          "meaning": "The final place on the Tree, representing the physical body and earthly home.",
+          "position": 10
+        }
+      ],
+      "purpose": "The most complete method in the book, taken from the Kabalistic Tree of Life; a seven-card Daath Pack is set aside and read after the ten Tree cards to qualify them.",
+      "sources": [
+        "Gray"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+# Living Tarot — Synthesis Notes
+
+How the nine source books were used to build `synthesized-meanings.json`, `combinations-and-spreads.json`, and `reader-chat-guidance.json`. Meanings are synthesized in our own words from the books plus standard traditional (Rider-Waite) knowledge; the parent merges this with the app's existing traditional meanings. No long verbatim passages were copied from any book.
+
+## Per-book contributions
+
+**Brigit Esselmont — *The Ultimate Guide to Tarot Card Meanings*.** The backbone of the synthesis: full 78/78 coverage with upright *and* reversed meanings for every card, drawn from each card's keywords plus its upright/reversed sections. The most complete reversal source in the set. Did not cover: nothing per-card — but her meanings are concise keyword-led entries, so the synthesis leans on the other books for narrative depth and symbolism.
+
+**Lisa Papez — *Unlocking the Tarot*.** Full 78/78 coverage, built around one neutral keyword per card read as a blessing or an obstacle depending on context — the shadow side is folded into each upright paraphrase. Her court cards are "sliding scales" between two poles with strengths/struggles and a fictional-character exemplar each. Did not cover: per-card reversed meanings — she states explicitly that she does not read with reversals, so all her `reversed` fields are null and her material feeds the upright synthesis only.
+
+**Eden Gray — *The Complete Guide to the Tarot*.** Full 78/78 coverage with upright and reversed meanings plus per-card symbolism (Rider-Waite imagery, Kabalah/Tree of Life correspondences, elemental suit associations). The classic traditional anchor of the set — the oldest voice here, and the source the synthesis leans on when modern books disagree with tradition. Also contributed 12 combination principles, 4 positional rules, and 3 full spreads (Ancient Celtic Method, Horoscope Method, Tree of Life Method) to `combinations-and-spreads.json`. Did not cover: two-card pair combinations (no dedicated chapter) or short 1-/3-card spreads. Note: her reversed court portraits ("perverse character", "crafty and violent") are dated, harsh outliers — the synthesis follows the modern readings there and says so in the notes.
+
+**Abbi Clark — *A Pocket Guide to Tarot Card Archetypes*.** Full 78/78 coverage as keyword lists (upright + reversed) framed by number themes (Aces = new beginnings … Tens = completion), suit domains (Swords = change/conflict, Cups = emotions/relationships, Wands = actions/communication, Pentacles = money/physical), and court significators. Did not cover: narrative meanings — her entries are keywords, so she sets the skeleton and other books add the flesh. Her reversals are terse one-liners throughout — the thinnest reversal source. One quirk: her Five of Wands reversed ("Competition, Tension") breaks her own general rule that fives are negative upright / positive reversed.
+
+**Robert Place — *The Tarot: History, Symbolism, and Divination*.** Full 78/78 coverage, but his entries are mostly iconographic/symbolic description (Renaissance, alchemical, and Golden Dawn symbolism) rather than divinatory "this card means X" statements — thinner as reading meanings than Hamaker's or Stuart's, and the synthesis uses his meaning statements embedded in those descriptions. Did not cover: per-card reversals (all `reversed` null) or a spread system; his value to the synthesis is symbolism and history, and he contributed little to combinations/positions. His clearest chat-guidance contribution is reading a layout as one picture/story and asking follow-up questions when a reading is unwelcome.
+
+**Micheline Stuart — *The Tarot Path to Self-Development*.** Covers the 22 Major Arcana only, in reverse order (Fool → Magician) as a Gurdjieff self-development ascent — each Major is a developmental stage. Did not cover: all 56 minors, or reversals (a stage narrative has no reversed readings). Her distinctive angles (e.g. the Fool read darkly as unconscious humanity, the World as enslavement to Mother Nature, the Sun's warning about ego flattering vanity) are recorded in the notes fields where they conflict with the majority.
+
+**Karen Hamaker-Zondag — *Tarot as a Way of Life*.** 76/78 coverage: all 22 Majors plus number cards and courts, in a Jungian register — each card's positive and negative poles inside a single reading, the cards as a mirror of the unconscious, tendencies rather than fixed fate. Did not cover: Six of Wands and Six of Swords (no dedicated entries anywhere in the book — verified by grep; they appear only inside later worked readings), or per-card reversals (all `reversed` null; the shadow pole is folded into the upright). Her number-six discussion covers only Six of Pentacles and Six of Cups.
+
+**Ethony Dawn — *Your Tarot Court*.** Covers the 16 court cards only, each as a personality archetype with a name (Queen of Cups = The Mystic, King of Wands = The Entrepreneur, Page of Wands = Peter Pan, King of Swords = The Scientist, etc.), plus strengths and a shadow side — and the book's own rule that a court card in opposition or reversed shows its shadow side, so her reversals are shadow-side paraphrases. Did not cover: any non-court card. Also contributed the full elemental-interaction table and court-rank elements (Page-earth, Knight-fire, Queen-water, King-air) to the combinations layer.
+
+**Johannes Fiebig & Evelin Burger — *The Complete Book of Tarot Spreads*.** Contributes spreads only — zero card-meaning content (the words "upright" and "reversed" never occur in the book). Part 1 gives method instead: personality/year/theme cards, and techniques for deriving a card's meaning in context (additions, quintessence/digit-sum cards, parallel cards, cross-references), which feed the combinations layer. See the spreads inventory below.
+
+## Coverage table
+
+| Cards | Upright sources | Reversal sources | Notes |
+|---|---|---|---|
+| All 22 Majors | 7 (Esselmont, Papez, Clark, Stuart, Place, Hamaker, Gray) | 3 (Esselmont, Clark, Gray) | Best-covered group in the set. |
+| Numbered minors (Ace–10), all suits | 6 (Esselmont, Papez, Clark, Place, Hamaker, Gray) | 3 (Esselmont, Clark, Gray) | Stuart and Ethony don't cover them; no reversal gap — Esselmont + Gray carry every card. |
+| Six of Wands, Six of Swords | 5 (Hamaker missing) | 3 (Esselmont, Clark, Gray) | Only cards with fewer than 6 upright sources. Hamaker discusses the number six generally but gives no dedicated entries for these two. |
+| All 16 court cards | 7 (Esselmont, Papez, Clark, Place, Hamaker, Gray, Ethony) | 4 (Esselmont, Clark, Gray, Ethony) | Ethony's shadow-side reversals and archetypes are the distinctive layer here. |
+| Every card | — | — | No card has a null reversal: Esselmont and Gray give a reversal for all 78, Clark for all 78 (tersely). |
+
+**Thin spots the traditional meanings must carry:** Place's per-card entries are iconographic rather than divinatory, so cards where the synthesis leans heavily on Place are thinner on "what does this mean in a reading" — the traditional meanings fill that. Clark's reversals are one-liners. Papez, Stuart, Place, and Hamaker give no per-card reversals at all, so reversal synthesis rests entirely on Esselmont, Clark, Gray (+ Ethony for courts). Fiebig contributes nothing per-card. Nothing in the set is entirely uncovered: every card has at least 5 upright sources and 3 reversal sources.
+
+**Where sources conflict** (all recorded in the per-card `notes` fields, majority reading used): the sharpest splits are The Hierophant (Clark alone inverts the upright/reversed polarity), Seven of Pentacles (Gray alone reads it pessimistically against patient evaluation), The World and The Fool (Stuart alone reads them darkly), and the Swords reversals generally, where Gray's harsher traditional readings often diverge from Esselmont/Clark's gentler ones. Gray's reversed court portraits are the most consistently dated outliers.
+
+## Spreads inventory (Fiebig & Burger)
+
+The book claims **122 layouts and variations**. The inventory in `work/fiebig-spreads.md` lists **113 named entries** across the book's own 11 Part 2 sections — the gap is multi-variation entries counted once (e.g. The Cross in 4 variants, Cycle of the Year in 4, Gypsy Method and Pyramid in 2 each). Sections: 1. For Every Day; 2. Tendencies & Perspectives; 3. Relaxation Exercises; 4. Concentration & Composure Exercises; 5. Searching & Finding; 6. Questions About Decisions; 7. Partnership & Relationships; 8. Life Journey; 9. Preview & Overview; 10. Major Layouts; 11. Departures. Standouts: the Churchyard Spread (13 cards, Fool shuffled in as a marker), Gypsy Method var. 2 (21 cards), Tarot Table 2 (21), the Fan and Golden Dawn Divination (15 each), and the 12-card Cycle of the Year in four variations. A few counts are approximate (~) where diagram labels were lost in extraction, and three spreads have unrecoverable counts from the text alone (Blind Spot, Progress Cards, My Most Important Talent) — the printed book would settle them.
+
+`combinations-and-spreads.json` carries a curated 14-spread catalog from this inventory (the app's 1/3/5-card spreads first, then Celtic Cross, Pyramid, The Cross, Decision, Partnership, The Solution, Present and Future, Checking the Direction of the Trend, plus Gray's Ancient Celtic Method, Horoscope Method, and Tree of Life Method) — practical, not all 122. The full inventory lives in `work/fiebig-spreads.md` for later additions.
+
+## Files in this folder
+
+- `synthesized-meanings.json` — 78 cards, blended meanings with sources and notes.
+- `combinations-and-spreads.json` — 30 combination principles, 18 positional rules, 14 spreads.
+- `reader-chat-guidance.json` — conversational flow, weaving, responding to user interpretations, questions-not-predictions, three voices.
+- `work/` — per-book extraction files (esselmont, papez, clark, ethony, stuart, place, hamaker, eden-gray), per-group synthesis files (synth-majors/wands/cups/swords/pentacles), eden-gray-combinations.json, fiebig-spreads.md, papez_build.py.
