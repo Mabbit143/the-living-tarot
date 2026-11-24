@@ -34,6 +34,12 @@ base and documentation alongside it. Clone it, install, and run it — see
   the number of readings, the deck, and the draw method. It never claims fate.
 - **Reflection and Follow-Up** — revisit a reading, record what actually
   happened, compare without rewriting the original interpretation.
+- **Take your history with you** — from the Archive, download a complete
+  JSON backup or a readable plain-text copy of everything: every reading
+  (spread, cards, interpretation, conversation, reflection), your personal
+  Lexicon meanings and signifiers, Life Memories, and Symbol Journal
+  entries. Both files are generated on your device from what is saved
+  there; nothing is sent anywhere.
 
 The product promise: it becomes more *personally informed* with every reading.
 It never claims to be more *accurate*.

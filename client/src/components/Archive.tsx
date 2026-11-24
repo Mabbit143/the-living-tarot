@@ -1,5 +1,10 @@
 import { useState } from 'react';
 import { getCard } from '../lib/knowledge';
+import {
+  downloadJsonBackup,
+  downloadTextHistory,
+  hasLexiconContent,
+} from '../lib/export';
 import type { Db } from '../lib/types';
 import { nowIso } from '../lib/types';
 
@@ -37,8 +42,35 @@ export default function Archive({ db, updateDb }: Props) {
     }));
   }
 
+  const lexiconCount = Object.values(db.lexicon).filter(hasLexiconContent).length;
+
   return (
     <div>
+      <div className="card">
+        <h2>Take your history with you</h2>
+        <p className="muted">
+          Your whole history — every reading with its cards, interpretation,
+          conversation, and reflections, your personal Lexicon meanings and
+          signifiers, your Life Memories, and your Symbol Journal. Both files
+          are made on this device from what is saved here; nothing is sent
+          anywhere.
+        </p>
+        <p className="small">
+          {db.readings.length} {db.readings.length === 1 ? 'reading' : 'readings'} ·{' '}
+          {lexiconCount} {lexiconCount === 1 ? 'Lexicon entry' : 'Lexicon entries'} ·{' '}
+          {db.memories.length} {db.memories.length === 1 ? 'Life Memory' : 'Life Memories'} ·{' '}
+          {db.journal.length} {db.journal.length === 1 ? 'journal entry' : 'journal entries'}
+        </p>
+        <div className="row">
+          <button className="primary" onClick={() => downloadJsonBackup(db)}>
+            Download JSON backup
+          </button>
+          <button onClick={() => downloadTextHistory(db)}>
+            Download plain-text copy
+          </button>
+        </div>
+      </div>
+
       <div className="card">
         <h2>Reading Archive</h2>
         <p className="muted">
