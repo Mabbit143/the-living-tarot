@@ -9,17 +9,10 @@ import type { MemoryItem, Reading } from './types';
 export function suggestMemories(reading: Reading): Omit<MemoryItem, 'id' | 'createdAt'>[] {
   const suggestions: Omit<MemoryItem, 'id' | 'createdAt'>[] = [];
 
-  if (reading.question.trim()) {
-    suggestions.push({
-      text: `You asked about: ${reading.question.trim()}`,
-      kind: 'concern',
-      timeframe: 'current',
-      status: 'suggested',
-      source: `you asked in ${reading.spreadName}`,
-      confidence: 'low',
-    });
-  }
-
+  // Note: the question itself is deliberately NOT suggested as a memory.
+  // Past readings already carry their questions into ranked retrieval, so a
+  // separate "you asked about" entry only clutters review without adding
+  // anything the reader can use.
   // Major Arcana cards carry the reading's themes; suggest the first as a
   // theme to watch, framed as a suggestion from the cards — never as
   // something that happened in the reader's life.

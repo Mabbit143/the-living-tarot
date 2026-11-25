@@ -1,6 +1,9 @@
 import { useEffect, useRef } from 'react';
 import SpreadCards from './SpreadCards';
 import { getSpread } from '../lib/knowledge';
+import mountWordHighlight from '../taste/moments/word-highlight/moment';
+import * as momentsLib from '../taste/moments/lib';
+import '../taste/moments/word-highlight/moment.css';
 import './welcome.css';
 
 const cards = ['the-fool', 'strength', 'the-star'];
@@ -10,26 +13,30 @@ const preview = spread.positions.map(({ position, label, meaning }, index) => ({
 }));
 
 export default function LandingPage({ onStart, onSetup }: { onStart: () => void; onSetup: () => void }) {
-  const landing = useRef<HTMLDivElement>(null);
+  const statement = useRef<HTMLElement>(null);
 
+  // The word-highlight moment is bundled (dev servers refuse source imports
+  // of /public files). If it fails, the statement simply shows in full ink.
   useEffect(() => {
-    const root = landing.current;
-    const modulePath = `${import.meta.env.BASE_URL}taste/moments/moments.js`;
-    let disposed = false;
-    const ready = import(/* @vite-ignore */ modulePath).then(async (moments) => {
-      if (!root || disposed) return;
-      await moments.mountAll(root);
-      if (disposed) moments.unmountAll(root);
-      return moments;
-    }).catch((error: unknown) => console.warn('Could not load the landing page text animation.', error));
+    const root = statement.current;
+    if (!root) return;
+    let handle: { destroy?: () => void } | undefined;
+    try {
+      handle = mountWordHighlight(root, {}, momentsLib) as { destroy?: () => void };
+    } catch (error: unknown) {
+      console.warn('Could not start the landing page text animation.', error);
+    }
     return () => {
-      disposed = true;
-      void ready.then((moments) => { if (root) moments?.unmountAll(root); });
+      try {
+        handle?.destroy?.();
+      } catch (error: unknown) {
+        console.warn('Could not stop the landing page text animation.', error);
+      }
     };
   }, []);
 
   return (
-    <div className="welcome" ref={landing}>
+    <div className="welcome">
       <a className="welcome-skip" href="#welcome-main">Skip to content</a>
       <header className="welcome-header">
         <div className="wrap welcome-header-inner">
@@ -54,14 +61,14 @@ export default function LandingPage({ onStart, onSetup }: { onStart: () => void;
               </div>
               <div className="welcome-spread" data-visual>
                 <div className="app-frame welcome-window" data-ui aria-label="Reading Table preview">
-                  <p>The reading table <span className="muted">{spread.name}</span></p>
+                  <p>Example reading <span className="muted">{spread.name}</span></p>
                   <SpreadCards cards={preview} deck="rws" />
                 </div>
               </div>
             </div>
           </div>
         </section>
-        <section className="welcome-statement" data-moment="word-highlight" aria-labelledby="welcome-context-heading">
+        <section className="welcome-statement" ref={statement} data-moment="word-highlight" aria-labelledby="welcome-context-heading">
           <div className="wrap welcome-wrap">
             <h2 id="welcome-context-heading">Guidance for your situation</h2>
             <p className="mo-wh__text">Ask what’s on your mind. After your reading, share as much as you like and get <strong>personal guidance</strong> for the cards you already drew.</p>

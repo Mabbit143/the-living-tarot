@@ -1,3 +1,5 @@
+// @ts-nocheck
+// Vendored from the taste skill (was public/taste/moments/word-highlight/moment.js). See lib.ts note.
 /*
   word-highlight - one statement's words turn from grey to ink, word by word, as the statement crosses
   the middle of the screen. Scrubbed to the scrollbar (it runs back when the visitor scrolls up); a
@@ -33,3 +35,4 @@ export default function (root, opts, lib) {
   }, { mode: 'view' });
   return { destroy: s.destroy };
 }
+

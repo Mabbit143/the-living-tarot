@@ -28,10 +28,14 @@ Snapshot: [critique 2026-11-25](/C:/Users/mabbi/dev/the-living-tarot/.impeccable
 
 ## Acceptance criteria
 
-- [ ] Suggestions visibly distinguish what the reader shared from what the
+- [x] Suggestions visibly distinguish what the reader shared from what the
   cards suggested (plain-language source line, not just kind labels).
-- [ ] Card-derived themes are never labeled as life events the user reported.
-- [ ] **Hide** vs **Dismiss** is explained where the choice is offered.
+- [x] Card-derived themes are never labeled as life events the user reported.
+- [x] **Hide** vs **Dismiss** is explained where the choice is offered.
+- [x] Question-as-memory suggestion removed (2026-11-25, phone test): past
+  readings already carry their questions into retrieval, so the separate
+  "you asked about" entry only cluttered review. `suggestMemories` now
+  emits card-theme suggestions only.
 
 ## Test plan
 

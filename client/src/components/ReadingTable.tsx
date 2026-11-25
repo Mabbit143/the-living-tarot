@@ -42,7 +42,6 @@ export default function ReadingTable({ db, updateDb, onStartChat, onResumeChat }
   const spread = getSpread(spreadName) ?? primarySpreads()[1];
   const deck = preferredDeck(db.preferredDeck);
   const allowReversals = db.allowReversals ?? true;
-  const hasQuestion = Boolean(question.trim());
   const drafts = db.readings.filter((r) => r.status === 'draft');
   const hasCardSetup = drawn.length > 0 || Object.keys(physical).length > 0;
   const hasSetup = hasCardSetup || question.length > 0 || mode !== EMPTY_SETUP.mode || spread.name !== EMPTY_SETUP.spreadName;
@@ -232,11 +231,10 @@ export default function ReadingTable({ db, updateDb, onStartChat, onResumeChat }
               {drawn.length > 0 ? 'Draw again' : 'Preview the cards'}
             </button>
           )}
-          {hasQuestion && (
-            <button className="ghost" onClick={() => beginReading('talk')} disabled={mode === 'physical' && !canBegin}>
-              Talk first
-            </button>
-          )}
+          <button onClick={() => beginReading('talk')} disabled={mode === 'physical' && !canBegin}
+            title="The reader asks one question first — your answer shapes the reading.">
+            Talk first
+          </button>
         </div>
         {mode === 'physical' && !canBegin && (
           <p className="small muted" role="status">

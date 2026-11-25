@@ -1,3 +1,6 @@
+// @ts-nocheck
+// Vendored from the taste skill (was public/taste/moments/lib.js).
+// Moved into src so Vite bundles it; dev servers refuse source imports of /public files.
 /*
   moments/lib.js - the few helpers every moment shares (taste-skill). One ES module, no dependencies.
 
@@ -187,3 +190,4 @@ export function blocks(root, skip = []) {
   const release = () => { for (const b of list) b.el.style.opacity = b.was; };
   return { list, measure, set, release };
 }
+

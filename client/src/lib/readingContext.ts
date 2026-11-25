@@ -59,6 +59,14 @@ const commonWords = new Set([
   'more', 'need', 'only', 'should', 'some', 'than', 'that', 'them', 'then', 'there', 'these',
   'they', 'this', 'want', 'what', 'when', 'where', 'which', 'while', 'with', 'would', 'your',
   'card', 'cards', 'position', 'reading', 'right', 'thing', 'things', 'situation',
+  // Words that technically overlap but carry no theme. Without these, two
+  // unrelated meanings can appear to "circle around" each other.
+  'each', 'self', 'selves', 'other', 'others', 'either', 'neither', 'both',
+  'same', 'much', 'many', 'often', 'still', 'even', 'ever', 'quite', 'rather',
+  'anything', 'something', 'everything', 'nothing', 'someone', 'anyone', 'everyone',
+  'another', 'every', 'always', 'never', 'away', 'back', 'over', 'under',
+  // Auxiliary and copula verbs: grammatical glue, never themes.
+  'will', 'shall', 'must', 'does', 'have', 'were', 'been', 'being',
 ]);
 
 export function sharedTopics(text: string, ...sources: string[]): string[] {
@@ -189,13 +197,34 @@ export function readTogether(
   return `${contextLink}${reversalNote}${first.card.name} in “${first.draw.positionLabel}” and ${second.card.name} in “${second.draw.positionLabel}” belong to the same story.${sharedNote} ${relationship}`;
 }
 
-function joinQuoted(topics: string[]): string {
+export function joinQuoted(topics: string[]): string {
   const shown = topics.slice(0, 3).map((topic) => `“${topic}”`);
   if (shown.length <= 1) return shown[0] ?? '';
   return `${shown.slice(0, -1).join(', ')} and ${shown[shown.length - 1]}`;
 }
 
-function joinNames(names: string[]): string {
+/** Life-domain bridges: question cue words mapped to theme words that
+ *  actually appear in card meanings. Lets "will my app be well received"
+ *  meet the Four of Pentacles on "money" instead of missing each other.
+ *  Used only to find a meeting point, never stated as a claim. */
+const QUESTION_DOMAINS: { match: RegExp; themes: string[] }[] = [
+  { match: /\b(app|software|product|startup|business|company|launch|release)\b/i, themes: ['work', 'security', 'money', 'support', 'risk', 'venture', 'reward', 'effort'] },
+  { match: /\b(job|career|work|boss|interview|promotion|client)\b/i, themes: ['work', 'security', 'money', 'support', 'effort', 'recognition'] },
+  { match: /\b(money|debt|financ|afford|budget|bills|income)\b/i, themes: ['money', 'security', 'resources', 'support'] },
+  { match: /\b(love|partner|marri|divorce|romance|crush|dating|husband|wife)\b/i, themes: ['love', 'relationship', 'support', 'trust', 'heart'] },
+  { match: /\b(health|body|sick|sleep|tired|doctor|pain|hospital)\b/i, themes: ['health', 'body', 'rest', 'energy', 'recovery'] },
+  { match: /\b(mother|father|family|child|kid|parent|home|house|move)\b/i, themes: ['home', 'family', 'support', 'security'] },
+  { match: /\b(decision|decide|choice|choose|stuck|option|options)\b/i, themes: ['choice', 'fear', 'risk', 'support'] },
+  { match: /\b(anxiet|anxious|worry|afraid|fear|scared|stress|overwhelm)\b/i, themes: ['fear', 'worry', 'rest', 'support'] },
+];
+
+/** Theme words a question points at, including via life-domain bridges. */
+export function bridgeTopics(question: string): string[] {
+  const found = QUESTION_DOMAINS.filter((d) => d.match.test(question)).flatMap((d) => d.themes);
+  return [...new Set(found)];
+}
+
+export function joinNames(names: string[]): string {
   if (names.length <= 1) return names[0] ?? '';
   return `${names.slice(0, -1).join(', ')} and ${names[names.length - 1]}`;
 }

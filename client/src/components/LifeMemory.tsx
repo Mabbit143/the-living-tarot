@@ -104,9 +104,10 @@ export default function LifeMemory({ db, updateDb }: Props) {
           <section aria-labelledby="memory-review-heading">
             <h3 id="memory-review-heading">Memory suggestions to review</h3>
             <p className="muted small">
-              Lines marked <em>you asked</em> came from your own words; lines marked{' '}
-              <em>cards suggested</em> came from the cards. Hide tucks a suggestion
-              away (find it under Hidden); Dismiss removes it for good.
+              Lines marked <em>cards suggested</em> came from the cards, not
+              from anything you reported — everything else here is in your own
+              words. Hide tucks a suggestion away (find it under Hidden);
+              Dismiss removes it for good.
             </p>
             {renderList(suggested, (m) => (
               <>

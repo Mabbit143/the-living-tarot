@@ -75,8 +75,8 @@ export default function ReaderSetup({ initial, forReading, onSave, onCancel }: P
             <label htmlFor="setup-context">What’s on your mind lately?</label>
             <textarea id="setup-context" rows={3} value={profile.lifeContext}
               onChange={(event) => setProfile({ ...profile, lifeContext: event.target.value })} />
-            <details className="reading-disclosure">
-              <summary>Add more context</summary>
+            <details className="reading-disclosure" open>
+              <summary>Add more context — people, goals, concerns, themes</summary>
               {extraFields.map(({ key, label }) => (
                 <div key={key}>
                   <label htmlFor={`setup-${key}`}>{label}</label>

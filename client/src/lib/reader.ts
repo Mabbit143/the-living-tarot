@@ -17,8 +17,8 @@ import type {
   Reading,
   VoiceId,
 } from './types';
-import type { Spread } from './knowledge';
-import { cardInCompany, cardInPosition, personalAssociation, positionRole, readTogether, sharedTopics } from './readingContext';
+import type { CardMeaning, Spread } from './knowledge';
+import { bridgeTopics, cardInCompany, cardInPosition, joinNames, joinQuoted, personalAssociation, positionRole, readTogether, sharedTopics } from './readingContext';
 import { appearanceHistory, memoryCandidates, rankCandidates, readingCandidates } from './relevance';
 
 export interface InterpretationSection {
@@ -48,8 +48,38 @@ export interface ReadingInput {
   now?: string;
 }
 
-function pick<T>(arr: T[], seed: number): T {
-  return arr[seed % arr.length];
+/**
+ * Meet the reader's question where it lands: name the part of this card's
+ * meaning that speaks to it, reaching via life-domain bridges when the
+ * question never uses the card's own words. Silent when nothing connects.
+ */
+function linkQuestionToCard(question: string, draw: DrawnCard, card: CardMeaning, index: number): string {
+  const q = question.trim();
+  if (!q) return '';
+  const meaning = draw.reversed ? card.reversed : card.upright;
+  const direct = sharedTopics(q, meaning, draw.positionMeaning);
+  const via = sharedTopics(bridgeTopics(q).join(' '), meaning)
+    .filter((topic) => !direct.includes(topic));
+  const topics = [...direct, ...via].slice(0, 3);
+  if (topics.length === 0) return '';
+  return BRIDGE_TEMPLATES[index % BRIDGE_TEMPLATES.length](joinQuoted(topics));
+}
+
+const BRIDGE_TEMPLATES = [
+  (topics: string) => `With your question in view, this card puts the spotlight on ${topics}.`,
+  (topics: string) => `Against your question, the live part of this card is ${topics}.`,
+  (topics: string) => `Held up to your question, this card comes down to ${topics}.`,
+];
+
+/** Closing question by relevance: the example question sharing the most
+ *  ground with this reading wins — but a single shared word is usually
+ *  coincidence ("job" matching "a job"), so anything below two shared topics
+ *  falls back to rotation rather than a confidently wrong question. */
+function pickClosingQuestion(questions: string[], query: string, seed: number): string {
+  const scored = questions.map((text) => ({ text, topics: sharedTopics(query, text).length }));
+  const best = scored.reduce((max, s) => Math.max(max, s.topics), 0);
+  const pool = best >= 2 ? scored.filter((s) => s.topics === best) : scored;
+  return pool[seed % pool.length].text;
 }
 
 export function buildInterpretation(input: ReadingInput): Interpretation {
@@ -77,6 +107,8 @@ export function buildInterpretation(input: ReadingInput): Interpretation {
     const nextCard = nextDraw && getCard(nextDraw.cardId);
     const connection = nextCard && cardInCompany(d, nextDraw, nextCard, personalAssociation(lexicon[nextCard.id]));
     if (connection) body += ` ${connection}`;
+    const bridge = linkQuestionToCard(topic, d, card, index);
+    if (bridge) body += ` ${bridge}`;
     if (seen.total > 0) {
       body += ` This card came up in ${seen.total} past reading${seen.total === 1 ? '' : 's'}`;
       body += seen.recent > 0
@@ -87,6 +119,9 @@ export function buildInterpretation(input: ReadingInput): Interpretation {
     return { heading, body };
   });
 
+  // A person remembers what happened last time. When these cards came up
+  // before and the reader recorded what actually happened, say so up front.
+  const echoedReflection = latestSharedReflection(drawn, pastReadings);
   const currentContext = [context, topic].filter(Boolean).join(' ');
   // Ranked retrieval: confirmed memories sharing at least two topics, ordered
   // by topic overlap, card relevance, recency, and confidence — not by array
@@ -115,18 +150,42 @@ export function buildInterpretation(input: ReadingInput): Interpretation {
   }
 
   const questions = QUESTION_TYPES.flatMap((q) => q.example_questions);
-  const closingQuestion = pick(questions, readingIndex + drawn.length);
+  // Score against the reader's own words only: card vocabulary would match
+  // almost any example question by coincidence.
+  const closingQuery = [topic, context ?? ''].filter(Boolean).join(' ');
+  const closingQuestion = pickClosingQuestion(questions, closingQuery, readingIndex + drawn.length);
 
   return {
     opening: [
       openings[voice],
       context && `You added: “${excerpt(context)}”`,
+      echoedReflection && `Last time ${echoedReflection.cardNames} came up, you noted: “${excerpt(echoedReflection.text)}” How does that sit beside this reading?`,
       relatedMemory && `You saved this in Life Memory: “${excerpt(relatedMemory.text)}” Is it still part of what you’re weighing?`,
     ].filter(Boolean).join('\n\n'),
     sections,
     closingQuestion,
     voiceLine: vp.example_line,
   };
+}
+
+/** The most recent reflection on a past reading that shares cards with the
+ *  current draw. Lets a new reading acknowledge what actually happened last
+ *  time instead of starting from zero. */
+function latestSharedReflection(
+  drawn: DrawnCard[],
+  pastReadings: Reading[],
+): { cardNames: string; text: string } | undefined {
+  const current = new Set(drawn.map((d) => d.cardId));
+  const candidates = pastReadings.filter((r) =>
+    r.status === 'complete'
+    && r.reflections.length > 0
+    && r.cards.some((c) => current.has(c.cardId)));
+  if (candidates.length === 0) return undefined;
+  const latest = [...candidates].sort((a, b) => (a.createdAt < b.createdAt ? 1 : -1))[0];
+  const names = [...new Set(
+    latest.cards.filter((c) => current.has(c.cardId)).map((c) => getCard(c.cardId)?.name ?? 'a card'),
+  )];
+  return { cardNames: joinNames(names), text: latest.reflections[latest.reflections.length - 1].text };
 }
 
 function excerpt(text: string): string {
@@ -186,10 +245,21 @@ function mentions(text: string, label: string): boolean {
 
 export function conversationOpening(question: string, voice: VoiceId): string {
   const topic = excerpt(question);
+  // Talk-first has to earn its tap: ask something specific enough to answer
+  // in a sentence or two, and useful enough that the answer visibly shapes
+  // the reading. No question yet means asking for the situation itself.
+  if (!topic) {
+    const cold: Record<VoiceId, string> = {
+      familiar: 'Before we lay out the cards, tell me in your own words — what’s weighing on you most right now?',
+      mystic: 'Before the cards speak, tell me — what image or feeling brings you to the table today?',
+      interpreter: 'Before we begin, give me the one detail that matters most about your situation.',
+    };
+    return cold[voice];
+  }
   const openings: Record<VoiceId, string> = {
-    familiar: `Let's look at “${topic}” together. Is there a part of it you’d like me to pay special attention to?`,
-    mystic: `Let’s hold “${topic}” in mind. Is there a feeling or image you’re bringing to the table?`,
-    interpreter: `You brought “${topic}” to this spread. Is there a detail that would help me put the cards in context?`,
+    familiar: `Let’s look at “${topic}” together. In your own words, what’s the hardest part of it right now?`,
+    mystic: `Let’s hold “${topic}” in mind. What feeling or image comes up when you sit with it?`,
+    interpreter: `You brought “${topic}” to this spread. What’s the one detail I most need to put the cards in context?`,
   };
   return openings[voice];
 }
