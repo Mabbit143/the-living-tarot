@@ -19,6 +19,7 @@ import type {
 } from './types';
 import type { Spread } from './knowledge';
 import { cardInCompany, cardInPosition, personalAssociation, positionRole, readTogether, sharedTopics } from './readingContext';
+import { appearanceHistory, memoryCandidates, rankCandidates, readingCandidates } from './relevance';
 
 export interface InterpretationSection {
   heading: string;
@@ -43,10 +44,8 @@ export interface ReadingInput {
   pastReadings: Reading[];
   voice: VoiceId;
   readingIndex: number;
-}
-
-function countAppearances(cardId: string, past: Reading[]): number {
-  return past.filter((reading) => reading.cards.some((card) => card.cardId === cardId)).length;
+  /** ISO "now" for recency weighting. Defaults to the current time. */
+  now?: string;
 }
 
 function pick<T>(arr: T[], seed: number): T {
@@ -54,7 +53,7 @@ function pick<T>(arr: T[], seed: number): T {
 }
 
 export function buildInterpretation(input: ReadingInput): Interpretation {
-  const { drawn, question, context, memories = [], profile, lexicon, pastReadings, voice, readingIndex } = input;
+  const { drawn, question, context, memories = [], profile, lexicon, pastReadings, voice, readingIndex, now } = input;
   const vp = voiceProfile(voice);
   const name = profile?.name ? `, ${profile.name}` : '';
 
@@ -72,22 +71,42 @@ export function buildInterpretation(input: ReadingInput): Interpretation {
   const sections: InterpretationSection[] = drawn.map((d, index) => {
     const card = getCard(d.cardId);
     if (!card) return { heading: d.positionLabel, body: 'Card not found in the deck.' };
-    const seen = countAppearances(d.cardId, pastReadings);
+    const seen = appearanceHistory(d.cardId, pastReadings, now);
     let body = cardInPosition(d, card, personalAssociation(lexicon[d.cardId]));
     const nextDraw = drawn[index + 1];
     const nextCard = nextDraw && getCard(nextDraw.cardId);
     const connection = nextCard && cardInCompany(d, nextDraw, nextCard, personalAssociation(lexicon[nextCard.id]));
     if (connection) body += ` ${connection}`;
-    if (seen > 0) {
-      body += ` This card came up in ${seen} past reading${seen === 1 ? '' : 's'}.`;
+    if (seen.total > 0) {
+      body += ` This card came up in ${seen.total} past reading${seen.total === 1 ? '' : 's'}`;
+      body += seen.recent > 0
+        ? `, ${seen.recent} of them in the last month — it’s active for you right now.`
+        : '.';
     }
     const heading = `${d.positionLabel} — ${card.name}${d.reversed ? ' (reversed)' : ''}`;
     return { heading, body };
   });
 
   const currentContext = [context, topic].filter(Boolean).join(' ');
-  const relatedMemory = memories.find((memory) => memory.status === 'confirmed'
-    && sharedTopics(currentContext, memory.text).length >= 2);
+  // Ranked retrieval: confirmed memories sharing at least two topics, ordered
+  // by topic overlap, card relevance, recency, and confidence — not by array
+  // order. Falling back to array order would let a stale memory outshout a
+  // current one.
+  const cardTexts = drawn.flatMap((d) => {
+    const card = getCard(d.cardId);
+    if (!card) return [d.positionMeaning];
+    return [d.positionMeaning, d.reversed ? card.reversed : card.upright];
+  });
+  const relatedMemory = rankCandidates(memoryCandidates(memories), {
+    question: topic,
+    context,
+    cardTexts,
+  })
+    .map(({ candidate, topics }) => ({
+      memory: memories.find((m) => m.id === candidate.key),
+      topics,
+    }))
+    .find(({ memory, topics }) => memory?.status === 'confirmed' && topics.length >= 2)?.memory;
   const together = readTogether(drawn, lexicon, getCard, currentContext);
   if (together) sections.push({ heading: 'How they read together', body: together });
   if (profile && profileContext(profile).length > 0) {
@@ -175,6 +194,14 @@ export function conversationOpening(question: string, voice: VoiceId): string {
   return openings[voice];
 }
 
+export interface FollowUpRecall {
+  memories?: MemoryItem[];
+  pastReadings?: Reading[];
+  currentReadingId?: string;
+  /** ISO "now" for recency weighting. Defaults to the current time. */
+  now?: string;
+}
+
 export function followUpReply(
   text: string,
   drawn: DrawnCard[],
@@ -182,6 +209,7 @@ export function followUpReply(
   interpretation: string,
   lexicon: Record<string, LexiconEntry>,
   voice: VoiceId,
+  recall: FollowUpRecall = {},
 ): string {
   const cards = drawn.flatMap((draw) => {
     const card = getCard(draw.cardId);
@@ -227,8 +255,49 @@ export function followUpReply(
     return `${openings[voice]}\n\n${meaning}`;
   }
 
+  // No card took the focus, so the reader reaches for what it remembers:
+  // confirmed memories first, then past readings — the same ranked retrieval
+  // the interpretation itself uses.
+  const recalledMemory = topRecalledMemory(text, recall);
+  if (recalledMemory) {
+    return `That brings to mind something you saved in Life Memory: “${excerpt(recalledMemory.text)}” Is it part of what you’re weighing right now?`;
+  }
+  const recalledReading = topRecalledReading(text, drawn, recall);
+  if (recalledReading) {
+    const question = recalledReading.question.trim()
+      ? ` — “${excerpt(recalledReading.question)}”`
+      : '';
+    const latest = recalledReading.reflections[recalledReading.reflections.length - 1];
+    const reflection = latest ? ` You later noted: “${excerpt(latest.text)}”` : '';
+    return `This came up before, in your ${recalledReading.spreadName} reading${question}.${reflection} What feels different about it this time?`;
+  }
+
   if (cards.length === 0) return 'Which part of the reading would you like to look at more closely?';
   return `Let’s take “${excerpt(text)}” back to the spread. Which card feels most connected to that for you? You can name the card or its position.`;
+}
+
+function topRecalledMemory(text: string, recall: FollowUpRecall): MemoryItem | undefined {
+  const memories = recall.memories ?? [];
+  if (memories.length === 0) return undefined;
+  const ranked = rankCandidates(memoryCandidates(memories), { question: text, now: recall.now });
+  const found = ranked.find(({ candidate, topics }) =>
+    candidate.kind === 'memory' && topics.length >= 2);
+  return found && memories.find((m) => m.id === found.candidate.key && m.status === 'confirmed');
+}
+
+function topRecalledReading(
+  text: string,
+  drawn: DrawnCard[],
+  recall: FollowUpRecall,
+): Reading | undefined {
+  const past = (recall.pastReadings ?? []).filter((r) => r.id !== recall.currentReadingId);
+  if (past.length === 0) return undefined;
+  const ranked = rankCandidates(
+    readingCandidates(past, drawn.map((d) => d.cardId)),
+    { question: text, now: recall.now },
+  );
+  const found = ranked.find(({ topics }) => topics.length >= 2);
+  return found && past.find((r) => r.id === found.candidate.key);
 }
 
 /** Detect whether a chat message asks the reader to remember a meaning for a

@@ -10,7 +10,7 @@
 import meaningsJson from '../../../server/src/knowledge/synthesized-meanings.json';
 import combosJson from '../../../server/src/knowledge/combinations-and-spreads.json';
 import guidanceJson from '../../../server/src/knowledge/reader-chat-guidance.json';
-import type { DeckId, VoiceId } from './types';
+import type { DeckId, Profile, VoiceId } from './types';
 
 export interface CardMeaning {
   id: string;
@@ -162,6 +162,13 @@ export function voiceProfile(id: VoiceId): VoiceProfile {
   const name =
     id === 'familiar' ? 'The Familiar' : id === 'mystic' ? 'The Mystic' : 'The Interpreter';
   return VOICES.find((v) => v.voice === name) ?? VOICES[0];
+}
+
+/** The medium's chosen name, falling back to the voice's title. */
+export function readerDisplayName(profile: Profile | null | undefined, voice: VoiceId): string {
+  const chosen = profile?.readerName?.trim();
+  if (chosen) return chosen;
+  return voice === 'familiar' ? 'The Familiar' : voice === 'mystic' ? 'The Mystic' : 'The Interpreter';
 }
 
 const MARSEILLE_TRUMP_NUMBERS: Partial<Record<string, number>> = {

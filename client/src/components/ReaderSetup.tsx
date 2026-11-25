@@ -22,7 +22,7 @@ export default function ReaderSetup({ initial, forReading, onSave, onCancel }: P
   const [step, setStep] = useState(0);
   const [profile, setProfile] = useState<Profile>(() => initial ?? ({
     name: '', lifeContext: '', people: '', goals: '', concerns: '', themes: [],
-    preferredVoice: 'familiar', createdAt: nowIso(),
+    preferredVoice: 'familiar', readerName: '', createdAt: nowIso(),
   }));
   const [themes, setThemes] = useState(profile.themes.join(', '));
   const dialog = useRef<HTMLDialogElement>(null);
@@ -42,7 +42,8 @@ export default function ReaderSetup({ initial, forReading, onSave, onCancel }: P
   function save() {
     onSave({
       ...profile,
-      name: profile.name.trim(), lifeContext: profile.lifeContext.trim(),
+      name: profile.name.trim(), readerName: (profile.readerName ?? '').trim(),
+      lifeContext: profile.lifeContext.trim(),
       people: profile.people.trim(), goals: profile.goals.trim(), concerns: profile.concerns.trim(),
       themes: themes.split(',').map((theme) => theme.trim()).filter(Boolean),
     });
@@ -90,8 +91,16 @@ export default function ReaderSetup({ initial, forReading, onSave, onCancel }: P
           </>
         )}
         {last && (
-          <fieldset className="setup-voices">
-            <legend>How would you like the reader to speak?</legend>
+          <>
+            <label htmlFor="setup-reader-name">Give your reader a name</label>
+            <input
+              id="setup-reader-name"
+              value={profile.readerName ?? ''}
+              onChange={(event) => setProfile({ ...profile, readerName: event.target.value })}
+              placeholder="e.g. Morgana — or leave blank to keep the voice name"
+            />
+            <fieldset className="setup-voices">
+              <legend>How would you like the reader to speak?</legend>
             {VOICE_OPTIONS.map(({ id, label, blurb }) => (
               <label key={id}>
                 <input type="radio" name="setup-voice" checked={profile.preferredVoice === id}
@@ -99,7 +108,8 @@ export default function ReaderSetup({ initial, forReading, onSave, onCancel }: P
                 <span><strong>{label}</strong><br /><span className="muted">{blurb}</span></span>
               </label>
             ))}
-          </fieldset>
+            </fieldset>
+          </>
         )}
         <div className="row setup-actions">
           <button type="submit" className="primary">{last ? (forReading ? 'Save and see guidance' : 'Save profile') : 'Continue'}</button>

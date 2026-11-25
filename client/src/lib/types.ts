@@ -13,6 +13,8 @@ export interface Profile {
   concerns: string;
   themes: string[];
   preferredVoice: VoiceId;
+  /** The medium's chosen name. Optional so older saved profiles keep working. */
+  readerName?: string;
   createdAt: string;
 }
 
@@ -105,7 +107,10 @@ export interface JournalEntry {
   at: string;
 }
 
+export const DB_VERSION = 1;
+
 export interface Db {
+  version: number;
   profile: Profile | null;
   hasStarted?: boolean;
   preferredDeck?: DeckId;

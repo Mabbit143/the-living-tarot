@@ -49,6 +49,14 @@ export default function ReadingTable({ db, updateDb, onStartChat, onResumeChat }
   const previewCards = cardsFor(mode === 'draw' ? drawn : physical);
   const duplicateCards = new Set(previewCards.map((card) => card.cardId)).size < previewCards.length;
   const canBegin = previewCards.length === spread.cards && !duplicateCards;
+  const duplicateName = (() => {
+    const seen = new Set<string>();
+    for (const card of previewCards) {
+      if (seen.has(card.cardId)) return getCard(card.cardId)?.name ?? 'A card';
+      seen.add(card.cardId);
+    }
+    return null;
+  })();
 
   function changeSetup(changes: Partial<ReadingSetup>) {
     updateDb((d) => ({ ...d, readingSetup: { ...(d.readingSetup ?? EMPTY_SETUP), ...changes } }));
@@ -230,6 +238,13 @@ export default function ReadingTable({ db, updateDb, onStartChat, onResumeChat }
             </button>
           )}
         </div>
+        {mode === 'physical' && !canBegin && (
+          <p className="small muted" role="status">
+            {duplicateCards
+              ? `${duplicateName} is in two positions — change one of them to read the cards.`
+              : `${previewCards.length} of ${spread.cards} positions filled — fill every position to read the cards.`}
+          </p>
+        )}
         {previewCards.length > 0 && (
           <SpreadCards cards={previewCards} deck={mode === 'draw' ? deck : 'midnight'} />
         )}

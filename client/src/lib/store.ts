@@ -8,14 +8,18 @@
 // the start.
 
 import type { CardSelection, Db, ReadingSetup } from './types';
+import { DB_VERSION, nowIso } from './types';
 
 export interface StoreAdapter {
   load(): Promise<Db>;
   save(db: Db): Promise<void>;
+  /** True when the most recent load recovered from quarantined storage. */
+  recoveredFromCorruptStorage?: () => boolean;
 }
 
 export function emptyDb(): Db {
   return {
+    version: DB_VERSION,
     profile: null,
     readings: [],
     lexicon: {},
@@ -23,6 +27,21 @@ export function emptyDb(): Db {
     chat: [],
     journal: [],
   };
+}
+
+/** Upgrade stored data to the current shape. v0 (no version field, i.e. the
+ *  shape shipped before versioning) gains `version: 1` with documented
+ *  defaults for newer optional fields. Unknown future versions throw so the
+ *  caller quarantines them instead of force-migrating. */
+export function migrate(raw: unknown): Db {
+  if (typeof raw !== 'object' || raw === null) throw new Error('stored value is not a reading database');
+  const data = raw as Record<string, unknown> & Partial<Db>;
+  if (data.version !== undefined && data.version !== DB_VERSION) {
+    throw new Error(`unsupported database version ${String(data.version)}`);
+  }
+  const base = { ...emptyDb(), ...data, version: DB_VERSION };
+  if (!isDb(base)) throw new Error('stored value is not a reading database');
+  return base;
 }
 
 function isDb(v: unknown): v is Db {
@@ -55,20 +74,39 @@ function isReadingSetup(value: unknown): value is ReadingSetup {
 }
 
 export class LocalStorageStore implements StoreAdapter {
+  private recovered = false;
+
   constructor(private key = 'living-tarot-db-v1') {}
 
+  recoveredFromCorruptStorage(): boolean {
+    return this.recovered;
+  }
+
+  /** Preserve an unreadable payload under a quarantine key before anything
+   *  else is written. Never overwrites: identical content is stored once. */
+  private quarantine(raw: string): void {
+    const prefix = `${this.key}.corrupt-`;
+    for (let i = 0; i < localStorage.length; i += 1) {
+      const name = localStorage.key(i);
+      if (name?.startsWith(prefix) && localStorage.getItem(name) === raw) return;
+    }
+    localStorage.setItem(`${prefix}${nowIso()}`, raw);
+  }
+
   async load(): Promise<Db> {
+    this.recovered = false;
+    const raw = localStorage.getItem(this.key);
+    if (!raw) return emptyDb();
     try {
-      const raw = localStorage.getItem(this.key);
-      if (!raw) return emptyDb();
-      const parsed: unknown = JSON.parse(raw);
-      if (!isDb(parsed)) return emptyDb();
+      const parsed = migrate(JSON.parse(raw));
       // Older versions could leave a transcript behind when deleting a reading.
       const readingIds = new Set(parsed.readings.map((reading) => reading.id));
       const chat = parsed.chat.filter((message) => readingIds.has(message.readingId));
       const readingSetup = isReadingSetup(parsed.readingSetup) ? parsed.readingSetup : undefined;
       return { ...emptyDb(), ...parsed, chat, readingSetup };
     } catch {
+      this.quarantine(raw);
+      this.recovered = true;
       return emptyDb();
     }
   }

@@ -34,6 +34,7 @@ export default function App() {
   const activeReading = db?.readings.find((reading) => reading.id === activeReadingId);
   const showSavedNotice = tab === 'archive' && db?.readings.some((reading) => reading.id === completedReadingId);
   const [editingProfile, setEditingProfile] = useState(false);
+  const [storageRecovered, setStorageRecovered] = useState(false);
   const [setup, setSetup] = useState<'landing' | 'profile' | 'reading' | null>(null);
   const mainRef = useRef<HTMLElement>(null);
   const focusReadingTable = useRef(false);
@@ -42,7 +43,9 @@ export default function App() {
   useEffect(() => {
     let alive = true;
     void store.load().then((loaded) => {
-      if (alive) setDb(loaded);
+      if (!alive) return;
+      setDb(loaded);
+      if (store.recoveredFromCorruptStorage?.()) setStorageRecovered(true);
     });
     return () => {
       alive = false;
@@ -104,6 +107,16 @@ export default function App() {
   if (!started) {
     return (
       <>
+        {storageRecovered && (
+          <div className="banner" role="status">
+            <strong className="gold">Your saved data couldn’t be read</strong>
+            <p className="small muted" style={{ margin: '0.3rem 0 0.6rem' }}>
+              We started fresh so nothing else could go wrong. A copy of what
+              was saved was kept on this device for recovery.
+            </p>
+            <button className="ghost" onClick={() => setStorageRecovered(false)}>Dismiss</button>
+          </div>
+        )}
         <LandingPage onStart={() => {
           focusReadingTable.current = true;
           updateDb((d) => ({ ...d, hasStarted: true }));
@@ -141,6 +154,17 @@ export default function App() {
 
   return (
     <div className="app tarot-workspace">
+      {storageRecovered && (
+        <div className="banner row space-between" role="status">
+          <div>
+            <strong className="gold">Your saved data couldn’t be read</strong>
+            <p className="small muted" style={{ margin: '0.3rem 0 0' }}>
+              A copy of what was saved was kept on this device for recovery.
+            </p>
+          </div>
+          <button className="ghost" onClick={() => setStorageRecovered(false)}>Dismiss</button>
+        </div>
+      )}
       <header className="app-header">
         <h1 className="wordmark">The Living Tarot</h1>
         <div className="workspace-account">

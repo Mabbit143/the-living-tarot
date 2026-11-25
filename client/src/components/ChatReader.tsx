@@ -3,7 +3,7 @@ import ReadingInterpretation from './ReadingInterpretation';
 import SpreadCards from './SpreadCards';
 import { readingDeck } from '../lib/decks';
 import { requestGeminiReply } from '../lib/gemini';
-import { getCard, getSpread } from '../lib/knowledge';
+import { getCard, getSpread, readerDisplayName } from '../lib/knowledge';
 import {
   buildInterpretation,
   conversationOpening,
@@ -106,7 +106,11 @@ export default function ChatReader({ reading, db, updateDb, onDone, onBack, onSe
   async function respond(mode: 'reading' | 'follow-up', userText?: string, context?: string) {
     if (activeRequest.current) return;
     const local = () => mode === 'reading' ? localInterpretation(context)
-      : followUpReply(userText ?? '', reading.cards, messages, reading.interpretation, db.lexicon, voice);
+      : followUpReply(userText ?? '', reading.cards, messages, reading.interpretation, db.lexicon, voice, {
+        memories: db.memories,
+        pastReadings: db.readings,
+        currentReadingId: reading.id,
+      });
     const write = (text: string, gemini?: ChatMessage['gemini']) =>
       reply(text, userText, mode === 'reading' ? text : undefined, gemini);
     if (!db.useGeminiReader) {
@@ -245,7 +249,7 @@ export default function ChatReader({ reading, db, updateDb, onDone, onBack, onSe
           ← Back to the table
         </button>
         <div className="row">
-          <label htmlFor="chat-reader-voice" style={{ margin: 0 }}>Reader:</label>
+          <label htmlFor="chat-reader-voice" style={{ margin: 0 }} title="Applies to follow-up replies; the reading above stays as written.">Voice for follow-ups:</label>
           <select
             id="chat-reader-voice"
             value={voice}
@@ -307,7 +311,7 @@ export default function ChatReader({ reading, db, updateDb, onDone, onBack, onSe
               <div className="chat" role="log" aria-label="Reading conversation">
                 {conversation.map((m) => (
                   <div key={m.id} className={`chat-msg ${m.role}`}>
-                    <strong className="chat-speaker">{m.role === 'reader' ? 'Reader' : 'You'}</strong>
+                    <strong className="chat-speaker">{m.role === 'reader' ? readerDisplayName(db.profile, voice) : 'You'}</strong>
                     {m.text}
                   </div>
                 ))}

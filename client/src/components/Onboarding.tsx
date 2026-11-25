@@ -24,11 +24,13 @@ export default function Onboarding({ initial, initialDeck, onSave, onCancel }: P
   const [concerns, setConcerns] = useState(initial?.concerns ?? '');
   const [themes, setThemes] = useState((initial?.themes ?? []).join(', '));
   const [voice, setVoice] = useState<VoiceId>(initial?.preferredVoice ?? 'familiar');
+  const [readerName, setReaderName] = useState(initial?.readerName ?? '');
   const [deck, setDeck] = useState(initialDeck);
 
   function save() {
     onSave({
       name: name.trim(),
+      readerName: readerName.trim(),
       lifeContext: lifeContext.trim(),
       people: people.trim(),
       goals: goals.trim(),
@@ -85,6 +87,14 @@ export default function Onboarding({ initial, initialDeck, onSave, onCancel }: P
           </button>
         ))}
       </div>
+
+      <label htmlFor="onboarding-reader-name">Name your reader</label>
+      <input
+        id="onboarding-reader-name"
+        value={readerName}
+        onChange={(e) => setReaderName(e.target.value)}
+        placeholder="e.g. Morgana — or leave blank to keep the voice name"
+      />
 
       <DeckPicker id="profile-deck" value={deck} onChange={setDeck} />
 

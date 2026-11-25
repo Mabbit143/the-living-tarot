@@ -71,7 +71,13 @@ export function cardInPosition(draw: DrawnCard, card: CardMeaning, personal?: st
   const role = positionRole(draw.positionLabel);
   const positionNote = role ? prompts[role] : draw.positionMeaning;
   if (personal) {
-    return `You associate ${card.name} with “${personal}.” ${positionNote}`;
+    // When the reader's own meaning shares nothing with the book's, say so
+    // plainly and let theirs win. Quiet agreement needs no announcement.
+    const book = draw.reversed ? card.reversed : card.upright;
+    const tension = sharedTopics(personal, book).length === 0
+      ? ` That pulls against the card’s traditional meaning — yours wins here, because it’s built from your life, not the book.`
+      : '';
+    return `You associate ${card.name} with “${personal}.”${tension} ${positionNote}`;
   }
   const specific = role && !draw.reversed ? positionReadings[card.id]?.[role] : undefined;
   if (specific) return specific;
@@ -153,17 +159,43 @@ export function readTogether(
     return `${contextLink}The High Priestess gives you a way to decide, and the Page of Pentacles gives you a way to test it. Take a quiet moment to name what you suspect is worth pursuing, then try one small thing that could confirm or challenge it.${next}`;
   }
 
-  const secondTheme = otherPersonal
-    ? `Your association for ${second.card.name} is “${otherPersonal}.”`
-    : firstSentence(second.draw.reversed ? second.card.reversed : second.card.upright);
+  // The card-by-card section already stated each meaning, so the synthesis
+  // composes relationships — shared topics, reversals, suits, roles — instead
+  // of re-quoting the same sentences.
+  const reversed = cards.filter(({ draw }) => draw.reversed);
+  const reversalNote = reversed.length > 1 && reversed.length === cards.length
+    ? 'Every card arrived reversed, so read this spread as inner weather first — what is shifting inside you before anything changes outside you? '
+    : reversed.length > 0
+      ? `${joinNames(reversed.map(({ card }) => card.name))} arrived reversed, so hold ${reversed.length > 1 ? 'those' : 'that'} as the inner part of the story. `
+      : '';
   if (personal) {
-    return `${contextLink}Bring your association of “${personal}” for ${first.card.name} in “${first.draw.positionLabel}” into conversation with ${second.card.name} in “${second.draw.positionLabel}.” ${secondTheme} What does your association change about how you’d read that second card?`;
+    const secondVoice = otherPersonal
+      ? ` Your association of “${otherPersonal}” for ${second.card.name} is the other half of that conversation.`
+      : '';
+    return `${contextLink}${reversalNote}Bring your association of “${personal}” for ${first.card.name} in “${first.draw.positionLabel}” into conversation with ${second.card.name} in “${second.draw.positionLabel}.”${secondVoice} What does your association change about how you’d read that second card?`;
   }
-  const firstTheme = firstSentence(first.draw.reversed ? first.card.reversed : first.card.upright);
+  const shared = sharedTopics(
+    first.draw.reversed ? first.card.reversed : first.card.upright,
+    second.draw.reversed ? second.card.reversed : second.card.upright,
+  );
+  const sharedNote = shared.length > 0
+    ? ` Both cards circle around ${joinQuoted(shared)}.`
+    : '';
   const relationship = first.role === 'task' && second.role === 'outcome'
     ? 'How might what the first card asks you to try make the second card’s possibility easier or harder to reach?'
     : first.card.suit && first.card.suit === second.card.suit
       ? 'Both cards work in the same suit. What changes as that shared theme moves from one position to the other?'
       : 'Where do these cards support each other, and where might one ask you to reconsider the other?';
-  return `${contextLink}Start with ${first.card.name} in “${first.draw.positionLabel}”: ${firstTheme} Then look at how it sits beside ${second.card.name} in “${second.draw.positionLabel}.” ${secondTheme} ${relationship}`;
+  return `${contextLink}${reversalNote}${first.card.name} in “${first.draw.positionLabel}” and ${second.card.name} in “${second.draw.positionLabel}” belong to the same story.${sharedNote} ${relationship}`;
+}
+
+function joinQuoted(topics: string[]): string {
+  const shown = topics.slice(0, 3).map((topic) => `“${topic}”`);
+  if (shown.length <= 1) return shown[0] ?? '';
+  return `${shown.slice(0, -1).join(', ')} and ${shown[shown.length - 1]}`;
+}
+
+function joinNames(names: string[]): string {
+  if (names.length <= 1) return names[0] ?? '';
+  return `${names.slice(0, -1).join(', ')} and ${names[names.length - 1]}`;
 }

@@ -23,13 +23,16 @@ See [store.ts](C:\Users\mabbi\dev\the-living-tarot\client\src\lib\store.ts:60)
 
 ## Acceptance criteria
 
-- [ ] On parse failure, the raw corrupt string is preserved under
+- [x] On parse failure, the raw corrupt string is preserved under
   `living-tarot-db-v1.corrupt-<ISO-date>` before anything else is written.
-- [ ] The app starts with a clean DB but shows a recoverable notice
+  (LocalStorageStore.quarantine; identical content stored once.)
+- [x] The app starts with a clean DB but shows a recoverable notice
   ("Your saved data couldn't be read — a copy was kept for recovery").
-- [ ] No save ever overwrites the quarantined copy.
-- [ ] Unit test: corrupt input produces quarantined copy + clean DB, and a
+- [x] No save ever overwrites the quarantined copy.
+- [x] Unit test: corrupt input produces quarantined copy + clean DB, and a
   subsequent save does not touch the quarantine key.
+  (`client/src/lib/store.test.ts`; behavior-harness verified, vitest green
+  on owner machine 2026-11-25.)
 
 ## Test plan
 

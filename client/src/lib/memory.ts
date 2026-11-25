@@ -11,27 +11,28 @@ export function suggestMemories(reading: Reading): Omit<MemoryItem, 'id' | 'crea
 
   if (reading.question.trim()) {
     suggestions.push({
-      text: `Asked about: ${reading.question.trim()}`,
+      text: `You asked about: ${reading.question.trim()}`,
       kind: 'concern',
       timeframe: 'current',
       status: 'suggested',
-      source: `reading (${reading.spreadName})`,
+      source: `you asked in ${reading.spreadName}`,
       confidence: 'low',
     });
   }
 
   // Major Arcana cards carry the reading's themes; suggest the first as a
-  // theme to watch, framed as a suggestion, not a fact.
+  // theme to watch, framed as a suggestion from the cards — never as
+  // something that happened in the reader's life.
   const major = reading.cards.find((c) => getCard(c.cardId)?.arcana === 'major');
   if (major) {
     const card = getCard(major.cardId);
     if (card) {
       suggestions.push({
-        text: `Theme from ${card.name} (${major.positionLabel}): ${card.upright.split('.')[0]}.`,
+        text: `The cards suggest watching this theme from ${card.name} (${major.positionLabel}): ${card.upright.split('.')[0]}.`,
         kind: 'event',
         timeframe: 'current',
         status: 'suggested',
-        source: `reading (${reading.spreadName})`,
+        source: `cards suggested in ${reading.spreadName}`,
         confidence: 'low',
       });
     }

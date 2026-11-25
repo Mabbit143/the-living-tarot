@@ -24,7 +24,7 @@ function readingBlocks(reading: Reading) {
 
 export default function ReadingInterpretation({ reading, headingRef }: {
   reading: Reading;
-  headingRef: Ref<HTMLHeadingElement>;
+  headingRef?: Ref<HTMLHeadingElement>;
 }) {
   const blocks = readingBlocks(reading);
   const summaryIndex = blocks.findIndex(({ heading }) => heading === synthesisHeading);
