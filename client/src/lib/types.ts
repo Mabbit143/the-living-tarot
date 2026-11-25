@@ -45,6 +45,7 @@ export interface Reading {
   question: string;
   cards: DrawnCard[];
   interpretation: string;
+  personalizedGuidance?: string;
   createdAt: string;
   status: 'draft' | 'complete';
   reflections: Reflection[];
@@ -106,6 +107,7 @@ export interface JournalEntry {
 
 export interface Db {
   profile: Profile | null;
+  hasStarted?: boolean;
   preferredDeck?: DeckId;
   allowReversals?: boolean;
   useGeminiReader?: boolean;

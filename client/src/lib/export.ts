@@ -100,6 +100,9 @@ function readingText(r: Reading, conversation: ChatMessage[]): string {
     lines.push('Interpretation:');
     lines.push(r.interpretation);
   }
+  if (r.personalizedGuidance) {
+    lines.push('', 'Personalized guidance:', r.personalizedGuidance);
+  }
   if (conversation.length > 0) {
     lines.push('');
     lines.push('Conversation:');

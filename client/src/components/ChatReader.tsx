@@ -1,4 +1,5 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import ReadingInterpretation from './ReadingInterpretation';
 import SpreadCards from './SpreadCards';
 import { readingDeck } from '../lib/decks';
 import { requestGeminiReply } from '../lib/gemini';
@@ -21,9 +22,10 @@ interface Props {
   updateDb: (fn: (db: Db) => Db) => void;
   onDone: () => void;
   onBack: () => void;
+  onSetupReader?: () => void;
 }
 
-export default function ChatReader({ reading, db, updateDb, onDone, onBack }: Props) {
+export default function ChatReader({ reading, db, updateDb, onDone, onBack, onSetupReader }: Props) {
   const spread = getSpread(reading.spreadName);
   const [voice, setVoice] = useState<VoiceId>(db.profile?.preferredVoice ?? 'familiar');
   const [input, setInput] = useState('');
@@ -32,11 +34,25 @@ export default function ChatReader({ reading, db, updateDb, onDone, onBack }: Pr
   const [readerNotice, setReaderNotice] = useState('');
   const activeRequest = useRef<AbortController | null>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
+  const interpretationHeadingRef = useRef<HTMLHeadingElement>(null);
+  const guidanceHeading = useRef<HTMLHeadingElement>(null);
+  const hadGuidance = useRef(Boolean(reading.personalizedGuidance));
+
+  useEffect(() => {
+    if (!reading.personalizedGuidance || hadGuidance.current) return;
+    hadGuidance.current = true;
+    if (db.profile) setVoice(db.profile.preferredVoice);
+    guidanceHeading.current?.focus();
+  }, [reading.personalizedGuidance, db.profile]);
 
   const messages: ChatMessage[] = db.chat
     .filter((m) => m.readingId === reading.id)
     .sort((a, b) => a.at.localeCompare(b.at));
   const delivered = Boolean(reading.interpretation);
+  const originalReply = delivered ? messages.find((message) => (
+    message.role === 'reader' && message.text === reading.interpretation
+  )) : undefined;
+  const conversation = messages.filter((message) => message.id !== originalReply?.id);
   const readOnOpen = reading.firstStep ? reading.firstStep === 'read' : !reading.question.trim();
   const canSkipToReading = Boolean(!delivered && spread && messages.length > 0);
   const hasReply = Boolean(input.trim());
@@ -127,6 +143,13 @@ export default function ChatReader({ reading, db, updateDb, onDone, onBack }: Pr
     window.scrollTo(0, 0);
   }, []);
 
+  useLayoutEffect(() => {
+    if (!delivered) return;
+    const heading = interpretationHeadingRef.current;
+    heading?.focus({ preventScroll: true });
+    heading?.scrollIntoView({ block: 'nearest' });
+  }, [delivered]);
+
   useEffect(() => {
     if (messages.length > 0 || delivered) return;
     // Defer the first turn so React can discard its development-only rehearsal.
@@ -213,8 +236,10 @@ export default function ChatReader({ reading, db, updateDb, onDone, onBack }: Pr
     setRememberText((r) => ({ ...r, [cardId]: '' }));
   }
 
+  const cards = <SpreadCards cards={reading.cards} deck={readingDeck(reading)} />;
+
   return (
-    <div>
+    <div className="reader-view">
       <div className="row space-between">
         <button className="ghost" onClick={onBack}>
           ← Back to the table
@@ -238,52 +263,87 @@ export default function ChatReader({ reading, db, updateDb, onDone, onBack }: Pr
       <div className="card">
         <h2 ref={headingRef} tabIndex={-1} style={{ overflowWrap: 'anywhere' }}>
           {reading.spreadName}
-          {reading.question ? <span className="muted"> — “{reading.question}”</span> : ''}
         </h2>
+        {reading.question && <p className="reading-question muted">“{reading.question}”</p>}
         {loading && messages.length === 0 && <p className="small muted" role="status">Reading the cards…</p>}
-        <SpreadCards cards={reading.cards} deck={readingDeck(reading)} />
-
-        <div className="chat" role="log" aria-label="Reading conversation">
-          {messages.map((m) => (
-            <div key={m.id} className={`chat-msg ${m.role}`}>
-              <strong className="chat-speaker">{m.role === 'reader' ? 'Reader' : 'You'}</strong>
-              {m.text}
+        {delivered && (
+          <>
+            <ReadingInterpretation reading={reading} headingRef={interpretationHeadingRef} />
+            {reading.personalizedGuidance ? (
+              <section className="personalized-guidance" aria-labelledby="personalized-guidance-heading">
+                <h3 id="personalized-guidance-heading" tabIndex={-1} ref={guidanceHeading}>Personalized guidance</h3>
+                <p className="reading-copy">{reading.personalizedGuidance}</p>
+              </section>
+            ) : onSetupReader && (
+              <section className="personalized-guidance" aria-labelledby="reader-setup-invitation">
+                <h3 id="reader-setup-invitation">Guidance for your situation</h3>
+                <p>Share a little about what’s on your mind to get a follow-up for this spread.</p>
+                <button className="ghost" onClick={onSetupReader} disabled={loading}>Set up my reader</button>
+              </section>
+            )}
+            <div className="row reading-finish">
+              <button className="primary" onClick={completeReading} disabled={loading}>
+                Complete this reading
+              </button>
+              {newSuggestionCount > 0 && (
+                <span className="small muted">
+                  {newSuggestionCount} memory {newSuggestionCount === 1 ? 'suggestion' : 'suggestions'} to review after completing.
+                </span>
+              )}
             </div>
-          ))}
-        </div>
+          </>
+        )}
+        {delivered && reading.cards.length > 3 ? (
+          <details className="reading-disclosure reader-support">
+            <summary>Cards in this spread</summary>
+            {cards}
+          </details>
+        ) : <div className={delivered ? 'reading-card-strip reader-support' : undefined}>{cards}</div>}
 
-        {canSkipToReading && (
-          <div className="row" style={{ marginBottom: '0.6rem' }}>
-            <button className={hasReply ? 'ghost' : 'primary'} onClick={() => void respond('reading')} disabled={loading}>
-              Read the cards
+        <div className={delivered ? 'reader-support' : undefined}>
+          {delivered && <h3>Talk about this reading</h3>}
+          <div className="chat" role="log" aria-label="Reading conversation">
+            {conversation.map((m) => (
+              <div key={m.id} className={`chat-msg ${m.role}`}>
+                <strong className="chat-speaker">{m.role === 'reader' ? 'Reader' : 'You'}</strong>
+                {m.text}
+              </div>
+            ))}
+          </div>
+
+          {canSkipToReading && (
+            <div className="row" style={{ marginBottom: '0.6rem' }}>
+              <button className={hasReply ? 'ghost' : 'primary'} onClick={() => void respond('reading')} disabled={loading}>
+                Read the cards
+              </button>
+            </div>
+          )}
+          <div className="chat-input-row">
+            <input
+              value={input}
+              disabled={loading}
+              onChange={(e) => setInput(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') send();
+              }}
+              placeholder="Talk to the reader…"
+              aria-label="Talk to the reader"
+            />
+            <button className={!canSkipToReading || hasReply ? 'primary' : 'ghost'} onClick={send} disabled={loading || !hasReply}>
+              Send
             </button>
           </div>
-        )}
-        <div className="chat-input-row">
-          <input
-            value={input}
-            disabled={loading}
-            onChange={(e) => setInput(e.target.value)}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter') send();
-            }}
-            placeholder="Talk to the reader…"
-            aria-label="Talk to the reader"
-          />
-          <button className={!canSkipToReading || hasReply ? 'primary' : 'ghost'} onClick={send} disabled={loading || !hasReply}>
-            Send
-          </button>
+          {((loading && messages.length > 0) || readerNotice) && (
+            <p className="small muted" role="status">
+              {loading ? 'Gemini is preparing a reply…' : readerNotice}
+            </p>
+          )}
         </div>
-        {((loading && messages.length > 0) || readerNotice) && (
-          <p className="small muted" role="status">
-            {loading ? 'Gemini is preparing a reply…' : readerNotice}
-          </p>
-        )}
       </div>
 
       {delivered && (
-        <div className="card">
-          <h3>Make it yours</h3>
+        <details className="reading-disclosure card personal-meanings">
+          <summary>Add personal card meanings</summary>
           <p className="small muted">
             If a card means something of your own to you, tell the reader and it will remember —
             that meaning becomes part of your lexicon. You can also just type it in chat, e.g.
@@ -312,17 +372,7 @@ export default function ChatReader({ reading, db, updateDb, onDone, onBack }: Pr
               </div>
             );
           })}
-          <div className="row" style={{ marginTop: '1rem' }}>
-            <button className="primary" onClick={completeReading} disabled={loading}>
-              Complete this reading
-            </button>
-            <span className="small muted">
-              {newSuggestionCount > 0
-                ? `${newSuggestionCount} memory ${newSuggestionCount === 1 ? 'suggestion' : 'suggestions'} to review after completing.`
-                : 'Completing saves the reading to your archive.'}
-            </span>
-          </div>
-        </div>
+        </details>
       )}
     </div>
   );

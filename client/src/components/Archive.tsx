@@ -150,6 +150,12 @@ export default function Archive({ db, updateDb }: Props) {
               {r.interpretation && (
                 <div style={{ marginTop: '1rem', whiteSpace: 'pre-wrap' }}>{r.interpretation}</div>
               )}
+              {r.personalizedGuidance && (
+                <section className="personalized-guidance">
+                  <h4 className="serif">Personalized guidance</h4>
+                  <p className="reading-copy">{r.personalizedGuidance}</p>
+                </section>
+              )}
               <hr />
               <h4 className="serif">Reading Revisited — reflections</h4>
               {r.reflections.length === 0 && (

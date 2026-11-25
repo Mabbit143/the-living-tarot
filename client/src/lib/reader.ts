@@ -18,7 +18,7 @@ import type {
   VoiceId,
 } from './types';
 import type { Spread } from './knowledge';
-import { cardInCompany, cardInPosition, personalAssociation, readTogether, sharedTopics } from './readingContext';
+import { cardInCompany, cardInPosition, personalAssociation, positionRole, readTogether, sharedTopics } from './readingContext';
 
 export interface InterpretationSection {
   heading: string;
@@ -90,6 +90,10 @@ export function buildInterpretation(input: ReadingInput): Interpretation {
     && sharedTopics(currentContext, memory.text).length >= 2);
   const together = readTogether(drawn, lexicon, getCard, currentContext);
   if (together) sections.push({ heading: 'How they read together', body: together });
+  if (profile && profileContext(profile).length > 0) {
+    const reflection = personalizedReflection(question, drawn, { ...profile, preferredVoice: voice }, lexicon);
+    if (reflection) sections.push({ heading: 'A question for your situation', body: reflection });
+  }
 
   const questions = QUESTION_TYPES.flatMap((q) => q.example_questions);
   const closingQuestion = pick(questions, readingIndex + drawn.length);
@@ -109,6 +113,51 @@ export function buildInterpretation(input: ReadingInput): Interpretation {
 function excerpt(text: string): string {
   const cleaned = text.trim().replace(/\s+/g, ' ');
   return cleaned.length > 180 ? `${cleaned.slice(0, 177).trimEnd()}…` : cleaned;
+}
+
+function profileContext(profile: Profile): string[] {
+  return [profile.lifeContext, profile.goals, profile.concerns, profile.people, ...profile.themes]
+    .map((entry) => entry.trim()).filter(Boolean);
+}
+
+function personalizedReflection(
+  question: string, drawn: DrawnCard[], profile: Profile, lexicon: Record<string, LexiconEntry>,
+): string {
+  const entries = profileContext(profile);
+  const pairs = drawn.flatMap((draw) => {
+    const card = getCard(draw.cardId);
+    if (!card) return [];
+    const theme = personalAssociation(lexicon[card.id]) ?? (draw.reversed ? card.reversed : card.upright);
+    return (entries.length ? entries : ['']).map((entry) => ({
+      draw, card, entry,
+      score: sharedTopics(entry, theme, draw.positionMeaning).length * 3
+        + sharedTopics(entry, question).length * 2 + sharedTopics(question, theme, draw.positionMeaning).length,
+      actionable: ['task', 'support'].includes(positionRole(draw.positionLabel) ?? ''),
+    }));
+  });
+  pairs.sort((a, b) => b.score - a.score || Number(b.actionable) - Number(a.actionable));
+  const focus = pairs[0];
+  if (!focus) return '';
+
+  const cardName = `${focus.card.name}${focus.draw.reversed ? ' reversed' : ''}`;
+  const position = `“${focus.draw.positionLabel}”`;
+  const questionLine = question.trim() ? ` As you revisit “${excerpt(question)},”` : '';
+  const context = focus.entry ? ` Consider what you shared in your profile: “${excerpt(focus.entry)}”.` : '';
+  const followUp = {
+    familiar: 'what’s one small thing this card helps you notice or try?',
+    mystic: 'what detail in the card’s image draws your attention, and what does it bring to mind?',
+    interpreter: 'which part of the card’s meaning addresses this position, and what would you check before acting on it?',
+  }[profile.preferredVoice];
+
+  return [
+    `${cardName} appeared in ${position}.${context}`,
+    cardInPosition(focus.draw, focus.card, personalAssociation(lexicon[focus.card.id])),
+    questionLine ? `${questionLine.trimStart()} ${followUp}` : followUp[0].toUpperCase() + followUp.slice(1),
+  ].join('\n\n');
+}
+
+export function buildPersonalizedGuidance(reading: Reading, profile: Profile, lexicon: Record<string, LexiconEntry>): string {
+  return personalizedReflection(reading.question, reading.cards, profile, lexicon);
 }
 
 function mentions(text: string, label: string): boolean {

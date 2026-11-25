@@ -4,13 +4,13 @@ import type { DeckId, Profile, VoiceId } from '../lib/types';
 import { nowIso } from '../lib/types';
 
 interface Props {
-  initial: Profile | null;
+  initial: Profile;
   initialDeck: DeckId;
   onSave: (profile: Profile, deck: DeckId) => void;
-  onCancel?: () => void;
+  onCancel: () => void;
 }
 
-const VOICE_OPTIONS: { id: VoiceId; label: string; blurb: string }[] = [
+export const VOICE_OPTIONS: { id: VoiceId; label: string; blurb: string }[] = [
   { id: 'familiar', label: 'The Familiar', blurb: 'Warm, plain-spoken, like someone who knows you.' },
   { id: 'mystic', label: 'The Mystic', blurb: 'Symbolic, image-led, reads the card as a dream first.' },
   { id: 'interpreter', label: 'The Interpreter', blurb: 'Precise and structured — card, position, and what recurs.' },
@@ -41,11 +41,9 @@ export default function Onboarding({ initial, initialDeck, onSave, onCancel }: P
 
   return (
     <div className="card">
-      <h2>{initial ? 'Your profile' : 'Welcome to The Living Tarot'}</h2>
+      <h2>Your profile</h2>
       <p className="muted">
-        {initial
-          ? 'Edit what the reader knows about you. Nothing here is shared; it only shapes how readings speak to you.'
-          : 'Before your first reading, tell the reader a little about your life. This is what makes readings yours instead of generic — and you can change any of it later.'}
+        Edit what your reader knows about you and how it speaks to you.
       </p>
 
       <label htmlFor="onboarding-name">What should the reader call you?</label>
@@ -88,17 +86,13 @@ export default function Onboarding({ initial, initialDeck, onSave, onCancel }: P
         ))}
       </div>
 
-      {initial && <DeckPicker id="profile-deck" value={deck} onChange={setDeck} />}
+      <DeckPicker id="profile-deck" value={deck} onChange={setDeck} />
 
       <div className="row" style={{ marginTop: '1.2rem' }}>
         <button className="primary" onClick={save}>
-          {initial ? 'Save profile' : 'Begin'}
+          Save profile
         </button>
-        {onCancel && (
-          <button className="ghost" onClick={onCancel}>
-            Cancel
-          </button>
-        )}
+        <button className="ghost" onClick={onCancel}>Cancel</button>
       </div>
     </div>
   );

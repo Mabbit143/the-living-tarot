@@ -269,6 +269,182 @@ label {
   min-block-size: 2.75rem;
 }
 
+.physical-entry {
+  margin-block-start: 1.25rem;
+}
+
+.physical-entry h3,
+.physical-entry p,
+.card-picker h3 {
+  margin: 0;
+}
+
+.physical-positions,
+.card-picker-results {
+  padding: 0;
+  list-style: none;
+}
+
+.physical-positions {
+  display: grid;
+  gap: 0.75rem;
+  margin-block: 0.75rem;
+}
+
+.physical-position {
+  display: grid;
+  gap: 0.35rem;
+  min-inline-size: 0;
+}
+
+.physical-position-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.physical-position-controls {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.25rem 0.65rem;
+  min-inline-size: 0;
+}
+
+.physical-card-choice {
+  grid-column: 1;
+  border-color: var(--control-border);
+  text-align: start;
+  overflow-wrap: anywhere;
+}
+
+.physical-card-choice:only-child {
+  grid-column: 1 / -1;
+}
+
+.physical-orientation {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0;
+  padding-inline: 0.25rem;
+  cursor: pointer;
+}
+
+.physical-orientation input {
+  width: auto;
+  margin: 0;
+}
+
+.physical-duplicate {
+  grid-column: 1 / -1;
+  color: var(--danger);
+  overflow-wrap: anywhere;
+}
+
+.card-picker {
+  inline-size: min(34rem, calc(100% - 2rem));
+  block-size: min(78dvh, 34rem);
+  max-block-size: calc(100% - 2rem);
+  padding: 1rem;
+  overflow: hidden;
+  border: 1px solid var(--violet);
+  border-radius: 12px;
+  background: var(--midnight-2);
+  color: var(--cream);
+}
+
+.card-picker[open] {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-picker::backdrop {
+  background: rgb(13 11 18 / 78%);
+}
+
+.card-picker-header {
+  align-items: start;
+  flex-wrap: nowrap;
+}
+
+.card-picker-header h3 {
+  padding-block-start: 0.35rem;
+  overflow-wrap: anywhere;
+}
+
+.card-picker-header button {
+  flex: none;
+}
+
+.card-picker input[type='search'] {
+  flex: none;
+  font-size: 1rem;
+}
+
+.physical-card-choice,
+.physical-orientation,
+.card-picker button,
+.card-picker input[type='search'] {
+  min-block-size: 2.75rem;
+}
+
+.physical-entry .card-picker-count {
+  margin-block: 0.3rem 0;
+}
+
+.card-picker-results {
+  flex: 1;
+  min-block-size: 0;
+  margin-block: 0.55rem 0;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  scrollbar-color: var(--control-border) var(--midnight-2);
+}
+
+.card-picker-results button {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem 0.65rem;
+  inline-size: 100%;
+  padding-inline: 0.55rem;
+  border-color: transparent;
+  background: transparent;
+  text-align: start;
+  overflow-wrap: anywhere;
+}
+
+.card-picker-results button:focus-visible {
+  outline: 1px solid var(--gold);
+  outline-offset: -2px;
+}
+
+.card-picker-clear {
+  align-self: start;
+  margin-block-start: 0.55rem;
+}
+
+@media (max-width: 35rem) {
+  .card-picker {
+    position: fixed;
+    inset: auto 0 0;
+    inline-size: 100%;
+    max-inline-size: none;
+    margin: 0;
+    padding-block-end: max(1rem, env(safe-area-inset-bottom));
+    border-radius: 12px 12px 0 0;
+  }
+}
+
+@media (min-width: 42rem) {
+  .physical-position {
+    grid-template-columns: minmax(8rem, 0.65fr) minmax(0, 1fr);
+    align-items: baseline;
+    gap: 1rem;
+  }
+}
+
 .tarot-card .position {
   color: var(--muted);
   font-size: 0.82rem;
@@ -284,6 +460,87 @@ label {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 0.6rem;
+}
+
+.reader-view h2 {
+  margin-block: 0.25rem 0.75rem;
+}
+
+.reading-question {
+  margin-block: 0 1rem;
+  max-inline-size: 68ch;
+  overflow-wrap: anywhere;
+}
+
+.reading-interpretation {
+  max-inline-size: 68ch;
+  margin-block-start: 1.25rem;
+}
+
+.reading-interpretation h3 {
+  margin-block: 0 0.5rem;
+  font-size: 1.35rem;
+  overflow-wrap: anywhere;
+}
+
+.reading-copy {
+  margin: 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.reading-breakdown {
+  display: grid;
+  gap: 1rem;
+  margin-block: 0.35rem 0.75rem;
+}
+
+.reading-breakdown h4 {
+  margin-block: 0 0.3rem;
+  color: var(--gold-soft);
+  overflow-wrap: anywhere;
+}
+
+.reading-finish {
+  margin-block-start: 1.25rem;
+}
+
+.reading-finish button {
+  min-block-size: 2.75rem;
+}
+
+.reader-support {
+  margin-block-start: 1.25rem;
+  padding-block-start: 1rem;
+  border-block-start: 1px solid var(--line);
+}
+
+.reading-card-strip .card-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 5rem), 1fr));
+  max-inline-size: 33rem;
+}
+
+.reading-card-strip .tarot-card {
+  min-block-size: 0;
+  padding: 0.5rem;
+  overflow-wrap: anywhere;
+}
+
+.reading-card-strip .tarot-art {
+  width: min(100%, 100px);
+}
+
+.personal-meanings summary {
+  min-block-size: 2.75rem;
+}
+
+.reader-view .chat:empty {
+  margin: 0;
+}
+
+.reader-view .chat-input-row input {
+  min-inline-size: 0;
+  font-size: 1rem;
 }
 
 .chat {

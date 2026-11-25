@@ -1,5 +1,6 @@
 import DeckPicker from './DeckPicker';
 import GeminiSettings from './GeminiSettings';
+import PhysicalDeckEntry from './PhysicalDeckEntry';
 import SpreadCards from './SpreadCards';
 import { preferredDeck } from '../lib/decks';
 import {
@@ -51,6 +52,13 @@ export default function ReadingTable({ db, updateDb, onStartChat, onResumeChat }
 
   function changeSetup(changes: Partial<ReadingSetup>) {
     updateDb((d) => ({ ...d, readingSetup: { ...(d.readingSetup ?? EMPTY_SETUP), ...changes } }));
+  }
+
+  function changePhysicalCard(index: number, selection: CardSelection) {
+    const next = { ...physical };
+    if (selection.cardId) next[index] = selection;
+    else delete next[index];
+    changeSetup({ physical: next });
   }
 
   function cardsFor(selections: Readonly<Partial<Record<number, CardSelection>>>): DrawnCard[] {
@@ -198,44 +206,9 @@ export default function ReadingTable({ db, updateDb, onStartChat, onResumeChat }
         </details>
 
         {mode === 'physical' && (
-          <div style={{ marginTop: '1rem' }}>
-            <p className="small muted">
-              Lay out your own deck, then tell the reader which card landed in each position.
-            </p>
-            {spread.positions.map((pos, i) => (
-              <div key={pos.position} className="row" style={{ marginBottom: '0.5rem' }}>
-                <span style={{ minWidth: '140px' }}>{pos.label}</span>
-                <select
-                  aria-label={`${pos.label} card`}
-                  value={physical[i]?.cardId ?? ''}
-                  onChange={(e) => {
-                    changeSetup({ physical: { ...physical, [i]: { cardId: e.target.value, reversed: physical[i]?.reversed ?? false } } });
-                  }}
-                >
-                  <option value="">Choose a card…</option>
-                  {CARDS.map((c) => (
-                    <option key={c.id} value={c.id}>
-                      {c.name}
-                    </option>
-                  ))}
-                </select>
-                <label style={{ display: 'inline-flex', gap: '0.3rem', margin: 0 }}>
-                  <input
-                    type="checkbox"
-                    style={{ width: 'auto' }}
-                    checked={physical[i]?.reversed ?? false}
-                    onChange={(e) => {
-                      changeSetup({ physical: { ...physical, [i]: { cardId: physical[i]?.cardId ?? '', reversed: e.target.checked } } });
-                    }}
-                  />
-                  Reversed
-                </label>
-              </div>
-            ))}
-          </div>
+          <PhysicalDeckEntry positions={spread.positions} selections={physical} onChange={changePhysicalCard} />
         )}
 
-        {duplicateCards && <p className="small" role="status">Choose a different card for each position.</p>}
         <div className="row reading-actions">
           <button className="primary" onClick={() => beginReading('read')} disabled={mode === 'physical' && !canBegin}>
             {mode === 'draw' && drawn.length === 0 ? 'Draw and read' : 'Read the cards'}

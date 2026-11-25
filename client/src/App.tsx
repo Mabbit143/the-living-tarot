@@ -2,14 +2,17 @@ import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react
 import Archive from './components/Archive';
 import ChatReader from './components/ChatReader';
 import Lexicon from './components/Lexicon';
+import LandingPage from './components/LandingPage';
 import LifeMemory from './components/LifeMemory';
 import Onboarding from './components/Onboarding';
 import PatternsView from './components/PatternsView';
 import ReadingTable from './components/ReadingTable';
+import ReaderSetup from './components/ReaderSetup';
 import SymbolJournal from './components/SymbolJournal';
 import { preferredDeck } from './lib/decks';
+import { buildPersonalizedGuidance } from './lib/reader';
 import { emptyDb, store } from './lib/store';
-import type { Db } from './lib/types';
+import type { Db, Profile } from './lib/types';
 
 type Tab = 'read' | 'lexicon' | 'memories' | 'archive' | 'patterns' | 'journal';
 
@@ -31,6 +34,10 @@ export default function App() {
   const activeReading = db?.readings.find((reading) => reading.id === activeReadingId);
   const showSavedNotice = tab === 'archive' && db?.readings.some((reading) => reading.id === completedReadingId);
   const [editingProfile, setEditingProfile] = useState(false);
+  const [setup, setSetup] = useState<'landing' | 'profile' | 'reading' | null>(null);
+  const mainRef = useRef<HTMLElement>(null);
+  const focusReadingTable = useRef(false);
+  const started = Boolean(db && (db.hasStarted || db.profile || db.readings.length));
 
   useEffect(() => {
     let alive = true;
@@ -47,6 +54,13 @@ export default function App() {
     savedNotice.current?.focus({ preventScroll: true });
     window.scrollTo(0, 0);
   }, [showSavedNotice, completedReadingId]);
+
+  useLayoutEffect(() => {
+    if (!started || !focusReadingTable.current) return;
+    focusReadingTable.current = false;
+    mainRef.current?.focus();
+    window.scrollTo(0, 0);
+  }, [started]);
 
   const updateDb = useCallback((fn: (d: Db) => Db) => {
     setDb((prev) => {
@@ -65,7 +79,41 @@ export default function App() {
     );
   }
 
-  if (!db.profile || editingProfile) {
+  function saveSetup(profile: Profile) {
+    if (setup === 'landing') focusReadingTable.current = true;
+    const readingId = setup === 'reading' ? activeReading?.id : undefined;
+    updateDb((d) => ({
+      ...d,
+      hasStarted: true,
+      profile,
+      readings: readingId ? d.readings.map((reading) => (
+        reading.id === readingId && reading.interpretation && !reading.personalizedGuidance
+          ? { ...reading, personalizedGuidance: buildPersonalizedGuidance(reading, profile, d.lexicon) }
+          : reading
+      )) : d.readings,
+    }));
+    setEditingProfile(false);
+    setSetup(null);
+  }
+
+  const guide = setup && (
+    <ReaderSetup initial={db.profile} forReading={setup === 'reading'}
+      onSave={saveSetup} onCancel={() => setSetup(null)} />
+  );
+
+  if (!started) {
+    return (
+      <>
+        <LandingPage onStart={() => {
+          focusReadingTable.current = true;
+          updateDb((d) => ({ ...d, hasStarted: true }));
+        }} onSetup={() => setSetup('landing')} />
+        {guide}
+      </>
+    );
+  }
+
+  if (editingProfile && db.profile) {
     return (
       <div className="app">
         <header className="app-header">
@@ -80,8 +128,10 @@ export default function App() {
               updateDb((d) => ({ ...d, profile, preferredDeck: deck }));
               setEditingProfile(false);
             }}
-            onCancel={db.profile ? () => setEditingProfile(false) : undefined}
+            onCancel={() => setEditingProfile(false)}
           />
+          <button className="ghost" onClick={() => setSetup('profile')}>Set up my reader</button>
+          {guide}
         </main>
       </div>
     );
@@ -94,7 +144,7 @@ export default function App() {
       <header className="app-header">
         <h1>The Living Tarot</h1>
         <p className="tagline">
-          A reader that remembers you{db.profile.name ? `, ${db.profile.name}` : ''}.
+          A reader that remembers you{db.profile?.name ? `, ${db.profile.name}` : ''}.
         </p>
         <nav className="nav" aria-label="Main navigation">
           {TABS.map((t) => (
@@ -111,13 +161,13 @@ export default function App() {
               {t.id === 'memories' && pendingMemoryCount > 0 && ` (${pendingMemoryCount} to review)`}
             </button>
           ))}
-          <button className="ghost" onClick={() => setEditingProfile(true)}>
+          <button className="ghost" onClick={() => db.profile ? setEditingProfile(true) : setSetup('profile')}>
             Profile
           </button>
         </nav>
       </header>
 
-      <main>
+      <main ref={mainRef} tabIndex={-1}>
         {activeReading ? (
           <ChatReader
             key={activeReading.id}
@@ -130,6 +180,7 @@ export default function App() {
               setTab('archive');
             }}
             onBack={() => setActiveReadingId(null)}
+            onSetupReader={!db.profile ? () => setSetup('reading') : undefined}
           />
         ) : (
           <>
@@ -173,6 +224,7 @@ export default function App() {
           </>
         )}
       </main>
+      {guide}
     </div>
   );
 }
