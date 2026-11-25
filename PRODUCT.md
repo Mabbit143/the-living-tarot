@@ -4,7 +4,7 @@
 
 ## Platform
 
-web
+web — Play Store release target; the 390px phone viewport is the primary layout target.
 
 ## Users
 
@@ -27,7 +27,7 @@ The app remembers how a card has shown up in the reader’s life. It combines so
 ## Capabilities and Constraints
 
 - The app supports 1-, 3-, and 5-card readings and a catalog of classic spreads. In-app deck choices are Rider–Waite–Smith (default), Tarot de Marseille, and Midnight (text only). Saved in-app readings retain their deck choice.
-- The current implementation stores personal data in the browser and generates interpretations from the bundled knowledge base and saved context. Exports are created on the device.
+- The current implementation stores personal data in the browser and generates interpretations from the bundled knowledge base and saved context. Exports are created on the device. Stored data is versioned and migrated on load; unreadable saves are quarantined, never overwritten.
 - Suggested Life Memories start unconfirmed. The reader can keep, edit, hide, or dismiss them.
 - Pattern counts depend on the number of readings, deck, and draw method. Interpretations use open questions and avoid predictions.
 
@@ -35,6 +35,7 @@ The app remembers how a card has shown up in the reader’s life. It combines so
 
 - **The Living Tarot** uses the tagline “A reader that remembers you.”
 - **The Familiar**, the default reader voice, is warm and plainspoken. **The Mystic** works through imagery and metaphor. **The Interpreter** explains how the cards, positions, and recurring themes relate.
+- The reader can be named: the medium's chosen name replaces the voice title wherever the reader speaks.
 
 ## Evidence on Hand
 

@@ -118,6 +118,7 @@ Prerequisites: Node 18+ and npm.
 cd client
 npm install
 npm run dev      # start the dev server
+npm test         # run the vitest suite
 npm run build    # typecheck + production build (output in client/dist)
 npm run preview  # serve the production build locally
 npm run typecheck
