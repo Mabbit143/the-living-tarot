@@ -1,4 +1,6 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import CardFace from './CardFace';
+import { preferredDeck } from '../lib/decks';
 import { CARDS, arcanaLabel, getCard } from '../lib/knowledge';
 import type { Db, Signifier } from '../lib/types';
 import { nowIso } from '../lib/types';
@@ -25,7 +27,11 @@ export default function Lexicon({ db, updateDb }: Props) {
   const [sigKind, setSigKind] = useState<Signifier['kind']>('self');
   const [sigLabel, setSigLabel] = useState('');
   const [sigTemp, setSigTemp] = useState(false);
+  const detailDialog = useRef<HTMLDialogElement>(null);
+  const detailHeading = useRef<HTMLHeadingElement>(null);
+  const activeTile = useRef<HTMLButtonElement | null>(null);
 
+  const deck = preferredDeck(db.preferredDeck);
   const filtered = CARDS.filter((c) => {
     if (arcana !== 'all' && c.arcana !== arcana) return false;
     if (suit !== 'all' && c.suit !== suit) return false;
@@ -38,6 +44,13 @@ export default function Lexicon({ db, updateDb }: Props) {
   const appearances = selectedId
     ? db.readings.reduce((n, r) => n + r.cards.filter((c) => c.cardId === selectedId).length, 0)
     : 0;
+
+  useEffect(() => {
+    const dialog = detailDialog.current;
+    if (!selectedId || !dialog || dialog.open) return;
+    dialog.showModal();
+    detailHeading.current?.focus();
+  }, [selectedId]);
 
   function upsert(cardId: string, patch: Partial<NonNullable<typeof entry>>) {
     updateDb((d) => {
@@ -79,14 +92,15 @@ export default function Lexicon({ db, updateDb }: Props) {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search cards…"
+            aria-label="Search cards"
             style={{ flex: 1 }}
           />
-          <select value={arcana} onChange={(e) => setArcana(e.target.value as typeof arcana)} style={{ width: 'auto' }}>
+          <select value={arcana} onChange={(e) => setArcana(e.target.value as typeof arcana)} style={{ width: 'auto' }} aria-label="Filter by arcana">
             <option value="all">All arcana</option>
             <option value="major">Major</option>
             <option value="minor">Minor</option>
           </select>
-          <select value={suit} onChange={(e) => setSuit(e.target.value)} style={{ width: 'auto' }}>
+          <select value={suit} onChange={(e) => setSuit(e.target.value)} style={{ width: 'auto' }} aria-label="Filter by suit">
             <option value="all">All suits</option>
             <option value="wands">Wands</option>
             <option value="cups">Cups</option>
@@ -101,11 +115,13 @@ export default function Lexicon({ db, updateDb }: Props) {
           <button
             key={c.id}
             className="tarot-card"
-            onClick={() => setSelectedId(c.id)}
-            style={selectedId === c.id ? { borderColor: 'var(--gold-soft)' } : undefined}
+            aria-haspopup="dialog"
+            onClick={(e) => {
+              activeTile.current = e.currentTarget;
+              setSelectedId(c.id);
+            }}
           >
-            <span className="numeral">{c.arcana === 'major' ? '✦' : '✧'}</span>
-            <span className="name">{c.name}</span>
+            <CardFace cardId={c.id} deck={deck} />
             <span className="position">
               {db.lexicon[c.id]?.personalMeaning ? '✎ yours' : ''}{' '}
               {db.lexicon[c.id]?.signifier ? `◆ ${db.lexicon[c.id]?.signifier?.label}` : ''}
@@ -115,10 +131,25 @@ export default function Lexicon({ db, updateDb }: Props) {
       </div>
 
       {selected && (
-        <div className="card">
-          <h3>
-            {selected.name} <span className="muted small">— {arcanaLabel(selected)}</span>
-          </h3>
+        <dialog
+          className="card lexicon-dialog"
+          ref={detailDialog}
+          aria-labelledby="lexicon-detail-title"
+          onClose={() => {
+            setSelectedId(null);
+            setAssocText('');
+            setSigLabel('');
+            setSigKind('self');
+            setSigTemp(false);
+            activeTile.current?.focus({ preventScroll: true });
+          }}
+        >
+          <div className="row space-between">
+            <h3 id="lexicon-detail-title" ref={detailHeading} tabIndex={-1}>
+              {selected.name} <span className="muted small">— {arcanaLabel(selected, deck)}</span>
+            </h3>
+            <button type="button" onClick={() => detailDialog.current?.close()}>Close</button>
+          </div>
           <p className="small muted">
             Appeared in {appearances} of your reading{appearances === 1 ? '' : 's'}.
           </p>
@@ -162,7 +193,7 @@ export default function Lexicon({ db, updateDb }: Props) {
             <p className="muted small">No personal meaning yet — give one in a reading, or add an association below.</p>
           )}
 
-          <label>Your associations (earlier → recent)</label>
+          <label htmlFor="lexicon-association">Your associations (earlier → recent)</label>
           {entry?.personalAssociations.length ? (
             <ul>
               {entry.personalAssociations.map((a, i) => (
@@ -177,6 +208,7 @@ export default function Lexicon({ db, updateDb }: Props) {
           )}
           <div className="chat-input-row">
             <input
+              id="lexicon-association"
               value={assocText}
               onChange={(e) => setAssocText(e.target.value)}
               onKeyDown={(e) => {
@@ -205,7 +237,7 @@ export default function Lexicon({ db, updateDb }: Props) {
             <p className="muted small">Not a signifier yet.</p>
           )}
           <div className="row">
-            <select value={sigKind} onChange={(e) => setSigKind(e.target.value as Signifier['kind'])} style={{ width: 'auto' }}>
+            <select value={sigKind} onChange={(e) => setSigKind(e.target.value as Signifier['kind'])} style={{ width: 'auto' }} aria-label="Signifier kind">
               {SIGNIFIER_KINDS.map((k) => (
                 <option key={k.value} value={k.value}>
                   {k.label}
@@ -216,6 +248,7 @@ export default function Lexicon({ db, updateDb }: Props) {
               value={sigLabel}
               onChange={(e) => setSigLabel(e.target.value)}
               placeholder="Who or what does this card stand for?"
+              aria-label="Who or what does this card stand for?"
               style={{ flex: 1 }}
             />
             <label style={{ display: 'inline-flex', gap: '0.3rem', margin: 0 }}>
@@ -239,7 +272,7 @@ export default function Lexicon({ db, updateDb }: Props) {
               Set signifier
             </button>
           </div>
-        </div>
+        </dialog>
       )}
     </div>
   );

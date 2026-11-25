@@ -47,8 +47,10 @@ export class LocalStorageStore implements StoreAdapter {
       if (!raw) return emptyDb();
       const parsed: unknown = JSON.parse(raw);
       if (!isDb(parsed)) return emptyDb();
-      // Merge over the empty shape so older saves still load cleanly.
-      return { ...emptyDb(), ...parsed };
+      // Older versions could leave a transcript behind when deleting a reading.
+      const readingIds = new Set(parsed.readings.map((reading) => reading.id));
+      const chat = parsed.chat.filter((message) => readingIds.has(message.readingId));
+      return { ...emptyDb(), ...parsed, chat };
     } catch {
       return emptyDb();
     }

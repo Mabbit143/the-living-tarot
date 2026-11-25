@@ -1,8 +1,10 @@
 import { useState } from 'react';
+import DeckPicker from './DeckPicker';
+import SpreadCards from './SpreadCards';
+import { preferredDeck } from '../lib/decks';
 import {
   CARDS,
   catalogSpreads,
-  getCard,
   getSpread,
   primarySpreads,
 } from '../lib/knowledge';
@@ -34,7 +36,21 @@ export default function ReadingTable({ db, updateDb, onStartChat, onResumeChat }
   const [physical, setPhysical] = useState<{ cardId: string; reversed: boolean }[]>([]);
 
   const spread = getSpread(spreadName) ?? primarySpreads()[1];
+  const deck = preferredDeck(db.preferredDeck);
   const drafts = db.readings.filter((r) => r.status === 'draft');
+  const physicalCards = spread.positions.flatMap((position, index) => {
+    const entry = physical[index];
+    if (!entry?.cardId) return [];
+    return [{
+      ...entry,
+      position: position.position,
+      positionLabel: position.label,
+      positionMeaning: position.meaning,
+    }];
+  });
+  const previewCards = mode === 'draw' ? drawn : physicalCards;
+  const duplicateCards = new Set(previewCards.map((card) => card.cardId)).size < previewCards.length;
+  const canBegin = previewCards.length === spread.cards && !duplicateCards;
 
   function drawCards() {
     const picked = shuffle(CARDS).slice(0, spread.cards);
@@ -56,44 +72,22 @@ export default function ReadingTable({ db, updateDb, onStartChat, onResumeChat }
   }
 
   function beginReading() {
-    let cards: DrawnCard[];
-    if (mode === 'draw') {
-      if (drawn.length !== spread.cards) return;
-      cards = drawn;
-    } else {
-      if (physical.length !== spread.cards || physical.some((p) => !p.cardId)) return;
-      const used = new Set<string>();
-      for (const p of physical) {
-        if (used.has(p.cardId)) return; // no duplicate cards from one physical deck
-        used.add(p.cardId);
-      }
-      cards = physical.map((p, i) => ({
-        cardId: p.cardId,
-        position: spread.positions[i].position,
-        positionLabel: spread.positions[i].label,
-        positionMeaning: spread.positions[i].meaning,
-        reversed: p.reversed,
-      }));
-    }
+    if (!canBegin) return;
     const reading: Reading = {
       id: newId(),
       spreadName: spread.name,
       question: question.trim(),
-      cards,
+      cards: previewCards,
       interpretation: '',
       createdAt: nowIso(),
       status: 'draft',
       reflections: [],
       physicalDeck: mode === 'physical',
+      deckId: mode === 'draw' ? deck : undefined,
     };
     updateDb((d) => ({ ...d, readings: [reading, ...d.readings] }));
     onStartChat(reading);
   }
-
-  const canBegin =
-    mode === 'draw'
-      ? drawn.length === spread.cards
-      : physical.length === spread.cards && physical.every((p) => p.cardId);
 
   return (
     <div>
@@ -118,15 +112,20 @@ export default function ReadingTable({ db, updateDb, onStartChat, onResumeChat }
 
       <div className="card">
         <h2>The reading table</h2>
-        <label>What is on your mind?</label>
+        <label htmlFor="reading-question">What is on your mind?</label>
         <input
+          id="reading-question"
           value={question}
           onChange={(e) => setQuestion(e.target.value)}
           placeholder="A question, a situation, or just a feeling…"
         />
 
-        <label>Spread</label>
-        <select value={spreadName} onChange={(e) => { setSpreadName(e.target.value); setDrawn([]); resetPhysical(); }}>
+        <label htmlFor="reading-spread">Spread</label>
+        <select id="reading-spread" value={spreadName} onChange={(e) => {
+          setSpreadName(e.target.value);
+          setDrawn([]);
+          setPhysical([]);
+        }}>
           <optgroup label="Everyday spreads">
             {primarySpreads().map((s) => (
               <option key={s.name} value={s.name}>
@@ -163,7 +162,12 @@ export default function ReadingTable({ db, updateDb, onStartChat, onResumeChat }
         </div>
 
         {mode === 'draw' ? (
-          <div style={{ marginTop: '1rem' }}>
+          <div>
+            <DeckPicker
+              id="reading-deck"
+              value={deck}
+              onChange={(preferredDeck) => updateDb((d) => ({ ...d, preferredDeck }))}
+            />
             <button className="primary" onClick={drawCards}>
               {drawn.length > 0 ? 'Draw again' : 'Draw the cards'}
             </button>
@@ -176,11 +180,12 @@ export default function ReadingTable({ db, updateDb, onStartChat, onResumeChat }
             {spread.positions.map((pos, i) => (
               <div key={pos.position} className="row" style={{ marginBottom: '0.5rem' }}>
                 <span style={{ minWidth: '140px' }}>{pos.label}</span>
-                <select
+                  <select
+                  aria-label={`${pos.label} card`}
                   value={physical[i]?.cardId ?? ''}
                   onChange={(e) => {
                     const next = [...physical];
-                    next[i] = { ...next[i], cardId: e.target.value };
+                    next[i] = { cardId: e.target.value, reversed: next[i]?.reversed ?? false };
                     setPhysical(next);
                   }}
                 >
@@ -198,7 +203,7 @@ export default function ReadingTable({ db, updateDb, onStartChat, onResumeChat }
                     checked={physical[i]?.reversed ?? false}
                     onChange={(e) => {
                       const next = [...physical];
-                      next[i] = { ...next[i], reversed: e.target.checked };
+                      next[i] = { cardId: next[i]?.cardId ?? '', reversed: e.target.checked };
                       setPhysical(next);
                     }}
                   />
@@ -209,28 +214,10 @@ export default function ReadingTable({ db, updateDb, onStartChat, onResumeChat }
           </div>
         )}
 
-        {(drawn.length > 0 || (mode === 'physical' && physical.some((p) => p.cardId))) && (
+        {previewCards.length > 0 && (
           <div style={{ marginTop: '1rem' }}>
-            <div className="card-grid">
-              {(mode === 'draw' ? drawn : physical.map((p, i) => ({
-                cardId: p.cardId,
-                position: spread.positions[i].position,
-                positionLabel: spread.positions[i].label,
-                positionMeaning: spread.positions[i].meaning,
-                reversed: p.reversed,
-              })) as DrawnCard[])
-                .filter((d) => d.cardId)
-                .map((d) => {
-                  const card = getCard(d.cardId);
-                  return (
-                    <div key={d.position} className={`tarot-card${d.reversed ? ' reversed' : ''}`}>
-                      <span className="position">{d.positionLabel}</span>
-                      <span className="numeral">{card?.arcana === 'major' ? '✦' : '✧'}</span>
-                      <span className="name">{card?.name ?? d.cardId}</span>
-                    </div>
-                  );
-                })}
-            </div>
+            <SpreadCards cards={previewCards} deck={mode === 'draw' ? deck : 'midnight'} />
+            {duplicateCards && <p className="small" role="status">Choose a different card for each position.</p>}
             <div className="row" style={{ marginTop: '1rem' }}>
               <button className="primary" onClick={beginReading} disabled={!canBegin}>
                 Begin the reading

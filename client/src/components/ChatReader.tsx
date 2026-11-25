@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
+import SpreadCards from './SpreadCards';
+import { readingDeck } from '../lib/decks';
 import {
   QUESTION_TYPES,
   flowForSpread,
@@ -42,8 +44,6 @@ export default function ChatReader({ reading, db, updateDb, onDone, onBack }: Pr
   const flow = spread ? flowForSpread(spread) : null;
   const [voice, setVoice] = useState<VoiceId>(db.profile?.preferredVoice ?? 'familiar');
   const [input, setInput] = useState('');
-  const [stepIdx, setStepIdx] = useState(1);
-  const [delivered, setDelivered] = useState(false);
   const [rememberText, setRememberText] = useState<Record<string, string>>({});
   const [ackCount, setAckCount] = useState(0);
   const startedRef = useRef(false);
@@ -51,18 +51,39 @@ export default function ChatReader({ reading, db, updateDb, onDone, onBack }: Pr
   const messages: ChatMessage[] = db.chat
     .filter((m) => m.readingId === reading.id)
     .sort((a, b) => a.at.localeCompare(b.at));
+  const delivered = Boolean(reading.interpretation);
+  const nextPromptIndex = reading.nextPromptIndex ?? messages.reduce((index, message) => {
+    // Older drafts only recorded the conversation. Match guide prompts in order,
+    // skipping replies about personal meanings and any other reader messages.
+    return message.role === 'reader' && message.text === flow?.steps[index]?.reader_says
+      ? index + 1
+      : index;
+  }, 0);
 
-  function pushReader(text: string) {
-    const msg: ChatMessage = { id: newId(), readingId: reading.id, role: 'reader', text, at: nowIso() };
-    updateDb((d) => ({ ...d, chat: [...d.chat, msg] }));
+  function messagesForReply(text: string, userText?: string): ChatMessage[] {
+    const fields = { readingId: reading.id, at: nowIso() };
+    const reply: ChatMessage = { ...fields, id: newId(), role: 'reader', text };
+    return userText
+      ? [{ ...fields, id: newId(), role: 'user', text: userText }, reply]
+      : [reply];
   }
 
-  function pushUser(text: string) {
-    const msg: ChatMessage = { id: newId(), readingId: reading.id, role: 'user', text, at: nowIso() };
-    updateDb((d) => ({ ...d, chat: [...d.chat, msg] }));
+  function reply(
+    text: string,
+    userText?: string,
+    progress?: Partial<Pick<Reading, 'interpretation' | 'nextPromptIndex'>>,
+  ) {
+    const turn = messagesForReply(text, userText);
+    updateDb((d) => ({
+      ...d,
+      chat: [...d.chat, ...turn],
+      readings: progress
+        ? d.readings.map((r) => r.id === reading.id ? { ...r, ...progress } : r)
+        : d.readings,
+    }));
   }
 
-  function deliverInterpretation() {
+  function deliverInterpretation(userText?: string) {
     if (!spread) return;
     const it = buildInterpretation({
       spread,
@@ -74,24 +95,19 @@ export default function ChatReader({ reading, db, updateDb, onDone, onBack }: Pr
       voice,
       readingIndex: db.readings.filter((r) => r.status === 'complete').length,
     });
-    pushReader(formatInterpretationText(it));
-    setDelivered(true);
-    updateDb((d) => ({
-      ...d,
-      readings: d.readings.map((r) =>
-        r.id === reading.id ? { ...r, interpretation: formatInterpretationText(it) } : r,
-      ),
-    }));
+    const interpretation = formatInterpretationText(it);
+    reply(interpretation, userText, { interpretation });
   }
 
-  // Seed the conversation on first open; resume straight to the
-  // interpretation if this draft already has chat history.
+  // A saved draft already has its last prompt or interpretation in the transcript.
   useEffect(() => {
     if (startedRef.current) return;
     startedRef.current = true;
-    if (messages.length === 0 && flow) {
-      pushReader(flow.steps[0].reader_says);
-    } else if (!reading.interpretation) {
+    if (messages.length > 0 || delivered) return;
+    const firstPrompt = flow?.steps[0];
+    if (firstPrompt) {
+      reply(firstPrompt.reader_says, undefined, { nextPromptIndex: 1 });
+    } else {
       deliverInterpretation();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -101,43 +117,31 @@ export default function ChatReader({ reading, db, updateDb, onDone, onBack }: Pr
     const text = input.trim();
     if (!text) return;
     setInput('');
-    pushUser(text);
 
     // Did the user ask the reader to remember a meaning for a card?
     const remember = detectRememberRequest(text, reading.cards);
     if (remember) {
       const card = getCard(remember.cardId);
-      updateDb((d) => {
-        const entry = d.lexicon[remember.cardId] ?? { cardId: remember.cardId, personalAssociations: [] };
-        return {
-          ...d,
-          lexicon: {
-            ...d.lexicon,
-            [remember.cardId]: {
-              ...entry,
-              personalMeaning: remember.meaning,
-              personalAssociations: [...entry.personalAssociations, { text: remember.meaning, at: nowIso() }],
-            },
-          },
-        };
-      });
-      pushReader(
+      savePersonalMeaning(
+        remember.cardId,
+        remember.meaning,
         `Remembered — ${card?.name ?? 'that card'} is now "${remember.meaning}" in your lexicon. It will read that way from here on, until you change it.`,
+        text,
       );
       return;
     }
 
-    if (flow && stepIdx < flow.steps.length) {
-      pushReader(flow.steps[stepIdx].reader_says);
-      setStepIdx(stepIdx + 1);
+    const prompt = flow?.steps[nextPromptIndex];
+    if (!delivered && prompt) {
+      reply(prompt.reader_says, text, { nextPromptIndex: nextPromptIndex + 1 });
       return;
     }
-    if (!delivered) {
-      deliverInterpretation();
+    if (!delivered && spread) {
+      deliverInterpretation(text);
       return;
     }
     const acks = ACKS[voice];
-    pushReader(acks[ackCount % acks.length]);
+    reply(acks[ackCount % acks.length], text);
     setAckCount(ackCount + 1);
   }
 
@@ -156,25 +160,31 @@ export default function ChatReader({ reading, db, updateDb, onDone, onBack }: Pr
     onDone();
   }
 
-  function rememberMeaning(cardId: string) {
-    const text = (rememberText[cardId] ?? '').trim();
-    if (!text) return;
+  function savePersonalMeaning(cardId: string, text: string, response: string, userText?: string) {
+    const turn = messagesForReply(response, userText);
+    const at = nowIso();
     updateDb((d) => {
       const entry = d.lexicon[cardId] ?? { cardId, personalAssociations: [] };
       return {
         ...d,
+        chat: [...d.chat, ...turn],
         lexicon: {
           ...d.lexicon,
           [cardId]: {
             ...entry,
             personalMeaning: text,
-            personalAssociations: [...entry.personalAssociations, { text, at: nowIso() }],
+            personalAssociations: [...entry.personalAssociations, { text, at }],
           },
         },
       };
     });
+  }
+
+  function rememberMeaning(cardId: string) {
+    const text = (rememberText[cardId] ?? '').trim();
+    if (!text) return;
+    savePersonalMeaning(cardId, text, `Noted — I will remember that meaning for ${getCard(cardId)?.name}.`);
     setRememberText((r) => ({ ...r, [cardId]: '' }));
-    pushReader(`Noted — I will remember that meaning for ${getCard(cardId)?.name}.`);
   }
 
   const vp = voiceProfile(voice);
@@ -188,8 +198,9 @@ export default function ChatReader({ reading, db, updateDb, onDone, onBack }: Pr
           ← Back to the table
         </button>
         <div className="row">
-          <label style={{ margin: 0 }}>Reader:</label>
+          <label htmlFor="chat-reader-voice" style={{ margin: 0 }}>Reader:</label>
           <select
+            id="chat-reader-voice"
             value={voice}
             onChange={(e) => setVoice(e.target.value as VoiceId)}
             style={{ width: 'auto' }}
@@ -207,21 +218,12 @@ export default function ChatReader({ reading, db, updateDb, onDone, onBack }: Pr
           {reading.question ? <span className="muted"> — “{reading.question}”</span> : ''}
         </h2>
         <p className="small muted">{vp.tone}</p>
-        <div className="card-grid" style={{ marginBottom: '0.5rem' }}>
-          {reading.cards.map((d) => {
-            const card = getCard(d.cardId);
-            return (
-              <div key={d.position} className={`tarot-card${d.reversed ? ' reversed' : ''}`}>
-                <span className="position">{d.positionLabel}</span>
-                <span className="name">{card?.name}</span>
-              </div>
-            );
-          })}
-        </div>
+        <SpreadCards cards={reading.cards} deck={readingDeck(reading)} />
 
-        <div className="chat">
+        <div className="chat" role="log" aria-label="Reading conversation">
           {messages.map((m) => (
             <div key={m.id} className={`chat-msg ${m.role}`}>
+              <strong className="chat-speaker">{m.role === 'reader' ? 'Reader' : 'You'}</strong>
               {m.text}
             </div>
           ))}
@@ -235,6 +237,7 @@ export default function ChatReader({ reading, db, updateDb, onDone, onBack }: Pr
               if (e.key === 'Enter') send();
             }}
             placeholder="Talk to the reader…"
+            aria-label="Talk to the reader"
           />
           <button className="primary" onClick={send}>
             Send
@@ -260,12 +263,13 @@ export default function ChatReader({ reading, db, updateDb, onDone, onBack }: Pr
             const entry = db.lexicon[d.cardId];
             return (
               <div key={d.position} style={{ marginBottom: '0.8rem' }}>
-                <label>
+                <label htmlFor={`remember-${d.cardId}`}>
                   {card?.name}
                   {entry?.personalMeaning ? ` — yours: “${entry.personalMeaning}”` : ''}
                 </label>
                 <div className="chat-input-row">
                   <input
+                    id={`remember-${d.cardId}`}
                     value={rememberText[d.cardId] ?? ''}
                     onChange={(e) =>
                       setRememberText((r) => ({ ...r, [d.cardId]: e.target.value }))

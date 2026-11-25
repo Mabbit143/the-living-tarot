@@ -63,7 +63,7 @@ function principlesFor(drawn: DrawnCard[], spread: Spread): string[] {
   const majors = drawn.filter((d) => getCard(d.cardId)?.arcana === 'major');
   const courts = drawn.filter((d) => {
     const c = getCard(d.cardId);
-    return c?.arcana === 'minor' && c.number >= 11;
+    return c?.arcana === 'minor' && c.number !== null && c.number >= 11;
   });
   const general = COMBINATION_PRINCIPLES.filter((p) => p.applies_to === 'general');
   // A couple of general principles, rotated so readings don't all quote the same one.

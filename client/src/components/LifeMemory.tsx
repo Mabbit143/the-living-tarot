@@ -28,6 +28,7 @@ export default function LifeMemory({ db, updateDb }: Props) {
   }
 
   function remove(id: string) {
+    if (!window.confirm('Remove this memory? This cannot be undone.')) return;
     updateDb((d) => ({ ...d, memories: d.memories.filter((m) => m.id !== id) }));
   }
 
@@ -66,7 +67,7 @@ export default function LifeMemory({ db, updateDb }: Props) {
           <li key={m.id} style={{ marginBottom: '0.7rem' }}>
             {editingId === m.id ? (
               <span className="chat-input-row">
-                <input value={editText} onChange={(e) => setEditText(e.target.value)} />
+                <input value={editText} onChange={(e) => setEditText(e.target.value)} aria-label="Edit memory" />
                 <button onClick={() => saveEdit(m.id)}>Save</button>
                 <button className="ghost" onClick={() => setEditingId(null)}>
                   Cancel
@@ -99,9 +100,10 @@ export default function LifeMemory({ db, updateDb }: Props) {
           otherwise — nothing becomes a lasting fact without your say-so.
         </p>
 
-        <label>Add a memory</label>
+        <label htmlFor="life-memory-text">Add a memory</label>
         <div className="chat-input-row">
           <input
+            id="life-memory-text"
             value={text}
             onChange={(e) => setText(e.target.value)}
             onKeyDown={(e) => {
@@ -114,14 +116,14 @@ export default function LifeMemory({ db, updateDb }: Props) {
           </button>
         </div>
         <div className="row" style={{ marginTop: '0.5rem' }}>
-          <select value={kind} onChange={(e) => setKind(e.target.value as MemoryKind)} style={{ width: 'auto' }}>
+          <select value={kind} onChange={(e) => setKind(e.target.value as MemoryKind)} style={{ width: 'auto' }} aria-label="Memory kind">
             {KINDS.map((k) => (
               <option key={k} value={k}>
                 {k}
               </option>
             ))}
           </select>
-          <select value={timeframe} onChange={(e) => setTimeframe(e.target.value as typeof timeframe)} style={{ width: 'auto' }}>
+          <select value={timeframe} onChange={(e) => setTimeframe(e.target.value as typeof timeframe)} style={{ width: 'auto' }} aria-label="Memory timeframe">
             <option value="current">Happening now</option>
             <option value="past">In the past</option>
           </select>

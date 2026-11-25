@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import SpreadCards from './SpreadCards';
+import { DECKS, readingDeck } from '../lib/decks';
 import { getCard } from '../lib/knowledge';
 import {
   downloadJsonBackup,
@@ -44,6 +46,19 @@ export default function Archive({ db, updateDb }: Props) {
 
   const lexiconCount = Object.values(db.lexicon).filter(hasLexiconContent).length;
 
+  function deleteReading(id: string) {
+    if (!window.confirm('Delete this reading, its conversation, and its reflections? This cannot be undone.')) return;
+    if (selectedId === id) {
+      setSelectedId(null);
+      setReflection('');
+    }
+    updateDb((d) => ({
+      ...d,
+      readings: d.readings.filter((reading) => reading.id !== id),
+      chat: d.chat.filter((message) => message.readingId !== id),
+    }));
+  }
+
   return (
     <div>
       <div className="card">
@@ -81,6 +96,7 @@ export default function Archive({ db, updateDb }: Props) {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search by question, spread, or card…"
+          aria-label="Search by question, spread, or card"
         />
       </div>
 
@@ -102,9 +118,7 @@ export default function Archive({ db, updateDb }: Props) {
               </button>
               <button
                 className="ghost"
-                onClick={() =>
-                  updateDb((d) => ({ ...d, readings: d.readings.filter((x) => x.id !== r.id) }))
-                }
+                onClick={() => deleteReading(r.id)}
               >
                 Delete
               </button>
@@ -115,14 +129,18 @@ export default function Archive({ db, updateDb }: Props) {
               <em>“{r.question}”</em>
             </p>
           )}
-          <p className="small">
-            {r.cards.map((c) => getCard(c.cardId)?.name).join(' · ')}
-          </p>
+          {selectedId !== r.id && (
+            <p className="small">
+              {r.cards.map((c) => getCard(c.cardId)?.name).join(' · ')}
+            </p>
+          )}
 
           {selectedId === r.id && (
             <>
+              {r.deckId && <p className="small muted">{DECKS[readingDeck(r)]}</p>}
+              <SpreadCards cards={r.cards} deck={readingDeck(r)} />
               {r.interpretation && (
-                <div style={{ whiteSpace: 'pre-wrap' }}>{r.interpretation}</div>
+                <div style={{ marginTop: '1rem', whiteSpace: 'pre-wrap' }}>{r.interpretation}</div>
               )}
               <hr />
               <h4 className="serif">Reading Revisited — reflections</h4>
@@ -142,6 +160,7 @@ export default function Archive({ db, updateDb }: Props) {
               </ul>
               <div className="chat-input-row">
                 <input
+                  aria-label="What actually happened since this reading?"
                   value={reflection}
                   onChange={(e) => setReflection(e.target.value)}
                   onKeyDown={(e) => {

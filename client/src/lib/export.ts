@@ -12,6 +12,7 @@
 // entries.
 
 import { getCard } from './knowledge';
+import { DECKS, readingDeck } from './decks';
 import type { ChatMessage, Db, LexiconEntry, MemoryItem, Reading } from './types';
 
 const APP_NAME = 'The Living Tarot';
@@ -83,6 +84,7 @@ function readingText(r: Reading, conversation: ChatMessage[]): string {
   const lines: string[] = [];
   lines.push(`${r.spreadName} — ${displayDate(r.createdAt)}${r.status === 'draft' ? ' (unfinished)' : ''}`);
   if (r.physicalDeck) lines.push('Drawn from your physical deck.');
+  if (r.deckId) lines.push(`Deck: ${DECKS[readingDeck(r)]}`);
   if (r.question) lines.push(`Question: ${r.question}`);
   lines.push('');
   lines.push('Cards:');

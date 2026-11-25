@@ -10,14 +10,14 @@
 import meaningsJson from '../../../server/src/knowledge/synthesized-meanings.json';
 import combosJson from '../../../server/src/knowledge/combinations-and-spreads.json';
 import guidanceJson from '../../../server/src/knowledge/reader-chat-guidance.json';
-import type { VoiceId } from './types';
+import type { DeckId, VoiceId } from './types';
 
 export interface CardMeaning {
   id: string;
   name: string;
   arcana: 'major' | 'minor';
   suit: string | null;
-  number: number;
+  number: number | null;
   upright: string;
   reversed: string;
   sources: string[];
@@ -157,10 +157,24 @@ export function voiceProfile(id: VoiceId): VoiceProfile {
   return VOICES.find((v) => v.voice === name) ?? VOICES[0];
 }
 
-export function arcanaLabel(card: CardMeaning): string {
-  if (card.arcana === 'major') return `Major Arcana · ${roman(card.number)}`;
+const MARSEILLE_TRUMP_NUMBERS: Partial<Record<string, number>> = {
+  justice: 8,
+  strength: 11,
+};
+
+export function arcanaLabel(card: CardMeaning, deck: DeckId = 'rws'): string {
+  if (card.arcana === 'major') {
+    const number = deck === 'marseille'
+      ? MARSEILLE_TRUMP_NUMBERS[card.id] ?? card.number
+      : card.number;
+    return number === null ? 'Major Arcana' : `Major Arcana · ${roman(number)}`;
+  }
   const suit = card.suit ? card.suit[0].toUpperCase() + card.suit.slice(1) : '';
-  return `${suit} · ${card.number === 11 ? 'Page' : card.number === 12 ? 'Knight' : card.number === 13 ? 'Queen' : card.number === 14 ? 'King' : card.number}`;
+  const courtRanks = ['Page', 'Knight', 'Queen', 'King'];
+  const rank = card.number === null
+    ? card.name.split(' of ')[0]
+    : courtRanks[card.number - 11] ?? card.number;
+  return `${suit} · ${rank}`;
 }
 
 function roman(n: number): string {

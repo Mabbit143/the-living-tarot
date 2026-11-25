@@ -35,13 +35,14 @@ export default function SymbolJournal({ db, updateDb }: Props) {
           What keeps catching your eye?
         </p>
         <textarea
+          aria-label="Symbol journal entry"
           rows={3}
           value={text}
           onChange={(e) => setText(e.target.value)}
           placeholder="A symbol, an image, a line that stayed with you…"
         />
         <div className="row" style={{ marginTop: '0.5rem' }}>
-          <select value={cardId} onChange={(e) => setCardId(e.target.value)} style={{ flex: 1 }}>
+          <select value={cardId} onChange={(e) => setCardId(e.target.value)} style={{ flex: 1 }} aria-label="Attach a card">
             <option value="">No card attached</option>
             {CARDS.map((c) => (
               <option key={c.id} value={c.id}>
@@ -65,9 +66,11 @@ export default function SymbolJournal({ db, updateDb }: Props) {
           </p>
           <button
             className="ghost small"
-            onClick={() =>
-              updateDb((d) => ({ ...d, journal: d.journal.filter((x) => x.id !== j.id) }))
-            }
+            onClick={() => {
+              if (window.confirm('Delete this journal entry? This cannot be undone.')) {
+                updateDb((d) => ({ ...d, journal: d.journal.filter((x) => x.id !== j.id) }));
+              }
+            }}
           >
             Delete
           </button>

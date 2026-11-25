@@ -3,6 +3,7 @@
 // React code only ever talks to the Db shape below.
 
 export type VoiceId = 'familiar' | 'mystic' | 'interpreter';
+export type DeckId = 'rws' | 'marseille' | 'midnight';
 
 export interface Profile {
   name: string;
@@ -38,6 +39,8 @@ export interface Reading {
   status: 'draft' | 'complete';
   reflections: Reflection[];
   physicalDeck: boolean;
+  deckId?: DeckId;
+  nextPromptIndex?: number;
 }
 
 export interface PersonalAssociation {
@@ -91,6 +94,7 @@ export interface JournalEntry {
 
 export interface Db {
   profile: Profile | null;
+  preferredDeck?: DeckId;
   readings: Reading[];
   lexicon: Record<string, LexiconEntry>;
   memories: MemoryItem[];

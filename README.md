@@ -17,6 +17,9 @@ base and documentation alongside it. Clone it, install, and run it — see
 - **1, 3, and 5-card spreads**, plus a catalog of classic layouts (Celtic
   Cross, Pyramid, Tree of Life, Decision, Partnership, and more) — drawn in
   the app or entered from your own physical deck.
+- **Three in-app deck styles** are available at the Reading Table and in
+  Profile. Rider–Waite–Smith is the default, with Tarot de Marseille and the
+  text-only Midnight style also available. Saved readings keep their deck.
 - **A conversational reader** (The Familiar by default, switchable to The
   Mystic or The Interpreter) that asks open questions instead of making
   predictions, and weaves cards, positions, and your past readings into one
@@ -75,6 +78,20 @@ server/src/knowledge/    The synthesized knowledge base (the data layer)
 docs/
   ARCHITECTURE.md                How the app is put together
 ```
+
+## Card artwork
+
+- **Rider–Waite–Smith** uses Pamela Colman Smith’s artwork from the early
+  Pam-A printing, with 78 digitized faces from the
+  [TaionWC collection on Wikimedia Commons](https://commons.wikimedia.org/wiki/Category:Rider-Waite-Smith_tarot_deck_(TaionWC)).
+- **Tarot de Marseille** uses the complete A. Camoin printing (1890–1900)
+  based on Nicolas Conver’s design, digitized by the Bibliothèque nationale de
+  France (btv1b10539497f) and available through
+  [Wikimedia Commons](https://commons.wikimedia.org/wiki/Category:Jeu_de_tarot_%C3%A0_enseignes_italiennes_dit_%22de_Marseille%22,_sur_le_mod%C3%A8le_du_tarot_de_Nicolas_Conver_-_jeu_de_cartes,_estampe_-_btv1b10539497f).
+
+The public-domain artwork is bundled as WebP thumbnails. The Marseille
+edition is mapped by card identity, including VIII Justice and XI Strength,
+so the selected artwork uses the same reading and Lexicon entries.
 
 ## Knowledge base provenance
 

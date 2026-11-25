@@ -9,6 +9,7 @@
   --cream: #f5f2ea;
   --muted: #b8b0c4;
   --line: #3a2f52;
+  --control-border: #867799;
   --danger: #c96a6a;
 }
 
@@ -68,11 +69,16 @@ button.ghost {
 input, select, textarea {
   background: var(--midnight-2);
   color: var(--cream);
-  border: 1px solid var(--line);
+  border: 1px solid var(--control-border);
   border-radius: 8px;
   padding: 0.55rem 0.7rem;
   font-size: 0.95rem;
   width: 100%;
+}
+
+input::placeholder, textarea::placeholder {
+  color: var(--muted);
+  opacity: 1;
 }
 
 input:focus, select:focus, textarea:focus {
@@ -117,7 +123,7 @@ label {
   margin: 0.9rem 0 0;
 }
 
-.nav button.active {
+.nav button[aria-current='page'] {
   border-color: var(--gold);
   color: var(--gold-soft);
 }
@@ -132,6 +138,22 @@ label {
 
 .card h3 {
   margin-top: 0;
+}
+
+.lexicon-dialog {
+  width: min(42rem, calc(100% - 2rem));
+  max-height: calc(100% - 2rem);
+  margin: auto;
+  color: var(--cream);
+  border-color: var(--violet);
+}
+
+.lexicon-dialog::backdrop {
+  background: rgb(13 11 18 / 78%);
+}
+
+.lexicon-dialog h3 {
+  margin: 0;
 }
 
 .muted {
@@ -182,14 +204,37 @@ label {
   font-size: 1.05rem;
 }
 
+.tarot-card:has(.tarot-art) {
+  justify-content: flex-start;
+}
+
 .tarot-card.reversed {
   border-style: dashed;
 }
 
-.tarot-card.reversed .name::after {
-  content: ' · reversed';
+.card-orientation {
   color: var(--violet-soft);
   font-size: 0.85rem;
+}
+
+.tarot-art {
+  display: block;
+  width: min(100%, 116px);
+  aspect-ratio: 7 / 12;
+  object-fit: contain;
+  align-self: center;
+  border-radius: 4px;
+  margin: 0.2rem 0;
+}
+
+.tarot-art.is-reversed {
+  transform: rotate(180deg);
+}
+
+.deck-picker select {
+  display: block;
+  max-width: 22rem;
+  margin-bottom: 0.75rem;
 }
 
 .tarot-card .position {
@@ -234,6 +279,13 @@ label {
   background: #2c2140;
   border: 1px solid var(--violet);
   align-self: flex-end;
+}
+
+.chat-speaker {
+  display: block;
+  margin-bottom: 0.15rem;
+  color: var(--muted);
+  font-size: 0.8rem;
 }
 
 .chat-input-row {
