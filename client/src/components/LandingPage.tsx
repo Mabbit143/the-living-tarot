@@ -57,6 +57,7 @@ export default function LandingPage({ onStart, onSetup }: { onStart: () => void;
                     <button className="ghost" onClick={onSetup}>Set up my reader</button>
                   </div>
                   <p className="small muted">You can start without a profile.</p>
+                  <p className="small"><a href="#welcome-context-heading">See how it works ↓</a></p>
                 </div>
               </div>
               <div className="welcome-spread" data-visual>
