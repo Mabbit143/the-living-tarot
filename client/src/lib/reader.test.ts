@@ -134,6 +134,52 @@ describe('conversationOpening', () => {
   });
 });
 
+describe('talk-first context', () => {
+  const build = (question: string, context: string | undefined, profile: null) => buildInterpretation({
+    spread,
+    question,
+    context,
+    memories: [],
+    drawn: [draw('knight-of-swords')],
+    profile,
+    lexicon: {},
+    pastReadings: [],
+    voice: 'familiar',
+    readingIndex: 0,
+    now: NOW,
+  });
+
+  it('quotes the reader back and admits when no card names it', () => {
+    const out = build('', 'How do i trust casein with parts of my life', null);
+    const section = out.sections.find((s) => s.heading === 'A question for your situation');
+    expect(section?.body).toContain('You told me:');
+    expect(section?.body).toContain('weather around it');
+  });
+
+  it('renders the section with no profile at all when context exists', () => {
+    const out = build('', 'How do i trust casein with parts of my life', null);
+    expect(out.sections.some((s) => s.heading === 'A question for your situation')).toBe(true);
+  });
+
+  it('keeps profile framing when the note comes from the profile', () => {
+    const out = buildInterpretation({
+      spread,
+      question: '',
+      context: undefined,
+      memories: [],
+      drawn: [draw('knight-of-swords')],
+      profile: { name: '', lifeContext: 'new job nerves', people: '', goals: '', concerns: '', themes: [], preferredVoice: 'familiar', createdAt: NOW },
+      lexicon: {},
+      pastReadings: [],
+      voice: 'familiar',
+      readingIndex: 0,
+      now: NOW,
+    });
+    const section = out.sections.find((s) => s.heading === 'A question for your situation');
+    expect(section?.body).toContain('Consider what you shared in your profile');
+  });
+});
+
 describe('suggestMemories', () => {
   it('never suggests the question itself as a memory', () => {
     const suggestions = suggestMemories(

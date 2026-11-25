@@ -216,6 +216,7 @@ const QUESTION_DOMAINS: { match: RegExp; themes: string[] }[] = [
   { match: /\b(mother|father|family|child|kid|parent|home|house|move)\b/i, themes: ['home', 'family', 'support', 'security'] },
   { match: /\b(decision|decide|choice|choose|stuck|option|options)\b/i, themes: ['choice', 'fear', 'risk', 'support'] },
   { match: /\b(anxiet|anxious|worry|afraid|fear|scared|stress|overwhelm)\b/i, themes: ['fear', 'worry', 'rest', 'support'] },
+  { match: /\b(trust|trusting|trusted|betray|loyal|lied|lying|cheat|honest|honesty|secret|truth)\b/i, themes: ['trust', 'support', 'honesty', 'heart', 'truth'] },
 ];
 
 /** Theme words a question points at, including via life-domain bridges. */

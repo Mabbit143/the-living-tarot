@@ -304,7 +304,14 @@ export default function ChatReader({ reading, db, updateDb, onDone, onBack, onSe
                 <summary>Cards in this spread</summary>
                 {cards}
               </details>
-            ) : <div className={delivered ? 'reading-card-strip reader-support' : undefined}>{cards}</div>}
+            ) : <div className={delivered ? 'reading-card-strip reader-support' : undefined}>{!delivered && reading.firstStep === 'talk' && !reading.physicalDeck
+                ? 'Your cards are face down for now - they will be revealed when you ask for the reading.'
+                : cards}</div>}
+            {!delivered && reading.firstStep === 'talk' && !reading.physicalDeck && (
+              <p className="muted small" role="status" style={{ marginTop: '0.5rem' }}>
+                Talk as much as you like first.
+              </p>
+            )}
 
             <div className={delivered ? 'reader-support' : undefined}>
               {delivered && <h3>Talk about this reading</h3>}

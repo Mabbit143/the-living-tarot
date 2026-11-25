@@ -53,8 +53,8 @@ export interface ReadingInput {
  * meaning that speaks to it, reaching via life-domain bridges when the
  * question never uses the card's own words. Silent when nothing connects.
  */
-function linkQuestionToCard(question: string, draw: DrawnCard, card: CardMeaning, index: number): string {
-  const q = question.trim();
+function linkQuestionToCard(question: string, context: string | undefined, draw: DrawnCard, card: CardMeaning, index: number): string {
+  const q = [question.trim(), context?.trim() ?? ''].filter(Boolean).join(' ');
   if (!q) return '';
   const meaning = draw.reversed ? card.reversed : card.upright;
   const direct = sharedTopics(q, meaning, draw.positionMeaning);
@@ -107,7 +107,7 @@ export function buildInterpretation(input: ReadingInput): Interpretation {
     const nextCard = nextDraw && getCard(nextDraw.cardId);
     const connection = nextCard && cardInCompany(d, nextDraw, nextCard, personalAssociation(lexicon[nextCard.id]));
     if (connection) body += ` ${connection}`;
-    const bridge = linkQuestionToCard(topic, d, card, index);
+    const bridge = linkQuestionToCard(topic, context, d, card, index);
     if (bridge) body += ` ${bridge}`;
     if (seen.total > 0) {
       body += ` This card came up in ${seen.total} past reading${seen.total === 1 ? '' : 's'}`;
@@ -144,8 +144,10 @@ export function buildInterpretation(input: ReadingInput): Interpretation {
     .find(({ memory, topics }) => memory?.status === 'confirmed' && topics.length >= 2)?.memory;
   const together = readTogether(drawn, lexicon, getCard, currentContext);
   if (together) sections.push({ heading: 'How they read together', body: together });
-  if (profile && profileContext(profile).length > 0) {
-    const reflection = personalizedReflection(question, drawn, { ...profile, preferredVoice: voice }, lexicon);
+  const hasPersonalContext = (profile && profileContext(profile).length > 0) || Boolean(context?.trim());
+  if (hasPersonalContext) {
+    const reflectionProfile = profile ? { ...profile, preferredVoice: voice } : { preferredVoice: voice };
+    const reflection = personalizedReflection(question, context, drawn, reflectionProfile, lexicon);
     if (reflection) sections.push({ heading: 'A question for your situation', body: reflection });
   }
 
@@ -193,23 +195,33 @@ function excerpt(text: string): string {
   return cleaned.length > 180 ? `${cleaned.slice(0, 177).trimEnd()}…` : cleaned;
 }
 
-function profileContext(profile: Profile): string[] {
-  return [profile.lifeContext, profile.goals, profile.concerns, profile.people, ...profile.themes]
+function profileContext(profile: Partial<Profile>): string[] {
+  return [profile.lifeContext ?? '', profile.goals ?? '', profile.concerns ?? '', profile.people ?? '', ...(profile.themes ?? [])]
     .map((entry) => entry.trim()).filter(Boolean);
 }
 
 function personalizedReflection(
-  question: string, drawn: DrawnCard[], profile: Profile, lexicon: Record<string, LexiconEntry>,
+  question: string,
+  context: string | undefined,
+  drawn: DrawnCard[],
+  profile: Partial<Profile> & Pick<Profile, 'preferredVoice'>,
+  lexicon: Record<string, LexiconEntry>,
 ): string {
-  const entries = profileContext(profile);
+  // The reader's own words from this conversation come first and win ties:
+  // talk-first answers outrank older profile notes.
+  const entries = [
+    ...(context?.trim() ? [{ text: context.trim(), mine: true as const }] : []),
+    ...profileContext(profile).map((text) => ({ text, mine: false as const })),
+  ];
+  const pool = entries.length ? entries : [{ text: '', mine: false as const }];
   const pairs = drawn.flatMap((draw) => {
     const card = getCard(draw.cardId);
     if (!card) return [];
     const theme = personalAssociation(lexicon[card.id]) ?? (draw.reversed ? card.reversed : card.upright);
-    return (entries.length ? entries : ['']).map((entry) => ({
+    return pool.map((entry) => ({
       draw, card, entry,
-      score: sharedTopics(entry, theme, draw.positionMeaning).length * 3
-        + sharedTopics(entry, question).length * 2 + sharedTopics(question, theme, draw.positionMeaning).length,
+      score: sharedTopics(entry.text, theme, draw.positionMeaning).length * 3
+        + sharedTopics(entry.text, question).length * 2 + sharedTopics(question, theme, draw.positionMeaning).length,
       actionable: ['task', 'support'].includes(positionRole(draw.positionLabel) ?? ''),
     }));
   });
@@ -220,7 +232,14 @@ function personalizedReflection(
   const cardName = `${focus.card.name}${focus.draw.reversed ? ' reversed' : ''}`;
   const position = `“${focus.draw.positionLabel}”`;
   const questionLine = question.trim() ? ` As you revisit “${excerpt(question)},”` : '';
-  const context = focus.entry ? ` Consider what you shared in your profile: “${excerpt(focus.entry)}”.` : '';
+  // When nothing in the spread names what the reader actually said, say that
+  // plainly instead of pretending a connection: the card becomes weather
+  // around their situation, not a label on it.
+  const noMeeting = focus.entry.text.length > 0 && focus.score === 0;
+  const entryLine = !focus.entry.text ? ''
+    : focus.entry.mine
+      ? ` You told me: “${excerpt(focus.entry.text)}.”${noMeeting ? ` None of these cards name that directly, so read ${cardName} as the weather around it.` : ''}`
+      : ` Consider what you shared in your profile: “${excerpt(focus.entry.text)}.”`;
   const followUp = {
     familiar: 'what’s one small thing this card helps you notice or try?',
     mystic: 'what detail in the card’s image draws your attention, and what does it bring to mind?',
@@ -228,14 +247,14 @@ function personalizedReflection(
   }[profile.preferredVoice];
 
   return [
-    `${cardName} appeared in ${position}.${context}`,
+    `${cardName} appeared in ${position}.${entryLine}`,
     cardInPosition(focus.draw, focus.card, personalAssociation(lexicon[focus.card.id])),
     questionLine ? `${questionLine.trimStart()} ${followUp}` : followUp[0].toUpperCase() + followUp.slice(1),
   ].join('\n\n');
 }
 
 export function buildPersonalizedGuidance(reading: Reading, profile: Profile, lexicon: Record<string, LexiconEntry>): string {
-  return personalizedReflection(reading.question, reading.cards, profile, lexicon);
+  return personalizedReflection(reading.question, undefined, reading.cards, profile, lexicon);
 }
 
 function mentions(text: string, label: string): boolean {
