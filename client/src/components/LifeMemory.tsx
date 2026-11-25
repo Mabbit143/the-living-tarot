@@ -100,6 +100,29 @@ export default function LifeMemory({ db, updateDb }: Props) {
           otherwise — nothing becomes a lasting fact without your say-so.
         </p>
 
+        {suggested.length > 0 && (
+          <section aria-labelledby="memory-review-heading">
+            <h3 id="memory-review-heading">Memory suggestions to review</h3>
+            {renderList(suggested, (m) => (
+              <>
+                <button className="primary" onClick={() => setStatus(m.id, 'confirmed')}>Save memory</button>
+                <button
+                  onClick={() => {
+                    setEditingId(m.id);
+                    setEditText(m.text);
+                  }}
+                >
+                  Edit
+                </button>
+                <button onClick={() => setStatus(m.id, 'hidden')}>Hide</button>
+                <button className="ghost" onClick={() => remove(m.id)}>
+                  Dismiss
+                </button>
+              </>
+            ))}
+          </section>
+        )}
+
         <label htmlFor="life-memory-text">Add a memory</label>
         <div className="chat-input-row">
           <input
@@ -128,27 +151,6 @@ export default function LifeMemory({ db, updateDb }: Props) {
             <option value="past">In the past</option>
           </select>
         </div>
-      </div>
-
-      <div className="card">
-        <h3>Suggested — waiting for you</h3>
-        {renderList(suggested, (m) => (
-          <>
-            <button onClick={() => setStatus(m.id, 'confirmed')}>Keep</button>
-            <button
-              onClick={() => {
-                setEditingId(m.id);
-                setEditText(m.text);
-              }}
-            >
-              Edit
-            </button>
-            <button onClick={() => setStatus(m.id, 'hidden')}>Hide</button>
-            <button className="ghost" onClick={() => remove(m.id)}>
-              Dismiss
-            </button>
-          </>
-        ))}
       </div>
 
       <div className="card">

@@ -78,6 +78,8 @@ export default function App() {
     );
   }
 
+  const pendingMemoryCount = db.memories.filter((memory) => memory.status === 'suggested').length;
+
   return (
     <div className="app">
       <header className="app-header">
@@ -96,6 +98,7 @@ export default function App() {
               }}
             >
               {t.label}
+              {t.id === 'memories' && pendingMemoryCount > 0 && ` (${pendingMemoryCount} to review)`}
             </button>
           ))}
           <button className="ghost" onClick={() => setEditingProfile(true)}>
@@ -129,7 +132,21 @@ export default function App() {
             )}
             {tab === 'lexicon' && <Lexicon db={db} updateDb={updateDb} />}
             {tab === 'memories' && <LifeMemory db={db} updateDb={updateDb} />}
-            {tab === 'archive' && <Archive db={db} updateDb={updateDb} />}
+            {tab === 'archive' && (
+              <>
+                {pendingMemoryCount > 0 && (
+                  <div className="banner row space-between">
+                    <strong role="status">
+                      {pendingMemoryCount} memory {pendingMemoryCount === 1 ? 'suggestion' : 'suggestions'} to review
+                    </strong>
+                    <button className="primary" onClick={() => setTab('memories')}>
+                      Review {pendingMemoryCount === 1 ? 'memory' : 'memories'}
+                    </button>
+                  </div>
+                )}
+                <Archive db={db} updateDb={updateDb} />
+              </>
+            )}
             {tab === 'patterns' && <PatternsView db={db} />}
             {tab === 'journal' && <SymbolJournal db={db} updateDb={updateDb} />}
           </>

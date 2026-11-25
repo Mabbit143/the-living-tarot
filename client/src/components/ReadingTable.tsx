@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import DeckPicker from './DeckPicker';
+import GeminiSettings from './GeminiSettings';
 import SpreadCards from './SpreadCards';
 import { preferredDeck } from '../lib/decks';
 import {
@@ -37,6 +38,7 @@ export default function ReadingTable({ db, updateDb, onStartChat, onResumeChat }
 
   const spread = getSpread(spreadName) ?? primarySpreads()[1];
   const deck = preferredDeck(db.preferredDeck);
+  const allowReversals = db.allowReversals ?? true;
   const hasQuestion = Boolean(question.trim());
   const drafts = db.readings.filter((r) => r.status === 'draft');
   const physicalCards = spread.positions.flatMap((position, index) => {
@@ -49,7 +51,8 @@ export default function ReadingTable({ db, updateDb, onStartChat, onResumeChat }
       positionMeaning: position.meaning,
     }];
   });
-  const previewCards = mode === 'draw' ? drawn : physicalCards;
+  const drawnPreview = allowReversals ? drawn : drawn.map((card) => ({ ...card, reversed: false }));
+  const previewCards = mode === 'draw' ? drawnPreview : physicalCards;
   const duplicateCards = new Set(previewCards.map((card) => card.cardId)).size < previewCards.length;
   const canBegin = previewCards.length === spread.cards && !duplicateCards;
 
@@ -60,7 +63,7 @@ export default function ReadingTable({ db, updateDb, onStartChat, onResumeChat }
       position: spread.positions[index].position,
       positionLabel: spread.positions[index].label,
       positionMeaning: spread.positions[index].meaning,
-      reversed: Math.random() < 0.2,
+      reversed: allowReversals && Math.random() < 0.2,
     }));
   }
 
@@ -143,6 +146,7 @@ export default function ReadingTable({ db, updateDb, onStartChat, onResumeChat }
         <p className="small">
           {spread.positions.map((p) => p.label).join(' · ')}
         </p>
+        <GeminiSettings db={db} updateDb={updateDb} />
 
         <div className="row" style={{ marginTop: '0.8rem' }}>
           <button
@@ -166,6 +170,18 @@ export default function ReadingTable({ db, updateDb, onStartChat, onResumeChat }
               value={deck}
               onChange={(preferredDeck) => updateDb((d) => ({ ...d, preferredDeck }))}
             />
+            <label className="row" style={{ margin: '0 0 0.75rem' }}>
+              <input
+                type="checkbox"
+                style={{ width: 'auto' }}
+                checked={allowReversals}
+                onChange={(e) => {
+                  const allowReversals = e.target.checked;
+                  updateDb((d) => ({ ...d, allowReversals }));
+                }}
+              />
+              Allow reversals
+            </label>
             <div className="row">
               {!hasQuestion && drawn.length === 0 && (
                 <button className="primary" onClick={() => beginReading(drawCards())}>

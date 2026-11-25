@@ -83,6 +83,7 @@ export interface ChatMessage {
   role: 'reader' | 'user';
   text: string;
   at: string;
+  gemini?: 'current-reading' | 'with-saved-context';
 }
 
 export interface JournalEntry {
@@ -95,6 +96,9 @@ export interface JournalEntry {
 export interface Db {
   profile: Profile | null;
   preferredDeck?: DeckId;
+  allowReversals?: boolean;
+  useGeminiReader?: boolean;
+  geminiSavedContext?: boolean;
   readings: Reading[];
   lexicon: Record<string, LexiconEntry>;
   memories: MemoryItem[];

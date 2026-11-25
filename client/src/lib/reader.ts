@@ -4,20 +4,21 @@
 // the reader asks questions and frames the future as tendency, never fate.
 
 import {
-  COMBINATION_PRINCIPLES,
-  POSITIONAL_RULES,
   QUESTION_TYPES,
   getCard,
   voiceProfile,
 } from './knowledge';
 import type {
+  ChatMessage,
   DrawnCard,
   LexiconEntry,
+  MemoryItem,
   Profile,
   Reading,
   VoiceId,
 } from './types';
 import type { Spread } from './knowledge';
+import { cardInCompany, cardInPosition, personalAssociation, readTogether, sharedTopics } from './readingContext';
 
 export interface InterpretationSection {
   heading: string;
@@ -35,6 +36,8 @@ export interface ReadingInput {
   spread: Spread;
   drawn: DrawnCard[];
   question: string;
+  context?: string;
+  memories?: MemoryItem[];
   profile: Profile | null;
   lexicon: Record<string, LexiconEntry>;
   pastReadings: Reading[];
@@ -42,127 +45,141 @@ export interface ReadingInput {
   readingIndex: number;
 }
 
-function firstSentence(text: string): string {
-  const m = text.match(/^.*?[.!?](\s|$)/);
-  return m ? m[0].trim() : text;
-}
-
 function countAppearances(cardId: string, past: Reading[]): number {
-  return past.reduce(
-    (n, r) => n + r.cards.filter((c) => c.cardId === cardId).length,
-    0,
-  );
+  return past.filter((reading) => reading.cards.some((card) => card.cardId === cardId)).length;
 }
 
 function pick<T>(arr: T[], seed: number): T {
   return arr[seed % arr.length];
 }
 
-function principlesFor(drawn: DrawnCard[], spread: Spread): string[] {
-  const out: string[] = [];
-  const majors = drawn.filter((d) => getCard(d.cardId)?.arcana === 'major');
-  const courts = drawn.filter((d) => {
-    const c = getCard(d.cardId);
-    return c?.arcana === 'minor' && c.number !== null && c.number >= 11;
-  });
-  const general = COMBINATION_PRINCIPLES.filter((p) => p.applies_to === 'general');
-  // A couple of general principles, rotated so readings don't all quote the same one.
-  if (general.length > 0) out.push(general[drawn.length % general.length].rule);
-  if (majors.length > 0 && drawn.length > majors.length) {
-    const p = COMBINATION_PRINCIPLES.find((x) => x.applies_to === 'majors-and-minors');
-    if (p) out.push(p.rule);
-  }
-  if (courts.length > 0) {
-    const p = COMBINATION_PRINCIPLES.find((x) => x.applies_to === 'court-cards');
-    if (p) out.push(p.rule);
-  }
-  if (drawn.length >= 3) {
-    const p = COMBINATION_PRINCIPLES.find((x) => x.applies_to === 'elemental');
-    if (p) out.push(p.rule);
-  }
-  const spreadRule = COMBINATION_PRINCIPLES.find((x) => x.applies_to === spread.name);
-  if (spreadRule) out.push(spreadRule.rule);
-  return out;
-}
-
-function positionalNote(drawn: DrawnCard[]): string | null {
-  const reversed = drawn.filter((d) => d.reversed);
-  if (reversed.length > 0) {
-    const p = POSITIONAL_RULES.find((x) => x.applies_to === 'reversed-in-position');
-    if (p) return p.rule;
-  }
-  const general = POSITIONAL_RULES.filter((x) => x.applies_to === 'general');
-  if (general.length > 0) return general[drawn.length % general.length].rule;
-  return null;
-}
-
 export function buildInterpretation(input: ReadingInput): Interpretation {
-  const { spread, drawn, question, profile, lexicon, pastReadings, voice, readingIndex } = input;
+  const { drawn, question, context, memories = [], profile, lexicon, pastReadings, voice, readingIndex } = input;
   const vp = voiceProfile(voice);
   const name = profile?.name ? `, ${profile.name}` : '';
 
   const topic = question.trim();
   const openings: Record<VoiceId, string> = {
     familiar: `Let's sit with this one${name}. ${topic
-      ? `You asked about ${topic} — here's what the cards are saying, in your own context.`
+      ? `Let’s keep your question in view: “${topic}”`
       : 'Here’s what each card brings to the spread.'}`,
     mystic: `The table is set${name}. ${topic
-      ? `You asked about ${topic} — let the images speak first.`
+      ? `Let’s hold “${topic}” in mind and see what the images bring up.`
       : 'Let the images speak first.'}`,
-    interpreter: `Reading: ${spread.name}${name}.${topic ? ` Question: ${topic}.` : ''} What follows is the mechanism: card, position, and what recurs.`,
+    interpreter: `${topic ? `Your question was “${topic}”\n\n` : ''}I’ll start with where each card lands, then look at how they fit together.`,
   };
 
-  const sections: InterpretationSection[] = drawn.map((d) => {
+  const sections: InterpretationSection[] = drawn.map((d, index) => {
     const card = getCard(d.cardId);
     if (!card) return { heading: d.positionLabel, body: 'Card not found in the deck.' };
-    const meaning = d.reversed ? card.reversed : card.upright;
-    const entry = lexicon[d.cardId];
     const seen = countAppearances(d.cardId, pastReadings);
-    let body = `${d.positionMeaning} ${meaning}`;
-    if (entry?.personalMeaning) {
-      body += ` Your own meaning for this card sits on top of that: "${entry.personalMeaning}"`;
-    }
+    let body = cardInPosition(d, card, personalAssociation(lexicon[d.cardId]));
+    const nextDraw = drawn[index + 1];
+    const nextCard = nextDraw && getCard(nextDraw.cardId);
+    const connection = nextCard && cardInCompany(d, nextDraw, nextCard, personalAssociation(lexicon[nextCard.id]));
+    if (connection) body += ` ${connection}`;
     if (seen > 0) {
-      body += ` This card has appeared in ${seen} of your past reading${seen === 1 ? '' : 's'} — keep an eye on what keeps returning.`;
+      body += ` This card came up in ${seen} past reading${seen === 1 ? '' : 's'}.`;
     }
     const heading = `${d.positionLabel} — ${card.name}${d.reversed ? ' (reversed)' : ''}`;
     return { heading, body };
   });
 
-  if (drawn.length > 1) {
-    const principles = principlesFor(drawn, spread);
-    const posNote = positionalNote(drawn);
-    let body =
-      'Read together, these cards tell one story rather than several. ';
-    const names = drawn
-      .map((d) => getCard(d.cardId)?.name ?? d.cardId)
-      .join(', ');
-    body += `With ${names} on the table, the thread runs through all of them: `;
-    body += drawn
-      .map((d) => {
-        const card = getCard(d.cardId);
-        return card ? firstSentence(d.reversed ? card.reversed : card.upright) : '';
-      })
-      .filter(Boolean)
-      .join(' Then ');
-    if (principles.length > 0) body += ` ${principles[0]}`;
-    if (posNote) body += ` ${posNote}`;
-    const majors = drawn.filter((d) => getCard(d.cardId)?.arcana === 'major');
-    if (majors.length > 0 && majors.length < drawn.length) {
-      body += ` The Major Arcana card${majors.length > 1 ? 's' : ''} here — ${majors.map((d) => getCard(d.cardId)?.name).join(', ')} — frame the smaller cards: they set the theme, the minors fill in how it plays out.`;
-    }
-    sections.push({ heading: 'How they read together', body });
-  }
+  const currentContext = [context, topic].filter(Boolean).join(' ');
+  const relatedMemory = memories.find((memory) => memory.status === 'confirmed'
+    && sharedTopics(currentContext, memory.text).length >= 2);
+  const together = readTogether(drawn, lexicon, getCard, currentContext);
+  if (together) sections.push({ heading: 'How they read together', body: together });
 
   const questions = QUESTION_TYPES.flatMap((q) => q.example_questions);
   const closingQuestion = pick(questions, readingIndex + drawn.length);
 
   return {
-    opening: openings[voice],
+    opening: [
+      openings[voice],
+      context && `You added: “${excerpt(context)}”`,
+      relatedMemory && `You saved this in Life Memory: “${excerpt(relatedMemory.text)}” Is it still part of what you’re weighing?`,
+    ].filter(Boolean).join('\n\n'),
     sections,
     closingQuestion,
     voiceLine: vp.example_line,
   };
+}
+
+function excerpt(text: string): string {
+  const cleaned = text.trim().replace(/\s+/g, ' ');
+  return cleaned.length > 180 ? `${cleaned.slice(0, 177).trimEnd()}…` : cleaned;
+}
+
+function mentions(text: string, label: string): boolean {
+  const normalized = (value: string) => ` ${value.toLowerCase().replace(/[^\p{L}\p{N}]+/gu, ' ').trim()} `;
+  return normalized(text).includes(normalized(label.replace(/^the /i, '')));
+}
+
+export function conversationOpening(question: string, voice: VoiceId): string {
+  const topic = excerpt(question);
+  const openings: Record<VoiceId, string> = {
+    familiar: `Let's look at “${topic}” together. Is there a part of it you’d like me to pay special attention to?`,
+    mystic: `Let’s hold “${topic}” in mind. Is there a feeling or image you’re bringing to the table?`,
+    interpreter: `You brought “${topic}” to this spread. Is there a detail that would help me put the cards in context?`,
+  };
+  return openings[voice];
+}
+
+export function followUpReply(
+  text: string,
+  drawn: DrawnCard[],
+  messages: ChatMessage[],
+  interpretation: string,
+  lexicon: Record<string, LexiconEntry>,
+  voice: VoiceId,
+): string {
+  const cards = drawn.flatMap((draw) => {
+    const card = getCard(draw.cardId);
+    return card ? [{ draw, card }] : [];
+  });
+  if (/^(?:thank(?:s| you)(?: so much)?|that helps)[.! ]*$/i.test(text)) {
+    return 'You’re welcome. We can leave it there, or come back to any card you want to sit with a little longer.';
+  }
+  if (/\b(?:read together|fit together|overall message|whole spread)\b/i.test(text)) {
+    const together = readTogether(drawn, lexicon, getCard, text);
+    if (together) return together;
+  }
+
+  const named = cards.filter(({ card }) => mentions(text, card.name));
+  const positions = cards.filter(({ draw }) => mentions(text, draw.positionLabel));
+  const reference = messages[messages.length - 1];
+  const previous = reference && reference.text !== interpretation && /\b(?:it|that|this card)\b/i.test(text)
+    ? cards.filter(({ card }) => mentions(reference.text, card.name))
+    : [];
+  const byTopic = cards.filter(({ card, draw }) => sharedTopics(text, draw.positionMeaning,
+    personalAssociation(lexicon[card.id]) ?? (draw.reversed ? card.reversed : card.upright)).length > 0);
+  const focus = named.length ? named : positions.length ? positions
+    : previous.length === 1 ? previous : byTopic.length === 1 ? byTopic : [];
+
+  if (focus.length > 1) {
+    const [first, second] = focus;
+    return `Let’s look at ${first.card.name} beside ${second.card.name}.\n\n`
+      + `${first.draw.positionLabel}\n${cardInPosition(first.draw, first.card, personalAssociation(lexicon[first.card.id]))}\n\n`
+      + `${second.draw.positionLabel}\n${cardInPosition(second.draw, second.card, personalAssociation(lexicon[second.card.id]))}\n\n`
+      + 'What changes for you when you read those two positions together?';
+  }
+
+  const selected = focus[0] ?? (cards.length === 1 ? cards[0] : undefined);
+  if (selected) {
+    const { card, draw } = selected;
+    const meaning = cardInPosition(draw, card, personalAssociation(lexicon[card.id]));
+    const orientation = draw.reversed ? ' (reversed)' : '';
+    const openings: Record<VoiceId, string> = {
+      familiar: `Let’s slow down with ${card.name}${orientation}. In this spread, it landed in “${draw.positionLabel}.”`,
+      mystic: `Let’s stay with the image of ${card.name}${orientation} in “${draw.positionLabel}.”`,
+      interpreter: `${card.name}${orientation} landed in “${draw.positionLabel}.” That position asks us to look at this: ${draw.positionMeaning}`,
+    };
+    return `${openings[voice]}\n\n${meaning}`;
+  }
+
+  if (cards.length === 0) return 'Which part of the reading would you like to look at more closely?';
+  return `Let’s take “${excerpt(text)}” back to the spread. Which card feels most connected to that for you? You can name the card or its position.`;
 }
 
 /** Detect whether a chat message asks the reader to remember a meaning for a
@@ -173,16 +190,16 @@ export function detectRememberRequest(
   drawn: DrawnCard[],
 ): { cardId: string; meaning: string } | null {
   const lower = text.toLowerCase();
-  const wantsRemember =
-    /remember|my meaning|call (it|this|that)|for me/.test(lower);
+  const wantsRemember = /\b(?:remember|my meaning|call (?:it|this|that))\b/.test(lower)
+    || /^(?!.*\?).+\bmeans?\b.+\bfor me[.!]?$/i.test(text);
   if (!wantsRemember) return null;
   for (const d of drawn) {
     const card = getCard(d.cardId);
     if (!card) continue;
-    if (lower.includes(card.name.toLowerCase())) {
+    if (mentions(lower, card.name)) {
       // Take the part after "is" / "means" / ":" as the meaning, if present.
-      const m = text.match(/(?:is|means?|:)\s+(.+)$/i);
-      return { cardId: d.cardId, meaning: (m?.[1] ?? text).trim() };
+      const m = text.match(/(?:\bis\b|\bmeans?\b|:)\s+(.+)$/i);
+      if (m) return { cardId: d.cardId, meaning: m[1].trim() };
     }
   }
   return null;

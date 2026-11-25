@@ -123,6 +123,14 @@ npm run preview  # serve the production build locally
 npm run typecheck
 ```
 
+For Gemini readings, open **Connect Gemini** on the Reading Table while using
+the local dev or preview server. The dialog checks the key with Google and the
+server holds it in memory until restart. Set `GEMINI_API_KEY` in the server
+environment if you prefer a preconfigured key. `GEMINI_MODEL` overrides the
+default model (`gemini-3.8-flash`). Gemini receives the current reading and
+recent messages when enabled. Sharing relevant saved context is a separate
+option. The local reader is available on static builds and when Gemini fails.
+
 How it fits together:
 
 - The client imports the knowledge JSONs directly from

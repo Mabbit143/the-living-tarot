@@ -5,22 +5,18 @@
 
 import { getCard } from './knowledge';
 import type { MemoryItem, Reading } from './types';
-import { newId, nowIso } from './types';
 
-export function suggestMemories(reading: Reading): MemoryItem[] {
-  const suggestions: MemoryItem[] = [];
-  const at = nowIso();
+export function suggestMemories(reading: Reading): Omit<MemoryItem, 'id' | 'createdAt'>[] {
+  const suggestions: Omit<MemoryItem, 'id' | 'createdAt'>[] = [];
 
   if (reading.question.trim()) {
     suggestions.push({
-      id: newId(),
       text: `Asked about: ${reading.question.trim()}`,
       kind: 'concern',
       timeframe: 'current',
       status: 'suggested',
       source: `reading (${reading.spreadName})`,
       confidence: 'low',
-      createdAt: at,
     });
   }
 
@@ -31,14 +27,12 @@ export function suggestMemories(reading: Reading): MemoryItem[] {
     const card = getCard(major.cardId);
     if (card) {
       suggestions.push({
-        id: newId(),
         text: `Theme from ${card.name} (${major.positionLabel}): ${card.upright.split('.')[0]}.`,
         kind: 'event',
         timeframe: 'current',
         status: 'suggested',
         source: `reading (${reading.spreadName})`,
         confidence: 'low',
-        createdAt: at,
       });
     }
   }

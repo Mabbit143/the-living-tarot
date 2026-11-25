@@ -1,15 +1,17 @@
 import { useEffect, useRef, useState } from 'react';
 import SpreadCards from './SpreadCards';
 import { readingDeck } from '../lib/decks';
+import { requestGeminiReply } from '../lib/gemini';
 import {
-  flowForSpread,
   getCard,
   getSpread,
   voiceProfile,
 } from '../lib/knowledge';
 import {
   buildInterpretation,
+  conversationOpening,
   detectRememberRequest,
+  followUpReply,
   formatInterpretationText,
   requestsInterpretation,
 } from '../lib/reader';
@@ -25,48 +27,27 @@ interface Props {
   onBack: () => void;
 }
 
-const ACKS: Record<VoiceId, string[]> = {
-  familiar: [
-    'That lands. What part of that feels closest to you?',
-    'Mm, I hear you. What else is in there?',
-    'Okay — I am with you. Keep going.',
-  ],
-  mystic: [
-    'The image shifts as you speak. What do you see in it now?',
-    'Listen to what is underneath the words. What stirs?',
-    'The cards are listening. What else wants to be said?',
-  ],
-  interpreter: [
-    'Noted. How does that connect to the card in this position?',
-    'That gives me something to work with. What is the next thread?',
-    'Understood — and does that fit the pattern you have seen before?',
-  ],
-};
-
 export default function ChatReader({ reading, db, updateDb, onDone, onBack }: Props) {
   const spread = getSpread(reading.spreadName);
-  const flow = spread ? flowForSpread(spread) : null;
   const [voice, setVoice] = useState<VoiceId>(db.profile?.preferredVoice ?? 'familiar');
   const [input, setInput] = useState('');
   const [rememberText, setRememberText] = useState<Record<string, string>>({});
-  const [ackCount, setAckCount] = useState(0);
-  const startedRef = useRef(false);
+  const [loading, setLoading] = useState(false);
+  const [readerNotice, setReaderNotice] = useState('');
+  const activeRequest = useRef<AbortController | null>(null);
 
   const messages: ChatMessage[] = db.chat
     .filter((m) => m.readingId === reading.id)
     .sort((a, b) => a.at.localeCompare(b.at));
   const delivered = Boolean(reading.interpretation);
-  const nextPromptIndex = reading.nextPromptIndex ?? messages.reduce((index, message) => {
-    // Older drafts only recorded the conversation. Match guide prompts in order,
-    // skipping replies about personal meanings and any other reader messages.
-    return message.role === 'reader' && message.text === flow?.steps[index]?.reader_says
-      ? index + 1
-      : index;
-  }, 0);
+  const suggestions = delivered ? suggestMemories(reading) : [];
+  const newSuggestionCount = suggestions.filter(
+    (suggestion) => !db.memories.some((memory) => memory.text === suggestion.text),
+  ).length;
 
-  function messagesForReply(text: string, userText?: string): ChatMessage[] {
+  function messagesForReply(text: string, userText?: string, gemini?: ChatMessage['gemini']): ChatMessage[] {
     const fields = { readingId: reading.id, at: nowIso() };
-    const reply: ChatMessage = { ...fields, id: newId(), role: 'reader', text };
+    const reply: ChatMessage = { ...fields, id: newId(), role: 'reader', text, gemini };
     return userText
       ? [{ ...fields, id: newId(), role: 'user', text: userText }, reply]
       : [reply];
@@ -75,59 +56,92 @@ export default function ChatReader({ reading, db, updateDb, onDone, onBack }: Pr
   function reply(
     text: string,
     userText?: string,
-    progress?: Partial<Pick<Reading, 'interpretation' | 'nextPromptIndex'>>,
+    interpretation?: string,
+    gemini?: ChatMessage['gemini'],
   ) {
-    const turn = messagesForReply(text, userText);
+    const turn = messagesForReply(text, userText, gemini);
     updateDb((d) => ({
       ...d,
       chat: [...d.chat, ...turn],
-      readings: progress
-        ? d.readings.map((r) => r.id === reading.id ? { ...r, ...progress } : r)
+      readings: interpretation
+        ? d.readings.map((r) => r.id === reading.id ? { ...r, interpretation } : r)
         : d.readings,
     }));
   }
 
-  function deliverInterpretation(userText?: string) {
-    if (!spread) return;
+  function localInterpretation(context?: string): string {
+    if (!spread) return 'This spread is no longer in the catalog.';
+    const pastReadings = db.readings.filter((r) => r.id !== reading.id && r.status === 'complete');
     const it = buildInterpretation({
       spread,
       drawn: reading.cards,
       question: reading.question,
+      context,
+      memories: db.memories,
       profile: db.profile,
       lexicon: db.lexicon,
-      pastReadings: db.readings.filter((r) => r.id !== reading.id && r.status === 'complete'),
+      pastReadings,
       voice,
-      readingIndex: db.readings.filter((r) => r.status === 'complete').length,
+      readingIndex: pastReadings.length,
     });
-    const interpretation = formatInterpretationText(it);
-    reply(interpretation, userText, { interpretation });
+    return formatInterpretationText(it);
+  }
+
+  async function respond(mode: 'reading' | 'follow-up', userText?: string, context?: string) {
+    if (activeRequest.current) return;
+    const local = () => mode === 'reading' ? localInterpretation(context)
+      : followUpReply(userText ?? '', reading.cards, messages, reading.interpretation, db.lexicon, voice);
+    const write = (text: string, gemini?: ChatMessage['gemini']) =>
+      reply(text, userText, mode === 'reading' ? text : undefined, gemini);
+    if (!db.useGeminiReader) {
+      write(local());
+      return;
+    }
+
+    const controller = new AbortController();
+    activeRequest.current = controller;
+    setReaderNotice('');
+    setLoading(true);
+    try {
+      const message = mode === 'follow-up' ? userText : context;
+      const text = await requestGeminiReply(reading, db, voice, messages, mode, message, controller.signal);
+      if (!controller.signal.aborted) {
+        write(text, db.geminiSavedContext ? 'with-saved-context' : 'current-reading');
+      }
+    } catch {
+      if (!controller.signal.aborted) {
+        setReaderNotice('Gemini was unavailable, so the local reader answered. You can reconnect from the Reading Table.');
+        write(local());
+      }
+    } finally {
+      if (!controller.signal.aborted) {
+        activeRequest.current = null;
+        setLoading(false);
+      }
+    }
   }
 
   // A saved draft already has its last prompt or interpretation in the transcript.
   useEffect(() => {
-    if (startedRef.current) return;
-    startedRef.current = true;
     if (messages.length > 0 || delivered) return;
-    if (!reading.question.trim()) {
-      deliverInterpretation();
-      return;
-    }
-    const firstPrompt = flow?.steps[0];
-    if (firstPrompt) {
-      reply(firstPrompt.reader_says, undefined, { nextPromptIndex: 1 });
-    } else {
-      deliverInterpretation();
-    }
+    // Defer the first turn so React can discard its development-only rehearsal.
+    const start = window.setTimeout(() => {
+      if (!reading.question.trim()) void respond('reading');
+      else if (spread) reply(conversationOpening(reading.question, voice));
+    }, 0);
+    return () => window.clearTimeout(start);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  useEffect(() => () => activeRequest.current?.abort(), []);
+
   function send() {
     const text = input.trim();
-    if (!text) return;
+    if (!text || loading) return;
     setInput('');
 
     if (!delivered && spread && requestsInterpretation(text)) {
-      deliverInterpretation(text);
+      void respond('reading', text);
       return;
     }
 
@@ -144,22 +158,16 @@ export default function ChatReader({ reading, db, updateDb, onDone, onBack }: Pr
       return;
     }
 
-    const prompt = flow?.steps[nextPromptIndex];
-    if (!delivered && prompt) {
-      reply(prompt.reader_says, text, { nextPromptIndex: nextPromptIndex + 1 });
-      return;
-    }
     if (!delivered && spread) {
-      deliverInterpretation(text);
+      void respond('reading', text, text);
       return;
     }
-    const acks = ACKS[voice];
-    reply(acks[ackCount % acks.length], text);
-    setAckCount(ackCount + 1);
+    void respond('follow-up', text);
   }
 
   function completeReading() {
-    const suggestions = suggestMemories(reading);
+    const createdAt = nowIso();
+    const newMemories = suggestions.map((suggestion) => ({ ...suggestion, id: newId(), createdAt }));
     updateDb((d) => ({
       ...d,
       readings: d.readings.map((r) =>
@@ -167,7 +175,7 @@ export default function ChatReader({ reading, db, updateDb, onDone, onBack }: Pr
       ),
       memories: [
         ...d.memories,
-        ...suggestions.filter((s) => !d.memories.some((m) => m.text === s.text)),
+        ...newMemories.filter((s) => !d.memories.some((m) => m.text === s.text)),
       ],
     }));
     onDone();
@@ -213,6 +221,7 @@ export default function ChatReader({ reading, db, updateDb, onDone, onBack }: Pr
           <select
             id="chat-reader-voice"
             value={voice}
+            disabled={loading}
             onChange={(e) => setVoice(e.target.value as VoiceId)}
             style={{ width: 'auto' }}
           >
@@ -243,6 +252,7 @@ export default function ChatReader({ reading, db, updateDb, onDone, onBack }: Pr
         <div className="chat-input-row">
           <input
             value={input}
+            disabled={loading}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={(e) => {
               if (e.key === 'Enter') send();
@@ -250,13 +260,18 @@ export default function ChatReader({ reading, db, updateDb, onDone, onBack }: Pr
             placeholder="Talk to the reader…"
             aria-label="Talk to the reader"
           />
-          <button className="primary" onClick={send}>
+          <button className="primary" onClick={send} disabled={loading}>
             Send
           </button>
         </div>
+        {(loading || readerNotice) && (
+          <p className="small muted" role="status">
+            {loading ? 'Gemini is preparing a reply…' : readerNotice}
+          </p>
+        )}
         {!delivered && spread && (
           <div className="row" style={{ marginTop: '0.5rem' }}>
-            <button className="ghost" onClick={() => deliverInterpretation()}>
+            <button className="ghost" onClick={() => void respond('reading')} disabled={loading}>
               Read the cards
             </button>
           </div>
@@ -295,11 +310,13 @@ export default function ChatReader({ reading, db, updateDb, onDone, onBack }: Pr
             );
           })}
           <div className="row" style={{ marginTop: '1rem' }}>
-            <button className="primary" onClick={completeReading}>
+            <button className="primary" onClick={completeReading} disabled={loading}>
               Complete this reading
             </button>
             <span className="small muted">
-              Completing saves it to the archive and suggests memories for you to confirm.
+              {newSuggestionCount > 0
+                ? `${newSuggestionCount} memory ${newSuggestionCount === 1 ? 'suggestion' : 'suggestions'} to review after completing.`
+                : 'Completing saves the reading to your archive.'}
             </span>
           </div>
         </div>
