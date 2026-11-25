@@ -1,0 +1,259 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-25T01:00:48.692Z",
+  "title": "Design System: The Living Tarot",
+  "extensions": {
+    "colorMeta": {
+      "midnight": {
+        "role": "neutral",
+        "displayName": "Midnight",
+        "canonical": "#0d0b12",
+        "tonalRamp": [
+          "oklch(15% 0.005 282)",
+          "oklch(26% 0.009 282)",
+          "oklch(37% 0.014 282)",
+          "oklch(48% 0.018 282)",
+          "oklch(59% 0.019 282)",
+          "oklch(70% 0.017 282)",
+          "oklch(82% 0.011 282)",
+          "oklch(95% 0.003 282)"
+        ]
+      },
+      "midnight-2": {
+        "role": "neutral",
+        "displayName": "Midnight panel",
+        "canonical": "#171224",
+        "tonalRamp": [
+          "oklch(15% 0.010 292)",
+          "oklch(26% 0.020 292)",
+          "oklch(37% 0.030 292)",
+          "oklch(48% 0.039 292)",
+          "oklch(59% 0.040 292)",
+          "oklch(70% 0.035 292)",
+          "oklch(82% 0.022 292)",
+          "oklch(95% 0.007 292)"
+        ]
+      },
+      "midnight-3": {
+        "role": "neutral",
+        "displayName": "Midnight control",
+        "canonical": "#221a33",
+        "tonalRamp": [
+          "oklch(15% 0.014 294)",
+          "oklch(26% 0.026 294)",
+          "oklch(37% 0.041 294)",
+          "oklch(48% 0.052 294)",
+          "oklch(59% 0.054 294)",
+          "oklch(70% 0.048 294)",
+          "oklch(82% 0.030 294)",
+          "oklch(95% 0.010 294)"
+        ]
+      },
+      "gold": {
+        "role": "primary",
+        "displayName": "Candle gold",
+        "canonical": "#c9a227",
+        "tonalRamp": [
+          "oklch(15% 0.035 91)",
+          "oklch(26% 0.067 91)",
+          "oklch(37% 0.102 91)",
+          "oklch(48% 0.132 91)",
+          "oklch(59% 0.136 91)",
+          "oklch(70% 0.120 91)",
+          "oklch(82% 0.076 91)",
+          "oklch(95% 0.024 91)"
+        ]
+      },
+      "gold-soft": {
+        "role": "primary",
+        "displayName": "Soft candle gold",
+        "canonical": "#e3c766",
+        "tonalRamp": [
+          "oklch(15% 0.029 93)",
+          "oklch(26% 0.055 93)",
+          "oklch(37% 0.085 93)",
+          "oklch(48% 0.110 93)",
+          "oklch(59% 0.113 93)",
+          "oklch(70% 0.099 93)",
+          "oklch(82% 0.063 93)",
+          "oklch(95% 0.020 93)"
+        ]
+      },
+      "violet": {
+        "role": "secondary",
+        "displayName": "Muted violet",
+        "canonical": "#8b6fc0",
+        "tonalRamp": [
+          "oklch(15% 0.031 299)",
+          "oklch(26% 0.059 299)",
+          "oklch(37% 0.090 299)",
+          "oklch(48% 0.116 299)",
+          "oklch(59% 0.120 299)",
+          "oklch(70% 0.106 299)",
+          "oklch(82% 0.067 299)",
+          "oklch(95% 0.022 299)"
+        ]
+      },
+      "violet-soft": {
+        "role": "secondary",
+        "displayName": "Soft violet",
+        "canonical": "#b39ddb",
+        "tonalRamp": [
+          "oklch(15% 0.023 299)",
+          "oklch(26% 0.044 299)",
+          "oklch(37% 0.068 299)",
+          "oklch(48% 0.087 299)",
+          "oklch(59% 0.090 299)",
+          "oklch(70% 0.079 299)",
+          "oklch(82% 0.050 299)",
+          "oklch(95% 0.016 299)"
+        ]
+      },
+      "cream": {
+        "role": "neutral",
+        "displayName": "Cream",
+        "canonical": "#f5f2ea",
+        "tonalRamp": [
+          "oklch(15% 0.003 93)",
+          "oklch(26% 0.006 93)",
+          "oklch(37% 0.009 93)",
+          "oklch(48% 0.012 93)",
+          "oklch(59% 0.012 93)",
+          "oklch(70% 0.011 93)",
+          "oklch(82% 0.007 93)",
+          "oklch(95% 0.002 93)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted lavender",
+        "canonical": "#b8b0c4",
+        "tonalRamp": [
+          "oklch(15% 0.008 300)",
+          "oklch(26% 0.015 300)",
+          "oklch(37% 0.022 300)",
+          "oklch(48% 0.029 300)",
+          "oklch(59% 0.030 300)",
+          "oklch(70% 0.026 300)",
+          "oklch(82% 0.017 300)",
+          "oklch(95% 0.005 300)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Panel line",
+        "canonical": "#3a2f52",
+        "tonalRamp": [
+          "oklch(15% 0.016 295)",
+          "oklch(26% 0.031 295)",
+          "oklch(37% 0.047 295)",
+          "oklch(48% 0.061 295)",
+          "oklch(59% 0.063 295)",
+          "oklch(70% 0.055 295)",
+          "oklch(82% 0.035 295)",
+          "oklch(95% 0.011 295)"
+        ]
+      },
+      "control-border": {
+        "role": "neutral",
+        "displayName": "Field border",
+        "canonical": "#867799",
+        "tonalRamp": [
+          "oklch(15% 0.014 303)",
+          "oklch(26% 0.025 303)",
+          "oklch(37% 0.039 303)",
+          "oklch(48% 0.050 303)",
+          "oklch(59% 0.052 303)",
+          "oklch(70% 0.046 303)",
+          "oklch(82% 0.029 303)",
+          "oklch(95% 0.009 303)"
+        ]
+      },
+      "danger": {
+        "role": "tertiary",
+        "displayName": "Soft red",
+        "canonical": "#c96a6a",
+        "tonalRamp": [
+          "oklch(15% 0.031 20)",
+          "oklch(26% 0.059 20)",
+          "oklch(37% 0.090 20)",
+          "oklch(48% 0.116 20)",
+          "oklch(59% 0.120 20)",
+          "oklch(70% 0.106 20)",
+          "oklch(82% 0.067 20)",
+          "oklch(95% 0.022 20)"
+        ]
+      }
+    }
+  },
+  "components": [
+    {
+      "name": "Primary button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Advance the reading.",
+      "html": "<button class=\"ds-button ds-primary\">Draw the cards</button>",
+      "css": ".ds-button{border:1px solid var(--line);border-radius:8px;padding:.5rem .9rem;font-size:.95rem;color:var(--cream);background:var(--midnight-3);cursor:pointer}.ds-button:hover{border-color:var(--gold)}.ds-primary{background:var(--gold);border-color:var(--gold);color:var(--midnight-2);font-weight:600}"
+    },
+    {
+      "name": "Secondary button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Choose an alternate action.",
+      "html": "<button class=\"ds-button\">Use my physical deck</button>",
+      "css": ".ds-button{border:1px solid var(--line);border-radius:8px;padding:.5rem .9rem;font-size:.95rem;color:var(--cream);background:var(--midnight-3);cursor:pointer}.ds-button:hover{border-color:var(--gold)}"
+    },
+    {
+      "name": "Ghost button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Keep supplemental actions subdued.",
+      "html": "<button class=\"ds-button ds-ghost\">Profile</button>",
+      "css": ".ds-button{border:1px solid var(--line);border-radius:8px;padding:.5rem .9rem;font-size:.95rem;color:var(--cream);background:var(--midnight-3);cursor:pointer}.ds-button:hover{border-color:var(--gold)}.ds-ghost{background:transparent}"
+    },
+    {
+      "name": "Question field",
+      "kind": "input",
+      "refersTo": "field",
+      "description": "Invite the reader to write a question.",
+      "html": "<label class=\"ds-label\" for=\"ds-question\">What is on your mind?</label><input class=\"ds-field\" id=\"ds-question\" placeholder=\"A question, a situation, or just a feeling…\">",
+      "css": ".ds-label{display:block;font-size:.85rem;color:var(--muted);margin:0 0 .3rem}.ds-field{box-sizing:border-box;width:100%;background:var(--midnight-2);color:var(--cream);border:1px solid var(--control-border);border-radius:8px;padding:.55rem .7rem;font-size:.95rem}.ds-field::placeholder{color:var(--muted);opacity:1}.ds-field:focus{outline:1px solid var(--gold);border-color:var(--gold)}"
+    },
+    {
+      "name": "Current navigation",
+      "kind": "nav",
+      "description": "Show the reader’s current view.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Main navigation\"><button class=\"ds-button\" aria-current=\"page\">Reading Table</button><button class=\"ds-button\">Lexicon</button></nav>",
+      "css": ".ds-button{border:1px solid var(--line);border-radius:8px;padding:.5rem .9rem;font-size:.95rem;color:var(--cream);background:var(--midnight-3);cursor:pointer}.ds-button:hover{border-color:var(--gold)}.ds-nav{display:flex;flex-wrap:wrap;gap:.4rem}.ds-button[aria-current=page]{border-color:var(--gold);color:var(--gold-soft)}"
+    },
+    {
+      "name": "Content panel",
+      "kind": "card",
+      "refersTo": "panel",
+      "description": "Group a step or related content.",
+      "html": "<section class=\"ds-panel\"><h3>The reading table</h3></section>",
+      "css": ".ds-panel{background:var(--midnight-2);color:var(--cream);border:1px solid var(--line);border-radius:12px;padding:1rem 1.1rem}.ds-panel h3{margin-top:0;color:var(--gold-soft);font-family:Georgia,serif;font-weight:400;letter-spacing:.02em}"
+    },
+    {
+      "name": "Position card",
+      "kind": "custom",
+      "description": "Name the card and its role in a spread.",
+      "html": "<div class=\"ds-tarot\"><span class=\"ds-card-name\">The Hermit</span><span class=\"ds-position\">Present</span></div>",
+      "css": ".ds-tarot{min-height:150px;display:flex;flex-direction:column;justify-content:center;gap:.3rem;text-align:center;padding:.9rem;border:1px solid var(--gold);border-radius:10px;background:linear-gradient(160deg,var(--midnight-3),#120e1e);color:var(--cream)}.ds-card-name{font:1.05rem Georgia,serif}.ds-position{color:var(--muted);font-size:.82rem}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Midnight Study",
+    "overview": "The Midnight Study is quiet and welcoming for beginners. Dark, closely related surfaces make space for card artwork and reading notes. Familiar controls and clear edges help readers move through a spread at their own pace.",
+    "keyCharacteristics": [
+      "Midnight surfaces with thin, visible borders",
+      "Candle gold for headings, primary actions, and selected navigation",
+      "Georgia headings and system sans-serif for reading and controls"
+    ],
+    "dos": [
+      "Use visible labels and preserve the gold focus outline on fields.",
+      "Pair reversal styling with the written orientation label.",
+      "Let navigation and spread grids reflow within the reading column."
+    ]
+  }
+}
