@@ -24,6 +24,16 @@ export interface DrawnCard {
   reversed: boolean;
 }
 
+export type CardSelection = Pick<DrawnCard, 'cardId' | 'reversed'>;
+
+export interface ReadingSetup {
+  question: string;
+  spreadName: string;
+  mode: 'draw' | 'physical';
+  drawn: CardSelection[];
+  physical: Partial<Record<number, CardSelection>>;
+}
+
 export interface Reflection {
   text: string;
   at: string;
@@ -40,6 +50,7 @@ export interface Reading {
   reflections: Reflection[];
   physicalDeck: boolean;
   deckId?: DeckId;
+  firstStep?: 'read' | 'talk';
   nextPromptIndex?: number;
 }
 
@@ -99,6 +110,7 @@ export interface Db {
   allowReversals?: boolean;
   useGeminiReader?: boolean;
   geminiSavedContext?: boolean;
+  readingSetup?: ReadingSetup;
   readings: Reading[];
   lexicon: Record<string, LexiconEntry>;
   memories: MemoryItem[];

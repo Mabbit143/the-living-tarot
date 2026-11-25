@@ -19,14 +19,14 @@ export default function Archive({ db, updateDb }: Props) {
   const [query, setQuery] = useState('');
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [reflection, setReflection] = useState('');
+  const search = query.trim().toLowerCase();
 
   const filtered = db.readings.filter((r) => {
-    if (!query) return true;
-    const q = query.toLowerCase();
+    if (!search) return true;
     return (
-      r.question.toLowerCase().includes(q) ||
-      r.spreadName.toLowerCase().includes(q) ||
-      r.cards.some((c) => (getCard(c.cardId)?.name ?? '').toLowerCase().includes(q))
+      r.question.toLowerCase().includes(search) ||
+      r.spreadName.toLowerCase().includes(search) ||
+      r.cards.some((c) => (getCard(c.cardId)?.name ?? '').toLowerCase().includes(search))
     );
   });
 
@@ -45,6 +45,8 @@ export default function Archive({ db, updateDb }: Props) {
   }
 
   const lexiconCount = Object.values(db.lexicon).filter(hasLexiconContent).length;
+  const pendingMemories = db.memories.filter((memory) => memory.status === 'suggested').length;
+  const savedMemories = db.memories.length - pendingMemories;
 
   function deleteReading(id: string) {
     if (!window.confirm('Delete this reading, its conversation, and its reflections? This cannot be undone.')) return;
@@ -73,7 +75,8 @@ export default function Archive({ db, updateDb }: Props) {
         <p className="small">
           {db.readings.length} {db.readings.length === 1 ? 'reading' : 'readings'} ·{' '}
           {lexiconCount} {lexiconCount === 1 ? 'Lexicon entry' : 'Lexicon entries'} ·{' '}
-          {db.memories.length} {db.memories.length === 1 ? 'Life Memory' : 'Life Memories'} ·{' '}
+          {savedMemories} {savedMemories === 1 ? 'saved memory' : 'saved memories'} ·{' '}
+          {pendingMemories > 0 && <>{pendingMemories} to review · </>}
           {db.journal.length} {db.journal.length === 1 ? 'journal entry' : 'journal entries'}
         </p>
         <div className="row">
@@ -100,7 +103,12 @@ export default function Archive({ db, updateDb }: Props) {
         />
       </div>
 
-      {filtered.length === 0 && <p className="muted">No readings yet. The table is waiting.</p>}
+      {filtered.length === 0 && (db.readings.length ? (
+        <div className="row">
+          <p className="muted" role="status">No readings match your search.</p>
+          <button className="ghost" onClick={() => setQuery('')}>Clear search</button>
+        </div>
+      ) : <p className="muted">No readings yet. The table is waiting.</p>)}
 
       {filtered.map((r) => (
         <div key={r.id} className="card">
@@ -125,7 +133,7 @@ export default function Archive({ db, updateDb }: Props) {
             </div>
           </div>
           {r.question && (
-            <p>
+            <p style={{ overflowWrap: 'anywhere' }}>
               <em>“{r.question}”</em>
             </p>
           )}

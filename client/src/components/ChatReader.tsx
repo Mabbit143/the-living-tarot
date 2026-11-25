@@ -1,12 +1,8 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import SpreadCards from './SpreadCards';
 import { readingDeck } from '../lib/decks';
 import { requestGeminiReply } from '../lib/gemini';
-import {
-  getCard,
-  getSpread,
-  voiceProfile,
-} from '../lib/knowledge';
+import { getCard, getSpread } from '../lib/knowledge';
 import {
   buildInterpretation,
   conversationOpening,
@@ -35,11 +31,15 @@ export default function ChatReader({ reading, db, updateDb, onDone, onBack }: Pr
   const [loading, setLoading] = useState(false);
   const [readerNotice, setReaderNotice] = useState('');
   const activeRequest = useRef<AbortController | null>(null);
+  const headingRef = useRef<HTMLHeadingElement>(null);
 
   const messages: ChatMessage[] = db.chat
     .filter((m) => m.readingId === reading.id)
     .sort((a, b) => a.at.localeCompare(b.at));
   const delivered = Boolean(reading.interpretation);
+  const readOnOpen = reading.firstStep ? reading.firstStep === 'read' : !reading.question.trim();
+  const canSkipToReading = Boolean(!delivered && spread && messages.length > 0);
+  const hasReply = Boolean(input.trim());
   const suggestions = delivered ? suggestMemories(reading) : [];
   const newSuggestionCount = suggestions.filter(
     (suggestion) => !db.memories.some((memory) => memory.text === suggestion.text),
@@ -122,11 +122,16 @@ export default function ChatReader({ reading, db, updateDb, onDone, onBack }: Pr
   }
 
   // A saved draft already has its last prompt or interpretation in the transcript.
+  useLayoutEffect(() => {
+    headingRef.current?.focus({ preventScroll: true });
+    window.scrollTo(0, 0);
+  }, []);
+
   useEffect(() => {
     if (messages.length > 0 || delivered) return;
     // Defer the first turn so React can discard its development-only rehearsal.
     const start = window.setTimeout(() => {
-      if (!reading.question.trim()) void respond('reading');
+      if (readOnOpen) void respond('reading');
       else if (spread) reply(conversationOpening(reading.question, voice));
     }, 0);
     return () => window.clearTimeout(start);
@@ -208,8 +213,6 @@ export default function ChatReader({ reading, db, updateDb, onDone, onBack }: Pr
     setRememberText((r) => ({ ...r, [cardId]: '' }));
   }
 
-  const vp = voiceProfile(voice);
-
   return (
     <div>
       <div className="row space-between">
@@ -233,11 +236,11 @@ export default function ChatReader({ reading, db, updateDb, onDone, onBack }: Pr
       </div>
 
       <div className="card">
-        <h2>
+        <h2 ref={headingRef} tabIndex={-1} style={{ overflowWrap: 'anywhere' }}>
           {reading.spreadName}
           {reading.question ? <span className="muted"> — “{reading.question}”</span> : ''}
         </h2>
-        <p className="small muted">{vp.tone}</p>
+        {loading && messages.length === 0 && <p className="small muted" role="status">Reading the cards…</p>}
         <SpreadCards cards={reading.cards} deck={readingDeck(reading)} />
 
         <div className="chat" role="log" aria-label="Reading conversation">
@@ -249,6 +252,13 @@ export default function ChatReader({ reading, db, updateDb, onDone, onBack }: Pr
           ))}
         </div>
 
+        {canSkipToReading && (
+          <div className="row" style={{ marginBottom: '0.6rem' }}>
+            <button className={hasReply ? 'ghost' : 'primary'} onClick={() => void respond('reading')} disabled={loading}>
+              Read the cards
+            </button>
+          </div>
+        )}
         <div className="chat-input-row">
           <input
             value={input}
@@ -260,21 +270,14 @@ export default function ChatReader({ reading, db, updateDb, onDone, onBack }: Pr
             placeholder="Talk to the reader…"
             aria-label="Talk to the reader"
           />
-          <button className="primary" onClick={send} disabled={loading}>
+          <button className={!canSkipToReading || hasReply ? 'primary' : 'ghost'} onClick={send} disabled={loading || !hasReply}>
             Send
           </button>
         </div>
-        {(loading || readerNotice) && (
+        {((loading && messages.length > 0) || readerNotice) && (
           <p className="small muted" role="status">
             {loading ? 'Gemini is preparing a reply…' : readerNotice}
           </p>
-        )}
-        {!delivered && spread && (
-          <div className="row" style={{ marginTop: '0.5rem' }}>
-            <button className="ghost" onClick={() => void respond('reading')} disabled={loading}>
-              Read the cards
-            </button>
-          </div>
         )}
       </div>
 

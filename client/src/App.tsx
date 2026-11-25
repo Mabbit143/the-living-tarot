@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import Archive from './components/Archive';
 import ChatReader from './components/ChatReader';
 import Lexicon from './components/Lexicon';
@@ -26,7 +26,10 @@ export default function App() {
   const [db, setDb] = useState<Db | null>(null);
   const [tab, setTab] = useState<Tab>('read');
   const [activeReadingId, setActiveReadingId] = useState<string | null>(null);
+  const [completedReadingId, setCompletedReadingId] = useState<string | null>(null);
+  const savedNotice = useRef<HTMLElement>(null);
   const activeReading = db?.readings.find((reading) => reading.id === activeReadingId);
+  const showSavedNotice = tab === 'archive' && db?.readings.some((reading) => reading.id === completedReadingId);
   const [editingProfile, setEditingProfile] = useState(false);
 
   useEffect(() => {
@@ -38,6 +41,12 @@ export default function App() {
       alive = false;
     };
   }, []);
+
+  useLayoutEffect(() => {
+    if (!showSavedNotice) return;
+    savedNotice.current?.focus({ preventScroll: true });
+    window.scrollTo(0, 0);
+  }, [showSavedNotice, completedReadingId]);
 
   const updateDb = useCallback((fn: (d: Db) => Db) => {
     setDb((prev) => {
@@ -95,6 +104,7 @@ export default function App() {
               onClick={() => {
                 setTab(t.id);
                 setActiveReadingId(null);
+                setCompletedReadingId(null);
               }}
             >
               {t.label}
@@ -115,6 +125,7 @@ export default function App() {
             db={db}
             updateDb={updateDb}
             onDone={() => {
+              setCompletedReadingId(activeReading.id);
               setActiveReadingId(null);
               setTab('archive');
             }}
@@ -134,14 +145,24 @@ export default function App() {
             {tab === 'memories' && <LifeMemory db={db} updateDb={updateDb} />}
             {tab === 'archive' && (
               <>
-                {pendingMemoryCount > 0 && (
+                {(showSavedNotice || pendingMemoryCount > 0) && (
                   <div className="banner row space-between">
-                    <strong role="status">
-                      {pendingMemoryCount} memory {pendingMemoryCount === 1 ? 'suggestion' : 'suggestions'} to review
-                    </strong>
-                    <button className="primary" onClick={() => setTab('memories')}>
-                      Review {pendingMemoryCount === 1 ? 'memory' : 'memories'}
-                    </button>
+                    <div>
+                      {showSavedNotice && <strong className="gold" ref={savedNotice} tabIndex={-1}>Reading saved</strong>}
+                      {pendingMemoryCount > 0 && (
+                        <div role="status">
+                          {pendingMemoryCount} memory {pendingMemoryCount === 1 ? 'suggestion' : 'suggestions'} to review
+                        </div>
+                      )}
+                    </div>
+                    {pendingMemoryCount > 0 && (
+                      <button className="primary" onClick={() => {
+                        setCompletedReadingId(null);
+                        setTab('memories');
+                      }}>
+                        Review {pendingMemoryCount === 1 ? 'memory' : 'memories'}
+                      </button>
+                    )}
                   </div>
                 )}
                 <Archive db={db} updateDb={updateDb} />

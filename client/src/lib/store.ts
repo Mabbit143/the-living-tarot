@@ -7,7 +7,7 @@
 // remote store is not, and the app is written against the async shape from
 // the start.
 
-import type { Db } from './types';
+import type { CardSelection, Db, ReadingSetup } from './types';
 
 export interface StoreAdapter {
   load(): Promise<Db>;
@@ -38,6 +38,22 @@ function isDb(v: unknown): v is Db {
   );
 }
 
+function isCardSelection(value: unknown): value is CardSelection {
+  if (!value || typeof value !== 'object') return false;
+  const card = value as Partial<CardSelection>;
+  return typeof card.cardId === 'string' && typeof card.reversed === 'boolean';
+}
+
+function isReadingSetup(value: unknown): value is ReadingSetup {
+  if (!value || typeof value !== 'object') return false;
+  const setup = value as Partial<ReadingSetup>;
+  return typeof setup.question === 'string' && typeof setup.spreadName === 'string'
+    && (setup.mode === 'draw' || setup.mode === 'physical')
+    && Array.isArray(setup.drawn) && setup.drawn.every(isCardSelection)
+    && Boolean(setup.physical && typeof setup.physical === 'object' && !Array.isArray(setup.physical)
+      && Object.values(setup.physical).every(isCardSelection));
+}
+
 export class LocalStorageStore implements StoreAdapter {
   constructor(private key = 'living-tarot-db-v1') {}
 
@@ -50,7 +66,8 @@ export class LocalStorageStore implements StoreAdapter {
       // Older versions could leave a transcript behind when deleting a reading.
       const readingIds = new Set(parsed.readings.map((reading) => reading.id));
       const chat = parsed.chat.filter((message) => readingIds.has(message.readingId));
-      return { ...emptyDb(), ...parsed, chat };
+      const readingSetup = isReadingSetup(parsed.readingSetup) ? parsed.readingSetup : undefined;
+      return { ...emptyDb(), ...parsed, chat, readingSetup };
     } catch {
       return emptyDb();
     }
