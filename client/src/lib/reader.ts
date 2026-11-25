@@ -252,7 +252,7 @@ export function conversationOpening(question: string, voice: VoiceId): string {
     const cold: Record<VoiceId, string> = {
       familiar: 'Before we lay out the cards, tell me in your own words — what’s weighing on you most right now?',
       mystic: 'Before the cards speak, tell me — what image or feeling brings you to the table today?',
-      interpreter: 'Before we begin, give me the one detail that matters most about your situation.',
+      interpreter: 'Before we begin, what’s the one detail that matters most about your situation?',
     };
     return cold[voice];
   }
