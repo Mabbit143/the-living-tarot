@@ -1,0 +1,54 @@
+
+perf client/dist/index.html @ 1440px
+  PASS  host CPU load (before/after)               23/39 %        
+  PASS  total transfer                             356.8 KiB      html 0.7K  css 5.2K  js 164.9K  font 31.7K  img 153.1K  other 1.1K
+  PASS  requests                                   13             12 by load
+  PASS  images bytes                               153.1 KiB      3 files
+  PASS  largest image                              54.3 KiB       rws/the-star.webp
+  WARN  JS parsed                                  526.9 KiB      4 files, 164.9K gz
+  PASS  CSS                                        5.2 KiB        2 files
+  PASS  font families                              1              Outfit
+  PASS  font files                                 1              31.7K
+  PASS  font bytes                                 31.7 KiB       
+  PASS  images without width+height                0              
+  PASS  below-fold images not lazy                 0              
+  PASS  oversized images (natural > 2.2x shown)    0              
+  PASS  WebGL live at load                         0              
+  PASS  WebGL live at bottom                       0              
+  PASS  WebGL peak live                            0              0 contexts made in all
+  PASS  long tasks                                 0              runs 3, 0..0, max 0ms
+  PASS  blocking time                              0 ms           runs 3, 0..0 ms; at load 0ms
+  PASS  FCP (CPU, relative)                        92 ms          runs 3, 60..144
+  PASS  LCP (CPU, relative)                        132 ms         runs 3, 120..180, h1
+  PASS  layout shift                               0.000          runs 3, 0.000..0.011; at load 0.000
+  PASS  modules loaded, never mounted              0              
+  PASS  broken requests                            0              
+  PASS  page height                                2 screens      DOM 106 nodes
+
+perf client/dist/index.html @ 390px
+  PASS  host CPU load (before/after)               23/39 %        
+  PASS  total transfer                             356.4 KiB      html 0.7K  css 5.2K  js 164.9K  font 31.7K  img 153.1K  other 0.7K
+  PASS  requests                                   12             11 by load
+  PASS  images bytes                               153.1 KiB      3 files
+  PASS  largest image                              54.3 KiB       rws/the-star.webp
+  WARN  JS parsed                                  526.9 KiB      4 files, 164.9K gz
+  PASS  CSS                                        5.2 KiB        2 files
+  PASS  font families                              1              Outfit
+  PASS  font files                                 1              31.7K
+  PASS  font bytes                                 31.7 KiB       
+  PASS  images without width+height                0              
+  PASS  below-fold images not lazy                 0              
+  PASS  oversized images (natural > 2.2x shown)    0              
+  PASS  WebGL live at load                         0              
+  PASS  WebGL live at bottom                       0              
+  PASS  WebGL peak live                            0              0 contexts made in all
+  PASS  long tasks                                 0              runs 3, 0..0, max 0ms
+  PASS  blocking time                              0 ms           runs 3, 0..0 ms; at load 0ms
+  PASS  FCP (CPU, relative)                        92 ms          runs 3, 68..92
+  PASS  LCP (CPU, relative)                        128 ms         runs 3, 128..136, img.tarot-art
+  PASS  layout shift                               0.000          runs 3, 0.000..0.000; at load 0.000
+  PASS  modules loaded, never mounted              0              
+  PASS  broken requests                            0              
+  PASS  page height                                2 screens      DOM 106 nodes
+
+SUMMARY client/dist/index.html: 0 FAIL, 2 WARN  -> WARN

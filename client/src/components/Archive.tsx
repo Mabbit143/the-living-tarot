@@ -62,45 +62,47 @@ export default function Archive({ db, updateDb }: Props) {
   }
 
   return (
-    <div>
-      <div className="card">
-        <h2>Take your history with you</h2>
-        <p className="muted">
-          Your whole history — every reading with its cards, interpretation,
-          conversation, and reflections, your personal Lexicon meanings and
-          signifiers, your Life Memories, and your Symbol Journal. Both files
-          are made on this device from what is saved here; nothing is sent
-          anywhere.
-        </p>
-        <p className="small">
-          {db.readings.length} {db.readings.length === 1 ? 'reading' : 'readings'} ·{' '}
-          {lexiconCount} {lexiconCount === 1 ? 'Lexicon entry' : 'Lexicon entries'} ·{' '}
-          {savedMemories} {savedMemories === 1 ? 'saved memory' : 'saved memories'} ·{' '}
-          {pendingMemories > 0 && <>{pendingMemories} to review · </>}
-          {db.journal.length} {db.journal.length === 1 ? 'journal entry' : 'journal entries'}
-        </p>
-        <div className="row">
-          <button className="primary" onClick={() => downloadJsonBackup(db)}>
-            Download JSON backup
-          </button>
-          <button onClick={() => downloadTextHistory(db)}>
-            Download plain-text copy
-          </button>
+    <div className="archive-layout">
+      <div className="archive-tools">
+        <div className="card">
+          <h2>Take your history with you</h2>
+          <p className="muted">
+            Your whole history — every reading with its cards, interpretation,
+            conversation, and reflections, your personal Lexicon meanings and
+            signifiers, your Life Memories, and your Symbol Journal. Both files
+            are made on this device from what is saved here; nothing is sent
+            anywhere.
+          </p>
+          <p className="small">
+            {db.readings.length} {db.readings.length === 1 ? 'reading' : 'readings'} ·{' '}
+            {lexiconCount} {lexiconCount === 1 ? 'Lexicon entry' : 'Lexicon entries'} ·{' '}
+            {savedMemories} {savedMemories === 1 ? 'saved memory' : 'saved memories'} ·{' '}
+            {pendingMemories > 0 && <>{pendingMemories} to review · </>}
+            {db.journal.length} {db.journal.length === 1 ? 'journal entry' : 'journal entries'}
+          </p>
+          <div className="row">
+            <button className="primary" onClick={() => downloadJsonBackup(db)}>
+              Download JSON backup
+            </button>
+            <button onClick={() => downloadTextHistory(db)}>
+              Download plain-text copy
+            </button>
+          </div>
         </div>
-      </div>
 
-      <div className="card">
-        <h2>Reading Archive</h2>
-        <p className="muted">
-          Every reading, searchable. Reflections are added alongside the original
-          interpretation — the original is never rewritten.
-        </p>
-        <input
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          placeholder="Search by question, spread, or card…"
-          aria-label="Search by question, spread, or card"
-        />
+        <div className="card">
+          <h2>Reading Archive</h2>
+          <p className="muted">
+            Every reading, searchable. Reflections are added alongside the original
+            interpretation — the original is never rewritten.
+          </p>
+          <input
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="Search by question, spread, or card…"
+            aria-label="Search by question, spread, or card"
+          />
+        </div>
       </div>
 
       {filtered.length === 0 && (db.readings.length ? (

@@ -91,8 +91,8 @@ export default function LifeMemory({ db, updateDb }: Props) {
   }
 
   return (
-    <div>
-      <div className="card">
+    <div className="memory-layout">
+      <div className="card memory-compose">
         <h2>Life Memory</h2>
         <p className="muted">
           The people, relationships, goals, concerns, and events the reader knows about.

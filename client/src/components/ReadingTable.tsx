@@ -115,7 +115,7 @@ export default function ReadingTable({ db, updateDb, onStartChat, onResumeChat }
   }
 
   return (
-    <div>
+    <div className="table-layout">
       {drafts.length > 0 && (
         <div className="banner">
           <strong className="gold">Unfinished reading{drafts.length > 1 ? 's' : ''}</strong>
@@ -135,75 +135,81 @@ export default function ReadingTable({ db, updateDb, onStartChat, onResumeChat }
         </div>
       )}
 
-      <div className="card">
+      <div className="card table-sheet">
         <h2>The reading table</h2>
-        <label htmlFor="reading-spread">Spread</label>
-        <select id="reading-spread" value={spread.name} onChange={(e) => changeSpread(e.target.value)}>
-          <optgroup label="Everyday spreads">
-            {primarySpreads().map((s) => (
-              <option key={s.name} value={s.name}>
-                {s.name} — {s.cards} card{s.cards > 1 ? 's' : ''}
-              </option>
-            ))}
-          </optgroup>
-          <optgroup label="From the books">
-            {catalogSpreads().map((s) => (
-              <option key={s.name} value={s.name}>
-                {s.name} — {s.cards} cards
-              </option>
-            ))}
-          </optgroup>
-        </select>
-        <p className="small muted">{spread.purpose}</p>
-        {spread.cards > 3 ? (
-          <details className="reading-disclosure small">
-            <summary>Spread positions</summary>
-            <ol>{spread.positions.map((position) => <li key={position.position}>{position.label}</li>)}</ol>
-          </details>
-        ) : <p className="small">{spread.positions.map((p) => p.label).join(' · ')}</p>}
+        <div className="table-fields">
+          <div className="table-spread-field">
+            <label htmlFor="reading-spread">Spread</label>
+            <select id="reading-spread" value={spread.name} onChange={(e) => changeSpread(e.target.value)}>
+              <optgroup label="Everyday spreads">
+                {primarySpreads().map((s) => (
+                  <option key={s.name} value={s.name}>
+                    {s.name} — {s.cards} card{s.cards > 1 ? 's' : ''}
+                  </option>
+                ))}
+              </optgroup>
+              <optgroup label="From the books">
+                {catalogSpreads().map((s) => (
+                  <option key={s.name} value={s.name}>
+                    {s.name} — {s.cards} cards
+                  </option>
+                ))}
+              </optgroup>
+            </select>
+            <p className="small muted">{spread.purpose}</p>
+            {spread.cards > 3 ? (
+              <details className="reading-disclosure small">
+                <summary>Spread positions</summary>
+                <ol>{spread.positions.map((position) => <li key={position.position}>{position.label}</li>)}</ol>
+              </details>
+            ) : <p className="small">{spread.positions.map((p) => p.label).join(' · ')}</p>}
+          </div>
 
-        <label htmlFor="reading-question">Question or topic (optional)</label>
-        <input
-          id="reading-question"
-          value={question}
-          onChange={(e) => changeSetup({ question: e.target.value })}
-          placeholder="A question, a situation, or just a feeling…"
-        />
-
-        <label className="row reading-source">
-          <input
-            type="checkbox"
-            style={{ width: 'auto' }}
-            checked={mode === 'physical'}
-            onChange={(e) => changeSetup({ mode: e.target.checked ? 'physical' : 'draw' })}
-          />
-          Use my physical deck
-        </label>
-
-        <details className="reading-disclosure reading-options">
-          <summary>Reading options{db.useGeminiReader && <span className="small muted"> · Gemini on</span>}</summary>
-          {mode === 'draw' && <>
-            <DeckPicker
-              id="reading-deck"
-              value={deck}
-              onChange={(preferredDeck) => updateDb((d) => ({ ...d, preferredDeck }))}
+          <div className="table-question-field">
+            <label htmlFor="reading-question">Question or topic (optional)</label>
+            <input
+              id="reading-question"
+              value={question}
+              onChange={(e) => changeSetup({ question: e.target.value })}
+              placeholder="A question, a situation, or just a feeling…"
             />
-            <label className="row" style={{ margin: '0 0 0.75rem' }}>
+
+            <label className="row reading-source">
               <input
                 type="checkbox"
                 style={{ width: 'auto' }}
-                checked={allowReversals}
-                onChange={(e) => {
-                  const allowReversals = e.target.checked;
-                  updateDb((d) => ({ ...d, allowReversals }));
-                }}
+                checked={mode === 'physical'}
+                onChange={(e) => changeSetup({ mode: e.target.checked ? 'physical' : 'draw' })}
               />
-              Allow reversals
+              Use my physical deck
             </label>
-          </>}
-          <GeminiSettings db={db} updateDb={updateDb} />
-          {hasSetup && <button className="ghost reading-reset" onClick={clearSetup}>Clear setup</button>}
-        </details>
+
+            <details className="reading-disclosure reading-options">
+              <summary>Reading options{db.useGeminiReader && <span className="small muted"> · Gemini on</span>}</summary>
+              {mode === 'draw' && <>
+                <DeckPicker
+                  id="reading-deck"
+                  value={deck}
+                  onChange={(preferredDeck) => updateDb((d) => ({ ...d, preferredDeck }))}
+                />
+                <label className="row" style={{ margin: '0 0 0.75rem' }}>
+                  <input
+                    type="checkbox"
+                    style={{ width: 'auto' }}
+                    checked={allowReversals}
+                    onChange={(e) => {
+                      const allowReversals = e.target.checked;
+                      updateDb((d) => ({ ...d, allowReversals }));
+                    }}
+                  />
+                  Allow reversals
+                </label>
+              </>}
+              <GeminiSettings db={db} updateDb={updateDb} />
+              {hasSetup && <button className="ghost reading-reset" onClick={clearSetup}>Clear setup</button>}
+            </details>
+          </div>
+        </div>
 
         {mode === 'physical' && (
           <PhysicalDeckEntry positions={spread.positions} selections={physical} onChange={changePhysicalCard} />

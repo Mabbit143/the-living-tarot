@@ -40,7 +40,7 @@ export default function Onboarding({ initial, initialDeck, onSave, onCancel }: P
   }
 
   return (
-    <div className="card">
+    <div className="card profile-sheet">
       <h2>Your profile</h2>
       <p className="muted">
         Edit what your reader knows about you and how it speaks to you.

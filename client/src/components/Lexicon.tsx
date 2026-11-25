@@ -79,8 +79,8 @@ export default function Lexicon({ db, updateDb }: Props) {
   }
 
   return (
-    <div>
-      <div className="card">
+    <div className="lexicon-layout">
+      <div className="card lexicon-toolbar">
         <h2>Your Personal Tarot Lexicon</h2>
         <p className="muted">
           Every card carries its synthesized meaning from your books, plus your own history
@@ -110,7 +110,7 @@ export default function Lexicon({ db, updateDb }: Props) {
         </div>
       </div>
 
-      <div className="card-grid">
+      <div className="card-grid lexicon-grid">
         {filtered.map((c) => (
           <button
             key={c.id}

@@ -1,53 +1,90 @@
+@font-face {
+  font-family: Outfit;
+  src: url('/fonts/outfit-latin.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
 :root {
-  --midnight: #0d0b12;
-  --midnight-2: #171224;
-  --midnight-3: #221a33;
-  --gold: #c9a227;
-  --gold-soft: #e3c766;
-  --violet: #8b6fc0;
-  --violet-soft: #b39ddb;
-  --cream: #f5f2ea;
-  --muted: #b8b0c4;
-  --line: #3a2f52;
-  --control-border: #867799;
-  --danger: #c96a6a;
+  --font-display: Outfit, system-ui, sans-serif;
+  --font-text: Outfit, system-ui, sans-serif;
+  --display-weight: 400;
+  --display-tracking: -0.03em;
+  --display-tracking-xl: -0.04em;
+  --p-bg: #efe9e0;
+  --p-surface: #e2d9cb;
+  --p-ink: #22261f;
+  --p-muted: #5a5c53;
+  --p-action: #2e5b44;
+  --p-action-ink: #fff;
+  --paper: #faf7f0;
+  --tint: #e1e8db;
+  --midnight: var(--p-bg);
+  --midnight-2: var(--paper);
+  --midnight-3: var(--p-surface);
+  --gold: var(--p-action);
+  --gold-soft: var(--p-action);
+  --violet: var(--p-action);
+  --violet-soft: var(--p-action);
+  --cream: var(--p-ink);
+  --muted: var(--p-muted);
+  --line: #d1c8b9;
+  --control-border: #878275;
+  --danger: #8a3327;
+  --edge: clamp(1rem, 4vw, 4rem);
+  --frame: 82rem;
 }
 
 * {
   box-sizing: border-box;
 }
 
+#root {
+  display: contents;
+}
+
 body {
   margin: 0;
   background: var(--midnight);
   color: var(--cream);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: var(--font-text);
   line-height: 1.55;
 }
 
-h1, h2, h3, .serif {
-  font-family: Georgia, 'Times New Roman', serif;
-  color: var(--gold-soft);
-  font-weight: normal;
-  letter-spacing: 0.02em;
+h1, h2, h3, h4, .serif {
+  font-family: var(--font-display);
+  color: var(--p-ink);
+  font-weight: var(--display-weight);
+  letter-spacing: var(--display-tracking);
+  line-height: 1.12;
+  overflow-wrap: anywhere;
 }
+
+h2 { font-size: clamp(2.15rem, 4vw, 3.5rem); }
+h3 { font-size: clamp(1.35rem, 2vw, 1.8rem); }
+h4 { font-size: 1.15rem; }
 
 a {
   color: var(--violet-soft);
 }
 
 button {
-  background: var(--midnight-3);
+  min-block-size: 44px;
+  max-inline-size: 100%;
+  background: var(--paper);
   color: var(--cream);
-  border: 1px solid var(--line);
-  border-radius: 8px;
+  border: 1px solid var(--control-border);
+  border-radius: 10px;
   padding: 0.5rem 0.9rem;
   cursor: pointer;
-  font-size: 0.95rem;
+  font: 500 0.95rem/1.25 var(--font-text);
+  overflow-wrap: anywhere;
 }
 
 button:hover:not(:disabled) {
   border-color: var(--gold);
+  background: var(--tint);
 }
 
 button:disabled {
@@ -57,9 +94,12 @@ button:disabled {
 
 button.primary {
   background: var(--gold);
-  color: #171224;
+  color: var(--p-action-ink);
   border-color: var(--gold);
-  font-weight: 600;
+}
+
+button.primary:hover:not(:disabled) {
+  background: #234a37;
 }
 
 button.ghost {
@@ -70,10 +110,24 @@ input, select, textarea {
   background: var(--midnight-2);
   color: var(--cream);
   border: 1px solid var(--control-border);
-  border-radius: 8px;
+  border-radius: 10px;
   padding: 0.55rem 0.7rem;
-  font-size: 0.95rem;
+  font: 1rem/1.4 var(--font-text);
   width: 100%;
+  max-inline-size: 100%;
+}
+
+input:not([type='checkbox'], [type='radio']), select, textarea {
+  min-block-size: 44px;
+}
+
+input[type='checkbox'], input[type='radio'] {
+  accent-color: var(--p-action);
+}
+
+:is(a, button, input, textarea, select, summary):focus-visible {
+  outline: 2px solid var(--p-action);
+  outline-offset: 3px;
 }
 
 input::placeholder, textarea::placeholder {
@@ -94,15 +148,19 @@ label {
 }
 
 .app {
-  max-width: 920px;
+  max-width: var(--frame);
   margin: 0 auto;
-  padding: 0 1rem 3rem;
+  padding: 0 var(--edge) 3rem;
 }
 
 .app-header {
-  border-bottom: 1px solid var(--line);
-  padding: 1.2rem 0 0.8rem;
-  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+  border-bottom: 1px solid var(--control-border);
+  padding: 1.35rem 0 1rem;
 }
 
 .app-header h1 {
@@ -112,8 +170,7 @@ label {
 
 .app-header .tagline {
   color: var(--muted);
-  font-style: italic;
-  margin: 0.2rem 0 0;
+  margin: 0;
 }
 
 .nav {
@@ -131,9 +188,14 @@ label {
 .card {
   background: var(--midnight-2);
   border: 1px solid var(--line);
-  border-radius: 12px;
-  padding: 1rem 1.1rem;
-  margin: 0.8rem 0;
+  border-radius: 16px;
+  padding: clamp(1rem, 2.5vw, 1.85rem);
+  margin: 0 0 1rem;
+  min-inline-size: 0;
+}
+
+.card > :is(h2, h3):first-child {
+  margin-block: 0 0.65rem;
 }
 
 .card h3 {
@@ -149,7 +211,7 @@ label {
 }
 
 .lexicon-dialog::backdrop {
-  background: rgb(13 11 18 / 78%);
+  background: rgb(34 38 31 / 65%);
 }
 
 .lexicon-dialog h3 {
@@ -181,8 +243,8 @@ label {
 }
 
 .tarot-card {
-  background: linear-gradient(160deg, var(--midnight-3), #120e1e);
-  border: 1px solid var(--gold);
+  background: var(--paper);
+  border: 1px solid var(--line);
   border-radius: 10px;
   padding: 0.9rem;
   text-align: center;
@@ -194,13 +256,13 @@ label {
 }
 
 .tarot-card .numeral {
-  font-family: Georgia, serif;
+  font-family: var(--font-display);
   color: var(--gold-soft);
   font-size: 1.4rem;
 }
 
 .tarot-card .name {
-  font-family: Georgia, serif;
+  font-family: var(--font-display);
   font-size: 1.05rem;
 }
 
@@ -243,7 +305,8 @@ label {
 
 .reading-disclosure summary {
   width: fit-content;
-  padding-block: 0.55rem;
+  min-block-size: 44px;
+  padding-block: 0.58rem;
   cursor: pointer;
   color: var(--violet-soft);
   outline-offset: 3px;
@@ -360,7 +423,7 @@ label {
 }
 
 .card-picker::backdrop {
-  background: rgb(13 11 18 / 78%);
+  background: rgb(34 38 31 / 65%);
 }
 
 .card-picker-header {
@@ -452,13 +515,13 @@ label {
 
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 145px), 1fr));
   gap: 0.7rem;
 }
 
 .spread-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 180px), 1fr));
   gap: 0.6rem;
 }
 
@@ -566,7 +629,7 @@ label {
 }
 
 .chat-msg.user {
-  background: #2c2140;
+  background: var(--tint);
   border: 1px solid var(--violet);
   align-self: flex-end;
 }
@@ -585,6 +648,7 @@ label {
 
 .chat-input-row input {
   flex: 1;
+  min-inline-size: 0;
 }
 
 .chip {

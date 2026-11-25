@@ -1,0 +1,214 @@
+{
+  "actions": [
+    "Set up my reader",
+    "Cancel setup",
+    "Start a reading",
+    "#reading-spread",
+    "Spread positions",
+    "Reading options",
+    "#reading-deck",
+    "#reading-deck",
+    "Allow reversals",
+    "Connect Gemini",
+    "#gemini-api-key",
+    "Connect and use Gemini",
+    "Include card associations",
+    "#reading-question",
+    "Preview the cards",
+    "Draw again",
+    "Read the cards",
+    "Cards in this spread",
+    "Set up my reader",
+    "#setup-name",
+    "Continue",
+    "Add more context",
+    "#setup-context",
+    "#setup-goals",
+    "Continue",
+    "The Mystic",
+    "Save and see guidance",
+    "#chat-reader-voice",
+    "[aria-label=\"Talk to the reader\"]",
+    "Send",
+    "Add personal card meanings",
+    "input[id^=\"remember-\"]",
+    "Remember",
+    "Complete this reading",
+    "Open",
+    "[aria-label=\"What actually happened since this reading?\"]",
+    "Add reflection",
+    "Download JSON backup",
+    "Download plain-text copy",
+    "[aria-label=\"Search by question, spread, or card\"]",
+    "Clear search",
+    "Close",
+    "Lexicon",
+    "[aria-label=\"Filter by arcana\"]",
+    "[aria-label=\"Filter by suit\"]",
+    "[aria-label=\"Search cards\"]",
+    ".tarot-card",
+    "#lexicon-association",
+    "Add",
+    "[aria-label=\"Signifier kind\"]",
+    "[aria-label=\"Who or what does this card stand for?\"]",
+    "Set signifier",
+    "Remove",
+    "Close",
+    "Life Memory",
+    "#life-memory-text",
+    "[aria-label=\"Memory kind\"]",
+    "[aria-label=\"Memory timeframe\"]",
+    "Add",
+    "Edit",
+    "Cancel",
+    "Hide",
+    "Restore",
+    "Delete",
+    "Patterns",
+    "Symbol Journal",
+    "[aria-label=\"Symbol journal entry\"]",
+    "[aria-label=\"Attach a card\"]",
+    "Add entry",
+    "Delete",
+    "Profile",
+    "#profile-deck",
+    "Save profile",
+    "Reading Table",
+    "Use my physical deck",
+    ".physical-card-choice",
+    "#card-picker-search",
+    "The Fool",
+    ".physical-orientation input",
+    "The Fool",
+    "Clear card",
+    ".physical-card-choice",
+    "Close",
+    "Use my physical deck",
+    "#reading-question",
+    "Talk first",
+    "← Back to the table",
+    "Resume",
+    "Read the cards",
+    "Complete this reading",
+    "Delete"
+  ],
+  "api": [
+    {
+      "name": "api/reader/gemini-key",
+      "body": {
+        "key": "synthetic-test-key"
+      }
+    },
+    {
+      "name": "api/reader/gemini",
+      "body": {
+        "mode": "reading",
+        "voice": "familiar",
+        "spread": "Five-Card Spread",
+        "question": "How can I make time for ceramics?",
+        "cards": [
+          {
+            "id": "two-of-swords",
+            "position": 1,
+            "reversed": false
+          },
+          {
+            "id": "nine-of-swords",
+            "position": 2,
+            "reversed": false
+          },
+          {
+            "id": "the-lovers",
+            "position": 3,
+            "reversed": false
+          },
+          {
+            "id": "king-of-swords",
+            "position": 4,
+            "reversed": false
+          },
+          {
+            "id": "page-of-cups",
+            "position": 5,
+            "reversed": false
+          }
+        ],
+        "chat": [],
+        "memories": []
+      }
+    },
+    {
+      "name": "api/reader/gemini",
+      "body": {
+        "mode": "follow-up",
+        "voice": "interpreter",
+        "spread": "Five-Card Spread",
+        "question": "How can I make time for ceramics?",
+        "cards": [
+          {
+            "id": "two-of-swords",
+            "position": 1,
+            "reversed": false
+          },
+          {
+            "id": "nine-of-swords",
+            "position": 2,
+            "reversed": false
+          },
+          {
+            "id": "the-lovers",
+            "position": 3,
+            "reversed": false
+          },
+          {
+            "id": "king-of-swords",
+            "position": 4,
+            "reversed": false
+          },
+          {
+            "id": "page-of-cups",
+            "position": 5,
+            "reversed": false
+          }
+        ],
+        "chat": [
+          {
+            "role": "reader",
+            "text": "Fixture interpretation for the selected cards."
+          }
+        ],
+        "message": "How do the cards fit together?",
+        "memories": []
+      }
+    },
+    {
+      "name": "api/reader/gemini",
+      "body": {
+        "mode": "reading",
+        "voice": "mystic",
+        "spread": "Three-Card Spread",
+        "question": "Another reading",
+        "cards": [
+          {
+            "id": "the-world",
+            "position": 1,
+            "reversed": false
+          },
+          {
+            "id": "two-of-pentacles",
+            "position": 2,
+            "reversed": false
+          },
+          {
+            "id": "the-sun",
+            "position": 3,
+            "reversed": false
+          }
+        ],
+        "chat": [],
+        "memories": []
+      }
+    }
+  ],
+  "errors": []
+}

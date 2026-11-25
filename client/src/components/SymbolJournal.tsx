@@ -27,8 +27,8 @@ export default function SymbolJournal({ db, updateDb }: Props) {
   }
 
   return (
-    <div>
-      <div className="card">
+    <div className="journal-layout">
+      <div className="card journal-compose">
         <h2>Symbol Journal</h2>
         <p className="muted">
           A running notebook for symbols, images, and associations — yours, not the book's.
@@ -56,26 +56,28 @@ export default function SymbolJournal({ db, updateDb }: Props) {
         </div>
       </div>
 
-      {db.journal.length === 0 && <p className="muted">No entries yet.</p>}
-      {db.journal.map((j) => (
-        <div key={j.id} className="card">
-          <p style={{ whiteSpace: 'pre-wrap', margin: '0 0 0.4rem' }}>{j.text}</p>
-          <p className="small muted" style={{ margin: 0 }}>
-            {new Date(j.at).toLocaleString()}
-            {j.cardIds.map((id) => ` · ${getCard(id)?.name ?? id}`).join('')}
-          </p>
-          <button
-            className="ghost small"
-            onClick={() => {
-              if (window.confirm('Delete this journal entry? This cannot be undone.')) {
-                updateDb((d) => ({ ...d, journal: d.journal.filter((x) => x.id !== j.id) }));
-              }
-            }}
-          >
-            Delete
-          </button>
-        </div>
+      <div className="journal-entries">
+        {db.journal.length === 0 && <p className="muted">No entries yet.</p>}
+        {db.journal.map((j) => (
+          <div key={j.id} className="card">
+            <p style={{ whiteSpace: 'pre-wrap', margin: '0 0 0.4rem' }}>{j.text}</p>
+            <p className="small muted" style={{ margin: 0 }}>
+              {new Date(j.at).toLocaleString()}
+              {j.cardIds.map((id) => ` · ${getCard(id)?.name ?? id}`).join('')}
+            </p>
+            <button
+              className="ghost small"
+              onClick={() => {
+                if (window.confirm('Delete this journal entry? This cannot be undone.')) {
+                  updateDb((d) => ({ ...d, journal: d.journal.filter((x) => x.id !== j.id) }));
+                }
+              }}
+            >
+              Delete
+            </button>
+          </div>
       ))}
+      </div>
     </div>
   );
 }

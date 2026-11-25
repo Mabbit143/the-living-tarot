@@ -240,7 +240,7 @@ export default function ChatReader({ reading, db, updateDb, onDone, onBack, onSe
 
   return (
     <div className="reader-view">
-      <div className="row space-between">
+      <div className="row space-between reader-toolbar">
         <button className="ghost" onClick={onBack}>
           ← Back to the table
         </button>
@@ -260,84 +260,88 @@ export default function ChatReader({ reading, db, updateDb, onDone, onBack, onSe
         </div>
       </div>
 
-      <div className="card">
+      <div className="card reader-sheet">
         <h2 ref={headingRef} tabIndex={-1} style={{ overflowWrap: 'anywhere' }}>
           {reading.spreadName}
         </h2>
         {reading.question && <p className="reading-question muted">“{reading.question}”</p>}
         {loading && messages.length === 0 && <p className="small muted" role="status">Reading the cards…</p>}
-        {delivered && (
-          <>
-            <ReadingInterpretation reading={reading} headingRef={interpretationHeadingRef} />
-            {reading.personalizedGuidance ? (
-              <section className="personalized-guidance" aria-labelledby="personalized-guidance-heading">
-                <h3 id="personalized-guidance-heading" tabIndex={-1} ref={guidanceHeading}>Personalized guidance</h3>
-                <p className="reading-copy">{reading.personalizedGuidance}</p>
-              </section>
-            ) : onSetupReader && (
-              <section className="personalized-guidance" aria-labelledby="reader-setup-invitation">
-                <h3 id="reader-setup-invitation">Guidance for your situation</h3>
-                <p>Share a little about what’s on your mind to get a follow-up for this spread.</p>
-                <button className="ghost" onClick={onSetupReader} disabled={loading}>Set up my reader</button>
-              </section>
-            )}
-            <div className="row reading-finish">
-              <button className="primary" onClick={completeReading} disabled={loading}>
-                Complete this reading
-              </button>
-              {newSuggestionCount > 0 && (
-                <span className="small muted">
-                  {newSuggestionCount} memory {newSuggestionCount === 1 ? 'suggestion' : 'suggestions'} to review after completing.
-                </span>
+        <div className={`reader-columns${delivered ? ' reader-columns--delivered' : ''}`}>
+          {delivered && (
+            <article className="reader-main-reading">
+              <ReadingInterpretation reading={reading} headingRef={interpretationHeadingRef} />
+              {reading.personalizedGuidance ? (
+                <section className="personalized-guidance" aria-labelledby="personalized-guidance-heading">
+                  <h3 id="personalized-guidance-heading" tabIndex={-1} ref={guidanceHeading}>Personalized guidance</h3>
+                  <p className="reading-copy">{reading.personalizedGuidance}</p>
+                </section>
+              ) : onSetupReader && (
+                <section className="personalized-guidance" aria-labelledby="reader-setup-invitation">
+                  <h3 id="reader-setup-invitation">Guidance for your situation</h3>
+                  <p>Share a little about what’s on your mind to get a follow-up for this spread.</p>
+                  <button className="ghost" onClick={onSetupReader} disabled={loading}>Set up my reader</button>
+                </section>
+              )}
+              <div className="row reading-finish">
+                <button className="primary" onClick={completeReading} disabled={loading}>
+                  Complete this reading
+                </button>
+                {newSuggestionCount > 0 && (
+                  <span className="small muted">
+                    {newSuggestionCount} memory {newSuggestionCount === 1 ? 'suggestion' : 'suggestions'} to review after completing.
+                  </span>
+                )}
+              </div>
+            </article>
+          )}
+          <div className="reader-companion">
+            {delivered && reading.cards.length > 3 ? (
+              <details className="reading-disclosure reader-support">
+                <summary>Cards in this spread</summary>
+                {cards}
+              </details>
+            ) : <div className={delivered ? 'reading-card-strip reader-support' : undefined}>{cards}</div>}
+
+            <div className={delivered ? 'reader-support' : undefined}>
+              {delivered && <h3>Talk about this reading</h3>}
+              <div className="chat" role="log" aria-label="Reading conversation">
+                {conversation.map((m) => (
+                  <div key={m.id} className={`chat-msg ${m.role}`}>
+                    <strong className="chat-speaker">{m.role === 'reader' ? 'Reader' : 'You'}</strong>
+                    {m.text}
+                  </div>
+                ))}
+              </div>
+
+              {canSkipToReading && (
+                <div className="row" style={{ marginBottom: '0.6rem' }}>
+                  <button className={hasReply ? 'ghost' : 'primary'} onClick={() => void respond('reading')} disabled={loading}>
+                    Read the cards
+                  </button>
+                </div>
+              )}
+              <div className="chat-input-row">
+                <input
+                  value={input}
+                  disabled={loading}
+                  onChange={(e) => setInput(e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter') send();
+                  }}
+                  placeholder="Talk to the reader…"
+                  aria-label="Talk to the reader"
+                />
+                <button className={!canSkipToReading || hasReply ? 'primary' : 'ghost'} onClick={send} disabled={loading || !hasReply}>
+                  Send
+                </button>
+              </div>
+              {((loading && messages.length > 0) || readerNotice) && (
+                <p className="small muted" role="status">
+                  {loading ? 'Gemini is preparing a reply…' : readerNotice}
+                </p>
               )}
             </div>
-          </>
-        )}
-        {delivered && reading.cards.length > 3 ? (
-          <details className="reading-disclosure reader-support">
-            <summary>Cards in this spread</summary>
-            {cards}
-          </details>
-        ) : <div className={delivered ? 'reading-card-strip reader-support' : undefined}>{cards}</div>}
-
-        <div className={delivered ? 'reader-support' : undefined}>
-          {delivered && <h3>Talk about this reading</h3>}
-          <div className="chat" role="log" aria-label="Reading conversation">
-            {conversation.map((m) => (
-              <div key={m.id} className={`chat-msg ${m.role}`}>
-                <strong className="chat-speaker">{m.role === 'reader' ? 'Reader' : 'You'}</strong>
-                {m.text}
-              </div>
-            ))}
           </div>
-
-          {canSkipToReading && (
-            <div className="row" style={{ marginBottom: '0.6rem' }}>
-              <button className={hasReply ? 'ghost' : 'primary'} onClick={() => void respond('reading')} disabled={loading}>
-                Read the cards
-              </button>
-            </div>
-          )}
-          <div className="chat-input-row">
-            <input
-              value={input}
-              disabled={loading}
-              onChange={(e) => setInput(e.target.value)}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter') send();
-              }}
-              placeholder="Talk to the reader…"
-              aria-label="Talk to the reader"
-            />
-            <button className={!canSkipToReading || hasReply ? 'primary' : 'ghost'} onClick={send} disabled={loading || !hasReply}>
-              Send
-            </button>
-          </div>
-          {((loading && messages.length > 0) || readerNotice) && (
-            <p className="small muted" role="status">
-              {loading ? 'Gemini is preparing a reply…' : readerNotice}
-            </p>
-          )}
         </div>
       </div>
 

@@ -1,0 +1,120 @@
+{
+ "start": "2026-11-25T12:59:29.669Z",
+ "round": 2,
+ "idle": 0,
+ "errors": 0,
+ "status": "pass",
+ "history": [
+  {
+   "at": "2026-11-25T13:09:07.757Z",
+   "mode": "manual",
+   "status": "fail",
+   "fails": 14,
+   "round": 1,
+   "reused": false,
+   "stopHookActive": false
+  },
+  {
+   "at": "2026-11-25T13:12:31.956Z",
+   "mode": "manual",
+   "status": "fail",
+   "fails": 7,
+   "round": 2,
+   "reused": false,
+   "stopHookActive": false
+  },
+  {
+   "at": "2026-11-25T13:15:41.396Z",
+   "mode": "manual",
+   "status": "pass",
+   "fails": 0,
+   "round": 2,
+   "reused": false,
+   "stopHookActive": false
+  }
+ ],
+ "max": 3,
+ "marker": {
+  "page": "client/dist/index.html",
+  "dir": "C:\\Users\\mabbi\\dev\\the-living-tarot",
+  "kind": "software",
+  "start": "2026-11-25T12:59:29.669Z",
+  "by": "start.mjs",
+  "url": null,
+  "root": "client/dist",
+  "category": "tarot",
+  "primary": "Start a reading"
+ },
+ "manual": true,
+ "roundKey": "29a66a65b5284dd1:da39a3ee",
+ "roundFree": false,
+ "idleFree": false,
+ "blockKey": null,
+ "fp": "5e817a315104177a",
+ "page": "client/dist/index.html",
+ "found": {
+  "fails": [],
+  "warns": [
+   {
+    "check": "scroll-reveal",
+    "where": "main#welcome-main > section.welcome-statement.mo-wh > div.wrap.welcome-wrap > p.mo-wh__text \"Ask what’s on your mind. After your read\"",
+    "msg": "starts \"color\" (0.2 s) the moment it is scrolled into view (an IntersectionObserver) on span.mo-w:nth-of-type(1) (inside a dealt moment's section, [data-moment]: an enter moment is expected on every kind; its still is judged under reduced motion)",
+    "fix": "show it at rest: no fade, rise or unmask when it is scrolled into view",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "copy-headings",
+    "where": "h2#welcome-context-heading \"Guidance for your situation\"",
+    "msg": "\"Guidance for your situation\" names no product, part, place or section (the one brand line a page may have)",
+    "fix": "name the thing in every heading: the product, a part, the place or a section noun",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "copy-buttons",
+    "where": "div.welcome-copy > div.welcome-intro > div.welcome-actions > button.ghost \"Set up my reader\"",
+    "msg": "\"Set up my reader\" does not start with a verb (book, buy, try, start, get, see...)",
+    "fix": "label buttons with a verb and what the visitor gets (\"Book a room\", \"Start free trial\")",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "stranded-action",
+    "where": "main#welcome-main > section.welcome-statement.mo-wh > div.wrap.welcome-wrap > button.primary.welcome-close \"Start a reading\"",
+    "msg": "stands 321px down from the nearest text of its block (\"Guidance for your situation\") (inside a held section or scroll scene, whose motion --quick does not check)",
+    "fix": "put the button under or beside the text it belongs to",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "share-meta",
+    "where": "head",
+    "msg": "the head lacks og:title, og:description, og:image, twitter:card: a shared link shows no picture or title of its own",
+    "fix": "copy the head block of starter.html: og tags, twitter:card, the icon and theme-color (references/system.md, Head)",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   }
+  ],
+  "crashed": [],
+  "seconds": {
+   "consistency": 57,
+   "layout": 14
+  }
+ },
+ "open": [],
+ "waived": [],
+ "warnCount": 5,
+ "at": "2026-11-25T13:15:41.397Z"
+}

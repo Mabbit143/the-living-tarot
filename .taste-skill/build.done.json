@@ -1,0 +1,11 @@
+{
+ "page": "client/dist/index.html",
+ "dir": "C:\\Users\\mabbi\\dev\\the-living-tarot",
+ "kind": "software",
+ "start": "2026-11-25T12:59:29.669Z",
+ "by": "start.mjs",
+ "url": null,
+ "root": "client/dist",
+ "category": "tarot",
+ "primary": "Start a reading"
+}

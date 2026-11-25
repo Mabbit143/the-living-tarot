@@ -1,0 +1,4 @@
+gate: checking client/dist/index.html (software); this takes a few minutes on a CPU Chrome
+gate: no open FAIL
+  5 WARN (not blocking), first: scroll-reveal main#welcome-main > section.welcome-stat; copy-headings h2#welcome-context-heading "Guidance for; copy-buttons div.welcome-copy > div.welcome-intro > d; stranded-action main#welcome-main > section.welcome-stat; share-meta head
+GATE: PASS

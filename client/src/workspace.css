@@ -1,0 +1,258 @@
+.wordmark {
+  color: var(--p-action);
+  font: 500 clamp(1.45rem, 2.4vw, 2rem)/1.05 var(--font-display);
+  letter-spacing: var(--display-tracking);
+  overflow-wrap: anywhere;
+}
+
+.tarot-workspace {
+  display: grid;
+  grid-template-columns: minmax(9.25rem, 0.19fr) minmax(0, 1fr);
+  gap: clamp(1.25rem, 3vw, 2.75rem);
+  align-items: start;
+}
+
+.tarot-workspace > .app-header {
+  grid-column: 1 / -1;
+}
+
+.workspace-main {
+  min-inline-size: 0;
+  overflow-wrap: anywhere;
+}
+
+.workspace-main:focus-visible {
+  outline: 2px solid var(--p-action);
+  outline-offset: 5px;
+}
+
+.workspace-nav {
+  margin: 0;
+  display: grid;
+  align-items: start;
+  gap: 0.25rem;
+}
+
+.workspace-nav button {
+  text-align: start;
+  padding-inline: 0.85rem;
+  border-color: transparent;
+  background: transparent;
+}
+
+.workspace-nav button[aria-current='page'] {
+  background: var(--tint);
+  border-color: var(--p-action);
+  color: var(--p-action);
+}
+
+.workspace-account {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  min-inline-size: 0;
+}
+
+.profile-workspace .view-profile {
+  max-inline-size: 52rem;
+  margin: clamp(1.25rem, 4vw, 3rem) auto 0;
+}
+
+.table-sheet,
+.reader-sheet,
+.profile-sheet {
+  border-block-start: 3px solid var(--p-action);
+}
+
+.table-fields,
+.archive-tools,
+.journal-layout,
+.patterns-layout {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  align-items: start;
+}
+
+.table-fields {
+  gap: clamp(1rem, 3vw, 2.6rem);
+}
+
+.table-spread-field > label:first-child,
+.table-question-field > label:first-child {
+  margin-block-start: 0;
+}
+
+.table-sheet .reading-actions {
+  border-block-start: 1px solid var(--line);
+  margin-block-end: 0;
+  padding-block-start: 1rem;
+}
+
+.table-sheet .reading-actions + .card-grid {
+  margin-block-start: 1rem;
+}
+
+.reader-toolbar {
+  margin-block-end: 0.85rem;
+}
+
+.reader-columns--delivered {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  gap: clamp(1rem, 3vw, 2.5rem);
+  align-items: start;
+}
+
+.reader-main-reading .reading-interpretation {
+  margin-block-start: 0;
+}
+
+.reader-companion {
+  min-inline-size: 0;
+}
+
+.reader-columns--delivered .reader-companion {
+  border-inline-start: 1px solid var(--line);
+  padding-inline-start: clamp(0.75rem, 2vw, 1.5rem);
+}
+
+.reader-companion > .reader-support:first-child {
+  margin-block-start: 0;
+  padding-block-start: 0;
+  border-block-start: 0;
+}
+
+.reader-companion > .reader-support h3 {
+  font-size: 1.3rem;
+}
+
+.lexicon-toolbar .row {
+  flex-wrap: wrap;
+}
+
+.lexicon-toolbar input[aria-label='Search cards'] {
+  min-inline-size: min(11rem, 100%);
+}
+
+.lexicon-grid {
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 122px), 1fr));
+}
+
+.lexicon-grid > button {
+  justify-content: flex-start;
+}
+
+.patterns-intro {
+  grid-column: 1 / -1;
+}
+
+.patterns-layout {
+  row-gap: 0;
+}
+
+.pattern-list ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pattern-list li {
+  padding-block: 0.65rem;
+  border-block-start: 1px solid var(--line);
+}
+
+.memory-compose label[for='life-memory-text'] {
+  margin-block-start: 1.25rem;
+}
+
+.journal-layout {
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+}
+
+.journal-entries > p:only-child {
+  margin: 0;
+  padding: 1.2rem;
+  border: 1px dashed var(--control-border);
+  border-radius: 16px;
+}
+
+.personal-meanings {
+  padding-block: 0.5rem;
+}
+
+@media (max-width: 970px) {
+  .tarot-workspace {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+  }
+
+  .workspace-nav {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .workspace-nav button {
+    padding-inline: 0.45rem;
+    text-align: center;
+  }
+
+}
+
+@media (max-width: 680px) {
+  .workspace-nav {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .workspace-nav button {
+    font-size: 0.9rem;
+  }
+
+  .tarot-workspace .app-header {
+    position: relative;
+    padding-inline-end: 5.5rem;
+    min-block-size: 4.7rem;
+  }
+
+  .workspace-account button {
+    position: absolute;
+    inset-block-start: 1rem;
+    inset-inline-end: 0;
+  }
+
+  .table-fields,
+  .archive-tools,
+  .journal-layout,
+  .patterns-layout,
+  .reader-columns--delivered {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .archive-tools {
+    gap: 0;
+  }
+
+  .reader-columns--delivered .reader-companion {
+    border-inline-start: 0;
+    border-block-start: 1px solid var(--line);
+    padding: 1rem 0 0;
+  }
+
+  .chat-msg {
+    max-inline-size: 96%;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :is(button, summary) {
+    transition: background-color 140ms ease, border-color 140ms ease, transform 140ms ease;
+  }
+
+  button:hover:not(:disabled) {
+    transform: translateY(-1px);
+  }
+
+  button:active:not(:disabled) {
+    transform: translateY(1px);
+  }
+}

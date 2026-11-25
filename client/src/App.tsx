@@ -115,12 +115,12 @@ export default function App() {
 
   if (editingProfile && db.profile) {
     return (
-      <div className="app">
+      <div className="app profile-workspace">
         <header className="app-header">
-          <h1>The Living Tarot</h1>
+          <h1 className="wordmark">The Living Tarot</h1>
           <p className="tagline">A reader that remembers you.</p>
         </header>
-        <main>
+        <main className="workspace-main view-profile">
           <Onboarding
             initial={db.profile}
             initialDeck={preferredDeck(db.preferredDeck)}
@@ -140,34 +140,36 @@ export default function App() {
   const pendingMemoryCount = db.memories.filter((memory) => memory.status === 'suggested').length;
 
   return (
-    <div className="app">
+    <div className="app tarot-workspace">
       <header className="app-header">
-        <h1>The Living Tarot</h1>
-        <p className="tagline">
-          A reader that remembers you{db.profile?.name ? `, ${db.profile.name}` : ''}.
-        </p>
-        <nav className="nav" aria-label="Main navigation">
-          {TABS.map((t) => (
-            <button
-              key={t.id}
-              aria-current={tab === t.id ? 'page' : undefined}
-              onClick={() => {
-                setTab(t.id);
-                setActiveReadingId(null);
-                setCompletedReadingId(null);
-              }}
-            >
-              {t.label}
-              {t.id === 'memories' && pendingMemoryCount > 0 && ` (${pendingMemoryCount} to review)`}
-            </button>
-          ))}
+        <h1 className="wordmark">The Living Tarot</h1>
+        <div className="workspace-account">
+          <p className="tagline">
+            A reader that remembers you{db.profile?.name ? `, ${db.profile.name}` : ''}.
+          </p>
           <button className="ghost" onClick={() => db.profile ? setEditingProfile(true) : setSetup('profile')}>
             Profile
           </button>
-        </nav>
+        </div>
       </header>
+      <nav className="nav workspace-nav" aria-label="Main navigation">
+        {TABS.map((t) => (
+          <button
+            key={t.id}
+            aria-current={tab === t.id ? 'page' : undefined}
+            onClick={() => {
+              setTab(t.id);
+              setActiveReadingId(null);
+              setCompletedReadingId(null);
+            }}
+          >
+            {t.label}
+            {t.id === 'memories' && pendingMemoryCount > 0 && ` (${pendingMemoryCount} to review)`}
+          </button>
+        ))}
+      </nav>
 
-      <main ref={mainRef} tabIndex={-1}>
+      <main className={`workspace-main view-${activeReading ? 'reader' : tab}`} ref={mainRef} tabIndex={-1}>
         {activeReading ? (
           <ChatReader
             key={activeReading.id}
