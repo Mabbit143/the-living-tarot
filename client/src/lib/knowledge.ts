@@ -137,18 +137,25 @@ export function catalogSpreads(): Spread[] {
   );
 }
 
-/** The conversational flow for a spread: 1/3/5-card flows, anything else
- * uses the 'catalog spreads' flow. */
+const STANDARD_SPREAD_FLOWS: Readonly<Record<string, string | undefined>> = {
+  'Single-Card Draw': '1-card',
+  'Three-Card Spread': '3-card',
+  'Five-Card Spread': '5-card',
+};
+
+const CATALOG_FLOW: Flow = {
+  spread: 'catalog spreads',
+  steps: [{
+    step: 1,
+    purpose: 'Offer an optional chance to share context before interpreting the spread.',
+    reader_says: 'Is there anything you’d like to share before I read the cards?',
+  }],
+};
+
+/** Position-specific scripts only apply to the layouts they were written for. */
 export function flowForSpread(spread: Spread): Flow {
-  const key =
-    spread.cards === 1
-      ? '1-card'
-      : spread.cards === 3
-        ? '3-card'
-        : spread.cards === 5
-          ? '5-card'
-          : 'catalog spreads';
-  return FLOWS.find((f) => f.spread === key) ?? FLOWS[FLOWS.length - 1];
+  const key = STANDARD_SPREAD_FLOWS[spread.name];
+  return FLOWS.find((f) => f.spread === key) ?? CATALOG_FLOW;
 }
 
 export function voiceProfile(id: VoiceId): VoiceProfile {

@@ -2,13 +2,17 @@ import { useEffect, useRef, useState } from 'react';
 import SpreadCards from './SpreadCards';
 import { readingDeck } from '../lib/decks';
 import {
-  QUESTION_TYPES,
   flowForSpread,
   getCard,
   getSpread,
   voiceProfile,
 } from '../lib/knowledge';
-import { buildInterpretation, detectRememberRequest, formatInterpretationText } from '../lib/reader';
+import {
+  buildInterpretation,
+  detectRememberRequest,
+  formatInterpretationText,
+  requestsInterpretation,
+} from '../lib/reader';
 import { suggestMemories } from '../lib/memory';
 import type { ChatMessage, Db, Reading, VoiceId } from '../lib/types';
 import { newId, nowIso } from '../lib/types';
@@ -104,6 +108,10 @@ export default function ChatReader({ reading, db, updateDb, onDone, onBack }: Pr
     if (startedRef.current) return;
     startedRef.current = true;
     if (messages.length > 0 || delivered) return;
+    if (!reading.question.trim()) {
+      deliverInterpretation();
+      return;
+    }
     const firstPrompt = flow?.steps[0];
     if (firstPrompt) {
       reply(firstPrompt.reader_says, undefined, { nextPromptIndex: 1 });
@@ -117,6 +125,11 @@ export default function ChatReader({ reading, db, updateDb, onDone, onBack }: Pr
     const text = input.trim();
     if (!text) return;
     setInput('');
+
+    if (!delivered && spread && requestsInterpretation(text)) {
+      deliverInterpretation(text);
+      return;
+    }
 
     // Did the user ask the reader to remember a meaning for a card?
     const remember = detectRememberRequest(text, reading.cards);
@@ -188,8 +201,6 @@ export default function ChatReader({ reading, db, updateDb, onDone, onBack }: Pr
   }
 
   const vp = voiceProfile(voice);
-  const followUp =
-    QUESTION_TYPES[Math.floor(messages.length / 2) % QUESTION_TYPES.length]?.example_questions[0];
 
   return (
     <div>
@@ -243,10 +254,12 @@ export default function ChatReader({ reading, db, updateDb, onDone, onBack }: Pr
             Send
           </button>
         </div>
-        {followUp && (
-          <p className="small muted" style={{ marginTop: '0.5rem' }}>
-            A question to sit with: {followUp}
-          </p>
+        {!delivered && spread && (
+          <div className="row" style={{ marginTop: '0.5rem' }}>
+            <button className="ghost" onClick={() => deliverInterpretation()}>
+              Read the cards
+            </button>
+          </div>
         )}
       </div>
 

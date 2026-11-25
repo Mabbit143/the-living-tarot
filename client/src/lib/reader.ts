@@ -101,12 +101,16 @@ export function buildInterpretation(input: ReadingInput): Interpretation {
   const vp = voiceProfile(voice);
   const name = profile?.name ? `, ${profile.name}` : '';
 
-  const opening =
-    voice === 'familiar'
-      ? `Let's sit with this one${name}. You asked about ${question || 'what is on your mind'} — here's what the cards are saying, in your own context.`
-      : voice === 'mystic'
-        ? `The table is set${name}. You asked about ${question || 'what is moving beneath the surface'} — let the images speak first.`
-        : `Reading: ${spread.name}${name}. Question: ${question || '—'}. What follows is the mechanism: card, position, and what recurs.`;
+  const topic = question.trim();
+  const openings: Record<VoiceId, string> = {
+    familiar: `Let's sit with this one${name}. ${topic
+      ? `You asked about ${topic} — here's what the cards are saying, in your own context.`
+      : 'Here’s what each card brings to the spread.'}`,
+    mystic: `The table is set${name}. ${topic
+      ? `You asked about ${topic} — let the images speak first.`
+      : 'Let the images speak first.'}`,
+    interpreter: `Reading: ${spread.name}${name}.${topic ? ` Question: ${topic}.` : ''} What follows is the mechanism: card, position, and what recurs.`,
+  };
 
   const sections: InterpretationSection[] = drawn.map((d) => {
     const card = getCard(d.cardId);
@@ -154,7 +158,7 @@ export function buildInterpretation(input: ReadingInput): Interpretation {
   const closingQuestion = pick(questions, readingIndex + drawn.length);
 
   return {
-    opening,
+    opening: openings[voice],
     sections,
     closingQuestion,
     voiceLine: vp.example_line,
@@ -189,4 +193,18 @@ export function formatInterpretationText(it: Interpretation): string {
   for (const s of it.sections) parts.push(`${s.heading}\n${s.body}`, '');
   parts.push(`One question to carry with you: ${it.closingQuestion}`);
   return parts.join('\n');
+}
+
+/** Recognise direct requests to skip the guided prompts. */
+export function requestsInterpretation(text: string): boolean {
+  const request = text.toLowerCase()
+    .replace(/['’]/g, '')
+    .replace(/[.!?,]/g, ' ')
+    .trim()
+    .replace(/\s+/g, ' ')
+    .replace(/^(?:(?:why dont you|can you|could you|would you|will you|please|just) )+/, '')
+    .replace(/(?: (?:for me|now|please))+$/, '');
+  return /^(?:do|give me|start|show me) (?:(?:the|a|my|this) )?(?:reading|interpretation)$/.test(request)
+    || /^(?:read|interpret) (?:the|my|these) cards$/.test(request)
+    || /^(?:skip (?:the )?(?:questions|prompts)|go ahead)$/.test(request);
 }

@@ -37,6 +37,7 @@ export default function ReadingTable({ db, updateDb, onStartChat, onResumeChat }
 
   const spread = getSpread(spreadName) ?? primarySpreads()[1];
   const deck = preferredDeck(db.preferredDeck);
+  const hasQuestion = Boolean(question.trim());
   const drafts = db.readings.filter((r) => r.status === 'draft');
   const physicalCards = spread.positions.flatMap((position, index) => {
     const entry = physical[index];
@@ -52,17 +53,15 @@ export default function ReadingTable({ db, updateDb, onStartChat, onResumeChat }
   const duplicateCards = new Set(previewCards.map((card) => card.cardId)).size < previewCards.length;
   const canBegin = previewCards.length === spread.cards && !duplicateCards;
 
-  function drawCards() {
+  function drawCards(): DrawnCard[] {
     const picked = shuffle(CARDS).slice(0, spread.cards);
-    setDrawn(
-      picked.map((c, i) => ({
-        cardId: c.id,
-        position: spread.positions[i].position,
-        positionLabel: spread.positions[i].label,
-        positionMeaning: spread.positions[i].meaning,
-        reversed: Math.random() < 0.2,
-      })),
-    );
+    return picked.map((card, index) => ({
+      cardId: card.id,
+      position: spread.positions[index].position,
+      positionLabel: spread.positions[index].label,
+      positionMeaning: spread.positions[index].meaning,
+      reversed: Math.random() < 0.2,
+    }));
   }
 
   function resetPhysical() {
@@ -71,13 +70,12 @@ export default function ReadingTable({ db, updateDb, onStartChat, onResumeChat }
     );
   }
 
-  function beginReading() {
-    if (!canBegin) return;
+  function beginReading(cards: DrawnCard[]) {
     const reading: Reading = {
       id: newId(),
       spreadName: spread.name,
       question: question.trim(),
-      cards: previewCards,
+      cards,
       interpretation: '',
       createdAt: nowIso(),
       status: 'draft',
@@ -112,7 +110,7 @@ export default function ReadingTable({ db, updateDb, onStartChat, onResumeChat }
 
       <div className="card">
         <h2>The reading table</h2>
-        <label htmlFor="reading-question">What is on your mind?</label>
+        <label htmlFor="reading-question">Question or topic (optional)</label>
         <input
           id="reading-question"
           value={question}
@@ -168,9 +166,16 @@ export default function ReadingTable({ db, updateDb, onStartChat, onResumeChat }
               value={deck}
               onChange={(preferredDeck) => updateDb((d) => ({ ...d, preferredDeck }))}
             />
-            <button className="primary" onClick={drawCards}>
-              {drawn.length > 0 ? 'Draw again' : 'Draw the cards'}
-            </button>
+            <div className="row">
+              {!hasQuestion && drawn.length === 0 && (
+                <button className="primary" onClick={() => beginReading(drawCards())}>
+                  Draw and read
+                </button>
+              )}
+              <button className={hasQuestion ? 'primary' : ''} onClick={() => setDrawn(drawCards())}>
+                {drawn.length > 0 ? 'Draw again' : hasQuestion ? 'Draw the cards' : 'Preview the cards'}
+              </button>
+            </div>
           </div>
         ) : (
           <div style={{ marginTop: '1rem' }}>
@@ -219,8 +224,8 @@ export default function ReadingTable({ db, updateDb, onStartChat, onResumeChat }
             <SpreadCards cards={previewCards} deck={mode === 'draw' ? deck : 'midnight'} />
             {duplicateCards && <p className="small" role="status">Choose a different card for each position.</p>}
             <div className="row" style={{ marginTop: '1rem' }}>
-              <button className="primary" onClick={beginReading} disabled={!canBegin}>
-                Begin the reading
+              <button className="primary" onClick={() => beginReading(previewCards)} disabled={!canBegin}>
+                {hasQuestion ? 'Begin the reading' : 'Read the cards'}
               </button>
             </div>
           </div>
