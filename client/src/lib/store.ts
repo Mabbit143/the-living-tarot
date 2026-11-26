@@ -29,6 +29,17 @@ export function emptyDb(): Db {
   };
 }
 
+/** Remove a reading and every chat message tied to it. An unknown id
+ *  returns the database unchanged. */
+export function deleteReading(db: Db, id: string): Db {
+  if (!db.readings.some((reading) => reading.id === id)) return db;
+  return {
+    ...db,
+    readings: db.readings.filter((reading) => reading.id !== id),
+    chat: db.chat.filter((message) => message.readingId !== id),
+  };
+}
+
 /** Upgrade stored data to the current shape. v0 (no version field, i.e. the
  *  shape shipped before versioning) gains `version: 1` with documented
  *  defaults for newer optional fields. Unknown future versions throw so the

@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { LocalStorageStore, emptyDb, migrate } from './store';
+import { LocalStorageStore, deleteReading, emptyDb, migrate } from './store';
+import type { Db, Reading } from './types';
 
 // Minimal localStorage mock so these run in the node environment too.
 const data = new Map<string, string>();
@@ -94,5 +95,41 @@ describe('LocalStorageStore corruption handling', () => {
     expect((await store.load()).hasStarted).toBe(true);
     expect(store.recoveredFromCorruptStorage()).toBe(false);
     expect(quarantineKeys()).toHaveLength(0);
+  });
+});
+
+describe('deleteReading', () => {
+  const reading = (id: string, status: Reading['status'] = 'draft'): Reading => ({
+    id,
+    spreadName: 'Three-Card Spread',
+    question: 'q',
+    cards: [],
+    interpretation: '',
+    createdAt: '2026-11-26T00:00:00.000Z',
+    status,
+    reflections: [],
+    physicalDeck: false,
+  });
+
+  function dbWithTwoReadings(): Db {
+    return {
+      ...emptyDb(),
+      readings: [reading('r1'), reading('r2', 'complete')],
+      chat: [
+        { id: 'm1', readingId: 'r1', role: 'user', text: 'hi', at: '2026-11-26T00:00:00.000Z' },
+        { id: 'm2', readingId: 'r2', role: 'reader', text: 'hello', at: '2026-11-26T00:00:00.000Z' },
+      ],
+    };
+  }
+
+  it('removes the reading and its conversation, keeping everything else', () => {
+    const next = deleteReading(dbWithTwoReadings(), 'r1');
+    expect(next.readings.map((r) => r.id)).toEqual(['r2']);
+    expect(next.chat.map((m) => m.id)).toEqual(['m2']);
+  });
+
+  it('leaves the database untouched for an unknown id', () => {
+    const db = dbWithTwoReadings();
+    expect(deleteReading(db, 'missing')).toEqual(db);
   });
 });

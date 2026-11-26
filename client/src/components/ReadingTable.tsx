@@ -12,6 +12,7 @@ import {
 } from '../lib/knowledge';
 import type { CardSelection, Db, DrawnCard, Reading, ReadingSetup } from '../lib/types';
 import { newId, nowIso } from '../lib/types';
+import { deleteReading } from '../lib/store';
 
 interface Props {
   db: Db;
@@ -100,6 +101,11 @@ export default function ReadingTable({ db, updateDb, onStartChat, onResumeChat }
     updateDb((d) => ({ ...d, readingSetup: undefined }));
   }
 
+  function discardDraft(id: string) {
+    if (!window.confirm('Delete this unfinished reading and its conversation? This cannot be undone.')) return;
+    updateDb((d) => deleteReading(d, id));
+  }
+
   function beginReading(firstStep: NonNullable<Reading['firstStep']>) {
     const cards = mode === 'draw' && drawn.length === 0 ? cardsFor(drawCards()) : previewCards;
     if (cards.length !== spread.cards || duplicateCards) return;
@@ -137,6 +143,7 @@ export default function ReadingTable({ db, updateDb, onStartChat, onResumeChat }
                 {d.question ? ` — “${d.question}”` : ''}
               </span>
               <button onClick={() => onResumeChat(d)}>Resume</button>
+              <button className="ghost" onClick={() => discardDraft(d.id)}>Delete</button>
             </div>
           ))}
         </div>
