@@ -130,13 +130,21 @@ npm run preview  # serve the production build locally
 npm run typecheck
 ```
 
-For Gemini readings, open **Connect Gemini** on the Reading Table while using
-the local dev or preview server. The dialog checks the key with Google and the
-server holds it in memory until restart. Set `GEMINI_API_KEY` in the server
-environment if you prefer a preconfigured key. `GEMINI_MODEL` overrides the
-default model (`gemini-3.8-flash`). Gemini receives the current reading and
-recent messages when enabled. Sharing relevant saved context is a separate
-option. The local reader is available on static builds and when Gemini fails.
+Readings are API-led (owner decision 2026-11-25): with Gemini connected, the
+model writes each reading grounded strictly in the bundled knowledge base
+(synthesized from the owner's tarot library) plus the current reading and
+recent messages — and it must never name, cite, or quote any books or
+authors. To connect, open **Connect Gemini** on the Reading Table while
+using the local dev or preview server. The dialog checks the key with Google
+and the server holds it in memory until restart. Set `GEMINI_API_KEY` in the
+server environment if you prefer a preconfigured key (`export` it before
+`npm run dev` so restarts keep working). `GEMINI_MODEL` overrides the
+default model (`gemini-3.5-flash-lite`). Sharing relevant saved context (ranked
+memories, associations, names) is a separate opt-in. The local deterministic
+reader is the offline fallback: static builds and Gemini failures use it
+automatically. At release, readings are served by a hosted proxy holding the
+key — see `docs/issues/P1-4-hosted-reader-proxy.md`. Point a build at it
+with `VITE_TAROT_API_URL` (no trailing slash).
 
 How it fits together:
 
@@ -145,7 +153,6 @@ How it fits together:
   `server.fs.allow` setting in `client/vite.config.ts`). The JSON files are
   the source of truth — edit the data, not the code, to change meanings.
 - Persistence is localStorage behind the `StoreAdapter` interface in
-  `client/src/lib/store.ts`. To move to Supabase/PostgreSQL, implement the
-  same interface against the backend; no reading, lexicon, or chat code needs
-  to change. See `docs/ARCHITECTURE.md` for the data model and the
-  Supabase/vector-search direction.
+  `client/src/lib/store.ts` (stored data is versioned and migrated on load;
+  unreadable saves are quarantined, never overwritten). No cloud sync is
+  planned; the Supabase adapter remains a documented seam only.

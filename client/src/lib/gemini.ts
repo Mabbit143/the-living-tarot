@@ -2,7 +2,11 @@ import { personalAssociation } from './readingContext';
 import { memoryCandidates, rankCandidates } from './relevance';
 import type { ChatMessage, Db, Reading, VoiceId } from './types';
 
-const keyEndpoint = '/api/reader/gemini-key';
+// Same-origin dev server by default; set VITE_TAROT_API_URL to point at the
+// hosted proxy (no trailing slash) for builds that have no local server.
+const apiBase = (import.meta.env.VITE_TAROT_API_URL as string | undefined ?? '').replace(/\/$/, '');
+const keyEndpoint = `${apiBase}/api/reader/gemini-key`;
+const readingEndpoint = `${apiBase}/api/reader/gemini`;
 
 export async function geminiConfigured(signal?: AbortSignal): Promise<boolean> {
   const response = await fetch(keyEndpoint, { signal, cache: 'no-store' });
@@ -46,7 +50,7 @@ export async function requestGeminiReply(
     : [];
   const chat = messages.filter((turn) => turn.role === 'user' || turn.gemini === 'current-reading'
     || (db.geminiSavedContext && turn.gemini === 'with-saved-context'));
-  const response = await fetch('/api/reader/gemini', {
+  const response = await fetch(readingEndpoint, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     signal,
@@ -68,10 +72,11 @@ export async function requestGeminiReply(
       mediumName: db.geminiSavedContext ? db.profile?.readerName?.trim() || undefined : undefined,
     }),
   });
-  if (!response.ok || !response.headers.get('content-type')?.includes('application/json')) {
-    throw new Error('Gemini reader unavailable.');
+  if (response.headers.get('content-type')?.includes('application/json')) {
+    const data = await response.json();
+    if (!response.ok) throw new Error(typeof data.error === 'string' ? data.error : 'Gemini reader unavailable.');
+    if (typeof data.text !== 'string' || !data.text.trim()) throw new Error('Gemini returned an empty reading.');
+    return data.text;
   }
-  const data = await response.json();
-  if (typeof data.text !== 'string' || !data.text.trim()) throw new Error('Gemini returned an empty reading.');
-  return data.text;
+  throw new Error('Gemini reader unavailable.');
 }

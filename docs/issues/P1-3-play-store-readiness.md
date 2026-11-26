@@ -37,14 +37,14 @@ Current state (grounding):
 - [ ] **Wrapper:** TWA (Bubblewrap, hosted PWA) vs Capacitor (bundled WebView).
   TWA keeps one codebase and instant updates but needs a hosted HTTPS origin
   + asset links; Capacitor ships offline-first but owns a native shell.
-- [x] **Gemini: decided 2026-11-25, revised same night — API-led readings.**
+- [x] **Gemini: decided 2026-11-25, API-led; release backend decided same night — hosted proxy.**
   Screenshot evidence proved templates alone can't reach the target
   experience, so the reader is generative (Gemini) with the local kernel as
-  offline fallback and grounding layer. The **Connect Gemini** flow must
-  work end-to-end (key stays user-supplied, never bundled) — never a dead
-  toggle. Open question this reopens for the Play build: with no local
-  `server/` process on device, Gemini needs a hosted proxy or equivalent —
-  see wrapper decision above.
+  offline fallback and grounding layer. At release users must never be asked
+  for an API key, so readings are served by a hosted proxy that holds the key
+  server-side and enforces the grounded prompt. The **Connect Gemini** flow
+  stays for beta (key stays user-supplied, never bundled). New issue tracks
+  the proxy service: auth, quotas, logging policy, Play data-safety.
 - [ ] **Minimum Android version / WebView baseline** the bundle targets
   (affects CSS/JS feature use and testing matrix).
 

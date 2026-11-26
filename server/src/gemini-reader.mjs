@@ -2,7 +2,7 @@ import { readFileSync } from 'node:fs';
 
 const endpoint = 'https://generativelanguage.googleapis.com/v1beta/models';
 const maxBodyBytes = 40 * 1024;
-const defaultModel = 'gemini-3.8-flash';
+const defaultModel = 'gemini-3.5-flash-lite';
 const voices = {
   familiar: 'Warm, plainspoken and grounded. Talk the way a thoughtful friend would.',
   mystic: 'Evocative and image-led. Use clear language around the symbolic reading.',

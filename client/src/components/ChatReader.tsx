@@ -5,11 +5,8 @@ import { readingDeck } from '../lib/decks';
 import { requestGeminiReply } from '../lib/gemini';
 import { getCard, getSpread, readerDisplayName } from '../lib/knowledge';
 import {
-  buildInterpretation,
   conversationOpening,
   detectRememberRequest,
-  followUpReply,
-  formatInterpretationText,
   requestsInterpretation,
 } from '../lib/reader';
 import { suggestMemories } from '../lib/memory';
@@ -85,53 +82,26 @@ export default function ChatReader({ reading, db, updateDb, onDone, onBack, onSe
     }));
   }
 
-  function localInterpretation(context?: string): string {
-    if (!spread) return 'This spread is no longer in the catalog.';
-    const pastReadings = db.readings.filter((r) => r.id !== reading.id && r.status === 'complete');
-    const it = buildInterpretation({
-      spread,
-      drawn: reading.cards,
-      question: reading.question,
-      context,
-      memories: db.memories,
-      profile: db.profile,
-      lexicon: db.lexicon,
-      pastReadings,
-      voice,
-      readingIndex: pastReadings.length,
-    });
-    return formatInterpretationText(it);
-  }
-
-  async function respond(mode: 'reading' | 'follow-up', userText?: string, context?: string) {
+  async function respond(mode: 'reading' | 'follow-up', userText?: string) {
     if (activeRequest.current) return;
-    const local = () => mode === 'reading' ? localInterpretation(context)
-      : followUpReply(userText ?? '', reading.cards, messages, reading.interpretation, db.lexicon, voice, {
-        memories: db.memories,
-        pastReadings: db.readings,
-        currentReadingId: reading.id,
-      });
     const write = (text: string, gemini?: ChatMessage['gemini']) =>
       reply(text, userText, mode === 'reading' ? text : undefined, gemini);
-    if (!db.useGeminiReader) {
-      write(local());
-      return;
-    }
 
     const controller = new AbortController();
     activeRequest.current = controller;
     setReaderNotice('');
     setLoading(true);
     try {
-      const message = mode === 'follow-up' ? userText : context;
-      const text = await requestGeminiReply(reading, db, voice, messages, mode, message, controller.signal);
+      const text = await requestGeminiReply(reading, db, voice, messages, mode, userText, controller.signal);
       if (!controller.signal.aborted) {
         write(text, db.geminiSavedContext ? 'with-saved-context' : 'current-reading');
       }
-    } catch {
+    } catch (error) {
       if (!controller.signal.aborted) {
-        setReaderNotice('Gemini was unavailable, so the local reader answered. You can reconnect from the Reading Table.');
-        write(local());
+        // No local fallback is offered: readings come from Gemini. Keep the
+        // reader's words in the box so nothing they typed is lost.
+        if (userText) setInput(userText);
+        setReaderNotice(error instanceof Error ? error.message : 'Gemini is unavailable right now. Try again shortly.');
       }
     } finally {
       if (!controller.signal.aborted) {
@@ -191,7 +161,7 @@ export default function ChatReader({ reading, db, updateDb, onDone, onBack, onSe
     }
 
     if (!delivered && spread) {
-      void respond('reading', text, text);
+      void respond('reading', text);
       return;
     }
     void respond('follow-up', text);

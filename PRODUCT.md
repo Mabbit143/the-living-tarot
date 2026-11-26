@@ -27,7 +27,7 @@ The app remembers how a card has shown up in the reader’s life. It combines so
 ## Capabilities and Constraints
 
 - The app supports 1-, 3-, and 5-card readings and a catalog of classic spreads. In-app deck choices are Rider–Waite–Smith (default), Tarot de Marseille, and Midnight (text only). Saved in-app readings retain their deck choice.
-- The current implementation stores personal data in the browser and generates interpretations from the bundled knowledge base and saved context. Exports are created on the device. Stored data is versioned and migrated on load; unreadable saves are quarantined, never overwritten.
+- The current implementation stores personal data in the browser. With Gemini connected, readings are written by the model grounded strictly in the bundled knowledge base (the owner's tarot library — never cited by name) plus the current reading; the local reader is the offline fallback. Exports are created on the device. Stored data is versioned and migrated on load; unreadable saves are quarantined, never overwritten.
 - Suggested Life Memories start unconfirmed. The reader can keep, edit, hide, or dismiss them.
 - Pattern counts depend on the number of readings, deck, and draw method. Interpretations use open questions and avoid predictions.
 

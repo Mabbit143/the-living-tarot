@@ -192,7 +192,7 @@ export default function ReadingTable({ db, updateDb, onStartChat, onResumeChat }
             </label>
 
             <details className="reading-disclosure reading-options">
-              <summary>Reading options{db.useGeminiReader && <span className="small muted"> · Gemini on</span>}</summary>
+              <summary>Reading options</summary>
               {mode === 'draw' && <>
                 <DeckPicker
                   id="reading-deck"

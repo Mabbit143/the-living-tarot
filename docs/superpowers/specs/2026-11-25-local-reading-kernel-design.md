@@ -84,8 +84,16 @@ cross-device sync, never for reasoning.
 - [ ] No measurable cold-start regression on a mid-range Android device.
 
 ## Build order (all five slices implemented 2026-11-25, verified with
-behavior harnesses; committed vitest suite awaits `npm install -D vitest`
-on an unsandboxed machine)
+behavior harnesses and the committed vitest suite)
+
+Postscript (same night): screenshot evidence proved templates alone can't
+reach the target experience, so the kernel's role changed — it is now the
+offline fallback AND the grounding layer for API-led readings: its ranked
+retrieval decides what the model gets told (question, talk-first context,
+ranked memories, card meanings, synthesis-relevant links), and the server
+prompt in `server/src/gemini-reader.mjs` enforces book-only knowledge with
+a no-cite rule. See `docs/issues/P1-4-hosted-reader-proxy.md` for the
+release backend.
 
 1. [x] Relevance-ranking module + unit tests (feeds everything else).
 2. [x] Synthesis composition over ranked material.

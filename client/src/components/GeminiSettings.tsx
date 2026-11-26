@@ -32,7 +32,6 @@ export default function GeminiSettings({ db, updateDb }: Props) {
     try {
       await connectGemini(key);
       setConfigured(true);
-      updateDb((current) => ({ ...current, useGeminiReader: true }));
       dialog.current?.close();
     } catch (error) {
       setError(error instanceof Error ? error.message : 'Could not connect to Gemini.');
@@ -44,23 +43,20 @@ export default function GeminiSettings({ db, updateDb }: Props) {
   return (
     <div style={{ marginTop: '0.9rem' }}>
       <div className="row">
-        <label className="row" style={{ margin: 0 }}>
-          <input type="checkbox" style={{ width: 'auto' }} checked={Boolean(db.useGeminiReader)}
-            onChange={(event) => {
-              const checked = event.target.checked;
-              if (checked && !configured) {
-                dialog.current?.showModal();
-                return;
-              }
-              updateDb((current) => ({ ...current, useGeminiReader: checked }));
-            }} />
-          Use Gemini for readings
-        </label>
-        <button className="ghost" onClick={() => dialog.current?.showModal()}>
-          {configured ? 'Change Gemini key' : 'Connect Gemini'}
-        </button>
+        {configured ? (
+          <p className="small muted" style={{ margin: 0 }}>Gemini is connected and writes every reading.</p>
+        ) : (
+          <button className="primary" onClick={() => dialog.current?.showModal()}>
+            Connect Gemini
+          </button>
+        )}
+        {configured && (
+          <button className="ghost" onClick={() => dialog.current?.showModal()}>
+            Change Gemini key
+          </button>
+        )}
       </div>
-      {db.useGeminiReader && (
+      {configured && (
         <>
           <p className="small muted" style={{ margin: '0.35rem 0' }}>
             Google Gemini receives your cards, question, and recent messages from this reading,
