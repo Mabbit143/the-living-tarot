@@ -112,11 +112,17 @@ memory-extraction modules.
 
 ## Development
 
-Prerequisites: Node 18+ and npm.
+Prerequisites for the checks: Node 22.12+ on the 22.x line, Node 24.x,
+or Node 26+, and npm. The npm project lives in `client/`. From the repository
+root, install the locked dependencies, including the dev dependencies needed
+by Vitest and TypeScript:
+
+```sh
+npm --prefix client ci --include=dev
+```
 
 ```sh
 cd client
-npm install
 npm run dev      # start the dev server
 npm test         # run the vitest suite
 npm run build    # typecheck + production build (output in client/dist)

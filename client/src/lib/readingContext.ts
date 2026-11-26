@@ -156,7 +156,7 @@ export function readTogether(
   const personal = personalAssociation(lexicon[first.card.id]);
   const otherPersonal = personalAssociation(lexicon[second.card.id]);
   const contextLink = relevant && contextual
-    ? `You brought up “${contextual.topics[0]}.” ${first.card.name} gives you a place to explore that in this spread. `
+    ? `You brought up “${contextual.topics[0]}” — ${first.card.name} in “${first.draw.positionLabel}” holds it clearest. `
     : '';
   const pairing = new Set(cards.filter(({ draw }) => !draw.reversed).map(({ card }) => card.id));
   if (!personal && !otherPersonal && pairing.has('the-high-priestess') && pairing.has('page-of-pentacles')

@@ -1155,17 +1155,17 @@
       "positions": [
         {
           "label": "Past",
-          "meaning": "What shaped the situation and is still influencing it.",
+          "meaning": "What shaped the situation and is still influencing it?",
           "position": 1
         },
         {
           "label": "Present",
-          "meaning": "What is happening now and what the querent is dealing with.",
+          "meaning": "What is happening now and what the querent is dealing with?",
           "position": 2
         },
         {
           "label": "Future",
-          "meaning": "Where things are headed if nothing changes.",
+          "meaning": "Where things are headed if nothing changes?",
           "position": 3
         }
       ],
@@ -1177,7 +1177,7 @@
       "positions": [
         {
           "label": "Situation",
-          "meaning": "What is going on at the heart of the question.",
+          "meaning": "What is going on at the heart of the question?",
           "position": 1
         },
         {
@@ -1192,7 +1192,7 @@
         },
         {
           "label": "Hidden influence",
-          "meaning": "What is unseen, unconscious, or working behind the scenes.",
+          "meaning": "What is unseen, unconscious, or working behind the scenes?",
           "position": 4
         },
         {
@@ -1219,7 +1219,7 @@
         },
         {
           "label": "What needs to be changed",
-          "meaning": "What has to shift for the situation to move forward.",
+          "meaning": "What has to shift for the situation to move forward?",
           "position": 3
         },
         {
@@ -1241,7 +1241,7 @@
         },
         {
           "label": "Task",
-          "meaning": "What the situation asks of you.",
+          "meaning": "What the situation asks of you?",
           "position": 2
         },
         {
@@ -1268,7 +1268,7 @@
         },
         {
           "label": "The joint tasks or chances",
-          "meaning": "What the two share: their common work and opportunities.",
+          "meaning": "What the two share: their common work and opportunities?",
           "position": 3
         }
       ],
@@ -1280,7 +1280,7 @@
       "positions": [
         {
           "label": "The task",
-          "meaning": "What needs doing.",
+          "meaning": "What needs doing?",
           "position": 1
         },
         {
@@ -1290,17 +1290,17 @@
         },
         {
           "label": "The solution",
-          "meaning": "How the problem can be resolved.",
+          "meaning": "How the problem can be resolved?",
           "position": 3
         },
         {
           "label": "New insights",
-          "meaning": "What is learned or seen differently along the way.",
+          "meaning": "What is learned or seen differently along the way?",
           "position": 4
         },
         {
           "label": "The conclusion",
-          "meaning": "Where the matter settles.",
+          "meaning": "Where the matter settles?",
           "position": 5
         }
       ],
@@ -1317,17 +1317,17 @@
         },
         {
           "label": "Your task",
-          "meaning": "What you need to do.",
+          "meaning": "What you need to do?",
           "position": 2
         },
         {
           "label": "Your fears",
-          "meaning": "What you are afraid of in this situation.",
+          "meaning": "What you are afraid of in this situation?",
           "position": 3
         },
         {
           "label": "Attitude that helps",
-          "meaning": "Which attitude will help you get ahead.",
+          "meaning": "Which attitude will help you get ahead?",
           "position": 4
         },
         {
@@ -1391,17 +1391,17 @@
         },
         {
           "label": "What crosses it",
-          "meaning": "What supports or hinders the first card, for good or bad.",
+          "meaning": "What supports or hinders the first card, for good or bad?",
           "position": 2
         },
         {
           "label": "Unconscious influences",
-          "meaning": "What is unknown or unconscious in the situation.",
+          "meaning": "What is unknown or unconscious in the situation?",
           "position": 3
         },
         {
           "label": "Conscious influences",
-          "meaning": "What is known or conscious: what the querent is aware of.",
+          "meaning": "What is known or conscious: what the querent is aware of?",
           "position": 4
         },
         {
@@ -1411,12 +1411,12 @@
         },
         {
           "label": "Near future",
-          "meaning": "What is coming around the bend; journeys just beginning.",
+          "meaning": "What is coming around the bend; journeys just beginning?",
           "position": 6
         },
         {
           "label": "Internal influences",
-          "meaning": "How the querent is influencing the situation; what is within their control.",
+          "meaning": "How the querent is influencing the situation; what is within their control?",
           "position": 7
         },
         {
@@ -1545,7 +1545,7 @@
         },
         {
           "label": "Final Outcome",
-          "meaning": "What the final outcome will be, gathering all that has been divined from the other cards.",
+          "meaning": "What the final outcome will be, gathering all that has been divined from the other cards?",
           "position": 10
         }
       ],
@@ -1670,7 +1670,7 @@
         },
         {
           "label": "9, Foundation",
-          "meaning": "Where the meanings of all the other cards are gathered together, showing what the final outcome will most probably be.",
+          "meaning": "Where the meanings of all the other cards are gathered together, showing what the final outcome will most probably be?",
           "position": 9
         },
         {
@@ -1721,12 +1721,12 @@
       "positions": [
         {
           "label": "First option",
-          "meaning": "What the first choice offers or leads to.",
+          "meaning": "What the first choice offers or leads to?",
           "position": 1
         },
         {
           "label": "Second option",
-          "meaning": "What the second choice offers or leads to.",
+          "meaning": "What the second choice offers or leads to?",
           "position": 2
         }
       ],
@@ -1751,7 +1751,7 @@
         },
         {
           "label": "Future",
-          "meaning": "What is likely to occur in the future.",
+          "meaning": "What is likely to occur in the future?",
           "position": 3
         }
       ],
@@ -1801,7 +1801,7 @@
         },
         {
           "label": "Action recommended",
-          "meaning": "What action you should take.",
+          "meaning": "What action you should take?",
           "position": 3
         },
         {
@@ -1866,7 +1866,7 @@
         },
         {
           "label": "What you value",
-          "meaning": "What matters most to you.",
+          "meaning": "What matters most to you?",
           "position": 3
         },
         {
@@ -1876,12 +1876,12 @@
         },
         {
           "label": "The short term",
-          "meaning": "What is coming soon.",
+          "meaning": "What is coming soon?",
           "position": 5
         },
         {
           "label": "The long term",
-          "meaning": "Where things are headed over time.",
+          "meaning": "Where things are headed over time?",
           "position": 6
         }
       ],
@@ -1901,27 +1901,27 @@
         },
         {
           "label": "Immediate past",
-          "meaning": "What just happened.",
+          "meaning": "What just happened?",
           "position": 2
         },
         {
           "label": "Immediate future",
-          "meaning": "What is coming next.",
+          "meaning": "What is coming next?",
           "position": 3
         },
         {
           "label": "Querent's state of mind",
-          "meaning": "What is uppermost in your mind.",
+          "meaning": "What is uppermost in your mind?",
           "position": 4
         },
         {
           "label": "Obstacle",
-          "meaning": "What stands in the way.",
+          "meaning": "What stands in the way?",
           "position": 5
         },
         {
           "label": "Help",
-          "meaning": "What helps or is coming to your aid.",
+          "meaning": "What helps or is coming to your aid?",
           "position": 6
         },
         {
@@ -1946,7 +1946,7 @@
         },
         {
           "label": "The present",
-          "meaning": "What is happening now, or your current state of mind.",
+          "meaning": "What is happening now, or your current state of mind?",
           "position": 2
         },
         {
@@ -1956,7 +1956,7 @@
         },
         {
           "label": "Obstacles",
-          "meaning": "What stands in the way — outer conditions or problems in your attitude.",
+          "meaning": "What stands in the way — outer conditions or problems in your attitude?",
           "position": 4
         },
         {
@@ -1971,7 +1971,7 @@
         },
         {
           "label": "Most likely outcome",
-          "meaning": "What is likely to occur if you follow Card 6's advice.",
+          "meaning": "What is likely to occur if you follow Card 6's advice?",
           "position": 7
         }
       ],
@@ -2066,7 +2066,7 @@
         },
         {
           "label": "Self, identity, image",
-          "meaning": "Who you are and how you present yourself.",
+          "meaning": "Who you are and how you present yourself?",
           "position": 5
         },
         {
@@ -2156,12 +2156,12 @@
         },
         {
           "label": "Near future",
-          "meaning": "What comes next.",
+          "meaning": "What comes next?",
           "position": 12
         },
         {
           "label": "Distant future",
-          "meaning": "Where the story is headed in the longer term.",
+          "meaning": "Where the story is headed in the longer term?",
           "position": 13
         }
       ],
@@ -2176,7 +2176,7 @@
       "positions": [
         {
           "label": "Past",
-          "meaning": "What has already happened.",
+          "meaning": "What has already happened?",
           "position": 1
         },
         {
@@ -2186,17 +2186,17 @@
         },
         {
           "label": "Future",
-          "meaning": "Where things are headed.",
+          "meaning": "Where things are headed?",
           "position": 3
         },
         {
           "label": "Effects of the past on the present",
-          "meaning": "How the past is still acting on today.",
+          "meaning": "How the past is still acting on today?",
           "position": 4
         },
         {
           "label": "Inner block",
-          "meaning": "What you may be doing to hold yourself back (in the book's example, self-criticism).",
+          "meaning": "What you may be doing to hold yourself back (in the book's example, self-criticism)?",
           "position": 5
         },
         {
@@ -2246,12 +2246,12 @@
         },
         {
           "label": "Card before the outcome",
-          "meaning": "What flanks and influences the goal on one side.",
+          "meaning": "What flanks and influences the goal on one side?",
           "position": 2
         },
         {
           "label": "Card after the outcome",
-          "meaning": "What flanks and influences the goal on the other side.",
+          "meaning": "What flanks and influences the goal on the other side?",
           "position": 3
         },
         {
@@ -2626,12 +2626,12 @@
         },
         {
           "label": "Card before the Ace",
-          "meaning": "What surrounds and feeds the passion on one side.",
+          "meaning": "What surrounds and feeds the passion on one side?",
           "position": 2
         },
         {
           "label": "Card after the Ace",
-          "meaning": "What surrounds and shapes the passion on the other side.",
+          "meaning": "What surrounds and shapes the passion on the other side?",
           "position": 3
         }
       ],
@@ -2711,17 +2711,17 @@
       "positions": [
         {
           "label": "Beginning",
-          "meaning": "How the story starts.",
+          "meaning": "How the story starts?",
           "position": 1
         },
         {
           "label": "Middle",
-          "meaning": "How the story develops.",
+          "meaning": "How the story develops?",
           "position": 2
         },
         {
           "label": "End",
-          "meaning": "How the story resolves.",
+          "meaning": "How the story resolves?",
           "position": 3
         }
       ],
@@ -3431,7 +3431,7 @@
       "positions": [
         {
           "label": "Card for the Day",
-          "meaning": "What the day holds or what to focus on; journal whatever comes to mind without overthinking.",
+          "meaning": "What the day holds or what to focus on; journal whatever comes to mind without overthinking?",
           "position": 1
         }
       ],
@@ -3516,17 +3516,17 @@
       "positions": [
         {
           "label": "Present Moment",
-          "meaning": "Where you are right now in your recovery.",
+          "meaning": "Where you are right now in your recovery?",
           "position": 1
         },
         {
           "label": "What Do I Need Right Now?",
-          "meaning": "What you need in this moment.",
+          "meaning": "What you need in this moment?",
           "position": 2
         },
         {
           "label": "How Can I Continue to Support My Healing?",
-          "meaning": "How to keep supporting your healing going forward.",
+          "meaning": "How to keep supporting your healing going forward?",
           "position": 3
         }
       ],
@@ -3541,7 +3541,7 @@
       "positions": [
         {
           "label": "What Do I Need to Know About My Boundaries?",
-          "meaning": "What to know about your boundaries with this person right now.",
+          "meaning": "What to know about your boundaries with this person right now?",
           "position": 1
         },
         {
@@ -3551,7 +3551,7 @@
         },
         {
           "label": "How Can I Care for My Needs in a Healthy, Happy Way?",
-          "meaning": "How to meet your own needs well.",
+          "meaning": "How to meet your own needs well?",
           "position": 3
         },
         {
@@ -3571,17 +3571,17 @@
       "positions": [
         {
           "label": "Option 1",
-          "meaning": "What the first option would bring.",
+          "meaning": "What the first option would bring?",
           "position": 1
         },
         {
           "label": "Option 2",
-          "meaning": "What the second option would bring.",
+          "meaning": "What the second option would bring?",
           "position": 2
         },
         {
           "label": "Option 3",
-          "meaning": "What the third option would bring.",
+          "meaning": "What the third option would bring?",
           "position": 3
         }
       ],
@@ -3621,12 +3621,12 @@
       "positions": [
         {
           "label": "The Situation",
-          "meaning": "Where you stand at the moment.",
+          "meaning": "Where you stand at the moment?",
           "position": 1
         },
         {
           "label": "What You Need to Know",
-          "meaning": "What you may be missing or ignoring.",
+          "meaning": "What you may be missing or ignoring?",
           "position": 2
         },
         {
@@ -3646,17 +3646,17 @@
       "positions": [
         {
           "label": "What Do I Need to Look at Right Now?",
-          "meaning": "What needs attention in this moment.",
+          "meaning": "What needs attention in this moment?",
           "position": 1
         },
         {
           "label": "What Can I Learn from My Anger?",
-          "meaning": "What anger is teaching you.",
+          "meaning": "What anger is teaching you?",
           "position": 2
         },
         {
           "label": "What Can I Do to Find Peace with the Present Moment?",
-          "meaning": "How to find peace right now.",
+          "meaning": "How to find peace right now?",
           "position": 3
         },
         {
@@ -3666,7 +3666,7 @@
         },
         {
           "label": "What Do I Need to Accept at This Time?",
-          "meaning": "What acceptance is asking of you now.",
+          "meaning": "What acceptance is asking of you now?",
           "position": 5
         }
       ],
@@ -3801,17 +3801,17 @@
       "positions": [
         {
           "label": "Release: What Do I Need to Release?",
-          "meaning": "What to let go of.",
+          "meaning": "What to let go of?",
           "position": 1
         },
         {
           "label": "Recover: How Can I Recover?",
-          "meaning": "How to recover.",
+          "meaning": "How to recover?",
           "position": 2
         },
         {
           "label": "Remember: How Do I Honor the Memory of This Child?",
-          "meaning": "How to honour the child's memory.",
+          "meaning": "How to honour the child's memory?",
           "position": 3
         }
       ],
@@ -3826,17 +3826,17 @@
       "positions": [
         {
           "label": "Past",
-          "meaning": "What led here.",
+          "meaning": "What led here?",
           "position": 1
         },
         {
           "label": "Present",
-          "meaning": "Where you are now.",
+          "meaning": "Where you are now?",
           "position": 2
         },
         {
           "label": "Future",
-          "meaning": "What is coming next.",
+          "meaning": "What is coming next?",
           "position": 3
         }
       ],
@@ -3851,22 +3851,22 @@
       "positions": [
         {
           "label": "Now",
-          "meaning": "Where things are now.",
+          "meaning": "Where things are now?",
           "position": 1
         },
         {
           "label": "Soon",
-          "meaning": "What is coming soon.",
+          "meaning": "What is coming soon?",
           "position": 2
         },
         {
           "label": "Obstacles",
-          "meaning": "What stands in the way.",
+          "meaning": "What stands in the way?",
           "position": 3
         },
         {
           "label": "The New Beginning Looks Like...",
-          "meaning": "What the new beginning will look like.",
+          "meaning": "What the new beginning will look like?",
           "position": 4
         }
       ],
@@ -3881,17 +3881,17 @@
       "positions": [
         {
           "label": "What Do You Need to Face About Getting Older?",
-          "meaning": "What aging asks you to face.",
+          "meaning": "What aging asks you to face?",
           "position": 1
         },
         {
           "label": "What Is Your Inner Dialogue at This Time?",
-          "meaning": "What you are telling yourself about aging.",
+          "meaning": "What you are telling yourself about aging?",
           "position": 2
         },
         {
           "label": "What Can You Appreciate About Yourself Right Now?",
-          "meaning": "What to appreciate about yourself now.",
+          "meaning": "What to appreciate about yourself now?",
           "position": 3
         },
         {
@@ -3911,27 +3911,27 @@
       "positions": [
         {
           "label": "What Do I Need to Know About Aging?",
-          "meaning": "What aging has to teach you.",
+          "meaning": "What aging has to teach you?",
           "position": 1
         },
         {
           "label": "What Do I Need to Know About Health?",
-          "meaning": "What health has to teach you.",
+          "meaning": "What health has to teach you?",
           "position": 2
         },
         {
           "label": "What Do I Need to Know About Dying?",
-          "meaning": "What dying has to teach you.",
+          "meaning": "What dying has to teach you?",
           "position": 3
         },
         {
           "label": "What Do I Need to Know About Loss?",
-          "meaning": "What loss has to teach you.",
+          "meaning": "What loss has to teach you?",
           "position": 4
         },
         {
           "label": "What Do I Need to Know About My Karma?",
-          "meaning": "What your deeds and karma have to teach you.",
+          "meaning": "What your deeds and karma have to teach you?",
           "position": 5
         }
       ],
@@ -3946,17 +3946,17 @@
       "positions": [
         {
           "label": "Your Inner Self",
-          "meaning": "Where you, the reader, are emotionally at this point in the reading.",
+          "meaning": "Where you, the reader, are emotionally at this point in the reading?",
           "position": 1
         },
         {
           "label": "Empathy for the Other",
-          "meaning": "How you perceive the other person and recognize their emotions.",
+          "meaning": "How you perceive the other person and recognize their emotions?",
           "position": 2
         },
         {
           "label": "Mirroring the Other in You",
-          "meaning": "How you would feel in their shoes — feeling what they feel.",
+          "meaning": "How you would feel in their shoes — feeling what they feel?",
           "position": 3
         },
         {
@@ -3966,7 +3966,7 @@
         },
         {
           "label": "Future Prognostications",
-          "meaning": "What they can do to resolve the situation, and the ramifications of those next steps.",
+          "meaning": "What they can do to resolve the situation, and the ramifications of those next steps?",
           "position": 5
         }
       ],
@@ -3986,7 +3986,7 @@
         },
         {
           "label": "Roadblocks to Acceptance",
-          "meaning": "Why the querent may not be ready to hear the story, or finds it discordant with their expectations; ask the querent to interpret this card themselves.",
+          "meaning": "Why the querent may not be ready to hear the story, or finds it discordant with their expectations; ask the querent to interpret this card themselves?",
           "position": 2
         },
         {
@@ -4032,7 +4032,7 @@
         {
           "position": 1,
           "label": "Key lesson or message of the day",
-          "meaning": "What the day was trying to teach you."
+          "meaning": "What the day was trying to teach you?"
         }
       ],
       "sources": [
@@ -4072,12 +4072,12 @@
         {
           "position": 2,
           "label": "What to avoid this week/month",
-          "meaning": "What to steer clear of."
+          "meaning": "What to steer clear of?"
         },
         {
           "position": 3,
           "label": "What to embrace this week/month",
-          "meaning": "What to lean into."
+          "meaning": "What to lean into?"
         }
       ],
       "sources": [
@@ -4097,17 +4097,17 @@
         {
           "position": 2,
           "label": "Internal influences",
-          "meaning": "What is coming from inside you."
+          "meaning": "What is coming from inside you?"
         },
         {
           "position": 3,
           "label": "External influences",
-          "meaning": "What is coming from outside you."
+          "meaning": "What is coming from outside you?"
         },
         {
           "position": 4,
           "label": "Key to a favourable outcome",
-          "meaning": "What unlocks the best resolution."
+          "meaning": "What unlocks the best resolution?"
         }
       ],
       "sources": [
@@ -4122,7 +4122,7 @@
         {
           "position": 1,
           "label": "Focus for the day",
-          "meaning": "What to hold in mind through the day ahead."
+          "meaning": "What to hold in mind through the day ahead?"
         }
       ],
       "sources": [
@@ -4162,12 +4162,12 @@
         {
           "position": 2,
           "label": "What you need",
-          "meaning": "What would actually serve you."
+          "meaning": "What would actually serve you?"
         },
         {
           "position": 3,
           "label": "How to bridge the gap",
-          "meaning": "How to move from want toward need."
+          "meaning": "How to move from want toward need?"
         }
       ],
       "sources": [
@@ -4187,17 +4187,17 @@
         {
           "position": 2,
           "label": "Something you can learn from your present",
-          "meaning": "What the present is teaching."
+          "meaning": "What the present is teaching?"
         },
         {
           "position": 3,
           "label": "What you need to learn next",
-          "meaning": "Where to focus your learning."
+          "meaning": "Where to focus your learning?"
         },
         {
           "position": 4,
           "label": "How to integrate this knowledge",
-          "meaning": "How to put the lessons together."
+          "meaning": "How to put the lessons together?"
         }
       ],
       "sources": [
@@ -4272,12 +4272,12 @@
         {
           "position": 1,
           "label": "Strengths to lean into",
-          "meaning": "What is already working for you."
+          "meaning": "What is already working for you?"
         },
         {
           "position": 2,
           "label": "Struggles you are currently dealing with",
-          "meaning": "What is getting in the way."
+          "meaning": "What is getting in the way?"
         },
         {
           "position": 3,
@@ -4357,7 +4357,7 @@
         {
           "position": 3,
           "label": "Advice",
-          "meaning": "What to consider or how to act."
+          "meaning": "What to consider or how to act?"
         }
       ],
       "sources": [
@@ -4372,17 +4372,17 @@
         {
           "position": 1,
           "label": "Energy",
-          "meaning": "What is going on energetically with the situation."
+          "meaning": "What is going on energetically with the situation?"
         },
         {
           "position": 2,
           "label": "Obstacle",
-          "meaning": "What is causing trouble."
+          "meaning": "What is causing trouble?"
         },
         {
           "position": 3,
           "label": "Advice",
-          "meaning": "How to move forward."
+          "meaning": "How to move forward?"
         }
       ],
       "sources": [

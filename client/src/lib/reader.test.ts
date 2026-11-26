@@ -77,20 +77,20 @@ describe('question bridging', () => {
     now: NOW,
   });
 
-  it('names the part of the card that speaks to the question', () => {
+  it('leads with the question so the card reads as the answer', () => {
     const out = build('money worries and rent');
-    expect(out.sections[0].body).toContain('spotlight on');
-    expect(out.sections[0].body).toContain('“money”');
+    expect(out.sections[0].body.startsWith('With “money worries and rent” in view')).toBe(true);
   });
 
   it('stays silent when nothing connects', () => {
     const out = build('should I text him back tonight');
-    expect(out.sections[0].body).not.toContain('spotlight on');
+    expect(out.sections[0].body).not.toContain('in view, here’s this card’s answer');
+    expect(out.sections[0].body).not.toContain('Reading “should I text him back tonight”');
   });
 
   it('meets a concrete question on its own words', () => {
     const out = build('will my garden grow');
-    expect(out.sections[0].body).toContain('“grow”');
+    expect(out.sections[0].body).toContain('will my garden grow');
     expect(out.sections[0].body).not.toContain('“will”');
   });
 
@@ -154,6 +154,12 @@ describe('talk-first context', () => {
     const section = out.sections.find((s) => s.heading === 'A question for your situation');
     expect(section?.body).toContain('You told me:');
     expect(section?.body).toContain('weather around it');
+  });
+
+  it('leads with the reader’s own words when there is no question', () => {
+    const out = build('', 'How do i trust Kasson with parts of my life', null);
+    expect(out.opening).toContain('You told me:');
+    expect(out.opening).toContain('How do i trust Kasson with parts of my life');
   });
 
   it('renders the section with no profile at all when context exists', () => {

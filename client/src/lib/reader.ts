@@ -18,7 +18,7 @@ import type {
   VoiceId,
 } from './types';
 import type { CardMeaning, Spread } from './knowledge';
-import { bridgeTopics, cardInCompany, cardInPosition, joinNames, joinQuoted, personalAssociation, positionRole, readTogether, sharedTopics } from './readingContext';
+import { bridgeTopics, cardInCompany, cardInPosition, joinNames, personalAssociation, positionRole, readTogether, sharedTopics } from './readingContext';
 import { appearanceHistory, memoryCandidates, rankCandidates, readingCandidates } from './relevance';
 
 export interface InterpretationSection {
@@ -49,11 +49,12 @@ export interface ReadingInput {
 }
 
 /**
- * Meet the reader's question where it lands: name the part of this card's
- * meaning that speaks to it, reaching via life-domain bridges when the
- * question never uses the card's own words. Silent when nothing connects.
+ * Lead with the reader's question so the book text that follows reads as the
+ * answer to it. Fires only when the question or conversation shares topical
+ * ground with the card (directly or via life-domain bridges); silent
+ * otherwise, so generic readings stay generic instead of faking a link.
  */
-function linkQuestionToCard(question: string, context: string | undefined, draw: DrawnCard, card: CardMeaning, index: number): string {
+function leadWithQuestion(question: string, context: string | undefined, draw: DrawnCard, card: CardMeaning, index: number): string {
   const q = [question.trim(), context?.trim() ?? ''].filter(Boolean).join(' ');
   if (!q) return '';
   const meaning = draw.reversed ? card.reversed : card.upright;
@@ -62,14 +63,20 @@ function linkQuestionToCard(question: string, context: string | undefined, draw:
     .filter((topic) => !direct.includes(topic));
   const topics = [...direct, ...via].slice(0, 3);
   if (topics.length === 0) return '';
-  return BRIDGE_TEMPLATES[index % BRIDGE_TEMPLATES.length](joinQuoted(topics));
+  return QUESTION_LEADS[index % QUESTION_LEADS.length](shortQuery(question, context));
 }
 
-const BRIDGE_TEMPLATES = [
-  (topics: string) => `With your question in view, this card puts the spotlight on ${topics}.`,
-  (topics: string) => `Against your question, the live part of this card is ${topics}.`,
-  (topics: string) => `Held up to your question, this card comes down to ${topics}.`,
+const QUESTION_LEADS = [
+  (query: string) => `With “${query}” in view, here’s this card’s answer.`,
+  (query: string) => `Reading “${query}” through this card:`,
+  (query: string) => `For “${query}”:`,
 ];
+
+/** Short enough to repeat per card without bloating the reading. */
+function shortQuery(question: string, context: string | undefined): string {
+  const q = (question.trim() || context?.trim() || '').replace(/\s+/g, ' ');
+  return q.length > 90 ? `${q.slice(0, 87).trimEnd()}…` : q;
+}
 
 /** Closing question by relevance: the example question sharing the most
  *  ground with this reading wins — but a single shared word is usually
@@ -88,14 +95,23 @@ export function buildInterpretation(input: ReadingInput): Interpretation {
   const name = profile?.name ? `, ${profile.name}` : '';
 
   const topic = question.trim();
+  const toldMe = context?.trim() ? `You told me: “${excerpt(context)}”` : '';
   const openings: Record<VoiceId, string> = {
-    familiar: `Let's sit with this one${name}. ${topic
-      ? `Let’s keep your question in view: “${topic}”`
-      : 'Here’s what each card brings to the spread.'}`,
-    mystic: `The table is set${name}. ${topic
-      ? `Let’s hold “${topic}” in mind and see what the images bring up.`
-      : 'Let the images speak first.'}`,
-    interpreter: `${topic ? `Your question was “${topic}”\n\n` : ''}I’ll start with where each card lands, then look at how they fit together.`,
+    familiar: topic
+      ? `Let's sit with this one${name}. Let’s keep your question in view: “${topic}”`
+      : toldMe
+        ? `Let's sit with this one${name}. ${toldMe} — let's see what the cards say about that.`
+        : `Let's sit with this one${name}. Here's what each card brings to the spread.`,
+    mystic: topic
+      ? `The table is set${name}. Let’s hold “${topic}” in mind and see what the images bring up.`
+      : toldMe
+        ? `The table is set${name}. ${toldMe} — let the images answer that.`
+        : `The table is set${name}. Let the images speak first.`,
+    interpreter: topic
+      ? `Your question was “${topic}”\n\nI’ll start with where each card lands, then look at how they fit together.`
+      : toldMe
+        ? `${toldMe}\n\nI’ll start with where each card lands, then look at how they fit together.`
+        : 'I’ll start with where each card lands, then look at how they fit together.',
   };
 
   const sections: InterpretationSection[] = drawn.map((d, index) => {
@@ -107,8 +123,8 @@ export function buildInterpretation(input: ReadingInput): Interpretation {
     const nextCard = nextDraw && getCard(nextDraw.cardId);
     const connection = nextCard && cardInCompany(d, nextDraw, nextCard, personalAssociation(lexicon[nextCard.id]));
     if (connection) body += ` ${connection}`;
-    const bridge = linkQuestionToCard(topic, context, d, card, index);
-    if (bridge) body += ` ${bridge}`;
+    const lead = leadWithQuestion(topic, context, d, card, index);
+    if (lead) body = `${lead} ${body}`;
     if (seen.total > 0) {
       body += ` This card came up in ${seen.total} past reading${seen.total === 1 ? '' : 's'}`;
       body += seen.recent > 0
@@ -160,7 +176,7 @@ export function buildInterpretation(input: ReadingInput): Interpretation {
   return {
     opening: [
       openings[voice],
-      context && `You added: “${excerpt(context)}”`,
+      context && topic && `You added: “${excerpt(context)}”`,
       echoedReflection && `Last time ${echoedReflection.cardNames} came up, you noted: “${excerpt(echoedReflection.text)}” How does that sit beside this reading?`,
       relatedMemory && `You saved this in Life Memory: “${excerpt(relatedMemory.text)}” Is it still part of what you’re weighing?`,
     ].filter(Boolean).join('\n\n'),

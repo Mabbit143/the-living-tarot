@@ -22,9 +22,13 @@ function readingBlocks(reading: Reading) {
   });
 }
 
-export default function ReadingInterpretation({ reading, headingRef }: {
+const closingPrefix = 'One question to carry with you:';
+
+export default function ReadingInterpretation({ reading, headingRef, onAnswerQuestion }: {
   reading: Reading;
   headingRef?: Ref<HTMLHeadingElement>;
+  /** In a live conversation, the closing question gets an answer button. In the Archive there is no one to answer to, so it stays plain text. */
+  onAnswerQuestion?: (question: string) => void;
 }) {
   const blocks = readingBlocks(reading);
   const summaryIndex = blocks.findIndex(({ heading }) => heading === synthesisHeading);
@@ -33,12 +37,26 @@ export default function ReadingInterpretation({ reading, headingRef }: {
   const lead = blocks[leadIndex];
   const details = blocks.filter((_, index) => index !== leadIndex);
 
+  function renderBody(body: string, key: number | string) {
+    if (onAnswerQuestion && body.startsWith(closingPrefix)) {
+      const question = body.slice(closingPrefix.length).trim();
+      return (
+        <p className="reading-copy" key={key}>{body}{' '}
+          <button className="ghost" onClick={() => onAnswerQuestion(question)}>
+            Answer this
+          </button>
+        </p>
+      );
+    }
+    return <p className="reading-copy" key={key}>{body}</p>;
+  }
+
   return (
     <section className="reading-interpretation" aria-labelledby="reading-interpretation-heading">
       <h3 id="reading-interpretation-heading" ref={headingRef} tabIndex={-1}>
         {lead.heading ?? 'The reading'}
       </h3>
-      <p className="reading-copy">{lead.body}</p>
+      {renderBody(lead.body, 'lead')}
       {details.length > 0 && (
         <details className="reading-disclosure">
           <summary>{details.some(({ heading }) => heading) ? 'Card-by-card reading' : 'Continue reading'}</summary>
@@ -49,7 +67,7 @@ export default function ReadingInterpretation({ reading, headingRef }: {
                   <h4>{heading}</h4>
                   <p className="reading-copy">{body}</p>
                 </section>
-              ) : <p className="reading-copy" key={index}>{body}</p>
+              ) : renderBody(body, index)
             ))}
           </div>
         </details>
