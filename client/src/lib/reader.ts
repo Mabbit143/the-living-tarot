@@ -72,6 +72,15 @@ const QUESTION_LEADS = [
   (query: string) => `For “${query}”:`,
 ];
 
+const RELATIONAL_THEMES = ['trust', 'love', 'relationship', 'heart', 'family'];
+
+/** True when the reader's words point at trust, love, or kin — the readings
+ *  where an outcome belongs to more than one person. */
+function isRelationalQuestion(question: string, context: string | undefined): boolean {
+  const q = [question.trim(), context?.trim() ?? ''].filter(Boolean).join(' ');
+  return bridgeTopics(q).some((theme) => RELATIONAL_THEMES.includes(theme));
+}
+
 /** Short enough to repeat per card without bloating the reading. */
 function shortQuery(question: string, context: string | undefined): string {
   const q = (question.trim() || context?.trim() || '').replace(/\s+/g, ' ');
@@ -125,6 +134,23 @@ export function buildInterpretation(input: ReadingInput): Interpretation {
     if (connection) body += ` ${connection}`;
     const lead = leadWithQuestion(topic, context, d, card, index);
     if (lead) body = `${lead} ${body}`;
+    // An outcome card in a reading about trust or kinship is a shared
+    // horizon, not a solo forecast: say who it's shared with.
+    if (positionRole(d.positionLabel) === 'outcome' && isRelationalQuestion(topic, context)) {
+      body += ` Read it as a shared possibility — this is the ${card.name} you build together, not one you wait for.`;
+      const anchor = drawn.find((other) => other !== d);
+      if (anchor) {
+        const anchorName = getCard(anchor.cardId)?.name ?? 'where you stand now';
+        body += ` Read the choice as this spread lays it out: more of ${anchorName} in “${anchor.positionLabel}” — or the turn toward ${card.name}.`;
+      }
+    }
+    // A past card names its era; with a live question it should also name
+    // what that era taught. The generic position prompt asks; this asks it
+    // about the reader's actual topic.
+    const queryTopics = bridgeTopics([topic, context?.trim() ?? ''].filter(Boolean).join(' '));
+    if (/\bpast\b/i.test(d.positionLabel) && queryTopics.length > 0) {
+      body += ` And specifically: what did that time teach you about ${queryTopics[0]}?`;
+    }
     if (seen.total > 0) {
       body += ` This card came up in ${seen.total} past reading${seen.total === 1 ? '' : 's'}`;
       body += seen.recent > 0
@@ -184,6 +210,30 @@ export function buildInterpretation(input: ReadingInput): Interpretation {
     closingQuestion,
     voiceLine: vp.example_line,
   };
+}
+
+const NEW_BEGINNINGS = /\b(new|beginning|beginnings|start|starting|fresh|recent|recently|newly)\b/i;
+const OLD_HURTS = ['grief', 'grieve', 'grieving', 'loss', 'lost', 'broken', 'disappointment', 'disappointed', 'ended', 'ending', 'wound', 'wounds'];
+
+/**
+ * The inference a person makes without thinking: a new relationship plus a
+ * past-position card about loss equals the old hurt haunting the new thing.
+ * Stated only when all three are really there — profile newness, a past
+ * position, and hurt in the card's own meaning.
+ */
+function pastEchoSentence(
+  profile: Partial<Profile>,
+  draw: DrawnCard,
+  card: CardMeaning,
+): string {
+  if (!/\bpast\b/i.test(draw.positionLabel)) return '';
+  const personal = profileContext(profile).join(' ');
+  // Word-boundary match, not sharedTopics: "new" is only three letters and
+  // the topic matcher ignores anything under four.
+  if (!NEW_BEGINNINGS.test(personal)) return '';
+  const meaning = draw.reversed ? card.reversed : card.upright;
+  if (sharedTopics(OLD_HURTS.join(' '), meaning).length === 0) return '';
+  return ` With something new beginning, ${card.name} reads like the hurt you’re afraid of repeating.`;
 }
 
 /** The most recent reflection on a past reading that shares cards with the
@@ -252,10 +302,17 @@ function personalizedReflection(
   // plainly instead of pretending a connection: the card becomes weather
   // around their situation, not a label on it.
   const noMeeting = focus.entry.text.length > 0 && focus.score === 0;
+  const plainWeather = ` None of these cards name that directly, so ${cardName} isn’t the answer here — ${cardName} is the backdrop. Where does that ${cardName} energy show up in ${shortQuery(question, context)}?`;
+  const echo = drawn
+    .map((d) => {
+      const card = getCard(d.cardId);
+      return card ? pastEchoSentence(profile, d, card) : '';
+    })
+    .find((sentence) => sentence.length > 0) ?? '';
   const entryLine = !focus.entry.text ? ''
     : focus.entry.mine
-      ? ` You told me: “${excerpt(focus.entry.text)}.”${noMeeting ? ` None of these cards name that directly, so read ${cardName} as the weather around it.` : ''}`
-      : ` Consider what you shared in your profile: “${excerpt(focus.entry.text)}.”`;
+      ? ` You told me: “${excerpt(focus.entry.text)}.”${noMeeting ? plainWeather : ''}${echo}`
+      : ` Consider what you shared in your profile: “${excerpt(focus.entry.text)}.”${echo}`;
   const followUp = {
     familiar: 'what’s one small thing this card helps you notice or try?',
     mystic: 'what detail in the card’s image draws your attention, and what does it bring to mind?',

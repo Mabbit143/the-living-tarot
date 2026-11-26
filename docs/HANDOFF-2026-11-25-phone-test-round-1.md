@@ -27,7 +27,7 @@ behavior-harness verified. Nothing is committed — commit from a clean
 
 ```sh
 cd client
-npm test                 # expect 3 files / 16 tests (13 + 3 new reflection/suggestion checks)
+npm test                 # expect 3 files / 29 tests
 npm run build
 ```
 
@@ -61,18 +61,23 @@ All covered behaviors have committed vitest cases (`relevance.test.ts`,
    reader's own words (≥2 shared topics, else rotation) instead of pure
    rotation. Verified by generating the exact Five-Card app reading and
    reading it: synthesis clean, bridges land ("money", "security"), closing
-   sane. Committed tests in `reader.test.ts` (now 3 files / 30 tests total).
+   sane.
 7. **Cold-reading follow-up (same night).** Card sections now LEAD with the
-   question ("With ... in view, here's this card's answer") instead of
-   appending a spotlight line; the opening leads with talk-first context
-   when there is no typed question; synthesis names where the topic lives
-   ("holds it clearest"); talk-first answers became the top-priority
-   personalization input with an honest-weather fallback when no card names
-   the situation. Closing question got an **Answer this** button (live
-   Reader only; Archive stays plain text) so end questions are answerable.
-   Also fixed 107 question-shaped position meanings missing their `?` in
-   the knowledge data (expect 3 files / 25 tests).
-6. **Reflections** — now wired into new readings (see 4 above). Confirm the
+   question instead of appending a spotlight line; the opening leads with
+   talk-first context when there is no typed question; synthesis names where
+   the topic lives ("holds it clearest"); talk-first answers became the
+   top-priority personalization input with an honest fallback when no card
+   names the situation. Also fixed 107 question-shaped position meanings
+   missing their `?` in the knowledge data.
+8. **Annotated-screenshot round (same night).** Killed filler-word
+   "insights" (stand/good/better/like…), added synonym-aware matching
+   (RELATED groups: trust↔loyalty, money↔wealth…), synthesis topics must
+   now matter to the reader's question, past cards name the release
+   ("stop carrying"), outcomes in trust readings are shared ("build
+   together"), the new-relationship/past-hurt inference is voiced, and
+   the closing question got an **Answer this** button (Reader only).
+   Committed suite: 3 files / 29 tests (run `npm test` to confirm).
+9. **Reflections** — now wired into new readings (see 4 above). Confirm the
    echo feels like remembering, not parroting.
 
 ## Context the next session needs
@@ -85,3 +90,4 @@ All covered behaviors have committed vitest cases (`relevance.test.ts`,
 - `npx impeccable login` still not run (needs the owner).
 - Test/build sandbox limits: `npm install` and `vite build` fail in this
   sandbox; they pass on the owner machine.
+

@@ -153,7 +153,8 @@ describe('talk-first context', () => {
     const out = build('', 'How do i trust casein with parts of my life', null);
     const section = out.sections.find((s) => s.heading === 'A question for your situation');
     expect(section?.body).toContain('You told me:');
-    expect(section?.body).toContain('weather around it');
+    expect(section?.body).toContain('isn’t the answer here');
+    expect(section?.body).toContain('is the backdrop');
   });
 
   it('leads with the reader’s own words when there is no question', () => {
@@ -183,6 +184,95 @@ describe('talk-first context', () => {
     });
     const section = out.sections.find((s) => s.heading === 'A question for your situation');
     expect(section?.body).toContain('Consider what you shared in your profile');
+  });
+});
+
+describe('a real reading holds together', () => {
+  const herReading = () => buildInterpretation({
+    spread,
+    question: '',
+    context: 'Learning how to trust Kasson with our lives',
+    memories: [],
+    drawn: [
+      draw('five-of-cups'),
+      { ...draw('queen-of-wands'), positionLabel: 'Present' },
+      { ...draw('two-of-wands'), positionLabel: 'Future' },
+    ],
+    profile: { name: 'Mabbit', lifeContext: 'new relationship, developer career', people: '', goals: '', concerns: '', themes: [], preferredVoice: 'familiar', createdAt: NOW },
+    lexicon: {},
+    pastReadings: [],
+    voice: 'familiar',
+    readingIndex: 0,
+    now: NOW,
+  });
+
+  it('names where the topic lives instead of circling filler', () => {
+    const out = herReading();
+    const synthesis = out.sections.find((s) => s.heading === 'How they read together');
+    expect(synthesis?.body).toContain('holds it clearest');
+    expect(synthesis?.body).not.toContain('circle around');
+    expect(synthesis?.body).toContain('stop carrying');
+  });
+
+  it('ties the present card to the question and the outcome to both people', () => {
+    const out = herReading();
+    const queen = out.sections.find((s) => s.heading === 'Present — Queen of Wands');
+    expect(queen?.body).toContain('Learning how to trust Kasson');
+    const future = out.sections.find((s) => s.heading === 'Future — Two of Wands');
+    expect(future?.body).toContain('build together');
+  });
+
+  it('voices the new-relationship past-hurt link out loud', () => {
+    const out = herReading();
+    const personal = out.sections.find((s) => s.heading === 'A question for your situation');
+    expect(personal?.body).toContain('hurt you’re afraid of repeating');
+  });
+});
+
+describe('the annotated reading', () => {
+  const herReading = () => buildInterpretation({
+    spread,
+    question: '',
+    context: 'Learning how to trust Kasson with our lives',
+    memories: [],
+    drawn: [
+      { cardId: 'knight-of-swords', position: 0, positionLabel: 'Past', positionMeaning: 'past', reversed: false },
+      { cardId: 'eight-of-wands', position: 1, positionLabel: 'Present', positionMeaning: 'present', reversed: true },
+      { cardId: 'two-of-wands', position: 2, positionLabel: 'Future', positionMeaning: 'future', reversed: false },
+    ],
+    profile: { name: 'Mabbit', lifeContext: 'new relationship, developer career', people: '', goals: '', concerns: '', themes: [], preferredVoice: 'familiar', createdAt: NOW },
+    lexicon: {},
+    pastReadings: [],
+    voice: 'familiar',
+    readingIndex: 0,
+    now: NOW,
+  });
+
+  it('states the link instead of asking the client to do the synthesis', () => {
+    const out = herReading();
+    const synthesis = out.sections.find((s) => s.heading === 'How they read together');
+    expect(synthesis?.body).toContain('where it started');
+    expect(synthesis?.body).toContain('not to confuse the two');
+    expect(synthesis?.body).not.toContain('reconsider the other');
+  });
+
+  it('asks what the past taught about the live topic', () => {
+    const out = herReading();
+    const past = out.sections.find((s) => s.heading === 'Past — Knight of Swords');
+    expect(past?.body).toContain('what did that time teach you about trust');
+  });
+
+  it('names the actual choice in the outcome', () => {
+    const out = herReading();
+    const future = out.sections.find((s) => s.heading === 'Future — Two of Wands');
+    expect(future?.body).toContain('more of Knight of Swords');
+    expect(future?.body).toContain('turn toward Two of Wands');
+  });
+
+  it('releases the past explicitly', () => {
+    const out = herReading();
+    const synthesis = out.sections.find((s) => s.heading === 'How they read together');
+    expect(synthesis?.body).toContain('stop carrying');
   });
 });
 

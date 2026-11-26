@@ -1,4 +1,5 @@
-import { personalAssociation, sharedTopics } from './readingContext';
+import { personalAssociation } from './readingContext';
+import { memoryCandidates, rankCandidates } from './relevance';
 import type { ChatMessage, Db, Reading, VoiceId } from './types';
 
 const keyEndpoint = '/api/reader/gemini-key';
@@ -33,9 +34,15 @@ export async function requestGeminiReply(
   signal: AbortSignal,
 ): Promise<string> {
   const context = [reading.question, message].filter(Boolean).join(' ');
+  // The kernel decides what the model gets told: ranked by topic overlap,
+  // recency, and confirmation status — the same ordering the local reader
+  // itself uses. Confirmed memories sharing at least two topics only.
   const memories = db.geminiSavedContext
-    ? db.memories.filter((memory) => memory.status === 'confirmed' && sharedTopics(context, memory.text).length >= 2)
-      .slice(0, 2).map((memory) => memory.text.slice(0, 500))
+    ? rankCandidates(memoryCandidates(db.memories), { question: context })
+      .filter(({ candidate, topics }) => candidate.kind === 'memory' && topics.length >= 2)
+      .slice(0, 2)
+      .map(({ candidate }) => db.memories.find((m) => m.id === candidate.key)?.text.slice(0, 500))
+      .filter((text): text is string => Boolean(text))
     : [];
   const chat = messages.filter((turn) => turn.role === 'user' || turn.gemini === 'current-reading'
     || (db.geminiSavedContext && turn.gemini === 'with-saved-context'));
@@ -57,6 +64,8 @@ export async function requestGeminiReply(
       chat: chat.slice(-6).map(({ role, text }) => ({ role, text: text.slice(0, 2400) })),
       message: message?.slice(0, 2500),
       memories,
+      profileName: db.geminiSavedContext ? db.profile?.name?.trim() || undefined : undefined,
+      mediumName: db.geminiSavedContext ? db.profile?.readerName?.trim() || undefined : undefined,
     }),
   });
   if (!response.ok || !response.headers.get('content-type')?.includes('application/json')) {

@@ -63,7 +63,9 @@ export default function GeminiSettings({ db, updateDb }: Props) {
       {db.useGeminiReader && (
         <>
           <p className="small muted" style={{ margin: '0.35rem 0' }}>
-            Google Gemini receives your cards, question, and recent messages from this reading.
+            Google Gemini receives your cards, question, and recent messages from this reading,
+            and writes it richly: what each card means, what it means for you, and the true arc
+            of the spread. The local reader stays as the fallback when Gemini is unavailable.
           </p>
           <label className="row" style={{ margin: 0 }}>
             <input type="checkbox" style={{ width: 'auto' }} checked={Boolean(db.geminiSavedContext)}
@@ -71,7 +73,7 @@ export default function GeminiSettings({ db, updateDb }: Props) {
                 const checked = event.target.checked;
                 updateDb((current) => ({ ...current, geminiSavedContext: checked }));
               }} />
-            Include card associations and relevant confirmed memories
+            Include card associations, relevant confirmed memories, and names
           </label>
         </>
       )}

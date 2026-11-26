@@ -65,14 +65,46 @@ const commonWords = new Set([
   'same', 'much', 'many', 'often', 'still', 'even', 'ever', 'quite', 'rather',
   'anything', 'something', 'everything', 'nothing', 'someone', 'anyone', 'everyone',
   'another', 'every', 'always', 'never', 'away', 'back', 'over', 'under',
+  // Generic adjectives and verbs that read as insight but say nothing.
+  'stand', 'stood', 'good', 'great', 'better', 'best', 'take', 'taken',
+  'give', 'given', 'keep', 'kept', 'bring', 'brought', 'coming', 'going',
+  'getting', 'like',
   // Auxiliary and copula verbs: grammatical glue, never themes.
   'will', 'shall', 'must', 'does', 'have', 'were', 'been', 'being',
 ]);
 
+/** Related surface forms, keyed by canonical theme. Lets "trust" meet
+ *  "loyalty" and "money" meet "wealth" without pretending they're the same
+ *  word. Matching stays deterministic: same inputs, same links. */
+export const RELATED: Record<string, string[]> = {
+  trust: ['trust', 'trusted', 'trustworthy', 'trustworthiness', 'loyalty', 'loyal', 'faith', 'faithful'],
+  love: ['love', 'loved', 'loving', 'romance', 'romantic', 'affection', 'affectionate'],
+  money: ['money', 'wealth', 'wealthy', 'rich', 'riches', 'abundance', 'abundant', 'prosperity', 'fortune'],
+  work: ['work', 'job', 'career', 'vocation', 'craft', 'calling'],
+  fear: ['fear', 'afraid', 'frightened', 'anxiety', 'anxious', 'worry', 'worried', 'dread'],
+  grief: ['grief', 'grieve', 'grieving', 'loss', 'lost', 'mourn', 'sorrow'],
+  home: ['home', 'house', 'family', 'familial', 'household'],
+  heart: ['heart', 'hearts', 'courage', 'bravery', 'brave'],
+  choice: ['choice', 'choose', 'decision', 'decide', 'option', 'options', 'crossroads'],
+  rest: ['rest', 'rested', 'patience', 'patient', 'stillness', 'pause'],
+  support: ['support', 'supportive', 'help', 'helpful', 'aid', 'encouragement', 'encourage'],
+  change: ['change', 'changes', 'transition', 'shift', 'transform'],
+};
+
+export function canonicalTopic(word: string): string {
+  for (const [key, forms] of Object.entries(RELATED)) {
+    if (forms.includes(word)) return key;
+  }
+  return word;
+}
+
 export function sharedTopics(text: string, ...sources: string[]): string[] {
   const words = (value: string) => value.toLowerCase().match(/[\p{L}\p{N}]{4,}/gu) ?? [];
-  const sourceWords = new Set(sources.flatMap(words));
-  return [...new Set(words(text))].filter((word) => !commonWords.has(word) && sourceWords.has(word));
+  const sourceWords = new Set(sources.flatMap(words).map(canonicalTopic));
+  return [...new Set(words(text))].filter((word) => {
+    const canon = canonicalTopic(word);
+    return !commonWords.has(word) && !commonWords.has(canon) && sourceWords.has(canon);
+  });
 }
 
 export function cardInPosition(draw: DrawnCard, card: CardMeaning, personal?: string): string {
@@ -182,19 +214,42 @@ export function readTogether(
       : '';
     return `${contextLink}${reversalNote}Bring your association of “${personal}” for ${first.card.name} in “${first.draw.positionLabel}” into conversation with ${second.card.name} in “${second.draw.positionLabel}.”${secondVoice} What does your association change about how you’d read that second card?`;
   }
-  const shared = sharedTopics(
-    first.draw.reversed ? first.card.reversed : first.card.upright,
-    second.draw.reversed ? second.card.reversed : second.card.upright,
-  );
+  const firstMeaning = first.draw.reversed ? first.card.reversed : first.card.upright;
+  const secondMeaning = second.draw.reversed ? second.card.reversed : second.card.upright;
+  // A shared theme is only worth naming when it matters to THIS reading:
+  // with a question or conversation, the topic must live in the reader's
+  // words (or their bridges) too — otherwise "stand" and "good" look like
+  // insight. Cold readings keep the unfiltered behavior.
+  let shared = sharedTopics(firstMeaning, secondMeaning);
+  if (context.trim()) {
+    const allowed = new Set([
+      ...sharedTopics(context, firstMeaning, secondMeaning),
+      ...bridgeTopics(context),
+      ...bridgeTopics(context).flatMap((key) => RELATED[key] ?? []),
+    ]);
+    shared = shared.filter((topic) => allowed.has(topic));
+  }
   const sharedNote = shared.length > 0
     ? ` Both cards circle around ${joinQuoted(shared)}.`
     : '';
-  const relationship = first.role === 'task' && second.role === 'outcome'
-    ? 'How might what the first card asks you to try make the second card’s possibility easier or harder to reach?'
-    : first.card.suit && first.card.suit === second.card.suit
-      ? 'Both cards work in the same suit. What changes as that shared theme moves from one position to the other?'
-      : 'Where do these cards support each other, and where might one ask you to reconsider the other?';
-  return `${contextLink}${reversalNote}${first.card.name} in “${first.draw.positionLabel}” and ${second.card.name} in “${second.draw.positionLabel}” belong to the same story.${sharedNote} ${relationship}`;
+  // A past card plus a live question about trust, love, or kin: name the
+  // release explicitly. What the past taught doesn't have to decide the
+  // outcome — that choice is the reading's work.
+  const pastCard = cards.find(({ draw }) => /\bpast\b/i.test(draw.positionLabel));
+  const queryThemes = bridgeTopics(context);
+  const integration = pastCard && outcome && pastCard.draw !== outcome.draw && queryThemes.length > 0
+    ? ` What ${pastCard.card.name} taught you about ${queryThemes[0]} doesn’t have to decide ${outcome.card.name} in “${outcome.draw.positionLabel}”: what would you need to stop carrying for the new version?`
+    : '';
+  // The synthesis states the link — it never asks the client to do the
+  // reader's job of reading the cards together. One closing question for the
+  // whole reading already exists elsewhere.
+  const suitName = first.card.suit ? { cups: 'Cups', wands: 'Wands', swords: 'Swords', pentacles: 'Pentacles' }[first.card.suit] : undefined;
+  const link = first.role === 'task' && second.role === 'outcome'
+    ? `What ${first.card.name} asks you to try is the price of ${second.card.name}’s possibility — pay it, or name what you’re paying instead.`
+    : first.card.suit && first.card.suit === second.card.suit && suitName
+      ? `Both cards work in ${suitName}: the theme doesn’t change from “${first.draw.positionLabel}” to “${second.draw.positionLabel}”, only its stage does.`
+      : `Read ${first.card.name} in “${first.draw.positionLabel}” as where it started and ${second.card.name} in “${second.draw.positionLabel}” as where it points — the spread’s whole advice is not to confuse the two.`;
+  return `${contextLink}${reversalNote}${first.card.name} in “${first.draw.positionLabel}” and ${second.card.name} in “${second.draw.positionLabel}” belong to the same story.${sharedNote} ${link}${integration}`;
 }
 
 export function joinQuoted(topics: string[]): string {

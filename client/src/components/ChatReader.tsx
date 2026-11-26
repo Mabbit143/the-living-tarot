@@ -274,7 +274,7 @@ export default function ChatReader({ reading, db, updateDb, onDone, onBack, onSe
           {delivered && (
             <article className="reader-main-reading">
               <ReadingInterpretation reading={reading} headingRef={interpretationHeadingRef} onAnswerQuestion={(question) => void respond('follow-up', question)} />
-              {reading.personalizedGuidance ? (
+              {reading.personalizedGuidance && !reading.interpretation.includes('A question for your situation') ? (
                 <section className="personalized-guidance" aria-labelledby="personalized-guidance-heading">
                   <h3 id="personalized-guidance-heading" tabIndex={-1} ref={guidanceHeading}>Personalized guidance</h3>
                   <p className="reading-copy">{reading.personalizedGuidance}</p>

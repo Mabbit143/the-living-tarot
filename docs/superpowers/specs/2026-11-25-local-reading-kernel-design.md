@@ -2,9 +2,13 @@
 
 ## Decision (2026-11-25, owner-confirmed)
 
-- **Reasoning: deepen the deterministic on-device kernel.** No model, no
-  inference API. An API pull is allowed only if the kernel proves unable to
-  deliver human-like readings — the owner doubts it will come to that.
+- **Reasoning: API-led (Gemini), kernel-grounded — revised same night.**
+  Screenshot evidence proved templates alone can't reach the target
+  experience, so the reader is generative. The deterministic kernel stays
+  as the offline fallback AND as the grounding layer: its ranked retrieval
+  decides what the model gets told (question, talk-first answers, ranked
+  memories, card meanings, synthesis skeleton). No model, no inference API
+  was the original call; the owner reversed it on the evidence.
 - **Data: local-only.** No Supabase/Postgres for now — not for inference,
   not for sync. Single device, localStorage behind `StoreAdapter`, file
   backup/restore. The adapter boundary stays, so this decision is reversible.
